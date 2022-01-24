@@ -1,0 +1,163 @@
+// 반응형 미디어쿼리
+@mixin max-w($attr) {
+	@media all and (max-width: #{$attr}) {
+		@content;
+	}
+}
+@mixin min-w($attr) {
+	@media all and (min-width: #{$attr}) {
+		@content;
+	}
+}
+@mixin min-max-w($min, $max) {
+	@media all and (min-width: #{$min}) and (max-width: #{$max}) {
+		@content;
+	}
+}
+
+@mixin tablet($width: '') {
+	@if $width == '' {
+		$width: $tablet;
+	}
+
+	@include max-w($width) {
+		@content;
+	}
+}
+
+@mixin mobile($width: '') {
+	@if $width == '' {
+		$width: $mobile;
+	}
+
+	@include max-w($width) {
+		@content;
+	}
+}
+
+@mixin small($width: '') {
+	@if $width == '' {
+		$width: $small;
+	}
+
+	@include max-w($width) {
+		@content;
+	}
+}
+
+// 포지션 관련
+@mixin fullscreen($z: 1, $p: 'absolute') {
+	position: #{$p};
+	top: 0;
+	left: 0;
+	z-index: $z;
+	width: 100%;
+	height: 100%;
+}
+
+@mixin position($p: 'center') {
+	@if #{$p} == 'center' {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+	} @else if #{$p} == 'vertical' {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto 0;
+	} @else if #{$p} == 'horizontal' {
+		position: absolute;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+	}
+}
+
+// 이미지 관련
+@mixin retina-bgi($uri, $extension) {
+	background-image: url('#{$uri}.#{$extension}');
+
+	@media all and (-webkit-min-device-pixel-ratio: 1.5),
+		all and (-o-min-device-pixel-ratio: 3/2),
+		all and (min--moz-device-pixel-ratio: 1.5),
+		all and (min-device-pixel-ratio: 1.5) {
+		background-image: url('#{$uri}@2x.#{$extension}');
+	}
+}
+
+// 크로스 브라우징
+// https://unto.kr/blog/coding-info/only-ie-css/
+@mixin IE {
+	// IE10 이상에서만 작동되게
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		@content;
+	}
+}
+
+// 기타 mixin
+@mixin clearfix {
+	&:after {
+		content: ' ';
+		display: table;
+		width: 100%;
+		clear: both;
+	}
+}
+
+@mixin disable($boolean: true) {
+	@if $boolean == true {
+		user-select: none;
+		pointer-events: none;
+		touch-action: none;
+	} @else {
+		user-select: auto;
+		pointer-events: auto;
+		touch-action: auto;
+	}
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::placeholder {
+		@content;
+	}
+}
+
+@mixin text-ellipsis() {
+	display: inline-block;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+@mixin box-ellipsis($line: 3, $lineHeight: 20px, $boxHeight: 'auto') {
+	display: -webkit-box;
+	-webkit-line-clamp: $line;
+	-webkit-box-orient: vertical;
+	@if ($boxHeight) == 'fixed' {
+		height: $lineHeight * $line;
+	} @else {
+		max-height: $lineHeight * $line;
+		height: auto;
+	}
+	line-height: $lineHeight;
+	text-align: left;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: normal;
+	overflow: hidden;
+}

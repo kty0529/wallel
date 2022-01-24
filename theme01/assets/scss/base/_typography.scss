@@ -1,0 +1,10 @@
+html,
+body {
+	font-size: gap(2);
+	font-family: $ff-default;
+	color: map-get($theme-colors, 'dark');
+}
+
+.ff-lemon {
+	font-family: 'Lemon', 'Spoqa Han Sans Neo', 'AppleSDGothicNeo', sans-serif;
+}

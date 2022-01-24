@@ -1,0 +1,53 @@
+// 기본 픽셀 배율
+$pixel: 8 !default;
+
+
+// 타이포그래피
+$ff-default: 'Spoqa Han Sans Neo', 'AppleSDGothicNeo', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif !default;
+
+
+// 색상값, 변수명 부트스트랩 카피
+// 색조합: https://flatuicolors.com/palette/defo
+$primary:   #2c3e50 !default;
+$secondary: #7f8c8d !default;
+$success:   #27ae60 !default;
+$info:      #3498db !default;
+$warning:   #f1c40f !default;
+$danger:    #c0392b !default;
+$light:     #ecf0f1 !default;
+$dark:      #222 !default;
+
+$theme-colors: (
+	'primary':    $primary,
+	'secondary':  $secondary,
+	'success':    $success,
+	'info':       $info,
+	'warning':    $warning,
+	'danger':     $danger,
+	'light':      $light,
+	'dark':       $dark
+) !default;
+
+
+// 반응형
+$container: 1000px !default;
+$gutter: 30px !default;
+
+$descktop: 1024px !default;
+$tablet: 768px !default;
+$mobile: 375px !default;
+
+$columns: (
+	'1': 8.333333%,
+	'2': 16.666666%,
+	'3': 25%,
+	'4': 33.333333%,
+	'5': 41.666666%,
+	'6': 50%,
+	'7': 58.333333%,
+	'8': 66.666666%,
+	'9': 75%,
+	'10': 83.333333%,
+	'11': 91.666666%,
+	'12': 100%
+);

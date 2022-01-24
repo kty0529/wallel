@@ -1,0 +1,14 @@
+// 글자색
+@each $key, $value in $theme-colors {
+	.text-#{$key} {
+		color: $value;
+	}
+}
+
+
+// 배경색
+@each $key, $value in $theme-colors {
+	.bg-#{$key} {
+		background-color: $value;
+	}
+}

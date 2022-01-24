@@ -1,0 +1,128 @@
+// 기본값
+.container {
+	margin: {
+		left: auto;
+		right: auto;
+	}
+	padding: {
+		left: #{$gutter / 2};
+		right: #{$gutter / 2};
+	}
+	max-width: $container;
+	width: 100%;
+}
+
+.container-fluid {
+	padding: {
+		left: #{$gutter / 2};
+		right: #{$gutter / 2};
+	}
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	margin-left: -#{$gutter / 2};
+	margin-right: -#{$gutter / 2};
+
+	&.reverse {
+		flex-direction: row-reverse;
+	}
+
+	&-hidden {
+		display: none;
+	}
+}
+
+.col {
+	@extend .row;
+	flex-direction: column;
+
+	&.reverse {
+		flex-direction: column-reverse;
+	}
+
+	&-hidden {
+		display: none;
+	}
+}
+
+
+// 기본 제어
+@each $key, $value in $columns {
+	.col-#{$key}, .col-offset-#{$key},
+	.col-tb-#{$key}, .col-tb-offset-#{$key},
+	.col-mo-#{$key}, .col-mo-offset-#{$key},
+	.col-sm-#{$key}, .col-sm-offset-#{$key} {
+		flex: 0 1 auto;
+		padding-left: #{$gutter / 2};
+		padding-right: #{$gutter / 2};
+		min-height: 1px;
+	}
+
+	.col-#{$key} { width: #{$value}; }
+	.col-offset-#{$key} { margin-left: #{$value}; }
+}
+
+
+// 테블릿 기기 제어
+@media all and (max-width: #{$descktop - 1}) {
+	@each $key, $value in $columns {
+		.col-#{$key} { width: 100%; }
+		.col-offset-#{$key} { margin-left: 0; }
+
+		.col-tb-#{$key} { width: #{$value}; }
+		.col-tb-offset-#{$key} { margin-left: #{$value}; }
+	}
+	.col-tb-hidden { display: none; }
+}
+
+
+// 모바일 기준 제어
+@media all and (max-width: #{$tablet - 1}) {
+	@each $key, $value in $columns {
+		.col-tb-#{$key} { width: 100%; }
+		.col-tb-offset-#{$key} { margin-left: 0; }
+
+		.col-mo-#{$key} { width: #{$value}; }
+		.col-mo-offset-#{$key} { margin-left: #{$value}; }
+	}
+	.col-mo-hidden { display: none; }
+}
+
+
+// 모바일 기준보다 작은 디바이스 제어
+@media all and (max-width: #{$mobile - 1}) {
+	@each $key, $value in $columns {
+		.col-mo-#{$key} { width: 100%; }
+		.col-mo-offset-#{$key} { margin-left: 0; }
+
+		.col-sm-#{$key} { width: #{$value}; }
+		.col-sm-offset-#{$key} { margin-left: #{$value}; }
+	}
+	.col-sm-hidden { display: none; }
+}
+
+
+// 320px 미만의 기기에선 사이트 숨김,
+// 불필요 할 경우 제거
+@media all and (max-width: 319px) {
+	html, body { display: none; }
+}
+
+
+// 추가 옵션
+// 2022-01-23 자동화 업데이트 필요해보임 (저장소에 푸시 안함)
+.justify-content-start {
+	justify-content: flex-start;
+}
+.justify-content-end {
+	justify-content: flex-end;
+}
+.align-items-start {
+	align-items: flex-start;
+}
+.align-items-end {
+	align-items: flex-end;
+}
