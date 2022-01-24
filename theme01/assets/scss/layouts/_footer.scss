@@ -1,0 +1,12 @@
+// footer
+#footer {
+	padding: gap(3) 0;
+	flex: 0 0 auto;
+	font-size: gap(1);
+	color: #2c3e50;
+}
+
+#footer-inner {
+	display: flex;
+	justify-content: space-between;
+}

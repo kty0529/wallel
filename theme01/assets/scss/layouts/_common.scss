@@ -1,0 +1,25 @@
+// common
+body {
+	background-color: map-get($theme-colors, 'light');
+}
+
+a {
+	transition: color 0.2s;
+
+	&:hover {
+		color: $info;
+	}
+}
+
+[class*="material-icons"] {
+	font-size: 1em;
+	vertical-align: middle;
+	transform: translateY(-0.05em);
+}
+
+// wrap
+#wrap {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
