@@ -12,6 +12,10 @@
 @import './layouts/header';
 @import './layouts/footer';
 
+// components
+@import './components/icons';
+
+
 // common
 
 // main
@@ -22,63 +26,68 @@
 
 
 // post
-.post {
-	padding: gap(4);
-	background-color: #fff;
+$gap: gap(4);
+$padding: $gap calc(#{$gap} / 1.5);
 
-	&:not(:first-child) {
-		margin-top: gap(3);
-	}
+#post-list {
+	.post {
+		padding: $padding;
+		background-color: #fff;
 
-	&-thumb {
-		margin: #{- gap(4)} #{- gap(4)} gap(4);
-		padding-top: 56.25%;
-		background: {
-			position: center center;
-			size: cover;
-			repeat: no-repeat;
-		}
-	}
-
-	&-title {
-		font-size: gap(2);
-		font-weight: 700;
-	}
-
-	&-info {
-		display: flex;
-		gap: gap(1.5);
-		margin-top: gap();
-		font-size: 13px;
-		color: $secondary;
-
-		.date {
-			flex: 0 0 auto;
+		&:not(:first-child) {
+			margin-top: gap(3);
 		}
 
-		.categories {
-			flex: 0 0 auto;
+		&-thumb {
+			margin: #{- $gap} calc(-#{$gap} / 1.5) $gap;
+			padding-top: 56.25%;
+			background: {
+				position: center center;
+				size: cover;
+				repeat: no-repeat;
+			}
 		}
 
-		.author {
-			flex: 0 0 auto;
+		&-title {
+			font-size: gap(2);
+			font-weight: 700;
 		}
-	}
 
-	&-desc {
-		padding-top: gap(2);
-		font-size: gap(1.6);
-	}
+		&-info {
+			display: flex;
+			gap: gap(1.5);
+			margin-top: gap();
+			font-size: gap(1.5);
+			color: $secondary;
 
-	&-external {
-		display: block;
-		margin: #{gap(4)} #{- gap(4)} #{- gap(4)};
-		padding: gap(2) gap(4);
-		font-size: gap(1.6);
-		border-top: 1px solid $light;
+			.date {
+				flex: 0 0 auto;
+			}
 
-		[class*="material"] {
-			margin-right: gap(0.5);
+			.categories {
+				flex: 0 0 auto;
+			}
+
+			.author {
+				flex: 0 0 auto;
+			}
+		}
+
+		&-desc {
+			padding-top: gap(2);
+			font-size: gap(1.6);
+		}
+
+		&-external {
+			display: block;
+			margin: #{$gap} #{- $gap} #{- $gap};
+			padding: gap(2) $gap;
+			font-size: gap(1.6);
+			border-top: 1px solid $light;
+
+			[class*="material"] {
+				margin-right: gap(0.5);
+			}
 		}
 	}
 }
@@ -87,7 +96,8 @@
 // sidebar
 #sidebar {
 	position: sticky;
-	top: gap(3);
+	top: 0;
+	padding: gap(4) 0 0;
 
 	.widget {
 		&-title {
@@ -143,19 +153,20 @@
 
 // single
 $gap: gap(4);
+$padding: $gap calc(#{$gap} / 1.5);
+
 .single {
-	margin-top: - $gap;
 	background-color: #fff;
 }
 
 .single-title {
-	padding: $gap calc(#{$gap} / 1.5);
+	padding: $padding;
 	font-size: gap(2);
 	font-weight: 700;
 }
 
 .single-content {
-	padding: $gap calc(#{$gap} / 1.5);
+	padding: $padding;
 	font-size: gap(1.7);
 	border-top: 1px solid $light;
 
@@ -197,7 +208,7 @@ $gap: gap(4);
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1em;
-	padding: $gap calc(#{$gap} / 1.5);
+	padding: $padding;
 	font-size: gap(1.5);
 	border-top: 1px solid $light;
 
@@ -210,7 +221,19 @@ $gap: gap(4);
 }
 
 .single-comment {
-	padding: $gap calc(#{$gap} / 1.5);
+	padding: $padding;
 	font-size: gap(1.5);
 	border-top: 1px solid $light;
 }
+
+
+// project
+.project-list {}
+.project {}
+.project-thumb {}
+.project-thumb img {}
+.project-data {}
+.project-title {}
+.project-title .date {}
+.project-title .lang {}
+.project-title .lang a {}

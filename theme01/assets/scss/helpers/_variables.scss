@@ -30,8 +30,8 @@ $theme-colors: (
 
 
 // 반응형
-$container: 1000px !default;
-$gutter: 30px !default;
+$container: $pixel * 125px !default; // 8 * 125 = 1000px
+$gutter: $pixel * 3.75px !default; // 8 * 3.75 = 30px
 
 $descktop: 1024px !default;
 $tablet: 768px !default;
