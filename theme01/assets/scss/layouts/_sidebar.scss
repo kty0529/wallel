@@ -15,6 +15,10 @@
 			margin: gap(2) 0 0;
 			font-size: gap(1.5);
 		}
+
+		&:not(:last-child) {
+			margin-bottom: gap(4);
+		}
 	}
 
 	.widget-category {

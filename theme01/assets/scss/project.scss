@@ -1,0 +1,169 @@
+// helpers
+@import './helpers/index';
+
+// project
+$gap: gap(4);
+$padding: $gap calc(#{$gap} / 1.5);
+
+#project-list {
+	.project:not(:first-child) {
+		margin-top: gap(3);
+	}
+
+	.project {
+		display: flex;
+		background-color: #fff;
+	}
+
+	.project-thumb {
+		flex: 0 0 gap(30);
+		position: relative;
+		overflow: hidden;
+
+		.view {
+			display: block;
+			height: 100%;
+
+			img {
+				position: absolute;
+				bottom: 100%;
+				left: 0;
+				min-width: 100%;
+				min-height: 100%;
+				transform: translate3d(0, 100%, 0);
+				object-fit: cover;
+
+			}
+			&:hover {
+				img {
+					bottom: 0;
+					transform: translate3d(0, 0, 0);
+					transition: all 1.5s linear;
+				}
+			}
+		}
+
+		.cat {
+			position: absolute;
+			bottom: gap();
+			left: gap();
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: gap(4);
+			height: gap(4);
+
+			@each $k, $v in $icons {
+				$color: map-get-deep($v, 'color');
+
+				&-#{$k} {
+					background-color: $color;
+
+					.ico {
+						background-image: get-icon($k, '#fff');
+					}
+				}
+			}
+		}
+
+		.ico {
+			width: gap(2.5);
+			height: gap(2.5);
+			transition: background-image 0.1s;
+		}
+	}
+
+	.project-data {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: $padding;
+	}
+
+	.project-title {
+		font-size: gap(2);
+	}
+
+	.project-info {
+		margin-top: gap(1);
+
+		.date {
+			font-size: gap(1.5);
+			color: $secondary;
+		}
+
+		.data {
+			display: flex;
+			gap: gap();
+			justify-content: space-between;
+			margin-top: gap(1.5);
+		}
+
+		.exts {
+			display: flex;
+			flex-wrap: wrap;
+			gap: gap();
+			margin-top: gap();
+
+			.ext {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: gap(4);
+				height: gap(4);
+				line-height: 0;
+				background-color: $light;
+				transition: background-color 0.1s;
+
+				@each $k, $v in $icons {
+					$color: map-get-deep($v, 'color');
+
+					&-#{$k}:hover {
+						background-color: $color;
+
+						.ico {
+							background-image: get-icon($k, '#fff');
+						}
+					}
+				}
+			}
+
+			.ico {
+				width: gap(2.5);
+				height: gap(2.5);
+				transition: background-image 0.1s;
+			}
+		}
+
+		.langs {
+			display: flex;
+			flex-wrap: wrap;
+			margin-top: gap();
+			gap: gap();
+
+			.lang {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: gap(4);
+				height: gap(4);
+				line-height: 0;
+				transition: background-color 0.1s;
+
+				@each $k, $v in $icons {
+					$color: map-get-deep($v, 'color');
+
+					&-#{$k} .ico {
+						background-image: get-icon($k, $color);
+					}
+				}
+			}
+
+			.ico {
+				width: gap(2.5);
+				height: gap(2.5);
+			}
+		}
+	}
+}

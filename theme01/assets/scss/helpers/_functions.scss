@@ -1,7 +1,13 @@
-// 배율 계산
+/// 배율 계산
+/// 전역변수 $pixel을 기반으로 배율을 계산합니다.
+/// ex) $pixel: 8 * $raito: 1 + $unit: px == 8px
+/// ex) $pixel: 8 * $raito: 2 + $unit: px == 16px
+/// @param {String} $raito - 기본 배율
+/// @param {String} $unit - 단위
 @function gap($raito: 1, $unit: 'px') {
 	@return #{$pixel * $raito + $unit};
 }
+
 
 /// Replace `$search` with `$replace` in `$string`
 /// https://css-tricks.com/snippets/sass/str-replace-function/
@@ -18,4 +24,33 @@
 	}
 
 	@return $string;
+}
+
+
+/// Deep-get
+/// https://css-tricks.com/snippets/sass/deep-getset-maps/
+@function map-get-deep($map, $keys...) {
+	@each $key in $keys {
+		$map: map-get($map, $key);
+	}
+	@return $map;
+}
+
+
+/// 백그라운드 SVG 아이콘 가져오기
+/// @param {String} $name - 아이콘명
+/// @param {String} $color - 아이콘 색상
+@function get-icon($name, $color: '') {
+	$color: #{$color};
+
+	@if $color == '' {
+		$color: str-replace(#{$primary}, '#', '');
+	}
+
+	@if str-index($color, '#') != null {
+		$color: str-replace($color, '#', '');
+	}
+
+	$icon: map-get-deep($icons, $name, 'icon');
+	@return url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="inherit" height="inherit" fill="%23#{$color}"%3E#{$icon}');
 }
