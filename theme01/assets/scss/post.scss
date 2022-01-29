@@ -1,0 +1,69 @@
+// helpers
+@import './helpers/index';
+
+// post
+$gap: gap(4);
+$padding: $gap calc(#{$gap} / 1.5);
+
+#post-list {
+	.post {
+		padding: $padding;
+		background-color: #fff;
+
+		&:not(:first-child) {
+			margin-top: gap(3);
+		}
+
+		&-thumb {
+			margin: #{- $gap} calc(-#{$gap} / 1.5) $gap;
+			padding-top: 56.25%;
+			background: {
+				position: center center;
+				size: cover;
+				repeat: no-repeat;
+			}
+		}
+
+		&-title {
+			font-size: gap(2);
+			font-weight: 700;
+		}
+
+		&-info {
+			display: flex;
+			gap: gap(1.5);
+			margin-top: gap();
+			font-size: gap(1.5);
+			color: $secondary;
+
+			.date {
+				flex: 0 0 auto;
+			}
+
+			.categories {
+				flex: 0 0 auto;
+			}
+
+			.author {
+				flex: 0 0 auto;
+			}
+		}
+
+		&-desc {
+			padding-top: gap(2);
+			font-size: gap(1.6);
+		}
+
+		&-external {
+			display: block;
+			margin: #{$gap} #{- $gap} #{- $gap};
+			padding: gap(2) $gap;
+			font-size: gap(1.6);
+			border-top: 1px solid $light;
+
+			[class*="material"] {
+				margin-right: gap(0.5);
+			}
+		}
+	}
+}

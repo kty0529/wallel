@@ -1,0 +1,56 @@
+// sidebar
+#sidebar {
+	position: sticky;
+	top: 0;
+	padding: gap(4) 0 0;
+
+	.widget {
+		&-title {
+			font-weight: 300;
+			font-size: gap(2);
+			text-transform: uppercase;
+		}
+
+		&-content {
+			margin: gap(2) 0 0;
+			font-size: gap(1.5);
+		}
+	}
+
+	.widget-category {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				margin-top: gap(2);
+
+				li {
+					padding-left: gap(2);
+				}
+			}
+		}
+
+		.widget-content {
+			& > ul {
+				& > li {
+					padding-bottom: gap(2);
+					border-bottom: 1px solid rgba($secondary, 20%);
+				}
+			}
+		}
+	}
+
+	.widget-recent {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		li {
+			padding-left: gap(2);
+		}
+	}
+}

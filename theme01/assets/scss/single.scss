@@ -1,0 +1,77 @@
+// helpers
+@import './helpers/index';
+
+// single
+$gap: gap(4);
+$padding: $gap calc(#{$gap} / 1.5);
+
+.single {
+	background-color: #fff;
+}
+
+.single-title {
+	padding: $padding;
+	font-size: gap(2);
+	font-weight: 700;
+}
+
+.single-content {
+	padding: $padding;
+	font-size: gap(1.7);
+	border-top: 1px solid $light;
+
+	h1, h2, h3, h4, h5, h6 {
+		&:not(:first-child) {
+			margin-top: 1.5em;
+		}
+	}
+
+	h1, h2 {
+		display: none;
+	}
+
+	h3 {
+		position: relative;
+		padding-top: 0.5em;
+
+		&:not(:first-child) {
+			margin-top: 2.5em;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 1px;
+			background-color: $info;
+		}
+	}
+
+	ol, ul, li, dl, dt, dd {
+		margin: 1em 0;
+	}
+}
+
+.single-data {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1em;
+	padding: $padding;
+	font-size: gap(1.5);
+	border-top: 1px solid $light;
+
+	.data {
+		flex: 1 1 calc(50% - 1em);
+	}
+	.data-label {
+		font-weight: 700;
+	}
+}
+
+.single-comment {
+	padding: $padding;
+	font-size: gap(1.5);
+	border-top: 1px solid $light;
+}
