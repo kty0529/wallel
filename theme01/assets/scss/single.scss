@@ -9,10 +9,13 @@ $padding: $gap calc(#{$gap} / 1.5);
 	background-color: #fff;
 }
 
-.single-title {
+.single-header {
 	padding: $padding;
-	font-size: gap(2);
-	font-weight: 700;
+
+	.title {
+		font-size: gap(2);
+		font-weight: 700;
+	}
 }
 
 .single-content {

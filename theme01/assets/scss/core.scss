@@ -15,3 +15,61 @@
 
 // components
 @import './components/icons';
+@import './components/pagination';
+
+
+// project detail
+$gap: gap(4);
+$padding: $gap calc(#{$gap} / 1.5);
+
+.entry {
+	background-color: #fff;
+}
+
+.entry-header {
+	.title {
+		padding: $padding;
+		font-size: gap(2);
+		font-weight: 700;
+	}
+
+	.description {
+		padding: $padding;
+		font-size: gap(1.7);
+		color: $secondary;
+		border-top: 1px solid $light;
+	}
+}
+
+.entry-screenshot {
+	padding: $padding;
+	padding-top: 0;
+
+	.title {
+		position: relative;
+		padding-top: 0.5em;
+		font-size: gap(2);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 1px;
+			background-color: $info;
+		}
+	}
+
+	.swiper {
+		padding-top: gap(2);
+
+		&-slide {
+			border: 1px solid $light;
+			height: gap(40);
+			overflow: hidden;
+		}
+	}
+
+	.navigation {}
+}

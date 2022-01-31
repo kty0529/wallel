@@ -1,0 +1,20 @@
+.pagination {
+	display: flex;
+	justify-content: center;
+	margin-top: gap(4);
+
+	.nav-links {}
+
+	.page-numbers {
+		padding: gap(0.5) gap(1);
+		font-size: gap(1.5);
+		line-height: 1;
+	}
+
+	.page-numbers.current {
+		font-weight: 700;
+		color: $primary;
+	}
+
+	.page-numbers.dots {}
+}

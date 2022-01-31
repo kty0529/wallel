@@ -13,6 +13,10 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined">
 	<link rel="stylesheet" href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css">
 
+	<!-- Vendor -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
 	<!-- core -->
 	<link rel="stylesheet" href="./assets/css/core.min.css">
 
@@ -79,46 +83,40 @@
 					</div>
 
 					<div class="col-9">
-						<div id="project-list">
-							<article class="project">
-								<div class="project-thumb">
-									<a class="view" href="./project_detail.html"><img src="./assets/images/project/sample-square.png" alt="프로젝트 대표 이미지"></a>
-									<a class="cat cat-tistory" href="./index.html"><i class="ico ico-tistory">tistory</i></a>
+						<article class="entry">
+							<header class="entry-header">
+								<h2 class="title">국내외 웹사이트 빌더 업체 리스트</h2>
+
+								<div class="description">
+									<p>가장 기본이 되는 2단 스킨에 불필요한 기능은 제거하여 더 가볍게 제작했습니다.</p>
+									<p>※ 티스토리 반응형웹 스킨 공모전 대상 수상</p>
 								</div>
+							</header>
 
-								<div class="project-data">
-									<h2 class="project-title"><a href="./project_detail.html">Square</a></h2>
-									<div class="project-info">
-										<div class="date">2019.03.12 ~ 2020.05.12</div>
-										<div class="data">
-											<div class="exts">
-												<a class="ext ext-link" href="javascript:void(0);"><i class="ico ico-link">link</i></a>
-												<a class="ext ext-github" href="javascript:void(0);"><i class="ico ico-github">github</i></a>
-											</div>
+							<div class="entry-screenshot">
+								<h3 class="title">스크린샷</h3>
 
-											<div class="langs">
-												<div class="lang lang-html5" href="javascript:void(0);"><i class="ico ico-html5">html5</i></div>
-												<div class="lang lang-css3" href="javascript:void(0);"><i class="ico ico-css3">css3</i></div>
-												<div class="lang lang-javascript" href="javascript:void(0);"><i class="ico ico-javascript">javascript</i></div>
-												<div class="lang lang-sass" href="javascript:void(0);"><i class="ico ico-sass">sass</i></div>
-											</div>
-										</div>
+								<div class="swiper">
+									<div class="swiper-wrapper">
+										<div class="swiper-slide"><img src="./assets/images/project/sample-square.png" alt="스크린샷 01"></div>
+										<div class="swiper-slide"><img src="./assets/images/project/sample-square02.png" alt="스크린샷 02"></div>
+										<div class="swiper-slide"><img src="./assets/images/project/sample-square03.png" alt="스크린샷 03"></div>
+										<div class="swiper-slide"><img src="./assets/images/project/sample-square04.png" alt="스크린샷 04"></div>
 									</div>
 								</div>
-							</article>
-						</div>
 
-						<nav class="navigation pagination" role="navigation" aria-label="글">
-							<h2 class="screen-reader-text">글 내비게이션</h2>
-							<div class="nav-links">
-								<a class="prev page-numbers" href="javascript:void(0);">PREV</a>
-								<span aria-current="page" class="page-numbers current">1</span>
-								<a class="page-numbers" href="javascript:void(0);">2</a>
-								<span class="page-numbers dots">…</span>
-								<a class="page-numbers" href="javascript:void(0);">18</a>
-								<a class="next page-numbers" href="javascript:void(0);">NEXT</a>
+								<div class="navigation">
+									<button class="arrows prev" aria-label="이전 슬라이더"><i class="ico ico-angle-left"></i></button>
+									<button class="arrows next" aria-label="다음 슬라이더"><i class="ico ico-angle-right"></i></button>
+								</div>
 							</div>
-						</nav>
+
+							<div class="entry-feature"></div>
+
+							<div class="entry-support"></div>
+
+							<div class="entry-download"></div>
+						</article>
 					</div>
 				</div>
 			</div>
@@ -141,12 +139,14 @@
 
 	<script src="./assets/js/core-footer.js"></script>
 	<script>
-		// 각 프로젝트 카테고리 클릭 이벤트 제어
-		const categories = document.querySelectorAll('.project-thumb .category');
-		categories.forEach((elm, idx) => {
-			elm.addEventListener('click', (e) => {
-				e.stopPropagation();
-			});
+		const swiper = new Swiper('.entry-screenshot .swiper', {
+			slidesPerView: 1.2,
+			loop: true,
+			spaceBetween: 15,
+			navigation: {
+				prevEl: '.entry-screenshot .navigation .prev',
+				nextEl: '.entry-screenshot .navigation .next'
+			},
 		});
 	</script>
 </body>

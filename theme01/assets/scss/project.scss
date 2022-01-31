@@ -31,6 +31,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 				min-width: 100%;
 				min-height: 100%;
 				transform: translate3d(0, 100%, 0);
+				transition: all 1.5s linear;
 				object-fit: cover;
 
 			}
@@ -38,7 +39,6 @@ $padding: $gap calc(#{$gap} / 1.5);
 				img {
 					bottom: 0;
 					transform: translate3d(0, 0, 0);
-					transition: all 1.5s linear;
 				}
 			}
 		}
