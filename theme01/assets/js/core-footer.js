@@ -23,11 +23,11 @@ const modal = {
 		},
 		overlay: '',
 	},
-	open: function(target) {
+	open: function(uid) {
 		const t = this;
 
-		// 데이터 정의
-		t.uid = target;
+		// 객체 데이터 정의
+		t.uid = uid;
 		t.html.outer.elm = document.querySelector(`#${t.uid} .modal-outer`);
 		t.html.inner.elm = document.querySelector(`#${t.uid} .modal-inner`);
 		t.html.overlay = document.querySelector('#overlay');

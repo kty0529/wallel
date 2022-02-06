@@ -1,3 +1,4 @@
+// tab
 function Tab(selector) {
 	this.selector = selector;
 
