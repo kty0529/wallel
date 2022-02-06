@@ -146,33 +146,6 @@
 								</div>
 							</div>
 
-							<div class="entry-common entry-support">
-								<h3 class="entry-title">브라우저 지원</h3>
-
-								<div class="entry-content">
-									<table>
-										<thead>
-											<tr>
-												<th>Chrome</th>
-												<th>Edge</th>
-												<th>Forefox</th>
-												<th>Safari</th>
-												<th>Opera</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>2</td>
-												<td>3</td>
-												<td>4</td>
-												<td>5</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-
 							<div class="entry-common entry-download">
 								<h3 class="entry-title">다운로드</h3>
 
@@ -191,7 +164,7 @@
 
 											<div class="item-action">
 												<a class="btn download" href="javascript:void(0);">다운로드</a>
-												<a class="btn history" href="javascript:void(0);">📝 변경사항</a>
+												<a class="btn history" href="javascript:void(0);" onclick="modal.open('change-log');">📝 변경사항</a>
 											</div>
 
 											<div class="item-note">
@@ -212,11 +185,24 @@
 			</div>
 		</main>
 
-		<div id="change-log" class="modal" >
-			<div class="modal-outer">
-				<div class="midal-inner">
+		<script>
+			const feature = new Tab('.entry-feature .tab-container');
+		</script>
 
-					<div class="content"></div>
+		<style>
+			.modal-inner {
+				padding: 20px;
+				width: 500px;
+				background-color: #fff;
+			}
+		</style>
+		<div id="change-log" class="modal">
+			<div class="modal-outer">
+				<div class="modal-inner">
+
+					sss
+
+					<a href="https://naver.com" target="_blank" rel="nofollow noopener noreferrer">naver</a>
 
 				</div>
 			</div>

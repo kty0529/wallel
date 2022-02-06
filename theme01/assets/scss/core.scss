@@ -17,22 +17,7 @@
 @import './components/icons';
 @import './components/pagination';
 @import './components/tab';
-
-
-#overlay {
-	@include fullscreen(10, 'fixed');
-	display: none;
-	background-color: rgba($dark, 0.6);
-
-	&.active {
-		display: block;
-		animation: fadeIn 0.3s linear forwards;
-	}
-}
-@keyframes fadeIn {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
-}
+@import './components/modal';
 
 
 // project detail
@@ -154,34 +139,15 @@ $padding: $gap calc(#{$gap} / 1.5);
 	}
 }
 
-.entry-support {
-	.entry-content {
-		table {
-			width: 100%;
-			border-top: 1px solid $light;
-			table-layout: fixed;
-
-			th, td {
-				padding: gap(1.5);
-				text-align: center;
-				border-bottom: 1px solid $light;
-			}
-
-			th {
-				width: calc(100% / 5);
-				color: $light;
-				background-color: $primary;
-				border: 0;
-			}
-		}
-	}
-}
-
 .entry-download {
 	.item {
 		position: relative;
 		display: flex;
 		border: 1px solid $light;
+
+		&:not(:first-child) {
+			margin-top: gap(1.5);
+		}
 
 		&-type {
 			flex: 0 0 gap(20);

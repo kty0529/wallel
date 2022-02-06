@@ -1,0 +1,19 @@
+.modal {
+	@include fullscreen(11, 'fixed');
+	display: none;
+	padding: gap(3);
+	overflow: hidden;
+	overflow-y: auto;
+
+	&-outer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		min-height: 100%;
+	}
+
+	&.active {
+		display: block;
+	}
+}
