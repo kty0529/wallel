@@ -2,9 +2,11 @@
 function Tab(selector) {
 	this.selector = selector;
 
-	selector = document.querySelector(selector);
-	const nav = selector.querySelectorAll('.tab-nav-item');
-	const wrapper = selector.querySelector('.tab-wrapper');
+	let container = this.selector;
+	container = document.querySelector(container);
+
+	const nav = container.querySelectorAll('.tab-nav-item');
+	const wrapper = container.querySelector('.tab-wrapper');
 	const item = wrapper.querySelectorAll('.tab-item');
 
 	nav.forEach((elm, idx) => {
@@ -17,7 +19,7 @@ function Tab(selector) {
 			e.preventDefault();
 
 			if ( ! elm.classList.contains('tab-nav-item-active') ) {
-				selector.querySelector('.tab-nav-item-active').classList.remove('tab-nav-item-active');
+				container.querySelector('.tab-nav-item-active').classList.remove('tab-nav-item-active');
 				elm.classList.add('tab-nav-item-active');
 
 				// show item
