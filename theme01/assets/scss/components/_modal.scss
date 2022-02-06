@@ -1,3 +1,6 @@
+//
+// 모달 공통
+//
 .modal {
 	@include fullscreen(11, 'fixed');
 	display: none;
@@ -16,4 +19,15 @@
 	&.active {
 		display: block;
 	}
+}
+
+//
+// 프로젝트 상세페이지 모달
+//
+
+// 변경사항 모달
+#change-log {
+	padding: 20px;
+	width: 500px;
+	background-color: #fff;
 }
