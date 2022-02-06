@@ -19,12 +19,53 @@
 @import './components/tab';
 
 
+#overlay {
+	@include fullscreen(10, 'fixed');
+	display: none;
+	background-color: rgba($dark, 0.6);
+
+	&.active {
+		display: block;
+		animation: fadeIn 0.3s linear forwards;
+	}
+}
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+
 // project detail
 $gap: gap(4);
 $padding: $gap calc(#{$gap} / 1.5);
 
 .entry {
 	background-color: #fff;
+
+	&-common {
+		padding: $padding;
+	}
+
+	&-title {
+		position: relative;
+		padding-top: 0.5em;
+		font-size: gap(2);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 1px;
+			background-color: $info;
+		}
+	}
+
+	&-content {
+		margin-top: gap(2);
+		font-size: gap(1.7);
+	}
 }
 
 .entry-header {
@@ -43,28 +84,8 @@ $padding: $gap calc(#{$gap} / 1.5);
 }
 
 .entry-screenshot {
-	position: relative;
-	padding: $padding;
-
-	.title {
-		position: relative;
-		padding-top: 0.5em;
-		font-size: gap(2);
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 20px;
-			height: 1px;
-			background-color: $info;
-		}
-	}
-
-	.images {
+	.entry-content {
 		display: flex;
-		margin-top: gap(2);
 		gap: gap(2);
 		overflow-x: auto;
 		overflow-y: hidden;
@@ -89,29 +110,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 }
 
 .entry-feature {
-	position: relative;
-	padding: $padding;
-
-	.title {
-		position: relative;
-		padding-top: 0.5em;
-		font-size: gap(2);
-
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 20px;
-			height: 1px;
-			background-color: $info;
-		}
-	}
-
-	.tab-container {
-		margin-top: gap(2);
-		font-size: gap(1.6);
-
+	.entry-content {
 		.tab-nav {
 			display: flex;
 
@@ -120,9 +119,8 @@ $padding: $gap calc(#{$gap} / 1.5);
 				justify-content: center;
 				align-items: center;
 				margin-right: -1px;
-				width: gap(4);
-				height: gap(4);
-				font-size: gap(1.4);
+				padding: 0 gap(1.5);
+				height: gap(5);
 				border: 1px solid $primary;
 				transition-property: color, background-color, border-color;
 				transition-duration: 0.2s;
@@ -139,19 +137,159 @@ $padding: $gap calc(#{$gap} / 1.5);
 		.tab-wrapper {
 			margin-top: gap(1);
 
-			ul {
+			.tab-item {
 				margin: 0;
 				padding: gap(3);
-				list-style: none;
+				list-style-position: inside;
 				background-color: $light;
 				border-radius: 3px;
-			}
 
-			li {
-				&:not(:first-child) {
-					margin-top: gap();
+				li {
+					&:not(:first-child) {
+						margin-top: gap();
+					}
 				}
 			}
 		}
 	}
+}
+
+.entry-support {
+	.entry-content {
+		table {
+			width: 100%;
+			border-top: 1px solid $light;
+			table-layout: fixed;
+
+			th, td {
+				padding: gap(1.5);
+				text-align: center;
+				border-bottom: 1px solid $light;
+			}
+
+			th {
+				width: calc(100% / 5);
+				color: $light;
+				background-color: $primary;
+				border: 0;
+			}
+		}
+	}
+}
+
+.entry-download {
+	.item {
+		position: relative;
+		display: flex;
+		border: 1px solid $light;
+
+		&-type {
+			flex: 0 0 gap(20);
+			display: flex;
+			flex-direction: column;
+			padding: gap(2.5);
+			font-weight: 700;
+			color: $danger;
+			background-color: rgba($light, 0.5);
+
+			.label {
+				flex: 1 1 auto;
+				font-size: gap(1.5);
+			}
+
+			.price {
+				flex: 0 0 auto;
+				font-size: gap(3);
+				color: $primary;
+				text-align: right;
+				letter-spacing: -0.02em;
+			}
+		}
+
+		&-content {
+			flex: 1 1 auto;
+			padding: gap(2.5);
+			border-left: 1px solid $light;
+		}
+
+		&-head {
+			display: flex;
+			align-items: center;
+
+			.title {
+				font-size: gap(2);
+			}
+
+			.version {
+				margin-left: gap(1);
+				font-size: gap(1.5);
+			}
+		}
+
+		&-action {
+			display: flex;
+			gap: gap(2);
+			margin-top: gap(2);
+
+			.btn {
+				display: inline-flex;
+				align-items: center;
+				height: gap(4);
+				color: $primary;
+				background-color: transparent;
+				border: 1px solid transparent;
+				border-radius: 3px;
+				transition-property: color, background-color;
+				transition-duration: 0.2s;
+			}
+
+			.download {
+				padding: 0 gap(1.5);
+				font-weight: 700;
+				color: $light;
+				background-color: darken($danger, 5%);
+				border-color: darken($danger, 5%);
+
+				&:hover {
+					background-color: $danger;
+					border-color: $danger;
+				}
+			}
+
+			.history {
+				text-decoration: underline;
+				text-underline-offset: 0.3em;
+			}
+		}
+
+		&-note {
+			margin-top: gap(2);
+			font-size: gap(1.5);
+			color: $secondary;
+		}
+
+
+		&-badge {
+			position: absolute;
+			top: 0;
+			right: gap();
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: gap(8);
+			height: gap(6);
+			font-weight: 700;
+			font-size: gap(1.5);
+			color: $light;
+			letter-spacing: -0.02em;
+			background-color: darken($danger, 5%);
+			border-radius: 0 0 5px 5px;
+		}
+	}
+}
+
+.entry-comment {
+	padding: $padding;
+	font-size: gap(1.5);
+	border-top: 1px solid $light;
 }

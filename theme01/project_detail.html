@@ -100,10 +100,10 @@
 								</div>
 							</header>
 
-							<div class="entry-screenshot">
-								<h3 class="title">스크린샷</h3>
+							<div class="entry-common entry-screenshot">
+								<h3 class="entry-title">스크린샷</h3>
 
-								<div class="images">
+								<div class="entry-content images">
 									<div class="item"><a href="./assets/images/project/sample-square.png" data-lightbox="screenshot" data-title="My caption 01"><img src="./assets/images/project/sample-square.png" alt="스크린샷 01"></a></div>
 									<div class="item"><a href="./assets/images/project/sample-square02.png" data-lightbox="screenshot" data-title="My caption 02"><img src="./assets/images/project/sample-square02.png" alt="스크린샷 02"></a></div>
 									<div class="item"><a href="./assets/images/project/sample-square03.png" data-lightbox="screenshot" data-title="My caption 03"><img src="./assets/images/project/sample-square03.png" alt="스크린샷 03"></a></div>
@@ -111,26 +111,26 @@
 								</div>
 							</div>
 
-							<div class="entry-feature">
-								<h3 class="title">특징</h3>
+							<div class="entry-common entry-feature">
+								<h3 class="entry-title">특징</h3>
 
-								<div class="tab-container">
+								<div class="entry-content tab-container">
 									<div class="tab-nav">
-										<button class="tab-nav-item" aria-label="탭1 콘텐츠 보기">1</button>
-										<button class="tab-nav-item" aria-label="탭2 콘텐츠 보기">2</button>
-										<button class="tab-nav-item" aria-label="탭3 콘텐츠 보기">3</button>
+										<button class="tab-nav-item" aria-label="탭1 콘텐츠 보기">옵션</button>
+										<button class="tab-nav-item" aria-label="탭2 콘텐츠 보기">위젯</button>
+										<button class="tab-nav-item" aria-label="탭3 콘텐츠 보기">페이지</button>
 									</div>
 
 									<div class="tab-wrapper">
-										<ul class="tab-item tab1">
+										<ol class="tab-item">
 											<li>반응형웹</li>
 											<li>하단 썸네일 최신글</li>
 											<li>좌측 사이드바</li>
 											<li>[스킨옵션] 사이드바 숨기기</li>
 											<li>[스킨옵션] 위젯 제목 숨기기</li>
 											<li>[스킨옵션] 카테고리 위젯 분류 전체보기 텍스트 제거</li>
-										</ul>
-										<ul class="tab-item tab2">
+										</ol>
+										<ol class="tab-item">
 											<li>[위젯] 메뉴</li>
 											<li>[위젯] 카테고리</li>
 											<li>[위젯] 링크</li>
@@ -138,22 +138,89 @@
 											<li>[위젯] 최근 댓글</li>
 											<li>[위젯] 방문자 카운터</li>
 											<li>[위젯] 검색</li>
-										</ul>
-										<ul class="tab-item tab3">
+										</ol>
+										<ol class="tab-item">
 											<li>[페이지] 방명록</li><li>[페이지] 태그로그</li><li>[페이지] 위치로그</li>
-										</ul>
+										</ol>
 									</div>
 								</div>
 							</div>
 
-							<div class="entry-support"></div>
+							<div class="entry-common entry-support">
+								<h3 class="entry-title">브라우저 지원</h3>
 
-							<div class="entry-download"></div>
+								<div class="entry-content">
+									<table>
+										<thead>
+											<tr>
+												<th>Chrome</th>
+												<th>Edge</th>
+												<th>Forefox</th>
+												<th>Safari</th>
+												<th>Opera</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>2</td>
+												<td>3</td>
+												<td>4</td>
+												<td>5</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="entry-common entry-download">
+								<h3 class="entry-title">다운로드</h3>
+
+								<div class="entry-content">
+									<div class="item">
+										<div class="item-type">
+											<div class="label">FREE</div>
+											<div class="price">0￦</div>
+										</div>
+
+										<div class="item-content">
+											<div class="item-head">
+												<h4 class="title">Square</h4>
+												<div class="version">v1.1.1</div>
+											</div>
+
+											<div class="item-action">
+												<a class="btn download" href="javascript:void(0);">다운로드</a>
+												<a class="btn history" href="javascript:void(0);">📝 변경사항</a>
+											</div>
+
+											<div class="item-note">
+												⚠️ 자료에 관련된 단순 문의, 버그 등에 대해 지원을 해드립니다.
+												<br>직접적인 수정 요청이나 새로운 기능이 생기는 건에 대해선 지원과 의뢰 모두 받지 않습니다.
+											</div>
+
+											<div class="item-badge">👑 BEST</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="entry-comment">comment</div>
 						</article>
 					</div>
 				</div>
 			</div>
 		</main>
+
+		<div id="change-log" class="modal" >
+			<div class="modal-outer">
+				<div class="midal-inner">
+
+					<div class="content"></div>
+
+				</div>
+			</div>
+		</div>
 
 		<footer id="footer">
 			<div class="container">
@@ -169,6 +236,8 @@
 			</div>
 		</footer>
 	</div>
+
+	<div id="overlay"></div>
 
 	<script src="./assets/js/core-footer.js"></script>
 </body>
