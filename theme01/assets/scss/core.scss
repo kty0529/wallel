@@ -42,6 +42,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 }
 
 .entry-screenshot {
+	position: relative;
 	padding: $padding;
 	padding-top: 0;
 
@@ -61,15 +62,67 @@ $padding: $gap calc(#{$gap} / 1.5);
 		}
 	}
 
-	.swiper {
-		padding-top: gap(2);
+	.images {
+		display: flex;
+		margin-top: gap(2);
+		gap: gap(2);
+		overflow-x: auto;
+		overflow-y: hidden;
 
-		&-slide {
-			border: 1px solid $light;
+		.item {
+			flex: 0 0 80%;
 			height: gap(40);
+			border: 1px solid $light;
 			overflow: hidden;
+
+			a {
+				display: block;
+				height: 100%;
+			}
+
+			img {
+				min-width: 100%;
+				min-height: 100%;
+			}
+		}
+	}
+}
+
+.entry-feature {
+	position: relative;
+	padding: $padding;
+	padding-top: 0;
+
+	.title {
+		position: relative;
+		padding-top: 0.5em;
+		font-size: gap(2);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 20px;
+			height: 1px;
+			background-color: $info;
 		}
 	}
 
-	.navigation {}
+	.features {
+		ul {
+			display: none;
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			&.active {
+				display: block;
+			}
+		}
+
+		li {
+
+		}
+	}
 }
