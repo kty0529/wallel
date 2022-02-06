@@ -7,9 +7,6 @@ function Tab(selector) {
 	const item = wrapper.querySelectorAll('.tab-item');
 
 	nav.forEach((elm, idx) => {
-		const target = elm.getAttribute('href').replace('#', '');
-		console.log(item[0]);
-
 		if ( idx == 0 ) {
 			elm.classList.add('tab-nav-item-active');
 			item[0].classList.add('tab-item-active');

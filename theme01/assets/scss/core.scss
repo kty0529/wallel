@@ -45,7 +45,6 @@ $padding: $gap calc(#{$gap} / 1.5);
 .entry-screenshot {
 	position: relative;
 	padding: $padding;
-	padding-top: 0;
 
 	.title {
 		position: relative;
@@ -92,7 +91,6 @@ $padding: $gap calc(#{$gap} / 1.5);
 .entry-feature {
 	position: relative;
 	padding: $padding;
-	padding-top: 0;
 
 	.title {
 		position: relative;
@@ -111,13 +109,49 @@ $padding: $gap calc(#{$gap} / 1.5);
 	}
 
 	.tab-container {
-		ul {
-			margin: 0;
-			padding: 0;
-			list-style: none;
+		margin-top: gap(2);
+		font-size: gap(1.6);
+
+		.tab-nav {
+			display: flex;
+
+			&-item {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-right: -1px;
+				width: gap(4);
+				height: gap(4);
+				font-size: gap(1.4);
+				border: 1px solid $primary;
+				transition-property: color, background-color, border-color;
+				transition-duration: 0.2s;
+
+				&-active {
+					font-weight: 700;
+					color: $light;
+					background-color: $primary;
+					border-color: $primary;
+				}
+			}
 		}
 
-		li {
+		.tab-wrapper {
+			margin-top: gap(1);
+
+			ul {
+				margin: 0;
+				padding: gap(3);
+				list-style: none;
+				background-color: $light;
+				border-radius: 3px;
+			}
+
+			li {
+				&:not(:first-child) {
+					margin-top: gap();
+				}
+			}
 		}
 	}
 }
