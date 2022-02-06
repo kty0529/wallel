@@ -62,8 +62,19 @@ $padding: $gap calc(#{$gap} / 1.5);
 		font-size: gap(1.6);
 		border-top: 1px solid $light;
 
-		[class*="material"] {
+		.ico {
+			position: relative;
+			top: -1px;
 			margin-right: gap(0.5);
+			width: gap(2);
+			height: gap(2);
+			transition: background 0.2s;
+		}
+
+		&:hover {
+			.ico {
+				background-image: get-icon('north-east', $info);
+			}
 		}
 	}
 }
