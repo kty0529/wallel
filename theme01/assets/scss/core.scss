@@ -16,6 +16,7 @@
 // components
 @import './components/icons';
 @import './components/pagination';
+@import './components/tab';
 
 
 // project detail
@@ -109,20 +110,14 @@ $padding: $gap calc(#{$gap} / 1.5);
 		}
 	}
 
-	.features {
+	.tab-container {
 		ul {
-			display: none;
 			margin: 0;
 			padding: 0;
 			list-style: none;
-
-			&.active {
-				display: block;
-			}
 		}
 
 		li {
-
 		}
 	}
 }

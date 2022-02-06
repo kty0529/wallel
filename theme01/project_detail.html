@@ -22,6 +22,8 @@
 	<link rel="stylesheet" href="./assets/vendor/lightbox2/dist/css/lightbox.min.css">
 	<script src="./assets/vendor/lightbox2/dist/js/lightbox.min.js"></script>
 
+	<script src="./assets/js/tab.js"></script>
+
 	<!-- core -->
 	<link rel="stylesheet" href="./assets/css/core.min.css">
 
@@ -112,51 +114,37 @@
 							<div class="entry-feature">
 								<h3 class="title">특징</h3>
 
-								<div class="navigation">
-									<a href="#tab1" class="active" aria-label="탭1 콘텐츠 보기">1</a>
-									<a href="#tab2" aria-label="탭2 콘텐츠 보기">2</a>
-									<a href="#tab3" aria-label="탭3 콘텐츠 보기">3</a>
-								</div>
+								<div class="tab-container">
+									<div class="tab-nav">
+										<a class="tab-nav-item" href="#tab1" aria-label="탭1 콘텐츠 보기">1</a>
+										<a class="tab-nav-item" href="#tab2" aria-label="탭2 콘텐츠 보기">2</a>
+										<a class="tab-nav-item" href="#tab3" aria-label="탭3 콘텐츠 보기">3</a>
+									</div>
 
-								<div class="features">
-									<ul class="active" data-uid="tab1">
-										<li>반응형웹</li>
-										<li>하단 썸네일 최신글</li>
-										<li>좌측 사이드바</li>
-										<li>[스킨옵션] 사이드바 숨기기</li>
-										<li>[스킨옵션] 위젯 제목 숨기기</li>
-										<li>[스킨옵션] 카테고리 위젯 분류 전체보기 텍스트 제거</li>
-									</ul>
-									<ul data-uid="tab2">
-										<li>[위젯] 메뉴</li>
-										<li>[위젯] 카테고리</li>
-										<li>[위젯] 링크</li>
-										<li>[위젯] 최근 게시글</li>
-										<li>[위젯] 최근 댓글</li>
-										<li>[위젯] 방문자 카운터</li>
-										<li>[위젯] 검색</li>
-									</ul>
-									<ul data-uid="tab3">
-										<li>[페이지] 방명록</li><li>[페이지] 태그로그</li><li>[페이지] 위치로그</li>
-									</ul>
+									<div class="tab-wrapper">
+										<ul class="tab-item tab1">
+											<li>반응형웹</li>
+											<li>하단 썸네일 최신글</li>
+											<li>좌측 사이드바</li>
+											<li>[스킨옵션] 사이드바 숨기기</li>
+											<li>[스킨옵션] 위젯 제목 숨기기</li>
+											<li>[스킨옵션] 카테고리 위젯 분류 전체보기 텍스트 제거</li>
+										</ul>
+										<ul class="tab-item tab2">
+											<li>[위젯] 메뉴</li>
+											<li>[위젯] 카테고리</li>
+											<li>[위젯] 링크</li>
+											<li>[위젯] 최근 게시글</li>
+											<li>[위젯] 최근 댓글</li>
+											<li>[위젯] 방문자 카운터</li>
+											<li>[위젯] 검색</li>
+										</ul>
+										<ul class="tab-item tab3">
+											<li>[페이지] 방명록</li><li>[페이지] 태그로그</li><li>[페이지] 위치로그</li>
+										</ul>
+									</div>
 								</div>
 							</div>
-
-							<script>
-								const feature = {
-									init: function() {
-										const nav = document.querySelectorAll('.entry-feature .navigation a');
-										nav.forEach((elm, idx) => {
-											if ( ! elm.classList.contains('active') ) {
-												const target = elm.getAttribute('href').replace('#', '');
-												console.log(target);
-											}
-										});
-									}
-								}
-
-								feature.init();
-							</script>
 
 							<div class="entry-support"></div>
 
