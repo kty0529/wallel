@@ -27,7 +27,10 @@
 
 // 변경사항 모달
 #change-log {
-	padding: 20px;
-	width: 500px;
-	background-color: #fff;
+	.modal-inner {
+		padding: 20px;
+		width: 500px;
+		height: 1000px;
+		background-color: #fff;
+	}
 }

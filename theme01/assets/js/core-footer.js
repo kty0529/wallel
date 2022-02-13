@@ -31,6 +31,7 @@ const modal = {
 		t.html.outer.elm = document.querySelector(`#${t.uid} .modal-outer`);
 		t.html.inner.elm = document.querySelector(`#${t.uid} .modal-inner`);
 		t.html.overlay = document.querySelector('#overlay');
+		document.body.classList.add('lock');
 
 		// 모달 + 배경 호출
 		document.querySelector(`#${t.uid}`).classList.add('active');
@@ -45,9 +46,11 @@ const modal = {
 
 		// 모달 + 배경 제거
 		document.querySelector('.modal').classList.remove('active');
+		document.body.classList.remove('lock');
 		t.html.overlay.classList.remove('active');
 
 		// 추가한 닫기 이벤트 제거
 		t.html.outer.elm.removeEventListener('click', t.html.outer.evt);
+		t.html.inner.elm.removeEventListener('click', t.html.inner.evt);
 	},
 }

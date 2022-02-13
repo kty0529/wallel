@@ -26,7 +26,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 	}
 
 	.post-title {
-		font-size: 16px;
+		font-size: 18px;
 		font-weight: 700;
 	}
 
@@ -34,7 +34,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 		display: flex;
 		gap: 12px;
 		margin-top: 8px;
-		font-size: 12px;
+		font-size: 14px;
 		color: $secondary;
 
 		.date {
@@ -52,14 +52,15 @@ $padding: $gap calc(#{$gap} / 1.5);
 
 	.post-desc {
 		padding-top: 16px;
-		font-size: 13px;
+		font-size: 15px;
+		line-height: 1.8;
 	}
 
 	.post-external {
 		display: block;
-		margin: #{$gap} #{- $gap} #{- $gap};
-		padding: 16px $gap;
-		font-size: 13px;
+		margin: #{$gap} calc(#{- $gap} / 1.5) #{- $gap};
+		padding: 16px calc(#{$gap} / 1.5);
+		font-size: 12px;
 		border-top: 1px solid $light;
 
 		.ico {

@@ -13,14 +13,14 @@ $padding: $gap calc(#{$gap} / 1.5);
 	padding: $padding;
 
 	.title {
-		font-size: 16px;
+		font-size: 18px;
 		font-weight: 700;
 	}
 }
 
 .single-content {
 	padding: $padding;
-	font-size: 14px;
+	font-size: 16px;
 	border-top: 1px solid $light;
 
 	h1, h2, h3, h4, h5, h6 {
@@ -60,9 +60,9 @@ $padding: $gap calc(#{$gap} / 1.5);
 .single-data {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1em;
+	gap: 1.5em;
 	padding: $padding;
-	font-size: 12px;
+	font-size: 14px;
 	border-top: 1px solid $light;
 
 	.data {
@@ -74,7 +74,5 @@ $padding: $gap calc(#{$gap} / 1.5);
 }
 
 .single-comment {
-	padding: $padding;
-	font-size: 12px;
 	border-top: 1px solid $light;
 }
