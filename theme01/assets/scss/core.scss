@@ -20,255 +20,50 @@
 @import './components/modal';
 
 
-// project detail
-$gap: 32px;
-$padding: $gap calc(#{$gap} / 1.5);
-
-.entry {
-	background-color: #fff;
-
-	&-common {
-		padding: $padding;
+// portfolio
+#portfolio-list {
+	& > .row {
+		gap: 30px 0;
 	}
 
-	&-title {
-		position: relative;
-		padding-top: 0.5em;
-		font-size: 18px;
+	.portfolio {
+		padding: 10px 10px 20px;
+		text-align: center;
+		background-color: #fff;
+	}
 
-		&::before {
-			content: '';
+	.portfolio-thumb {
+		position: relative;
+		padding-top: 100%;
+		background-color: $light;
+		overflow: hidden;
+
+		img {
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 20px;
-			height: 1px;
-			background-color: $info;
+			min-width: 100%;
+			min-height: 100%;
+			object-fit: cover;
 		}
 	}
 
-	&-content {
-		margin-top: 20px;
-		font-size: 16px;
-	}
-}
-
-.entry-header {
-	.title {
-		padding: $padding;
-		font-size: 16px;
-		font-weight: 700;
+	.portfolio-title {
+		margin-top: 16px;
+		font-size: 15px;
+		font-weight: 500;
 	}
 
-	.description {
-		padding: $padding;
-		font-size: 16px;
-		color: $secondary;
-		border-top: 1pxd $light;
-	}
-}
-
-.entry-screenshot {
-	.entry-content {
+	.portfolio-languages {
 		display: flex;
-		padding-bottom: 5px;
-		gap: 16px;
-		overflow-x: scroll;
-		overflow-y: hidden;
+		justify-content: center;
+		gap: 8px;
+		margin: 8px 0 0;
+		padding: 0;
+		list-style: none;
 
-		&::-webkit-scrollbar {
-			height: 10px;
-		}
-		&::-webkit-scrollbar-thumb {
-			background-color: $primary;
-			background-clip: padding-box;
-			border: 3px solid transparent;
-		}
-		&::-webkit-scrollbar-track {
-			height: 10px;
-			background-color: $light;
-		}
-
-		.item {
-			flex: 0 0 80%;
-			height: 320px;
-			border: 1pxd $light;
-			overflow: hidden;
-
-			a {
-				display: block;
-				height: 100%;
-			}
-
-			img {
-				min-width: 100%;
-				min-height: 100%;
-			}
+		li {
+			flex: 0 0 auto;
 		}
 	}
-}
-
-.entry-feature {
-	.entry-content {
-		.tab-nav {
-			display: flex;
-
-			&-item {
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				margin-right: -1px;
-				padding: 0 12px;
-				height: 40px;
-				border: 1px solid $primary;
-				transition-property: color, background-color, border-color;
-				transition-duration: 0.2s;
-
-				&-active {
-					font-weight: 700;
-					color: $light;
-					background-color: $primary;
-					border-color: $primary;
-				}
-			}
-		}
-
-		.tab-wrapper {
-			margin-top: 8px;
-
-			.tab-item {
-				margin: 0;
-				padding: 24px;
-				list-style-position: inside;
-				background-color: $light;
-				border-radius: 3px;
-
-				li {
-					&:not(:first-child) {
-						margin-top: 8px;
-					}
-				}
-			}
-		}
-	}
-}
-
-.entry-download {
-	.item {
-		position: relative;
-		display: flex;
-		border: 1px solid $light;
-
-		&:not(:first-child) {
-			margin-top: 12px;
-		}
-
-		&-type {
-			flex: 0 0 160px;
-			display: flex;
-			flex-direction: column;
-			padding: 20px;
-			font-weight: 700;
-			color: $danger;
-			background-color: rgba($light, 0.5);
-
-			.label {
-				flex: 1 1 auto;
-				font-size: 12px;
-			}
-
-			.price {
-				flex: 0 0 auto;
-				font-size: 24px;
-				color: $primary;
-				text-align: right;
-				letter-spacing: -0.02em;
-			}
-		}
-
-		&-content {
-			flex: 1 1 auto;
-			padding: 20px;
-			border-left: 1px solid $light;
-		}
-
-		&-head {
-			display: flex;
-			align-items: center;
-
-			.title {
-				font-size: 16px;
-			}
-
-			.version {
-				margin-left: 8px;
-				font-size: 12px;
-			}
-		}
-
-		&-action {
-			display: flex;
-			gap: 16px;
-			margin-top: 16px;
-
-			.btn {
-				display: inline-flex;
-				align-items: center;
-				height: 32px;
-				font-size: 14px;
-				color: $primary;
-				background-color: transparent;
-				border: 1px solid transparent;
-				border-radius: 3px;
-				transition-property: color, background-color;
-				transition-duration: 0.2s;
-			}
-
-			.download {
-				padding: 0 12px;
-				font-weight: 700;
-				color: $light;
-				background-color: darken($danger, 5%);
-				border-color: darken($danger, 5%);
-
-				&:hover {
-					background-color: $danger;
-					border-color: $danger;
-				}
-			}
-
-			.history {
-				text-decoration: underline;
-				text-underline-offset: 0.3em;
-			}
-		}
-
-		&-note {
-			margin-top: 16px;
-			font-size: 12px;
-			color: $secondary;
-		}
-
-
-		&-badge {
-			position: absolute;
-			top: 0;
-			right: 8px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			width: 64px;
-			height: 40px;
-			font-weight: 700;
-			font-size: 12px;
-			color: $light;
-			letter-spacing: -0.02em;
-			background-color: darken($danger, 5%);
-			border-radius: 0 0 5px 5px;
-		}
-	}
-}
-
-.entry-comment {
-	border-top: 1px solid $light;
 }

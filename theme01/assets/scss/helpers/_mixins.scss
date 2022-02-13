@@ -56,19 +56,19 @@
 }
 
 @mixin position($p: 'center') {
-	@if #{$p} == 'center' {
+	@if unquote(#{$p} == 'center') {
 		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
 		margin: auto;
-	} @else if #{$p} == 'vertical' {
+	} @else if unquote(#{$p} == 'vertical') {
 		position: absolute;
 		top: 0;
 		bottom: 0;
 		margin: auto 0;
-	} @else if #{$p} == 'horizontal' {
+	} @else if unquote(#{$p} == 'horizontal') {
 		position: absolute;
 		right: 0;
 		left: 0;

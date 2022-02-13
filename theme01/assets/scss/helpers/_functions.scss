@@ -30,7 +30,7 @@
 /// @param {String} $name - 아이콘명
 /// @param {String} $color - 아이콘 색상
 @function get-icon($name, $color: '') {
-	$color: #{$color};
+	$color: unquote("#{$color}");
 
 	@if $color == '' {
 		$color: str-replace(#{$primary}, '#', '');
