@@ -2,7 +2,7 @@
 @import './helpers/index';
 
 // single
-$gap: gap(4);
+$gap: 32px;
 $padding: $gap calc(#{$gap} / 1.5);
 
 .single {
@@ -13,14 +13,14 @@ $padding: $gap calc(#{$gap} / 1.5);
 	padding: $padding;
 
 	.title {
-		font-size: gap(2);
+		font-size: 16px;
 		font-weight: 700;
 	}
 }
 
 .single-content {
 	padding: $padding;
-	font-size: gap(1.7);
+	font-size: 14px;
 	border-top: 1px solid $light;
 
 	h1, h2, h3, h4, h5, h6 {
@@ -62,7 +62,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 	flex-wrap: wrap;
 	gap: 1em;
 	padding: $padding;
-	font-size: gap(1.5);
+	font-size: 12px;
 	border-top: 1px solid $light;
 
 	.data {
@@ -75,6 +75,6 @@ $padding: $gap calc(#{$gap} / 1.5);
 
 .single-comment {
 	padding: $padding;
-	font-size: gap(1.5);
+	font-size: 12px;
 	border-top: 1px solid $light;
 }

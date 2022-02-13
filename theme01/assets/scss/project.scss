@@ -2,12 +2,12 @@
 @import './helpers/index';
 
 // project
-$gap: gap(4);
+$gap: 32px;
 $padding: $gap calc(#{$gap} / 1.5);
 
 #project-list {
 	.project:not(:first-child) {
-		margin-top: gap(3);
+		margin-top: 24px;
 	}
 
 	.project {
@@ -16,7 +16,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 	}
 
 	.project-thumb {
-		flex: 0 0 gap(30);
+		flex: 0 0 240px;
 		position: relative;
 		overflow: hidden;
 
@@ -45,13 +45,13 @@ $padding: $gap calc(#{$gap} / 1.5);
 
 		.cat {
 			position: absolute;
-			bottom: gap();
-			left: gap();
+			bottom: 8px;
+			left: 8px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: gap(4);
-			height: gap(4);
+			width: 32px;
+			height: 32px;
 
 			@each $k, $v in $icons {
 				$color: map-get-deep($v, 'color');
@@ -67,8 +67,8 @@ $padding: $gap calc(#{$gap} / 1.5);
 		}
 
 		.ico {
-			width: gap(2.5);
-			height: gap(2.5);
+			width: 20px;
+			height: 20px;
 			transition: background-image 0.1s;
 		}
 	}
@@ -82,36 +82,36 @@ $padding: $gap calc(#{$gap} / 1.5);
 	}
 
 	.project-title {
-		font-size: gap(2);
+		font-size: 16px;
 	}
 
 	.project-info {
-		margin-top: gap(1);
+		margin-top: 8px;
 
 		.date {
-			font-size: gap(1.5);
+			font-size: 12px;
 			color: $secondary;
 		}
 
 		.data {
 			display: flex;
-			gap: gap();
+			gap: 8px;
 			justify-content: space-between;
-			margin-top: gap(1.5);
+			margin-top: 12px;
 		}
 
 		.exts {
 			display: flex;
 			flex-wrap: wrap;
-			gap: gap();
-			margin-top: gap();
+			gap: 8px;
+			margin-top: 8px;
 
 			.ext {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				width: gap(4);
-				height: gap(4);
+				width: 32px;
+				height: 32px;
 				line-height: 0;
 				background-color: $light;
 				transition: background-color 0.1s;
@@ -130,8 +130,8 @@ $padding: $gap calc(#{$gap} / 1.5);
 			}
 
 			.ico {
-				width: gap(2.5);
-				height: gap(2.5);
+				width: 20px;
+				height: 20px;
 				transition: background-image 0.1s;
 			}
 		}
@@ -139,15 +139,15 @@ $padding: $gap calc(#{$gap} / 1.5);
 		.langs {
 			display: flex;
 			flex-wrap: wrap;
-			margin-top: gap();
-			gap: gap();
+			margin-top: 8px;
+			gap: 8px;
 
 			.lang {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				width: gap(4);
-				height: gap(4);
+				width: 32px;
+				height: 32px;
 				line-height: 0;
 				transition: background-color 0.1s;
 
@@ -161,8 +161,8 @@ $padding: $gap calc(#{$gap} / 1.5);
 			}
 
 			.ico {
-				width: gap(2.5);
-				height: gap(2.5);
+				width: 20px;
+				height: 20px;
 			}
 		}
 	}

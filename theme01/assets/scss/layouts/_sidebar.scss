@@ -2,22 +2,22 @@
 #sidebar {
 	position: sticky;
 	top: 0;
-	padding: gap(4) 0 0;
+	padding: 32px 0 0;
 
 	.widget {
 		&-title {
 			font-weight: 300;
-			font-size: gap(2);
+			font-size: 16px;
 			text-transform: uppercase;
 		}
 
 		&-content {
-			margin: gap(2) 0 0;
-			font-size: gap(1.5);
+			margin: 16px 0 0;
+			font-size: 12px;
 		}
 
 		&:not(:last-child) {
-			margin-bottom: gap(4);
+			margin-bottom: 32px;
 		}
 	}
 
@@ -28,10 +28,10 @@
 			list-style: none;
 
 			li {
-				margin-top: gap(2);
+				margin-top: 16px;
 
 				li {
-					padding-left: gap(2);
+					padding-left: 16px;
 				}
 			}
 		}
@@ -39,7 +39,7 @@
 		.widget-content {
 			& > ul {
 				& > li {
-					padding-bottom: gap(2);
+					padding-bottom: 16px;
 					border-bottom: 1px solid rgba($secondary, 20%);
 				}
 			}
@@ -54,7 +54,7 @@
 		}
 
 		li {
-			padding-left: gap(2);
+			padding-left: 16px;
 		}
 	}
 }

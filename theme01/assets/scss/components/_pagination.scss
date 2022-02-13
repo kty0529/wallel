@@ -1,11 +1,11 @@
 .pagination {
 	display: flex;
 	justify-content: center;
-	margin-top: gap(4);
+	margin-top: 32px;
 
 	.page-numbers {
-		padding: gap(0.5) gap(1);
-		font-size: gap(1.5);
+		padding: 4px 8px;
+		font-size: 12px;
 		line-height: 1;
 	}
 

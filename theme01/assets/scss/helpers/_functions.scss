@@ -1,14 +1,3 @@
-/// 배율 계산
-/// 전역변수 $pixel을 기반으로 배율을 계산합니다.
-/// ex) $pixel: 8 * $raito: 1 + $unit: px == 8px
-/// ex) $pixel: 8 * $raito: 2 + $unit: px == 16px
-/// @param {String} $raito - 기본 배율
-/// @param {String} $unit - 단위
-@function gap($raito: 1, $unit: 'px') {
-	@return #{$pixel * $raito + $unit};
-}
-
-
 /// Replace `$search` with `$replace` in `$string`
 /// https://css-tricks.com/snippets/sass/str-replace-function/
 /// @author Hugo Giraudel

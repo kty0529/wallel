@@ -2,12 +2,12 @@
 @import './helpers/index';
 
 // post
-$gap: gap(4);
+$gap: 32px;
 $padding: $gap calc(#{$gap} / 1.5);
 
 #post-list {
 	.post:not(:first-child) {
-		margin-top: gap(3);
+		margin-top: 24px;
 	}
 
 	.post {
@@ -26,15 +26,15 @@ $padding: $gap calc(#{$gap} / 1.5);
 	}
 
 	.post-title {
-		font-size: gap(2);
+		font-size: 16px;
 		font-weight: 700;
 	}
 
 	.post-info {
 		display: flex;
-		gap: gap(1.5);
-		margin-top: gap();
-		font-size: gap(1.5);
+		gap: 12px;
+		margin-top: 8px;
+		font-size: 12px;
 		color: $secondary;
 
 		.date {
@@ -51,23 +51,23 @@ $padding: $gap calc(#{$gap} / 1.5);
 	}
 
 	.post-desc {
-		padding-top: gap(2);
-		font-size: gap(1.6);
+		padding-top: 16px;
+		font-size: 13px;
 	}
 
 	.post-external {
 		display: block;
 		margin: #{$gap} #{- $gap} #{- $gap};
-		padding: gap(2) $gap;
-		font-size: gap(1.6);
+		padding: 16px $gap;
+		font-size: 13px;
 		border-top: 1px solid $light;
 
 		.ico {
 			position: relative;
 			top: -1px;
-			margin-right: gap(0.5);
-			width: gap(2);
-			height: gap(2);
+			margin-right: 4px;
+			width: 16px;
+			height: 16px;
 			transition: background 0.2s;
 		}
 

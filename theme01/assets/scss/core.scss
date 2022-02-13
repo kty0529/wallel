@@ -21,7 +21,7 @@
 
 
 // project detail
-$gap: gap(4);
+$gap: 32px;
 $padding: $gap calc(#{$gap} / 1.5);
 
 .entry {
@@ -34,7 +34,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 	&-title {
 		position: relative;
 		padding-top: 0.5em;
-		font-size: gap(2);
+		font-size: 16px;
 
 		&::before {
 			content: '';
@@ -48,21 +48,21 @@ $padding: $gap calc(#{$gap} / 1.5);
 	}
 
 	&-content {
-		margin-top: gap(2);
-		font-size: gap(1.7);
+		margin-top: 16px;
+		font-size: 14px;
 	}
 }
 
 .entry-header {
 	.title {
 		padding: $padding;
-		font-size: gap(2);
+		font-size: 16px;
 		font-weight: 700;
 	}
 
 	.description {
 		padding: $padding;
-		font-size: gap(1.7);
+		font-size: 14px;
 		color: $secondary;
 		border-top: .0625rem solid $light;
 	}
@@ -71,23 +71,27 @@ $padding: $gap calc(#{$gap} / 1.5);
 .entry-screenshot {
 	.entry-content {
 		display: flex;
-		gap: gap(2);
-		overflow-x: scoll;
+		padding-bottom: 5px;
+		gap: 16px;
+		overflow-x: scroll;
 		overflow-y: hidden;
 
 		&::-webkit-scrollbar {
-			height: 0.3125rem;
+			height: 10px;
 		}
 		&::-webkit-scrollbar-thumb {
-			background-color: red;
+			background-color: $primary;
+			background-clip: padding-box;
+			border: 3px solid transparent;
 		}
 		&::-webkit-scrollbar-track {
-			background-color: black;
+			height: 10px;
+			background-color: $light;
 		}
 
 		.item {
 			flex: 0 0 80%;
-			height: gap(40);
+			height: 320px;
 			border: .0625rem solid $light;
 			overflow: hidden;
 
@@ -114,8 +118,8 @@ $padding: $gap calc(#{$gap} / 1.5);
 				justify-content: center;
 				align-items: center;
 				margin-right: -0.0625rem;
-				padding: 0 gap(1.5);
-				height: gap(5);
+				padding: 0 12px;
+				height: 40px;
 				border: .0625rem solid $primary;
 				transition-property: color, background-color, border-color;
 				transition-duration: 0.2s;
@@ -130,18 +134,18 @@ $padding: $gap calc(#{$gap} / 1.5);
 		}
 
 		.tab-wrapper {
-			margin-top: gap(1);
+			margin-top: 8px;
 
 			.tab-item {
 				margin: 0;
-				padding: gap(3);
+				padding: 24px;
 				list-style-position: inside;
 				background-color: $light;
 				border-radius: .1875rem;
 
 				li {
 					&:not(:first-child) {
-						margin-top: gap();
+						margin-top: 8px;
 					}
 				}
 			}
@@ -156,26 +160,26 @@ $padding: $gap calc(#{$gap} / 1.5);
 		border: .0625rem solid $light;
 
 		&:not(:first-child) {
-			margin-top: gap(1.5);
+			margin-top: 12px;
 		}
 
 		&-type {
-			flex: 0 0 gap(20);
+			flex: 0 0 160px;
 			display: flex;
 			flex-direction: column;
-			padding: gap(2.5);
+			padding: 20px;
 			font-weight: 700;
 			color: $danger;
 			background-color: rgba($light, 0.5);
 
 			.label {
 				flex: 1 1 auto;
-				font-size: gap(1.5);
+				font-size: 12px;
 			}
 
 			.price {
 				flex: 0 0 auto;
-				font-size: gap(3);
+				font-size: 24px;
 				color: $primary;
 				text-align: right;
 				letter-spacing: -0.02em;
@@ -184,7 +188,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 
 		&-content {
 			flex: 1 1 auto;
-			padding: gap(2.5);
+			padding: 20px;
 			border-left: .0625rem solid $light;
 		}
 
@@ -193,24 +197,24 @@ $padding: $gap calc(#{$gap} / 1.5);
 			align-items: center;
 
 			.title {
-				font-size: gap(2);
+				font-size: 16px;
 			}
 
 			.version {
-				margin-left: gap(1);
-				font-size: gap(1.5);
+				margin-left: 8px;
+				font-size: 12px;
 			}
 		}
 
 		&-action {
 			display: flex;
-			gap: gap(2);
-			margin-top: gap(2);
+			gap: 16px;
+			margin-top: 16px;
 
 			.btn {
 				display: inline-flex;
 				align-items: center;
-				height: gap(4);
+				height: 32px;
 				color: $primary;
 				background-color: transparent;
 				border: .0625rem solid transparent;
@@ -220,7 +224,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 			}
 
 			.download {
-				padding: 0 gap(1.5);
+				padding: 0 12px;
 				font-weight: 700;
 				color: $light;
 				background-color: darken($danger, 5%);
@@ -239,8 +243,8 @@ $padding: $gap calc(#{$gap} / 1.5);
 		}
 
 		&-note {
-			margin-top: gap(2);
-			font-size: gap(1.5);
+			margin-top: 16px;
+			font-size: 12px;
 			color: $secondary;
 		}
 
@@ -248,14 +252,14 @@ $padding: $gap calc(#{$gap} / 1.5);
 		&-badge {
 			position: absolute;
 			top: 0;
-			right: gap();
+			right: 8px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			width: gap(8);
-			height: gap(6);
+			width: 64px;
+			height: 40px;
 			font-weight: 700;
-			font-size: gap(1.5);
+			font-size: 12px;
 			color: $light;
 			letter-spacing: -0.02em;
 			background-color: darken($danger, 5%);
@@ -266,6 +270,6 @@ $padding: $gap calc(#{$gap} / 1.5);
 
 .entry-comment {
 	padding: $padding;
-	font-size: gap(1.5);
+	font-size: 12px;
 	border-top: .0625rem solid $light;
 }
