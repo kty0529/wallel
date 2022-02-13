@@ -59,36 +59,7 @@
 		<main id="main">
 			<div class="container">
 				<div class="row">
-					<div class="col-3">
-						<aside id="sidebar">
-							<h2 class="blind">사이드바</h2>
-
-							<div class="widget widget-category">
-								<h3 class="widget-title">Category</h3>
-
-								<div class="widget-content">
-									<ul>
-										<li><a href="javascript:void(0);">Tistory</a></li>
-										<li><a href="javascript:void(0);">Wordpress</a></li>
-										<li><a href="javascript:void(0);">KBoard</a></li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="widget widget-tags">
-								<h3 class="widget-title">Tags</h3>
-
-								<div class="widget-content">
-									<a href="javascript:void(0);">반응형</a>,
-									<a href="javascript:void(0);">HTML5</a>,
-									<a href="javascript:void(0);">무료</a>,
-									<a href="javascript:void(0);">티스토리</a>
-								</div>
-							</div>
-						</aside>
-					</div>
-
-					<div class="col-9">
+					<div class="col-9 order-2">
 						<div id="project-detail">
 							<article class="entry">
 								<header class="entry-header">
@@ -152,13 +123,13 @@
 									<div class="entry-content">
 										<div class="item">
 											<div class="item-type">
-												<div class="label">FREE</div>
+												<h4 class="label">FREE</h4>
 												<div class="price">0￦</div>
 											</div>
 
 											<div class="item-content">
 												<div class="item-head">
-													<h4 class="title">Square</h4>
+													<div class="title">Square</div>
 													<div class="version">v1.1.1</div>
 												</div>
 
@@ -181,6 +152,27 @@
 								<div class="entry-comment">comment</div>
 							</article>
 						</div>
+					</div>
+
+					<div class="col-3 order-1">
+						<aside id="sidebar">
+							<h2 class="blind">사이드바</h2>
+
+							<div class="widget widget-index">
+								<h3 class="widget-title">Index</h3>
+
+								<div class="widget-content">
+									<ul class="indexes"></ul>
+
+									<a class="demo" href="javascript:void(0);">데모 사이트</a>
+								</div>
+								<script>
+									document.addEventListener('DOMContentLoaded', () => {
+										const indexes = new Indexes('.entry h3, .entry h4, .entry h5, .entry h6', '#sidebar .widget-index .indexes');
+									});
+								</script>
+							</div>
+						</aside>
 					</div>
 				</div>
 			</div>

@@ -29,3 +29,22 @@ function Tab(selector) {
 		});
 	});
 }
+
+// indexes
+function Indexes(elements, target) {
+	this.elements = elements;
+	this.target = target;
+
+	const getElements = this.elements;
+	const setTarget = this.target;
+
+	document.querySelectorAll(getElements).forEach((elm, idx) => {
+		idx = idx + 1;
+		elm.setAttribute('id', `heading-${idx}`);
+		const heading = elm.tagName;
+		const target = document.querySelector(setTarget);
+		const txt = elm.textContent;
+
+		target.insertAdjacentHTML('beforeend', `<li class="heading-${heading.toLowerCase()}"><a href="#heading-${idx}">${txt}</a></li>`);
+	});
+}

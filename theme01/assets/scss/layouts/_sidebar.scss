@@ -57,4 +57,51 @@
 			padding-left: 16px;
 		}
 	}
+
+	.widget-index {
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				margin-top: 10px;
+				overflow: hidden;
+
+				a {
+					display: block;
+				}
+			}
+
+			$k: 0;
+			$fz: 14px;
+			@for $i from 3 to 7 {
+				.heading-h#{$i} {
+					font-size: $fz;
+					padding-left: #{$k}px;
+				}
+
+				$k: $k + 10;
+				$fz: $fz - 1;
+			}
+		}
+
+		.widget-content {
+			.demo {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-top: 20px;
+				padding: 10px 10px;
+				color: $light;
+				text-align: center;
+				background-color: $primary;
+				transition: background 0.2s;
+
+				&:hover {
+					background-color: darken($primary, 5%);
+				}
+			}
+		}
+	}
 }

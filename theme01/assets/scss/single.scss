@@ -1,78 +1,80 @@
 // helpers
 @import './helpers/index';
 
-// single
+// pages
 $gap: 32px;
 $padding: $gap calc(#{$gap} / 1.5);
 
-.single {
-	background-color: #fff;
-}
-
-.single-header {
-	padding: $padding;
-
-	.title {
-		font-size: 18px;
-		font-weight: 700;
+#post-detail {
+	.entry {
+		background-color: #fff;
 	}
-}
 
-.single-content {
-	padding: $padding;
-	font-size: 16px;
-	border-top: 1px solid $light;
+	.entry-header {
+		padding: $padding;
 
-	h1, h2, h3, h4, h5, h6 {
-		&:not(:first-child) {
-			margin-top: 1.5em;
+		.title {
+			font-size: 18px;
+			font-weight: 700;
 		}
 	}
 
-	h1, h2 {
-		display: none;
-	}
+	.entry-content {
+		padding: $padding;
+		font-size: 16px;
+		border-top: 1px solid $light;
 
-	h3 {
-		position: relative;
-		padding-top: 0.5em;
-
-		&:not(:first-child) {
-			margin-top: 2.5em;
+		h1, h2, h3, h4, h5, h6 {
+			&:not(:first-child) {
+				margin-top: 1.5em;
+			}
 		}
 
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 20px;
-			height: 1px;
-			background-color: $info;
+		h1, h2 {
+			display: none;
+		}
+
+		h3 {
+			position: relative;
+			padding-top: 0.5em;
+
+			&:not(:first-child) {
+				margin-top: 2.5em;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 20px;
+				height: 1px;
+				background-color: $info;
+			}
+		}
+
+		ol, ul, li, dl, dt, dd {
+			margin: 1em 0;
 		}
 	}
 
-	ol, ul, li, dl, dt, dd {
-		margin: 1em 0;
-	}
-}
+	.entry-data {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5em;
+		padding: $padding;
+		font-size: 14px;
+		border-top: 1px solid $light;
 
-.single-data {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1.5em;
-	padding: $padding;
-	font-size: 14px;
-	border-top: 1px solid $light;
-
-	.data {
-		flex: 1 1 calc(50% - 1em);
+		.data {
+			flex: 1 1 calc(50% - 1em);
+		}
+		.data-label {
+			font-weight: 700;
+		}
 	}
-	.data-label {
-		font-weight: 700;
-	}
-}
 
-.single-comment {
-	border-top: 1px solid $light;
+	.entry-comment {
+		border-top: 1px solid $light;
+	}
 }
