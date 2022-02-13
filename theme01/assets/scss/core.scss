@@ -41,8 +41,8 @@ $padding: $gap calc(#{$gap} / 1.5);
 			position: absolute;
 			top: 0;
 			left: 0;
-			width: 20px;
-			height: 1px;
+			width: 1.25rem;
+			height: .0625rem;
 			background-color: $info;
 		}
 	}
@@ -64,7 +64,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 		padding: $padding;
 		font-size: gap(1.7);
 		color: $secondary;
-		border-top: 1px solid $light;
+		border-top: .0625rem solid $light;
 	}
 }
 
@@ -72,13 +72,23 @@ $padding: $gap calc(#{$gap} / 1.5);
 	.entry-content {
 		display: flex;
 		gap: gap(2);
-		overflow-x: auto;
+		overflow-x: scoll;
 		overflow-y: hidden;
+
+		&::-webkit-scrollbar {
+			height: 0.3125rem;
+		}
+		&::-webkit-scrollbar-thumb {
+			background-color: red;
+		}
+		&::-webkit-scrollbar-track {
+			background-color: black;
+		}
 
 		.item {
 			flex: 0 0 80%;
 			height: gap(40);
-			border: 1px solid $light;
+			border: .0625rem solid $light;
 			overflow: hidden;
 
 			a {
@@ -103,10 +113,10 @@ $padding: $gap calc(#{$gap} / 1.5);
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				margin-right: -1px;
+				margin-right: -0.0625rem;
 				padding: 0 gap(1.5);
 				height: gap(5);
-				border: 1px solid $primary;
+				border: .0625rem solid $primary;
 				transition-property: color, background-color, border-color;
 				transition-duration: 0.2s;
 
@@ -127,7 +137,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 				padding: gap(3);
 				list-style-position: inside;
 				background-color: $light;
-				border-radius: 3px;
+				border-radius: .1875rem;
 
 				li {
 					&:not(:first-child) {
@@ -143,7 +153,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 	.item {
 		position: relative;
 		display: flex;
-		border: 1px solid $light;
+		border: .0625rem solid $light;
 
 		&:not(:first-child) {
 			margin-top: gap(1.5);
@@ -175,7 +185,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 		&-content {
 			flex: 1 1 auto;
 			padding: gap(2.5);
-			border-left: 1px solid $light;
+			border-left: .0625rem solid $light;
 		}
 
 		&-head {
@@ -203,8 +213,8 @@ $padding: $gap calc(#{$gap} / 1.5);
 				height: gap(4);
 				color: $primary;
 				background-color: transparent;
-				border: 1px solid transparent;
-				border-radius: 3px;
+				border: .0625rem solid transparent;
+				border-radius: .1875rem;
 				transition-property: color, background-color;
 				transition-duration: 0.2s;
 			}
@@ -249,7 +259,7 @@ $padding: $gap calc(#{$gap} / 1.5);
 			color: $light;
 			letter-spacing: -0.02em;
 			background-color: darken($danger, 5%);
-			border-radius: 0 0 5px 5px;
+			border-radius: 0 0 .3125rem .3125rem;
 		}
 	}
 }
@@ -257,5 +267,5 @@ $padding: $gap calc(#{$gap} / 1.5);
 .entry-comment {
 	padding: $padding;
 	font-size: gap(1.5);
-	border-top: 1px solid $light;
+	border-top: .0625rem solid $light;
 }
