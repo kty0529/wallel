@@ -1,0 +1,40 @@
+[data-tooltip] {
+	position: relative;
+
+	&::before {
+		content: attr(data-tooltip);
+		display: none;
+		position: absolute;
+		bottom: calc(100% + 4px);
+		left: 50%;
+		padding: 6px;
+		font-size: 13px;
+		font-weight: 500;
+		color: $light;
+		line-height: 1;
+		font-style: normal;
+		text-indent: 0;
+		text-transform: capitalize;
+		white-space: nowrap;
+		background-color: $dark;
+		border-radius: 3px;
+		transform: translateX(-50%);
+	}
+
+	&::after {
+		content: '';
+		display: none;
+		position: absolute;
+		bottom: calc(100% + 2px);
+		left: 50%;
+		width: 4px;
+		height: 4px;
+		background-color: $dark;
+		transform: translateX(-50%) rotate(45deg);
+	}
+
+	&:hover::before,
+	&:hover::after {
+		display: block;
+	}
+}

@@ -10,51 +10,10 @@
 }
 
 @each $k, $v in $icons {
-	$label: map-get-deep($v, 'label');
 	$color: map-get-deep($v, 'color');
 
 	.ico-#{$k} {
 		position: relative;
 		background-image: get-icon(#{$k}, $color);
-
-		@if $label != null {
-			&::before {
-				content: '#{$label}';
-				display: none;
-				position: absolute;
-				bottom: calc(100% + 4px);
-				left: 50%;
-				padding: 4px 6px;
-				font-size: 11px;
-				font-weight: 600;
-				color: $light;
-				line-height: 1;
-				font-style: normal;
-				text-indent: 0;
-				text-transform: capitalize;
-				background-color: $dark;
-				border-radius: 3px;
-				transform: translateX(-50%);
-			}
-
-			&::after {
-				content: '';
-				display: none;
-				position: absolute;
-				bottom: calc(100% + 2px);
-				left: 50%;
-				width: 4px;
-				height: 4px;
-				background-color: $dark;
-				transform: translateX(-50%) rotate(45deg);
-			}
-
-			&.hover::before,
-			&:hover::before,
-			&.hover::after,
-			&:hover::after {
-				display: block;
-			}
-		}
 	}
 }
