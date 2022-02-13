@@ -48,6 +48,12 @@
 	}
 }
 
+@for $i from 1 to 10 {
+	.order-#{$i} {
+		order: #{$i};
+	}
+}
+
 
 // 기본 제어
 @each $key, $value in $columns {
