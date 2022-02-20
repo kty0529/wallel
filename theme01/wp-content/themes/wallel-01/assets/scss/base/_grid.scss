@@ -48,6 +48,8 @@
 	}
 }
 
+
+// 순서 제어
 @for $i from 1 to 10 {
 	.order-#{$i} {
 		order: #{$i};
@@ -118,17 +120,24 @@
 }
 
 
-// 추가 옵션
-// 2022-01-23 자동화 업데이트 필요해보임 (저장소에 푸시 안함)
-.justify-content-start {
-	justify-content: flex-start;
-}
-.justify-content-end {
-	justify-content: flex-end;
-}
-.align-items-start {
-	align-items: flex-start;
-}
-.align-items-end {
-	align-items: flex-end;
+// 정렬
+$flex-align: (
+	'justify-content': (
+		'start': 'flex-start',
+		'end': 'flex-end',
+		'center': 'center',
+	),
+	'align-items': (
+		'start': 'flex-start',
+		'end': 'flex-end',
+		'center': 'center',
+	),
+);
+
+@each $k, $v in $flex-align {
+	@each $i, $o in $v {
+		.#{$k}-#{$i} {
+			#{$k}: #{$o};
+		}
+	}
 }

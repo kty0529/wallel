@@ -1,0 +1,104 @@
+// helpers
+@import './helpers/index';
+
+// pages
+$gap: 32px;
+$padding: $gap calc(#{$gap} / 1.5);
+
+#portfolio-list {
+	& > .row {
+		gap: 30px 0;
+	}
+
+	.portfolio {
+		padding: 10px 10px 20px;
+		text-align: center;
+		background-color: #fff;
+	}
+
+	.portfolio-thumb {
+		position: relative;
+		padding-top: 100%;
+		background-color: $light;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			min-width: 100%;
+			min-height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.portfolio-title {
+		margin-top: 16px;
+		font-size: 15px;
+		font-weight: 500;
+	}
+
+	.portfolio-languages {
+		display: flex;
+		justify-content: center;
+		gap: 8px;
+		margin: 8px 0 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			flex: 0 0 auto;
+		}
+	}
+}
+
+#portfolio-detail {
+	.entry {
+		background-color: #fff;
+
+		&-common {
+			padding: $padding;
+		}
+
+		&-title {
+			position: relative;
+			padding-top: 0.5em;
+			font-size: 18px;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 20px;
+				height: 1px;
+				background-color: $info;
+			}
+		}
+
+		&-content {
+			margin-top: 20px;
+			font-size: 16px;
+		}
+	}
+
+	.entry-header {
+		.title {
+			padding: $padding;
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.description {
+			padding: $padding;
+			font-size: 16px;
+			color: $secondary;
+			border-top: 1px solid $light;
+		}
+	}
+
+	.entry-content {
+		margin-top: 0;
+		border-top: 1px solid $light;
+	}
+}
