@@ -1,0 +1,64 @@
+:root {
+	--point-color: #b20a0a;
+}
+
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
+
+/**
+* 구텐베르그 에디터 스타일링
+*/
+* {
+	font-family: 'Spoqa Han Sans Neo', sans-serif;
+}
+
+.wp-block,
+.components-snackbar,
+.components-form-token-field__input-container {
+	font-size: 16px;
+	line-height: 1.8;
+}
+
+.wp-block,
+.wp-block[data-align='wide'] {
+	max-width: 1050px;
+}
+.wp-block[data-align='full'] {
+	max-width: none;
+}
+
+.editor-styles-wrapper dl:first-of-type,
+.editor-styles-wrapper p:first-of-type { margin-top: 0; }
+
+.editor-styles-wrapper dl:last-of-type,
+.editor-styles-wrapper p:last-of-type { margin-bottom: 0; }
+
+.editor-styles-wrapper a { color: var(--point-color); }
+.editor-styles-wrapper a:hover { text-decoration: underline; }
+
+.editor-styles-wrapper h3 { position: relative; margin-top: 50px; margin-bottom: 20px; font-size: 25px; font-weight: 400; }
+.editor-styles-wrapper h3:before { content: ''; display: block; margin-bottom: 10px; width: 40px; height: 1px; background-color: var(--point-color); }
+
+.editor-styles-wrapper hr { margin: 30px 0; padding: 0; height: 0; border: 0; border-top: 1px solid #ddd; overflow: hidden; }
+
+.editor-styles-wrapper ol,
+.editor-styles-wrapper ul { padding-top: 20px; padding-bottom: 20px; background-color: #fafafa; border-radius: 5px; }
+.editor-styles-wrapper ol li,
+.editor-styles-wrapper ul li { margin-bottom: 8px; }
+.editor-styles-wrapper ol li:last-child,
+.editor-styles-wrapper ul li:last-child { margin-bottom: 0; }
+
+.editor-styles-wrapper table { border-collapse: collapse; table-layout: fixed; }
+.editor-styles-wrapper table th,
+.editor-styles-wrapper table td { padding: 10px; }
+.editor-styles-wrapper table th { background-color: #f5f5f5; }
+
+/**
+* 각 CPT별 에디터 가로 사이즈 조절
+*/
+.single-post .wp-block {
+	max-width: 1050px;
+}
+.single-post .wp-block[data-align='wide'] {
+	max-width: 1050px;
+}
