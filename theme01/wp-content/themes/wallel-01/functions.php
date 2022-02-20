@@ -10,6 +10,8 @@
 		wp_enqueue_style( 'style', get_theme_file_uri( '/style.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
 
 		// Vendor
+		wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper@8/swiper-bundle.min.css', array( 'core' ), '8.0.6', 'all' );
+		wp_enqueue_style( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/dist/css/lightbox.min.css' ), array( 'core' ), false, 'all' );
 	}
 	add_action( 'wp_enqueue_scripts', 'wallel_theme_stylesheet' );
 
@@ -22,12 +24,13 @@
 		wp_deregister_script( 'jquery' );
 		wp_enqueue_script( 'jquery', '//code.jquery.com/jquery-3.6.0.min.js', false, '3.6.0', false );
 
+		// Vendor
+		wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array( 'jquery' ), '1.0.0', false );
+		wp_enqueue_script( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/dist/js/lightbox.min.js' ), array( 'jquery' ), false, false );
+
 		// Core
 		wp_enqueue_script( 'core-header', get_theme_file_uri( '/assets/js/core-header.js' ), array( 'jquery' ), '1.0.0', false );
-		wp_enqueue_script( 'core-footer', get_theme_file_uri( '/assets/js/core-footer.js' ), array( 'jquery' ), '1.0.0', true );
-
-		// Vendor
-
+		wp_enqueue_script( 'core-footer', get_theme_file_uri( '/assets/js/core-footer.js' ), array( 'jquery', 'core-header' ), '1.0.0', true );
 	}
 	add_action( 'wp_enqueue_scripts', 'wallel_theme_script' );
 
