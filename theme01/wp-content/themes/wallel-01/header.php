@@ -37,18 +37,20 @@
 					<div class="row align-items-end">
 						<div class="col-5">
 							<div class="logo">
-								<h1 class="title ff-lemon"><a href="<?php home_url(); ?>">Wallel</a></h1>
+								<h1 class="title ff-lemon"><a href="<?php echo home_url(); ?>">Wallel</a></h1>
 							</div>
 						</div>
 						<div class="col-7">
 							<nav class="gnb">
 								<h2 class="blind">메인 메뉴</h2>
-								<ul>
-									<li><a href="./archive.html">Blog</a></li>
-									<li><a href="./project.html">Project</a></li>
-									<li><a href="./portfolio.html">Portfolio</a></li>
-									<li><a href="javascript:void(0);">Contact</a></li>
-								</ul>
+								<?php
+									wp_nav_menu( array(
+										'theme_location' => 'main_menu',
+										'container'      => false,
+										'menu_class'     => 'main-menu',
+									) );
+								?>
+
 							</nav>
 						</div>
 					</div>

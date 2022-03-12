@@ -50,6 +50,17 @@
 
 
 	/**
+	 * 메뉴 추가
+	 */
+	register_nav_menus( array(
+		'main_menu'       => '메인메뉴',
+		'footer_menu'     => '푸터메뉴',
+		'blog_categories' => '블로그 카테고리',
+		'mobile_menu'     => '모바일 메뉴',
+	) );
+
+
+	/**
 	 * 어드민바 버튼 제거
 	 * https://codex.wordpress.org/Function_Reference/remove_node
 	 */
@@ -156,3 +167,23 @@
 	 * 추가 function 불러오기
 	 */
 	get_template_part( 'functions/browser-update-alert' );
+	get_template_part( 'functions/custom-post-type', 'project' );
+	get_template_part( 'functions/dlm-download-metabox' );
+
+
+	/**
+	 * 비밀글 제목 앞에 아이콘 추가
+	 */
+	function custom_private_title_format( $format ) {
+		return '[🔒] %s';
+	}
+	add_filter( 'private_title_format', 'custom_private_title_format' );
+
+
+	/**
+	 * 보호글 제목 앞에 아이콘 추가
+	 */
+	function custom_protacted_title_format( $format ) {
+		return '[🔐] %s';
+	}
+	add_filter( 'protected_title_format', 'custom_protacted_title_format' );
