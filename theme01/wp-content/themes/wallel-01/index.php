@@ -10,13 +10,10 @@
 	get_header();
 ?>
 
-<main id="main">
+<main id="main" <?php post_class(); ?>>
 	<div class="container">
 		<div class="row">
-			<div class="col-3">
-				<?php get_sidebar(); ?>
-			</div>
-
+			<?php /* content */ ?>
 			<div class="col-9">
 				<div id="post-list">
 					<?php
@@ -70,10 +67,14 @@
 					}
 				?>
 			</div>
+
+			<?php /* sidebar */ ?>
+			<div class="col-3">
+				<?php get_sidebar(); ?>
+			</div>
 		</div>
 	</div>
 </main>
 
 <?php
 	get_footer();
-?>
