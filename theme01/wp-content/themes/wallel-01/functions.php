@@ -5,13 +5,14 @@
 	 * 테마 CSS
 	 */
 	function wallel_theme_stylesheet() {
-		// Core
-		wp_enqueue_style( 'core', get_theme_file_uri( '/assets/css/core.min.css' ), false, wp_get_theme()->get( 'Version' ), 'all' );
-		wp_enqueue_style( 'style', get_theme_file_uri( '/style.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
-
 		// Vendor
-		wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper@8/swiper-bundle.min.css', array( 'core' ), '8.0.6', 'all' );
-		wp_enqueue_style( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/dist/css/lightbox.min.css' ), array( 'core' ), false, 'all' );
+		wp_enqueue_style( 'swiper', 'https://unpkg.com/swiper@8/swiper-bundle.min.css', false, '8.0.6', 'all' );
+		wp_enqueue_style( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/dist/css/lightbox.min.css' ), false, false, 'all' );
+		wp_enqueue_style( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.css' ), false, '1.27.0', 'all' );
+
+		// Core
+		wp_enqueue_style( 'core', get_theme_file_uri( '/assets/css/core.min.css' ), false, time(), 'all' );
+		wp_enqueue_style( 'style', get_theme_file_uri( '/style.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
 	}
 	add_action( 'wp_enqueue_scripts', 'wallel_theme_stylesheet' );
 
@@ -27,6 +28,7 @@
 		// Vendor
 		wp_enqueue_script( 'swiper', 'https://unpkg.com/swiper@8/swiper-bundle.min.js', array( 'jquery' ), '1.0.0', false );
 		wp_enqueue_script( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/dist/js/lightbox.min.js' ), array( 'jquery' ), false, false );
+		wp_enqueue_script( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.js' ), array( 'jquery' ), '1.27.0', false );
 
 		// Core
 		wp_enqueue_script( 'core-header', get_theme_file_uri( '/assets/js/core-header.js' ), array( 'jquery' ), '1.0.0', false );

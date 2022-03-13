@@ -1,0 +1,71 @@
+a {
+  transition: color 0.2s;
+
+  &:hover {
+    color: $info;
+  }
+}
+
+pre {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1em;
+  font-family: 'Menlo', 'Consolas', $ff-default;
+  font-size: 0.9em;
+  text-align: left;
+  line-height: 1.8;
+  background-color: #fafafa;
+  overflow: auto;
+
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  tab-size: 4;
+  hyphens: none;
+
+  code {
+    display: block;
+    padding: 0;
+    color: inherit;
+    line-height: inherit;
+    background-color: transparent;
+  }
+
+  // prismjs
+  @at-root pre[class*='language-'],
+    code[class*='language-'] {
+    margin: 1em 0;
+    font-family: 'Menlo', 'Consolas', $ff-default;
+    font-size: 0.9em;
+  }
+  code[class*='language-'] {
+    margin: 0;
+  }
+}
+
+hr,
+.wp-block-separator {
+  margin: 2.5em 0;
+  height: 1px;
+  background-color: $light;
+  border: 0;
+}
+
+iframe[src*='codepen.io'] {
+  display: block;
+  width: 100%;
+}
+
+figure,
+.wp-block-embed {
+  display: block;
+  margin-top: 1em;
+
+  figcaption {
+    font-size: 0.9em;
+    color: $secondary;
+    text-align: center;
+  }
+}

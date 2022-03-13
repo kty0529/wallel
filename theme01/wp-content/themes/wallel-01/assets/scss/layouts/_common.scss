@@ -1,48 +1,44 @@
 body.lock {
-	position: relative;
-	overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 body {
-	background-color: map-get($theme-colors, 'light');
+  background-color: map-get($theme-colors, 'light');
 }
 
-a {
-	transition: color 0.2s;
-
-	&:hover {
-		color: $info;
-	}
-}
-
-[class*="material-icons"] {
-	font-size: 1em;
-	vertical-align: middle;
-	transform: translateY(-0.05em);
+[class*='material-icons'] {
+  font-size: 1em;
+  vertical-align: middle;
+  transform: translateY(-0.05em);
 }
 
 #wrap {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 #main {
-	flex: 1 1 auto;
-	padding: 80px 0;
+  flex: 1 1 auto;
+  padding: 80px 0;
 }
 
 #overlay {
-	@include fullscreen(10, 'fixed');
-	display: none;
-	background-color: rgba($dark, 0.6);
+  @include fullscreen(10, 'fixed');
+  display: none;
+  background-color: rgba($dark, 0.6);
 
-	&.active {
-		display: block;
-		animation: fadeIn 0.3s linear forwards;
-	}
+  &.active {
+    display: block;
+    animation: fadeIn 0.3s linear forwards;
+  }
 }
 @keyframes fadeIn {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -8,9 +8,15 @@
 	add_action( 'wp_enqueue_scripts', 'archive__template_stylesheet' );
 
 	get_header();
+
+	the_post();
+	$categories = get_the_category();
+	$tags = get_the_tags();
 ?>
 
-<main id="main" <?php post_class(); ?>>
+<main id="main" <?php post_class(); ?> itemscope itemtype="http://schema.org/Article">
+	<meta itemprop="url" content="<?php echo get_permalink(); ?>">
+
 	<div class="container">
 		<div class="row">
 			<?php /* content */ ?>
@@ -18,66 +24,64 @@
 				<div id="post-detail">
 					<article class="entry">
 						<header class="entry-header">
-							<h2 class="title">국내외 웹사이트 빌더 업체 리스트</h2>
+							<h2 class="title" itemprop="name">
+								<?php the_title(); ?>
+							</h2>
 						</header>
 
-						<div class="entry-content">
-							<p>코딩 지식이 없어도 손쉽게 웹사이트를 만들 수 있는 서비스를 제공하는 업체를 알아두기 위해 모아봤다.</p>
-							<h3>해외</h3>
-							<h4>1. Squarespace (<a aria-label=" (새탭으로 열기)" rel="noreferrer noopener" href="https://www.squarespace.com/" target="_blank">https://www.squarespace.com/</a>)</h4>
-							<ol><li>반응형</li><li>템플릿</li><li>쇼핑몰</li><li>유료</li></ol>
-							<h4>2. Wix (<a aria-label=" (새탭으로 열기)" rel="noreferrer noopener" href="https://ko.wix.com/" target="_blank">https://ko.wix.com/</a>)</h4>
-							<ol><li>반응형</li><li><strong>한국어 지원</strong></li><li>템플릿</li><li>쇼핑몰</li><li>무료/유료</li></ol>
-							<h3>국내</h3>
-							<h4>1. 아임웹 (<a aria-label=" (새탭으로 열기)" rel="noreferrer noopener" href="https://imweb.me/" target="_blank">https://imweb.me/</a>)</h4>
-							<ol><li>반응형</li><li>템플릿</li><li>쇼핑몰</li><li>무료/유료</li><li>상세 기능 – <a href="https://imweb.me/features" target="_blank" rel="noreferrer noopener" aria-label="https://imweb.me/features (새탭으로 열기)">https://imweb.me/features</a></li></ol>
-							<h4>2. <strong>모두</strong> (<a aria-label=" (새탭으로 열기)" rel="noreferrer noopener" href="https://www.modoo.at/" target="_blank">https://www.modoo.at/</a>)</h4>
-							<ol><li><strong>네이버 자회사</strong></li><li>PC/Mobile</li><li>템플릿</li><li>네이버 톡톡 연동</li><li>네이버 스마트 스토어 연동</li><li>상세 기능 – <a rel="noreferrer noopener" aria-label="https://www.modoo.at/home/main/promote (새탭으로 열기)" href="https://www.modoo.at/home/main/promote" target="_blank">https://www.modoo.at/home/main/promote</a></li></ol>
-							<h4>3. 크리에이터링크 (<a aria-label=" (새탭으로 열기)" rel="noreferrer noopener" href="https://creatorlink.net/" target="_blank">https://creatorlink.net/</a>)</h4>
-							<h4>4. 식스샵 (<a aria-label=" (새탭으로 열기)" rel="noreferrer noopener" href="https://www.sixshop.com/" target="_blank">https://www.sixshop.com/</a>)</h4>
-
-							<h2>h2</h2>
-							<h3>h3</h3>
-							<h4>h4</h4>
-							<h5>h5</h5>
-							<h6>h6</h6>
+						<div class="entry-content" itemprop="articleBody">
+							<?php the_content(); ?>
 						</div>
 
 						<div class="entry-data">
-							<div class="data">
-								<div class="data-label">카테고리</div>
-								<div class="data-value">
-									<a href="javascript:void(0);">북마크</a>,
-									<a href="javascript:void(0);">북마크</a>,
-									<a href="javascript:void(0);">북마크</a>,
-									<a href="javascript:void(0);">북마크</a>
+							<?php if ( $categories ) { ?>
+								<div class="data">
+									<div class="data-label">카테고리</div>
+									<div class="data-value">
+										<?php
+											$category_arr = array();
+											foreach ( $categories as $k => $v ) {
+												$category_arr[] = '<a href="'.get_term_link( $v->term_id ).'">'.$v->name.'</a>';
+											}
+											echo implode( ', ', $category_arr );
+										?>
+									</div>
 								</div>
-							</div>
+							<?php } ?>
 
-							<div class="data">
-								<div class="data-label">태그</div>
-								<div class="data-value">
-									<a href="javascript:void(0);">빌더</a>,
-									<a href="javascript:void(0);">빌더</a>,
-									<a href="javascript:void(0);">빌더</a>,
-									<a href="javascript:void(0);">빌더</a>
+							<?php if ( $tags ) { ?>
+								<div class="data">
+									<div class="data-label">태그</div>
+									<div class="data-value">
+										<?php
+											$tag_arr = array();
+											foreach ( $tags as $v ) {
+												$tag_arr[] = '<a href="'.get_tag_link( $v->term_id ).'">'.$v->name.'</a>';
+											}
+											echo implode( ', ', $tag_arr );
+										?>
+									</div>
 								</div>
-							</div>
+							<?php } ?>
 
 							<div class="data">
 								<div class="data-label">작성자</div>
-								<div class="data-value">김 태영</div>
+								<div class="data-value" itemprop="author"><?php echo get_the_author(); ?></div>
 							</div>
 
 							<div class="data">
 								<div class="data-label">작성일</div>
 								<div class="data-value">
-									<time datetime="2021-12-23 12:12">2021-12-23 12:12</time>
+									<time datetime="<?php echo get_the_date( 'Y-m-d H:i' ); ?>" itemprop="dateCreated"><?php echo get_the_date( 'Y-m-d H:i' ); ?></time>
 								</div>
 							</div>
 						</div>
 
-						<div class="entry-comment">comment</div>
+						<div class="entry-comment">
+							<div style="padding: 30px 15px; font-size: 13px; text-align: center; background-color: #fff;">
+								<p>게시글에 문제가 있거나, 다른 문의가 있을 경우 <strong>kty0529@gmail.com</strong>으로 연락 부탁드립니다.<br>감사합니다.</p>
+							</div>
+						</div>
 					</article>
 				</div>
 			</div>

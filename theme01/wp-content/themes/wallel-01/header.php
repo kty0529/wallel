@@ -50,7 +50,6 @@
 										'menu_class'     => 'main-menu',
 									) );
 								?>
-
 							</nav>
 						</div>
 					</div>
