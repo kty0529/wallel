@@ -20,7 +20,7 @@
 	<div class="container">
 		<div class="row">
 			<?php /* content */ ?>
-			<div class="col-9">
+			<div class="col-12">
 				<div id="post-detail">
 					<article class="entry">
 						<header class="entry-header">
@@ -86,7 +86,7 @@
 				</div>
 			</div>
 
-			<?php /* sidebar */ ?>
+			<?php /* sidebar ?>
 			<div class="col-3">
 				<aside id="sidebar">
 					<h2 class="blind">사이드바</h2>
@@ -105,6 +105,7 @@
 					</div>
 				</aside>
 			</div>
+			<?php */ ?>
 		</div>
 	</div>
 </main>

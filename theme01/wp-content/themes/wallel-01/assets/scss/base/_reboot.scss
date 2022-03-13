@@ -59,9 +59,10 @@ iframe[src*='codepen.io'] {
 }
 
 figure,
+.wp-block-image,
 .wp-block-embed {
   display: block;
-  margin-top: 1em;
+  margin: 1em 0;
 
   figcaption {
     font-size: 0.9em;
