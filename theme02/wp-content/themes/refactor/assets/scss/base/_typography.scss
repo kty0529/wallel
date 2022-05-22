@@ -1,0 +1,9 @@
+// import
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
+html,
+body {
+	font-size: rem-calc(16);
+	font-family: $ff-default;
+	color: map-get($theme-colors, 'dark');
+}

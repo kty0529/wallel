@@ -1,0 +1,23 @@
+#footer {
+  padding: 40px 0 86px;
+  font-size: 14px;
+  color: $secondary;
+
+  .title {
+    font-size: 26px;
+    font-weight: 400;
+  }
+
+  .copyright {
+    margin-top: 6px;
+  }
+
+  .navigation {
+    ul {
+      @include reset-list;
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid $light;
+    }
+  }
+}

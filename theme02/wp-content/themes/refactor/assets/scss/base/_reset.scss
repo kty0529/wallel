@@ -1,0 +1,195 @@
+*, ::before, ::after {
+	box-sizing: border-box;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'AppleSDGothicNeo', 'Malgun Gothic', sans-serif;
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.5;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+main, header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption {
+	display: block;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+p {
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+img {
+	height: auto;
+}
+
+img, iframe, video, object, embed, button, select, input, textarea {
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	vertical-align: middle;
+	background-color: transparent;
+	border: 0;
+	box-shadow: none;
+	overflow: visible;
+}
+
+// 외형 초기화
+%textarea,
+textarea {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+$inputType: ('text', 'search', 'tel', 'url', 'email', 'password', 'submit');
+@each $v in $inputType {
+	input[type='#{$v}'] {
+		@extend %textarea;
+	}
+}
+
+button, select {
+	text-transform: none;
+	cursor: pointer;
+}
+
+input[type='checkbox'] {
+	border: 1px solid;
+	border-radius: 0;
+}
+
+input[type='search'] {
+	-webkit-appearance: none;
+
+	&::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+
+	&::-ms-clear {
+		display: none;
+		width: 0;
+		height: 0;
+	}
+
+	&::-ms-reveal {
+		display: none;
+		width: 0;
+		height: 0;
+	}
+
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		display: none;
+	}
+}
+
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+	overflow: visible;
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+small {
+	font-size: 80%;
+}
+
+code, kbd, samp {
+	font-family: 'Consolas', 'monospace', sans-serif;
+	font-size: 1em;
+}
+
+sub, sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+[hidden] {
+	display: none;
+}
+
+.clear {
+	display: block;
+	width: 100%;
+	clear: both;
+}
+
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+// https://stackoverflow.com/questions/29444935/what-does-this-combination-of-before-after-and-displaytable-do
+.clearfix {
+	&:before,
+	&:after {
+		content: ' '; // 1
+		display: table; // 2
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+.blind, .sr-only, .screen-reader-text {
+	position: absolute;
+	display: block;
+	margin: -1px;
+	padding: 0;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	border: 0;
+	word-wrap: normal !important;
+}
+
+table {
+	border-collapse: collapse;
+	table-layout: fixed;
+}

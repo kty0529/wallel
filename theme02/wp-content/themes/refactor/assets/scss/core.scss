@@ -1,0 +1,61 @@
+// common use
+@use 'sass:math';
+
+// helpers
+@import './helpers/index';
+
+// base
+@import './base/reset';
+@import './base/colors';
+@import './base/grid';
+@import './base/typography';
+
+// components
+@import './components/icons';
+@import './components/overlay';
+@import './components/posts';
+@import './components/sidebar';
+@import './components/tooltip';
+
+// layouts
+@import './layouts/header';
+@import './layouts/main';
+@import './layouts/footer';
+
+// 공통
+::selection {
+  color: #fff;
+  background-color: $primary;
+}
+
+* {
+  outline-color: $primary;
+}
+
+.ff-lemon {
+  font-family: 'Lemon', sans-serif;
+}
+
+a {
+  transition: color 0.2s;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+// 스크롤 잠그기
+html.scroll-lock {
+  overflow: hidden;
+
+  @include min-w($tablet) {
+    overflow: visible;
+  }
+}
+
+// 워드프레스 어드민바 항상 고정
+#wpadminbar {
+  position: fixed !important;
+}
+
+// 사용자 코드 입력

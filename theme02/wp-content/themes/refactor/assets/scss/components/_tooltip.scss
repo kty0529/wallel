@@ -1,0 +1,41 @@
+// tooltip
+[data-tooltip] {
+  position: relative;
+  z-index: 10;
+
+  &::before {
+    @include disable();
+    content: attr(data-tooltip);
+    display: none;
+    position: absolute;
+    bottom: calc(100% + rem-calc(6));
+    left: 50%;
+    z-index: 2;
+    padding: rem-calc(3 5);
+    font-size: rem-calc(12);
+    color: #fff;
+    background-color: $dark;
+    transform: translateX(-50%);
+    border-radius: rem-calc(3);
+    white-space: nowrap;
+  }
+
+  &::after {
+    @include disable();
+    content: '';
+    display: none;
+    position: absolute;
+    bottom: calc(100% + rem-calc(4));
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%) rotate(45deg);
+    width: rem-calc(4);
+    height: rem-calc(4);
+    background-color: $dark;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    display: block;
+  }
+}

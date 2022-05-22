@@ -1,0 +1,7 @@
+@import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
+
+body,
+#wpadminbar,
+#wpadminbar * {
+	font-family: 'Spoqa Han Sans Neo', sans-serif;
+}

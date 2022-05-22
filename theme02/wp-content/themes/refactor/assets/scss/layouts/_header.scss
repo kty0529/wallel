@@ -1,0 +1,29 @@
+#header {
+  background-color: $light;
+
+  .inner-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: rem-calc(100);
+  }
+
+  .title {
+    font-size: rem-calc(28);
+  }
+
+  .navigation {
+    ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      display: block;
+      padding: rem-calc(16 20);
+      font-size: rem-calc(14);
+    }
+  }
+}

@@ -1,0 +1,52 @@
+// 타이포그래피
+$rem-base: 16px !default;
+$ff-default: 'Spoqa Han Sans Neo', 'AppleSDGothicNeo', 'Noto Sans CJK KR', 'Malgun Gothic', sans-serif !default;
+
+
+// 색상값, 변수명 부트스트랩 카피
+// 색조합: https://flatuicolors.com/palette/defo
+$primary:   #b20a0a !default;
+$secondary: #606060 !default;
+$success:   #27ae60 !default;
+$info:      #3498db !default;
+$warning:   #f1c40f !default;
+$danger:    #c0392b !default;
+$light:     #ecf0f1 !default;
+$dark:      #222 !default;
+
+$theme-colors: (
+	"primary":    $primary,
+	"secondary":  $secondary,
+	"success":    $success,
+	"info":       $info,
+	"warning":    $warning,
+	"danger":     $danger,
+	"light":      $light,
+	"dark":       $dark
+) !default;
+
+
+// 반응형
+$container: rem-calc(1080) !default;
+$gutter: rem-calc(30) !default;
+
+// Desktop First이며, 아래 기기 "이하"에서 반응형 작동함
+// 예) 모니터 가로길이 1024px 까지는 PC로 인정 1023px 부터 테블릿
+$descktop: rem-calc(1024 - 1) !default;
+$tablet: rem-calc(783 - 1) !default;
+$mobile: rem-calc(425 - 1) !default;
+
+$columns: (
+	'1': 8.333333%,
+	'2': 16.666666%,
+	'3': 25%,
+	'4': 33.333333%,
+	'5': 41.666666%,
+	'6': 50%,
+	'7': 58.333333%,
+	'8': 66.666666%,
+	'9': 75%,
+	'10': 83.333333%,
+	'11': 91.666666%,
+	'12': 100%
+) !default;
