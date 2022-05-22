@@ -6,4 +6,4 @@
 .vscode
 
 # 샘플 테마 동기화 차단
-theme01/wp-content/themes/wallel-liji/*
+**/themes/wallel-liji/*
