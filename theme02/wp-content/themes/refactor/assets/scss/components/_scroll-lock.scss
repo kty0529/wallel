@@ -1,0 +1,7 @@
+html.scroll-lock {
+  overflow: hidden;
+
+  @include min-w($tablet) {
+    overflow: visible;
+  }
+}

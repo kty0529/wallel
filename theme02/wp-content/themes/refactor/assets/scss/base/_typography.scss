@@ -1,9 +1,38 @@
 // import
 @import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
 
+* {
+  outline-color: $primary;
+}
+
 html,
 body {
 	font-size: rem-calc(16);
 	font-family: $ff-default;
 	color: map-get($theme-colors, 'dark');
+}
+
+::selection {
+  color: #fff;
+  background-color: $primary;
+}
+
+.ff-lemon {
+  font-family: 'Lemon', sans-serif;
+}
+
+a {
+  &:hover {
+    color: $primary;
+  }
+}
+
+code {
+  position: relative;
+  top: rem-calc(-1);
+  display: inline-block;
+  font-family: 'Menlo', 'Consolas', $ff-default;
+  font-size: 0.9em;
+  color: $danger;
+  letter-spacing: rem-calc(-0.2);
 }

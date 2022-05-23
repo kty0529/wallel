@@ -20,42 +20,14 @@
 @import './components/tooltip';
 @import './components/pagination';
 @import './components/offcanvas';
+@import './components/scroll-lock';
 
 // layouts
 @import './layouts/header';
 @import './layouts/main';
 @import './layouts/footer';
 
-// 공통
-::selection {
-  color: #fff;
-  background-color: $primary;
-}
-
-* {
-  outline-color: $primary;
-}
-
-.ff-lemon {
-  font-family: 'Lemon', sans-serif;
-}
-
-a {
-  transition: color 0.2s;
-
-  &:hover {
-    color: $primary;
-  }
-}
-
-// 스크롤 잠그기
-html.scroll-lock {
-  overflow: hidden;
-
-  @include min-w($tablet) {
-    overflow: visible;
-  }
-}
+// pages
+@import './pages/single';
 
 // 사용자 코드 입력
-
