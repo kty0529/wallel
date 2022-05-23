@@ -1,5 +1,6 @@
 // common use
 @use 'sass:math';
+@use "sass:list";
 
 // helpers
 @import './helpers/index';
@@ -9,6 +10,7 @@
 @import './base/colors';
 @import './base/grid';
 @import './base/typography';
+@import './base/wordpress';
 
 // components
 @import './components/icons';
@@ -16,6 +18,8 @@
 @import './components/posts';
 @import './components/sidebar';
 @import './components/tooltip';
+@import './components/pagination';
+@import './components/offcanvas';
 
 // layouts
 @import './layouts/header';
@@ -53,9 +57,5 @@ html.scroll-lock {
   }
 }
 
-// 워드프레스 어드민바 항상 고정
-#wpadminbar {
-  position: fixed !important;
-}
-
 // 사용자 코드 입력
+

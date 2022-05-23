@@ -1,0 +1,130 @@
+#offcanvas {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  padding: rem-calc(50 30 100);
+  max-width: rem-calc(320);
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  .widget {
+    &:not(:first-child) {
+      margin-top: rem-calc(32);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: rem-calc(14);
+    }
+
+    .menu {
+      margin-top: rem-calc(12);
+
+      & > li {
+        padding-bottom: rem-calc(14);
+      }
+    }
+
+    .sub-menu {
+      li {
+        margin-top: rem-calc(4);
+        color: $secondary;
+
+        &:first-child {
+          margin-top: rem-calc(8);
+        }
+
+        &:before {
+          position: relative;
+          top: rem-calc(-1);
+          margin-right: rem-calc(8);
+          color: darken($light, 10%);
+
+          // material icons
+          content: '\e5cc';
+          font: {
+            family: 'Material Symbols Outlined';
+            size: rem-calc(18);
+          }
+          vertical-align: middle;
+        }
+
+        ul {
+          li {
+            padding-left: rem-calc(16);
+          }
+        }
+      }
+    }
+
+    .current-menu-item > a {
+      color: $primary;
+    }
+  }
+
+  .widget-title {
+    font-size: rem-calc(16);
+    font-weight: 500;
+    color: $dark;
+    text-transform: uppercase;
+  }
+}
+
+#toggle-offcanvas {
+  display: none;
+  position: fixed;
+  bottom: rem-calc(30);
+  right: rem-calc(15);
+  z-index: 102;
+  padding-bottom: rem-calc(2);
+  width: rem-calc(40);
+  height: rem-calc(40);
+  font-size: rem-calc(16);
+  color: $dark;
+  text-align: center;
+  background-color: #fff;
+  border: rem-calc(1) solid darken($light, 5%);
+  border-radius: rem-calc(3);
+
+  @include mobile {
+    display: block;
+  }
+}
+
+$adminbarHeight: (
+  32px, // desktop
+  46px  // mobile
+);
+body.admin-bar {
+  #offcanvas {
+    @include mobile {
+      top: list.nth($adminbarHeight, 2);
+    }
+  }
+}
+
+html.offcanvas-active {
+  @include min-w($tablet) {
+    &.scroll-lock {
+      overflow: visible;
+    }
+
+    #overlay.active {
+      display: none;
+    }
+  }
+
+  @include mobile {
+    #offcanvas {
+      display: block;
+    }
+  }
+}

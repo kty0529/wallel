@@ -1,4 +1,4 @@
-<aside id="sidebar">
+<aside class="sidebar">
   <h2 class="blind">사이드바</h2>
 
   <div class="widget widget-search">
@@ -21,17 +21,3 @@
     ?>
   </div>
 </aside>
-
-<button id="toggle-sidebar" aria-hidden="true">
-  <span class="material-symbols-outlined">filter_alt</span>
-</button>
-
-<script>
-  const toggleSidebarButton = document.querySelector('#toggle-sidebar');
-  toggleSidebarButton.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    wallel.overlay.classList.toggle('active');
-    ['scroll-lock', 'sidebar-active'].map(el => wallel.root.classList.toggle(el));
-  });
-</script>

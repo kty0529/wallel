@@ -6,13 +6,25 @@
     justify-content: space-between;
     align-items: flex-end;
     height: rem-calc(100);
+
+    @include tablet {
+      height: auto;
+    }
   }
 
   .title {
     font-size: rem-calc(28);
+
+    @include tablet {
+      @include blind;
+    }
   }
 
   .navigation {
+    @include tablet {
+      display: none;
+    }
+
     ul {
       display: flex;
       margin: 0;

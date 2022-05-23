@@ -1,22 +1,6 @@
-@use "sass:list";
-
-#sidebar {
-  height: 100%;
-
+.sidebar {
   @include mobile {
     display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 101;
-    padding: rem-calc(50 30 100);
-    max-width: rem-calc(320);
-    width: 100%;
-    background-color: #fff;
-    overflow: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   .widget {
@@ -59,9 +43,6 @@
   }
 
   .widget-category {
-    position: sticky;
-    top: rem-calc(30);
-
     ul {
       margin: 0;
       padding: 0;
@@ -111,57 +92,6 @@
 
     .current-menu-item > a {
       color: $primary;
-    }
-  }
-}
-
-$adminbarHeight: (32px, 46px);
-body.admin-bar {
-  #sidebar {
-    @include mobile {
-      top: list.nth($adminbarHeight, 2);
-    }
-
-    .widget-category {
-      top: calc(rem-calc(30) + list.nth($adminbarHeight, 1));
-    }
-  }
-}
-
-#toggle-sidebar {
-  display: none;
-  position: fixed;
-  bottom: rem-calc(30);
-  right: rem-calc(15);
-  z-index: 102;
-  padding-bottom: rem-calc(2);
-  width: rem-calc(50);
-  height: rem-calc(50);
-  font-size: rem-calc(20);
-  text-align: center;
-  background-color: #fff;
-  border: rem-calc(1) solid darken($light, 5%);
-  border-radius: rem-calc(3);
-
-  @include mobile {
-    display: block;
-  }
-}
-
-html.sidebar-active {
-  @include min-w($tablet) {
-    &.scroll-lock {
-      overflow: visible;
-    }
-
-    #overlay.active {
-      display: none;
-    }
-  }
-
-  @include mobile {
-    #sidebar {
-      display: block;
     }
   }
 }

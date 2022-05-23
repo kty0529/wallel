@@ -1,4 +1,8 @@
 #main {
   padding: rem-calc(100 0 150);
   background-color: $light;
+
+  @include tablet {
+    padding: rem-calc(50 0 100);
+  }
 }
