@@ -181,3 +181,9 @@
     return '[🔐] %s';
   }
   add_filter( 'protected_title_format', 'custom_protacted_title_format' );
+
+
+  /**
+	 * 추가 function 불러오기
+	 */
+	get_template_part( 'functions/custom-post-type', 'project' );
