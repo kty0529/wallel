@@ -1,7 +1,7 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 ?>
-<aside id="offcanvas" aria-hidden="true">
+<div id="offcanvas" aria-hidden="true">
   <div class="widget widget-global-navigation">
     <div class="widget-title">Menu</div>
 
@@ -23,7 +23,7 @@
       ));
     ?>
   </div>
-</aside>
+</div>
 
 <button id="toggle-offcanvas" aria-hidden="true">
   <span class="material-symbols-outlined icon">menu</span>

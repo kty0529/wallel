@@ -11,8 +11,8 @@
   <div class="container">
     <div class="row">
       <div class="col-9 col-tb-9">
-        <article class="entry">
-          <header class="entry-header">
+        <article id="entry">
+          <header id="entry-header">
             <h2 itemprop="name headline" class="title"><?php the_title(); ?></h2>
 
             <div class="data">
@@ -34,12 +34,12 @@
             </div>
           </header>
 
-          <div itemprop="articleBody" class="entry-container">
+          <div itemprop="articleBody" id="entry-container">
             <?php the_content(); ?>
           </div>
 
           <?php if ( $tags = get_the_tags() ) { ?>
-            <div class="entry-tags">
+            <div id="entry-tags">
               <?php
                 // $tag_arr = array();
                 foreach ( $tags as $v ) {
