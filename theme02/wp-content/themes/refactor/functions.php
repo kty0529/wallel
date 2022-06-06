@@ -97,6 +97,7 @@
 
     // plugins
     remove_meta_box('aioseo-rss-feed', 'dashboard', 'normal');
+    remove_meta_box('aioseo-overview', 'dashboard', 'normal');
     remove_meta_box('wp_mail_smtp_reports_widget_lite', 'dashboard', 'normal');
   }
   add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
