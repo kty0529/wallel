@@ -102,45 +102,58 @@
   }
 
   .sec-screenshot {
-    .wrapper {
-      background-color: $light;
+    position: relative;
 
+    .sec-content {
       ul {
-        display: flex;
         margin: 0;
-        padding: 15px;
-        gap: 15px;
+        padding: 0;
         list-style: none;
         background-color: transparent;
-        overflow: hidden;
-        overflow-x: scroll;
       }
 
       li {
         margin: 0;
-        flex: 0 0 auto;
-        width: 40%;
-        height: 300px;
-        overflow: hidden;
-        border: 1px solid $border-color;
+        height: auto;
+      }
 
-        a {
-          display: block;
-          height: 100%;
-        }
+      a {
+        position: relative;
+        display: block;
+        padding-top: 56.25%;
+        border: rem-calc(1) solid $border-color;
       }
 
       img {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: top center;
       }
+
+      .navigation {
+        position: absolute;
+        top: rem-calc(15);
+        right: 0;
+        font-size: rem-calc(25);
+        line-height: 0;
+
+        .arrows {
+          line-height: inherit;
+
+          &:not([disabled]):hover {
+            color: $primary;
+          }
+        }
+      }
     }
   }
 
   .sec-download {
-    .wrapper {
+    .sec-content {
       ul {
         margin: 0;
         padding: 0;
@@ -150,8 +163,8 @@
       }
 
       svg {
-        width: 32px;
-        height: 32px;
+        width: rem-calc(32);
+        height: rem-calc(32);
       }
     }
 
