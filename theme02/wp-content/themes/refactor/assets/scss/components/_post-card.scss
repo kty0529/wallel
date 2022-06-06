@@ -80,11 +80,6 @@
     a {
       position: relative;
       z-index: 1;
-      transition: {
-        property: background, border, color;
-        timing-function: linear;
-        duration: 0.2s;
-      }
 
       &:hover {
         z-index: 2;
