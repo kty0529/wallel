@@ -63,6 +63,17 @@
       }
     }
   }
+
+  &-comment {
+    margin-top: rem-calc(30);
+    padding: rem-calc(30);
+    background-color: #fff;
+
+    @include small {
+      margin: rem-calc(30 -15 0);
+      padding: rem-calc(30 15);
+    }
+  }
 }
 
 #project-entry {
