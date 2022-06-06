@@ -4,7 +4,7 @@
   <div class="widget widget-search">
     <form method="get" action="<?php echo home_url() ?>">
       <input type="hidden" name="post_type" value="post">
-      <input type="text" name="s" placeholder="Search" required value="<?php echo get_search_query(); ?>">
+      <input type="text" name="s" placeholder="Find Posts" required value="<?php echo get_search_query(); ?>">
       <button type="submit" aria-label="검색">
         <span class="material-symbols-outlined">search</span>
       </button>
@@ -18,10 +18,8 @@
       <?php
         wp_list_categories( array(
           'title_li' => '',
-          'show_count' => false,
+          'show_count' => true,
           'hide_title_if_empty' => false,
-          'orderby' => 'name',
-          'order' => 'ASC',
         ) );
       ?>
     </ul>

@@ -63,10 +63,6 @@
         margin-top: rem-calc(4);
         color: $secondary;
 
-        &:first-child {
-          margin-top: rem-calc(8);
-        }
-
         &:before {
           position: relative;
           top: rem-calc(-1);
@@ -90,7 +86,7 @@
       }
     }
 
-    .current-menu-item > a {
+    .current-cat > a {
       color: $primary;
     }
   }
