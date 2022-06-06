@@ -10,7 +10,7 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-9 col-tb-9">
+      <div class="col-12">
         <article id="entry">
           <header id="entry-header">
             <h2 itemprop="name headline" class="title"><?php the_title(); ?></h2>
@@ -24,10 +24,6 @@
             <?php the_content(); ?>
           </div>
         </article>
-      </div>
-
-      <div class="col-3 col-tb-3">
-        <?php get_sidebar(); ?>
       </div>
     </div>
   </div>
