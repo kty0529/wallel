@@ -4,7 +4,12 @@
 
 2022.05.22 ~
 
+## 남은 작업
 
-## 파일 경로
+- [ ] 문의하기 form
+- [ ] 퍼블리싱 스터디를 위한 Custom Post Type 만들기
+
+
+## 작업 파일 경로
 
 wp-content > themes > refactor
