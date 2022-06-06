@@ -4,7 +4,7 @@
   $post_format = get_post_format();
   $content = apply_filters( 'the_content', get_the_content( false ) );
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'post' ); ?> itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card' ); ?> itemprop="blogPost" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
   <a itemprop="url" href="<?php echo get_permalink(); ?>">
     <h3 itemprop="name headline" class="title"><?php the_title(); ?></h3>
   </a>

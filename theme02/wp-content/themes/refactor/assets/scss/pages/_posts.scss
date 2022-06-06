@@ -1,0 +1,7 @@
+#posts {
+  &-container {
+    @include small {
+      margin: rem-calc(0 -15);
+    }
+  }
+}

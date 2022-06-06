@@ -7,18 +7,18 @@
   <div class="container">
     <div class="row">
       <div class="col-9 col-tb-9">
-        <section id="posts">
-          <header id="posts-header">
-            <h2 class="blind">블로그</h2>
+        <section id="project">
+          <header id="project-header">
+            <h2 class="blind">프로젝트</h2>
           </header>
 
-          <div id="posts-container">
+          <div id="project-container">
             <?php
               if ( have_posts() ) {
                 while ( have_posts() ) {
                   the_post();
 
-                  get_template_part( 'templates/parts/list' );
+                  get_template_part( 'templates/parts/list', 'project' );
                 }
 
                 get_template_part('templates/parts/pagination');

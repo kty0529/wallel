@@ -15,7 +15,7 @@
 // components
 @import './components/icons';
 @import './components/overlay';
-@import './components/posts';
+@import './components/post-card';
 @import './components/sidebar';
 @import './components/tooltip';
 @import './components/pagination';
@@ -28,6 +28,7 @@
 @import './layouts/footer';
 
 // pages
+@import './pages/posts';
 @import './pages/single';
 @import './pages/404';
 
