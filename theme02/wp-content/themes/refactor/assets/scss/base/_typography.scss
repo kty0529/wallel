@@ -10,6 +10,9 @@ body {
 	font-size: rem-calc(16);
 	font-family: $ff-default;
 	color: map-get($theme-colors, 'dark');
+  word-break: break-all;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 ::selection {
