@@ -7,7 +7,7 @@
   function wallel_theme_stylesheet() {
     // Vendor
     wp_enqueue_style( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/dist/css/lightbox.min.css' ), false, false, 'all' );
-    wp_enqueue_style( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.css' ), false, '1.27.0', 'all' );
+    wp_enqueue_style( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.css' ), false, '1.28.0', 'all' );
 
     // Core
     wp_enqueue_style( 'core', get_theme_file_uri( '/assets/css/core.min.css' ), false, time(), 'all' );
@@ -26,7 +26,7 @@
 
     // Vendor
     wp_enqueue_script( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/dist/js/lightbox.min.js' ), array( 'jquery' ), false, false );
-    wp_enqueue_script( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.js' ), array( 'jquery' ), '1.27.0', false );
+    wp_enqueue_script( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.js' ), array( 'jquery' ), '1.28.0', false );
 
     // Core
     wp_enqueue_script( 'core-header', get_theme_file_uri( '/assets/js/core-header.js' ), array( 'jquery' ), time(), false );
