@@ -99,7 +99,7 @@
 .project-card {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: rem-calc(20);
   padding: rem-calc(20);
   background-color: #fff;
 
@@ -114,7 +114,7 @@
   &-thumbnail {
     position: relative;
     flex: 0 0 rem-calc(250);
-    height: 150px;
+    height: rem-calc(150);
     background-color: #fff;
 
     img {
@@ -151,19 +151,19 @@
 
   &-container {
     display: flex;
-    padding: 10px 0;
+    padding: rem-calc(10 0);
     flex-direction: column;
     justify-content: center;
     flex: 1 1 auto;
 
     .title {
-      font-size: 18px;
+      font-size: rem-calc(18);
       font-weight: 500;
     }
 
     .description {
-      margin-top: 16px;
-      font-size: 13px;
+      margin-top: rem-calc(16);
+      font-size: rem-calc(13);
       color: $secondary;
       line-height: 1.8;
     }
@@ -171,23 +171,24 @@
     .languages {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: rem-calc(4);
       list-style: none;
-      margin: 20px 0 0;
-      padding: 0;
-      border-top: 1px solid $border-color;
+      margin: rem-calc(30 0 0);
+      padding: rem-calc(20 0 0);
+      border-top: rem-calc(1) solid $border-color;
 
       .label {
-        padding-right: 4px;
-        font-size: 13px;
+        padding-right: rem-calc(4);
+        font-size: rem-calc(13);
         font-weight: 500;
+        color: $dark;
       }
 
       svg {
-        width: 32px;
-        height: 32px;
+        width: rem-calc(32);
+        height: rem-calc(32);
         vertical-align: middle;
-        background-color: #f1f1f1;
+        background-color: $light;
         fill: #333;
         transition: all 0.2s;
       }

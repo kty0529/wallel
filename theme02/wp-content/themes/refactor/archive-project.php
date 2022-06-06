@@ -29,7 +29,7 @@
       </div>
 
       <div class="col-3 col-tb-3">
-        <?php get_sidebar(); ?>
+        <?php get_sidebar( 'project' ); ?>
       </div>
     </div>
   </div>

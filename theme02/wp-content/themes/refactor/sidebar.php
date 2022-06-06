@@ -3,7 +3,8 @@
 
   <div class="widget widget-search">
     <form method="get" action="<?php echo home_url() ?>">
-      <input type="text" name="s" placeholder="Search" required>
+      <input type="hidden" name="post_type" value="post">
+      <input type="text" name="s" placeholder="Search" required value="<?php echo get_search_query(); ?>">
       <button type="submit" aria-label="검색">
         <span class="material-symbols-outlined">search</span>
       </button>
