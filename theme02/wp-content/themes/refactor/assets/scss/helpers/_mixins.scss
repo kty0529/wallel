@@ -242,4 +242,20 @@
       background-color: $light;
     }
   }
+
+	// embed 블럭 스타일링
+	.wp-block-embed {
+		figcaption {
+			margin-top: .5em;
+			margin-bottom: 1em;
+			color: #555;
+			font-size: 13px;
+			text-align: center;
+		}
+
+		iframe[src*='codepen.io'] {
+			width: 100%;
+			vertical-align: middle;
+		}
+	}
 }
