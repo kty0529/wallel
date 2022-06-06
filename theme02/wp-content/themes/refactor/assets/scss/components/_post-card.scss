@@ -103,6 +103,10 @@
   padding: rem-calc(20);
   background-color: #fff;
 
+  @include mobile {
+    display: block;
+  }
+
   @include small {
     padding: rem-calc(15);
   }
@@ -114,7 +118,6 @@
   &-thumbnail {
     position: relative;
     flex: 0 0 rem-calc(250);
-    height: rem-calc(150);
     background-color: #fff;
 
     img {
@@ -155,6 +158,10 @@
     flex-direction: column;
     justify-content: center;
     flex: 1 1 auto;
+
+    @include mobile {
+      margin-top: rem-calc(20);
+    }
 
     .title {
       font-size: rem-calc(18);
