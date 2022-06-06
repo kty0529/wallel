@@ -33,7 +33,7 @@
 
 	function create__project__taxonomies() {
 		$labels = array(
-			'name'          => '프로잭트 카테고리', // 관리자 화면 글 목록의 카테고리 컬럼명
+			'name'          => '프로젝트 카테고리', // 관리자 화면 글 목록의 카테고리 컬럼명
 			'singular_name' => '카테고리',
 			'menu_name'     => '카테고리',
 		);
