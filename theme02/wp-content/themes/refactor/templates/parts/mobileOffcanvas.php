@@ -33,6 +33,7 @@
     <ul class="cat">
       <?php
         wp_list_categories( array(
+          'taxonomy' => 'project-type',
           'title_li' => '',
           'show_count' => true,
           'hide_title_if_empty' => false,
