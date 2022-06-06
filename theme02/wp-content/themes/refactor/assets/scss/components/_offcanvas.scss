@@ -17,7 +17,16 @@
     &:not(:first-child) {
       margin-top: rem-calc(32);
     }
+  }
 
+  .widget-title {
+    font-size: rem-calc(16);
+    font-weight: 500;
+    color: $dark;
+    text-transform: uppercase;
+  }
+
+  .widget-menu {
     ul {
       margin: 0;
       padding: 0;
@@ -33,14 +42,31 @@
       }
     }
 
-    .sub-menu {
+    .current-menu-item > a {
+      color: $primary;
+    }
+  }
+
+  .widget-category {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: rem-calc(14);
+    }
+
+    .cat {
+      margin-top: rem-calc(12);
+
+      & > li {
+        padding-bottom: rem-calc(14);
+      }
+    }
+
+    .children {
       li {
         margin-top: rem-calc(4);
         color: $secondary;
-
-        &:first-child {
-          margin-top: rem-calc(8);
-        }
 
         &:before {
           position: relative;
@@ -65,16 +91,9 @@
       }
     }
 
-    .current-menu-item > a {
+    .current-cat > a {
       color: $primary;
     }
-  }
-
-  .widget-title {
-    font-size: rem-calc(16);
-    font-weight: 500;
-    color: $dark;
-    text-transform: uppercase;
   }
 }
 

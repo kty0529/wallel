@@ -2,7 +2,7 @@
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 ?>
 <div id="offcanvas" aria-hidden="true">
-  <div class="widget widget-global-navigation">
+  <div class="widget widget-menu">
     <div class="widget-title">Menu</div>
 
     <?php
@@ -13,15 +13,32 @@
     ?>
   </div>
 
-  <div class="widget widget-blog">
+  <div class="widget widget-category">
     <div class="widget-title">Blog</div>
 
-    <?php
-      wp_nav_menu(array(
-        'theme_location' => 'blog_categories',
-        'container'      => false,
-      ));
-    ?>
+    <ul class="cat">
+      <?php
+        wp_list_categories( array(
+          'title_li' => '',
+          'show_count' => true,
+          'hide_title_if_empty' => false,
+        ) );
+      ?>
+    </ul>
+  </div>
+
+  <div class="widget widget-category">
+    <div class="widget-title">Project</div>
+
+    <ul class="cat">
+      <?php
+        wp_list_categories( array(
+          'title_li' => '',
+          'show_count' => true,
+          'hide_title_if_empty' => false,
+        ) );
+      ?>
+    </ul>
   </div>
 </div>
 
