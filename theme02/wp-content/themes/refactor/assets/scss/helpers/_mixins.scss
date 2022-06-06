@@ -176,10 +176,13 @@
 
   h3 {
     position: relative;
-    margin-top: rem-calc(50);
     margin-bottom: rem-calc(20);
     font-size: rem-calc(22);
     font-weight: 400;
+
+		&:not(:first-child) {
+			margin-top: rem-calc(50);
+		}
 
     &:before {
       content: '';
@@ -242,6 +245,13 @@
       background-color: $light;
     }
   }
+
+	// prismjs 스타일링
+	code[class*=language-],
+	pre[class*=language-] {
+		font-size: 0.95em;
+		font-family: 'Menlo', 'Consolas', $ff-default;
+	}
 
 	// embed 블럭 스타일링
 	.wp-block-embed {
