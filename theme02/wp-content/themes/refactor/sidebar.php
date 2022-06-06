@@ -14,11 +14,16 @@
   <div class="widget widget-category">
     <h3 class="widget-title">Category</h3>
 
-    <?php
-      wp_nav_menu(array(
-        'theme_location' => 'blog_categories',
-        'container'      => false,
-      ));
-    ?>
+    <ul class="cat">
+      <?php
+        wp_list_categories( array(
+          'title_li' => '',
+          'show_count' => false,
+          'hide_title_if_empty' => false,
+          'orderby' => 'name',
+          'order' => 'ASC',
+        ) );
+      ?>
+    </ul>
   </div>
 </aside>

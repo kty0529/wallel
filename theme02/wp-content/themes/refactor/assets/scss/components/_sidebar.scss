@@ -50,7 +50,7 @@
       font-size: rem-calc(14);
     }
 
-    .menu {
+    .cat {
       margin-top: rem-calc(24);
 
       & > li {
@@ -58,7 +58,7 @@
       }
     }
 
-    .sub-menu {
+    .children {
       li {
         margin-top: rem-calc(4);
         color: $secondary;

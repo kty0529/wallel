@@ -14,7 +14,7 @@
   <div class="widget widget-category">
     <h3 class="widget-title">Category</h3>
 
-    <ul class="menu">
+    <ul class="cat">
       <?php
         wp_list_categories( array(
           'taxonomy' => 'project-type',
