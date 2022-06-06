@@ -253,13 +253,18 @@
 		font-family: 'Menlo', 'Consolas', $ff-default;
 	}
 
+	.wp-caption {
+		margin: 0;
+		max-width: 100%;
+	}
+
 	// embed 블럭 스타일링
 	.wp-block-embed {
 		figcaption {
 			margin-top: .5em;
 			margin-bottom: 1em;
 			color: #555;
-			font-size: 13px;
+			font-size: rem-calc(13);
 			text-align: center;
 		}
 
