@@ -82,38 +82,16 @@
 	/**
 	 * 메타박스 추가
 	 */
+	// 메타박스용 스타일 추가
 	function prefix_enqueue_custom_style() {
 		wp_enqueue_style( 'metabox-style', get_template_directory_uri() . '/assets/css/metabox-admin.css' );
 	}
 	add_action( 'rwmb_enqueue_scripts', 'prefix_enqueue_custom_style' );
 
+	// 메타박스 필드 추가
 	function prefix_register_meta_boxes( $meta_boxes ) {
 		$post_type = 'project';
 		$prefix    = $post_type.'_meta_';
-
-		/**
-		 * 목업
-		 */
-		$meta_boxes[] = array(
-			'id'         => 'mockup',
-			'title'      => '목업',
-			'post_types' => $post_type,
-			'context'    => 'normal',
-			'priority'   => 'high',
-
-			'fields' => array(
-				array(
-					'id'                => $prefix.'mockup',
-					'name'              => '목업',
-					'label_description' => '페이지 상단에 나타나는 목업 선택하세요.',
-					'type'              => 'image_upload',
-					'desc'              => '최대 1장 업로드 가능',
-					'max_file_uploads'  => 1,
-					'force_delete'      => true,
-				),
-			), // end fields array
-		); // end $meta_boxes[] array
-
 
 		/**
 		 * 기본 데이터
@@ -129,7 +107,7 @@
 				array(
 					'id'                => $prefix.'tech',
 					'name'              => '사용 기술',
-					'label_description' => '사이트 제작에 사용된 기술 나열하세요.',
+					'label_description' => '사이트 제작에 사용된 기술 나열하세요.<br>콤마로 구분하여 입력해주세요.',
 					'type'              => 'text',
 					'desc'              => 'ex) jQuery, PHP, HTML5, CSS3, SASS',
 					'std'               => 'HTML5, CSS3, jQuery',
@@ -139,40 +117,12 @@
 					'type' => 'divider',
 				),
 				array(
-					'id'                => $prefix.'client',
-					'name'              => 'CLIENT',
-					'label_description' => '클라이언트명 입력하세요.',
-					'type'              => 'text',
-					'desc'              => 'ex) Naver',
-					'std'               => '',
-				),
-
-				array(
-					'type' => 'divider',
-				),
-				array(
 					'id'                => $prefix.'release',
 					'name'              => 'RELEASE',
-					'label_description' => '공개한 날짜 선택하세요.',
+					'label_description' => '배포 날짜를 선택하세요.',
 					'type'              => 'date',
 					'desc'              => '',
 					'std'               => '',
-				),
-
-				array(
-					'type' => 'divider',
-				),
-				array(
-					'id'                => $prefix.'cms',
-					'name'              => 'CMS',
-					'label_description' => '사용한 CMS 선택하세요.',
-					'type'              => 'radio',
-					'options'           => array(
-						'wordpress' => 'Wordpress',
-						'tistory'   => 'Tistory',
-						'kboard'    => 'KBoard',
-					),
-					'inline'            => false,
 				),
 
 				array(
@@ -194,7 +144,7 @@
 					'label_description' => 'Github 저장소 주소 입력하세요.',
 					'type'              => 'text',
 				),
-			), // end fields array
+			),
 
 			// 유효성 검사
 			'validation' => array(
@@ -209,7 +159,7 @@
 					),
 				)
 			),
-		); // end $meta_boxes[] array
+		);
 
 
 		/**
@@ -229,8 +179,8 @@
 					'label_description' => '프로젝트에대한 상세 소개를 입력해주세요.',
 					'type'              => 'wysiwyg',
 				),
-			), // end fields array
-		); // end $meta_boxes[] array
+			),
+		);
 
 
 		/**
@@ -250,290 +200,8 @@
 					'label_description' => '클릭하면 최대화면으로 노출되는 화면 스크린샷 선택하세요.',
 					'type'              => 'image_advanced',
 				),
-			), // end fields array
-		); // end $meta_boxes[] array
-
-
-		/**
-		 * 기능 소개
-		 */
-		$meta_boxes[] = array(
-			'id'         => 'support',
-			'title'      => '기능 소개',
-			'post_types' => $post_type,
-			'context'    => 'normal',
-			'priority'   => 'high',
-
-			'fields' => array(
-				/**
-				 * 기본기능
-				 */
-				array(
-					'id'        => $prefix.'enable_support',
-					'name'      => 'Section 사용 여부',
-					'type'      => 'switch',
-					'style'     => 'square',
-					'on_label'  => '예',
-					'off_label' => '아니오',
-				),
-
-				array(
-					'id'                => $prefix.'support_1',
-					'name'              => '기본 기능 List 1',
-					'label_description' => '기본 기능을 나열하세요.',
-					'type'              => 'text',
-					'clone'             => true,
-					'sort_clone'        => true,
-					'add_button'        => '항목 추가',
-				),
-				array(
-					'id'                => $prefix.'support_2',
-					'name'              => '기본 기능 List 2',
-					'label_description' => '기본 기능을 나열하세요.',
-					'type'              => 'text',
-					'clone'             => true,
-					'sort_clone'        => true,
-					'add_button'        => '항목 추가',
-				),
-				array(
-					'id'                => $prefix.'support_3',
-					'name'              => '기본 기능 List 3',
-					'label_description' => '기본 기능을 나열하세요.',
-					'type'              => 'text',
-					'clone'             => true,
-					'sort_clone'        => true,
-					'add_button'        => '항목 추가',
-				),
-
-				array(
-					'type' => 'divider',
-				),
-
-				/**
-				 * 강조기능
-				 */
-				array(
-					'id'        => $prefix.'enable_import_tech',
-					'name'      => 'Section 사용 여부',
-					'type'      => 'switch',
-					'style'     => 'square',
-					'on_label'  => '예',
-					'off_label' => '아니오',
-				),
-				array(
-					'id'                => $prefix.'import_tech',
-					'name'              => '강조 기능',
-					'label_description' => '강조할 기능의 스크린샷 선택하세요.',
-					'type'              => 'image_advanced',
-					'desc'              => '이미지 편집 기능을 통해 이미지 자체에 <strong>타이틀</strong>과 <strong>설명</strong>을 기입해야 합니다.',
-				),
-			), // end fields array
-		); // end $meta_boxes[] array
-
-
-		/**
-		 * 브라우저 지원
-		 */
-		$meta_boxes[] = array(
-			'id'         => 'browser_support',
-			'title'      => '브라우저 지원',
-			'post_types' => $post_type,
-			'context'    => 'normal',
-			'priority'   => 'high',
-
-			'fields' => array(
-				array(
-					'id'        => $prefix.'enable_browser_support',
-					'name'      => 'Section 사용 여부',
-					'type'      => 'switch',
-					'style'     => 'square',
-					'on_label'  => '예',
-					'off_label' => '아니오',
-				),
-				array(
-					'id'                => $prefix.'browser_support',
-					'name'              => '브라우저 지원',
-					'label_description' => '지원 하는 브라우저를 선택하세요.',
-					'type'              => 'checkbox_list',
-					'options'           => array(
-						'chrome'                => 'Chrome',
-						'firefox'               => 'Firefox',
-						'internet explorer 9+'  => 'Internet Explorer 9+',
-						'internet explorer 10+' => 'Internet Explorer 10+',
-						'internet explorer 11+' => 'Internet Explorer 11+',
-						'opera'                 => 'Opera',
-						'safari'                => 'Safari',
-					),
-				),
-			), // end fields array
-		); // end $meta_boxes[] array
-
-
-		/**
-		 * 판매 및 배포 옵션
-		 */
-		$meta_boxes[] = array(
-			'id'         => 'selling',
-			'title'      => '판매 및 배포 옵션',
-			'post_types' => $post_type,
-			'context'    => 'normal',
-			'priority'   => 'high',
-
-			'tabs'       => array(
-				'default'       => array(
-					'label' => '기본 옵션',
-				),
-				'free'          => array(
-					'label' => 'FREE',
-				),
-				'license'       => array(
-					'label' => 'LICENSE',
-				),
-				'support'  => array(
-					'label' => 'SUPPORT',
-				),
 			),
-
-			'tab_style'  => 'left',
-
-			'fields'     => array(
-
-				array(
-					'id'                => $prefix.'best_selling',
-					'name'              => '베스트 라벨',
-					'label_description' => '카드에 BEST 라벨을 붙일 타입을 선택하세요.',
-					'type'              => 'radio',
-					'options'           => array(
-						'free'    => 'FREE',
-						'license' => 'LICENSE',
-						'support' => 'SUPPORT',
-					),
-					'tab'               => 'default',
-				),
-				array(
-					'type' => 'divider',
-					'tab'  => 'default',
-				),
-				array(
-					'id'                => $prefix.'select_download_file',
-					'name'              => '파일 선택',
-					'label_description' => 'Downloads에 등록된 파일을 선택하세요.',
-					'type'              => 'post',
-					'post_type'         => 'dlm_download',
-					'field_type'        => 'select',
-					'query_args'  => array(
-						'post_status'    => 'publish',
-						'posts_per_page' => -1,
-					),
-					'tab'               => 'default',
-				),
-				array(
-					'type' => 'divider',
-					'tab'  => 'default',
-				),
-				array(
-					'id'        => $prefix.'enable_free_selling',
-					'name'      => 'FREE 사용 여부',
-					'type'      => 'switch',
-					'style'     => 'square',
-					'on_label'  => '예',
-					'off_label' => '아니오',
-					'tab'       => 'default',
-				),
-				array(
-					'id'        => $prefix.'enable_license_selling',
-					'name'      => 'LICENSE 사용 여부',
-					'type'      => 'switch',
-					'style'     => 'square',
-					'on_label'  => '예',
-					'off_label' => '아니오',
-					'tab'       => 'default',
-				),
-				array(
-					'id'        => $prefix.'enable_support_selling',
-					'name'      => 'SUPPORT 사용 여부',
-					'type'      => 'switch',
-					'style'     => 'square',
-					'on_label'  => '예',
-					'off_label' => '아니오',
-					'tab'       => 'default',
-				),
-
-
-				/**
-				 * Free 텝
-				 */
-				array(
-					'id'      => $prefix.'free_scope',
-					'name'    => '지원 범위',
-					'type'    => 'checkbox_list',
-					'options' => array(
-						'file_download'  => '파일제공',
-						'normal_support' => '일반문의 지원',
-						'remove_license' => '라이센스 제거',
-						'tech_support'   => '기술문의 지원',
-					),
-					'tab'     => 'free',
-				),
-
-
-				/**
-				 * License 텝
-				 */
-				array(
-					'id'   => $prefix.'license_amount',
-					'name' => '판매가',
-					'type' => 'number',
-					'desc' => '단위: 원',
-					'tab'  => 'license',
-				),
-				array(
-					'type' => 'divider',
-					'tab'  => 'license',
-				),
-				array(
-					'id'      => $prefix.'license_scope',
-					'name'    => '지원 범위',
-					'type'    => 'checkbox_list',
-					'options' => array(
-						'file_download'  => '파일제공',
-						'normal_support' => '일반문의 지원',
-						'remove_license' => '라이센스 제거',
-						'tech_support'   => '기술문의 지원',
-					),
-					'tab'     => 'license',
-				),
-
-
-				/**
-				 * Tech Support 텝
-				 */
-				array(
-					'id'   => $prefix.'support_amount',
-					'name' => '판매가',
-					'type' => 'number',
-					'desc' => '단위: 원',
-					'tab'  => 'support',
-				),
-				array(
-					'type' => 'divider',
-					'tab'  => 'support',
-				),
-				array(
-					'id'      => $prefix.'support_scope',
-					'name'    => '지원 범위',
-					'type'    => 'checkbox_list',
-					'options' => array(
-						'file_download'  => '파일제공',
-						'normal_support' => '일반문의 지원',
-						'remove_license' => '라이센스 제거',
-						'tech_support'   => '기술문의 지원',
-					),
-					'tab'     => 'support',
-				),
-
-			),
-		); // end $meta_boxes[] array
+		);
 
 		return $meta_boxes;
 	}
