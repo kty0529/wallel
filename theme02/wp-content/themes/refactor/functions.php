@@ -135,6 +135,17 @@
 
 
   /**
+	 * TinyMCE에 editor style 입히기
+	 * https://codex.wordpress.org/TinyMCE
+	 */
+	function custom_TinyMCE_format( $in ) {
+		$in['content_css'] = get_theme_file_uri( '/assets/css/editor-style.min.css' );
+		return $in;
+	}
+	add_filter( 'tiny_mce_before_init', 'custom_TinyMCE_format' );
+
+
+  /**
    * 관리자 > 사용자 목록에 특정 column 지우기
    * https://wordpress.stackexchange.com/questions/19180/how-to-remove-a-column-from-the-posts-page
    */
