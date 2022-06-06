@@ -8,7 +8,10 @@
     height: rem-calc(100);
 
     @include tablet {
+      display: block;
+      padding-top: rem-calc(60);
       height: auto;
+      text-align: center;
     }
   }
 
@@ -16,7 +19,8 @@
     font-size: rem-calc(28);
 
     @include tablet {
-      @include blind;
+      font-size: 20px;
+      color: lighten($dark, 20%);
     }
   }
 
