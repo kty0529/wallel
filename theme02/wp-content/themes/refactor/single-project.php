@@ -27,14 +27,14 @@
               </div>
 
               <div class="cms">
-                <span class="label">CMS:</span>
+                <span class="label">분류:</span>
                 <span class="value">
                   <?php
                     $terms = get_the_terms( get_the_ID(), 'project-type' );
                     if ( $terms && ! is_wp_error( $terms ) ) {
                       $terms = array_values( $terms );
                       $term = $terms[0];
-                      $term_link = get_term_link( $term->term_id, 'project-type' );
+                      $term_link = get_term_link( $term->term_id, $term->taxonomy );
                       echo '<a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a>';
                     }
                   ?>
