@@ -190,7 +190,6 @@
         vertical-align: middle;
         background-color: $light;
         fill: #333;
-        transition: all 0.2s;
       }
 
       @each $brand, $color in $brand-colors {
