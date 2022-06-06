@@ -48,10 +48,6 @@
       display: inline-block;
       padding: rem-calc(2 4);
       background-color: $light;
-      transition: {
-        property: color, background-color;
-        duration: 0.1s;
-      }
 
       &:hover {
         color: #fff;
