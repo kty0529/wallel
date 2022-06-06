@@ -15,7 +15,7 @@
       font-size: rem-calc(12);
       color: $secondary;
       background-color: #fff;
-      border: rem-calc(1) solid darken($light, 10%);
+      border: rem-calc(1) solid $border-color;
 
       &:first-child {
         margin-left: 0;

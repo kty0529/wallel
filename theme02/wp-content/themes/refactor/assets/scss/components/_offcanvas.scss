@@ -46,7 +46,7 @@
           position: relative;
           top: rem-calc(-1);
           margin-right: rem-calc(8);
-          color: darken($light, 10%);
+          color: $border-color;
 
           // material icons
           content: '\e5cc';

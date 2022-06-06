@@ -23,7 +23,7 @@
       display: flex;
       height: rem-calc(50);
       background-color: #fff;
-      border: rem-calc(1) solid darken($light, 10%);
+      border: rem-calc(1) solid $border-color;
     }
 
     input {
@@ -71,7 +71,7 @@
           position: relative;
           top: rem-calc(-1);
           margin-right: rem-calc(8);
-          color: darken($light, 10%);
+          color: $border-color;
 
           // material icons
           content: '\e5cc';

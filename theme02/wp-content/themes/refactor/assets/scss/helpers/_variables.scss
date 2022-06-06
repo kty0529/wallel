@@ -50,3 +50,23 @@ $columns: (
 	'11': 91.666666%,
 	'12': 100%
 ) !default;
+
+
+// 브랜드별 대표 색상
+$brand-colors: (
+	"css3": "#30A9DC",
+	"github": "#000",
+	"html5": "#F1672C",
+	"javascript": "#F1BF26",
+	"jquery": "#1168af",
+	"php": "#8892BF",
+	"react": "#61DAFB",
+	"sass": "#CF649A",
+	"tistory": "#EA5220",
+	"vue": "#50C08D",
+	"wordpress": "#575C60",
+);
+
+
+// 커스텀 테마 컬러
+$border-color: darken($light, 10%);
