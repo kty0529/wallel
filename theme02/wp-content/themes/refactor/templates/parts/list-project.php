@@ -40,7 +40,7 @@
     <ul class="languages">
       <li class="label">Languages</li>
       <?php
-        $languages = explode(', ', metabox( 'tech' ));
+        $languages = explode(', ', project_meta( 'tech' ));
 
         foreach ( $languages as $v ) {
           $icon = strtolower($v);

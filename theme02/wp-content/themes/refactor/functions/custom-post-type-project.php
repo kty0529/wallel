@@ -116,11 +116,11 @@
 
 
 		/**
-		 * 기본 정보
+		 * 기본 데이터
 		 */
 		$meta_boxes[] = array(
 			'id'         => 'default_data',
-			'title'      => '기본 정보',
+			'title'      => '기본 데이터',
 			'post_types' => $post_type,
 			'context'    => 'normal',
 			'priority'   => 'high',
@@ -134,6 +134,7 @@
 					'desc'              => 'ex) jQuery, PHP, HTML5, CSS3, SASS',
 					'std'               => 'HTML5, CSS3, jQuery',
 				),
+
 				array(
 					'type' => 'divider',
 				),
@@ -145,6 +146,7 @@
 					'desc'              => 'ex) Naver',
 					'std'               => '',
 				),
+
 				array(
 					'type' => 'divider',
 				),
@@ -156,6 +158,7 @@
 					'desc'              => '',
 					'std'               => '',
 				),
+
 				array(
 					'type' => 'divider',
 				),
@@ -171,6 +174,7 @@
 					),
 					'inline'            => false,
 				),
+
 				array(
 					'type' => 'divider',
 				),
@@ -180,8 +184,19 @@
 					'label_description' => '오픈된 사이트 혹은 데모 링크 주소 입력하세요.',
 					'type'              => 'text',
 				),
+
+				array(
+					'type' => 'divider',
+				),
+				array(
+					'id'                => $prefix.'github_link',
+					'name'              => 'Github 저장소 링크',
+					'label_description' => 'Github 저장소 주소 입력하세요.',
+					'type'              => 'text',
+				),
 			), // end fields array
 
+			// 유효성 검사
 			'validation' => array(
 				'rules'  => array(
 					$prefix.'demo_link' => array(
@@ -194,6 +209,27 @@
 					),
 				)
 			),
+		); // end $meta_boxes[] array
+
+
+		/**
+		 * 프로젝트 상세 소개
+		 */
+		$meta_boxes[] = array(
+			'id'         => 'detail',
+			'title'      => '프로젝트 상세 소개',
+			'post_types' => $post_type,
+			'context'    => 'normal',
+			'priority'   => 'high',
+
+			'fields' => array(
+				array(
+					'id'                => $prefix.'detail',
+					'name'              => '프로젝트 상세 소개',
+					'label_description' => '프로젝트에대한 상세 소개를 입력해주세요.',
+					'type'              => 'wysiwyg',
+				),
+			), // end fields array
 		); // end $meta_boxes[] array
 
 
@@ -510,9 +546,9 @@
 	 * 기존 방식
 	 * rwmb_meta( 'project_meta_mockup', array( 'limit' => 1 ) ); 또는 rwmb_meta( 'project_meta_mockup' );
 	 * 변경된 방식
-	 * metabox( 'mockup', array( 'limit' => 1 ) ); 또는 metabox( 'mockup' );
+	 * project_meta( 'mockup', array( 'limit' => 1 ) ); 또는 project_meta( 'mockup' );
 	 */
-	function metabox( $key, $array = false ) {
+	function project_meta( $key, $array = false ) {
 
 		if ( $array ) {
 			return rwmb_meta( 'project_meta_'.$key, $array );
