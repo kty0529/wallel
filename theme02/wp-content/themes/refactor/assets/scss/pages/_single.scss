@@ -146,13 +146,13 @@
       }
 
       .navigation {
-        position: absolute;
-        top: rem-calc(15);
-        right: 0;
+        display: flex;
+        justify-content: flex-end;
         font-size: rem-calc(25);
         line-height: 0;
 
         .arrows {
+          margin-top: rem-calc(20);
           line-height: inherit;
 
           &:not([disabled]):hover {
