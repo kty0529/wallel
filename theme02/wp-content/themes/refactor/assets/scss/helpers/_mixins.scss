@@ -176,12 +176,12 @@
 
   h3 {
     position: relative;
-    margin-bottom: rem-calc(20);
-    font-size: rem-calc(22);
+    margin-bottom: 1em;
+    font-size: 1.5em;
     font-weight: 400;
 
 		&:not(:first-child) {
-			margin-top: rem-calc(50);
+			margin-top: 1.3em;
 		}
 
     &:before {
