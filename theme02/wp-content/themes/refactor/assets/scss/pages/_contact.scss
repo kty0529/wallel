@@ -1,0 +1,75 @@
+#contact {
+  margin: 0 auto;
+  max-width: rem-calc(600);
+
+  .form-row {
+    display: flex;
+    align-items: center;
+    margin-top: rem-calc(20);
+  }
+
+  .form-label {
+    flex: 0 0 rem-calc(100);
+    display: block;
+    font-size: rem-calc(13);
+  }
+
+  .form-row-submit {
+    position: relative;
+  }
+
+  span {
+    flex: 1 1 auto;
+    display: block;
+  }
+
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    font-size: rem-calc(14);
+    background-color: #fff;
+    border: rem-calc(1) solid $border-color;
+  }
+
+  input {
+    padding: rem-calc(0 10);
+    height: rem-calc(40);
+  }
+
+  textarea {
+    padding: rem-calc(10);
+    min-height: rem-calc(200);
+    resize: vertical;
+  }
+
+  input[type='submit'] {
+    height: rem-calc(50);
+    font-size: rem-calc(14);
+    color: $light;
+    background-color: $dark;
+    border: 0;
+  }
+
+  .wpcf7-not-valid-tip {
+    margin-top: rem-calc(10);
+    font-size: rem-calc(12);
+    color: $danger;
+  }
+
+  .wpcf7-response-output {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 10px 15px;
+    font-size: rem-calc(12);
+    background-color: #fff;
+  }
+
+  .wpcf7-spinner {
+    position: absolute;
+    margin: auto 0;
+    top: 0;
+    right: rem-calc(15);
+    bottom: 0;
+  }
+}
