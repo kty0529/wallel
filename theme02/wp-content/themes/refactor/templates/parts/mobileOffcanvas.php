@@ -3,7 +3,7 @@
 ?>
 <div id="offcanvas" aria-hidden="true">
   <div class="widget widget-menu">
-    <div class="widget-title">Menu</div>
+    <div class="widget-title">메뉴</div>
 
     <?php
       wp_nav_menu(array(
@@ -14,7 +14,7 @@
   </div>
 
   <div class="widget widget-category">
-    <div class="widget-title">Blog</div>
+    <div class="widget-title">블로그</div>
 
     <ul class="cat">
       <?php
@@ -28,7 +28,7 @@
   </div>
 
   <div class="widget widget-category">
-    <div class="widget-title">Project</div>
+    <div class="widget-title">프로젝트</div>
 
     <ul class="cat">
       <?php

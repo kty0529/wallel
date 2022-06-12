@@ -8,7 +8,7 @@
     height: rem-calc(100);
 
     @include tablet {
-      display: block;
+      align-items: center;
       padding-top: rem-calc(15);
       height: auto;
     }
@@ -24,15 +24,15 @@
   }
 
   .navigation {
-    @include tablet {
-      display: none;
-    }
-
     ul {
       display: flex;
       margin: 0;
       padding: 0;
       list-style: none;
+
+      @include tablet {
+        margin-right: rem-calc(-10);
+      }
     }
 
     a {
@@ -40,6 +40,11 @@
       padding: rem-calc(16 20);
       font-size: rem-calc(14);
       text-transform: uppercase;
+
+      @include tablet {
+        padding: rem-calc(0 10);
+        font-size: rem-calc(12);
+      }
     }
   }
 }
