@@ -19,6 +19,16 @@
     }
   }
 
+  .widget-search {
+    input {
+      padding: rem-calc(0 15);
+      height: rem-calc(40);
+      font-size: rem-calc(13);
+      width: 100%;
+      border: rem-calc(1) solid $border-color;
+    }
+  }
+
   .widget-title {
     font-size: rem-calc(16);
     font-weight: 500;
