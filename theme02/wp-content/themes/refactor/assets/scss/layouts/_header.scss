@@ -7,7 +7,7 @@
     align-items: flex-end;
     height: rem-calc(100);
 
-    @include tablet {
+    @include mobile {
       align-items: center;
       padding-top: rem-calc(15);
       height: auto;
@@ -17,7 +17,7 @@
   .title {
     font-size: rem-calc(28);
 
-    @include tablet {
+    @include mobile {
       font-size: rem-calc(16);
       color: lighten($dark, 20%);
     }
@@ -30,7 +30,7 @@
       padding: 0;
       list-style: none;
 
-      @include tablet {
+      @include mobile {
         margin-right: rem-calc(-10);
       }
     }
@@ -41,7 +41,7 @@
       font-size: rem-calc(14);
       text-transform: uppercase;
 
-      @include tablet {
+      @include mobile {
         padding: rem-calc(0 10);
         font-size: rem-calc(12);
       }

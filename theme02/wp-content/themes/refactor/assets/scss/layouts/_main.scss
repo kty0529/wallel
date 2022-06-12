@@ -1,8 +1,8 @@
 #main {
-  padding: rem-calc(100 0 150);
+  padding: rem-calc(70 0 150);
   background-color: $light;
 
-  @include tablet {
+  @include mobile {
     padding: rem-calc(20 0 100);
   }
 }
