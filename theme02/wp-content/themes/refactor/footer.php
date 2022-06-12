@@ -34,7 +34,5 @@
 
     wp_footer();
   ?>
-
-  <script id="dsq-count-scr" src="//wallel.disqus.com/count.js" async></script>
 </body>
 </html>
