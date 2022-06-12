@@ -113,6 +113,10 @@
   border: rem-calc(1) solid darken($light, 5%);
   border-radius: rem-calc(3);
 
+  .icon_active {
+    display: none;
+  }
+
   @include mobile {
     display: block;
   }
@@ -144,6 +148,16 @@ html.offcanvas-active {
   @include mobile {
     #offcanvas {
       display: block;
+    }
+
+    #toggle-offcanvas {
+      .icon_deactive {
+        display: none;
+      }
+
+      .icon_active {
+        display: block;
+      }
     }
   }
 }

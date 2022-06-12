@@ -44,24 +44,6 @@
 </div>
 
 <button id="toggle-offcanvas" aria-hidden="true">
-  <span class="material-symbols-outlined icon">menu</span>
+  <span class="material-symbols-outlined icon_deactive">menu</span>
+  <span class="material-symbols-outlined icon_active">menu_open</span>
 </button>
-
-<script>
-  const toggleSidebarButton = document.querySelector('#toggle-offcanvas');
-  const toggleSidebarButtonIcon = toggleSidebarButton.querySelector('.icon');
-
-  toggleSidebarButton.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    wallel.overlay.classList.toggle('active');
-
-    if (wallel.overlay.classList.contains('active')) {
-      toggleSidebarButtonIcon.textContent = 'menu_open';
-    } else {
-      toggleSidebarButtonIcon.textContent = 'menu';
-    }
-
-    ['scroll-lock', 'offcanvas-active'].map(el => wallel.root.classList.toggle(el));
-  });
-</script>
