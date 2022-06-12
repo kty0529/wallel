@@ -34,7 +34,7 @@
   </p>
 
   <div class="buttons">
-    <a href="<?php echo get_permalink(); ?>" class="view-more">Continue Reading</a>
+    <a href="<?php echo get_permalink(); ?>" class="view-more">자세히 보기</a>
 
     <?php if ( $get_url = get_url_in_content( $content ) ) { ?>
       <a href="<?php echo $get_url; ?>" class="external-link" target="_blank" data-tooltip="외부링크 바로가기" aria-label="외부링크 바로가기">

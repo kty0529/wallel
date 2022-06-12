@@ -4,7 +4,7 @@
   <div class="widget widget-search">
     <form method="get" action="<?php echo home_url() ?>">
       <input type="hidden" name="post_type" value="project">
-      <input type="text" name="s" placeholder="Find Projects" required value="<?php echo get_search_query(); ?>">
+      <input type="text" name="s" placeholder="프로젝트 찾기" required value="<?php echo get_search_query(); ?>">
       <button type="submit" aria-label="검색">
         <span class="material-symbols-outlined">search</span>
       </button>
@@ -12,7 +12,7 @@
   </div>
 
   <div class="widget widget-category">
-    <h3 class="widget-title">Category</h3>
+    <h3 class="widget-title">카테고리</h3>
 
     <ul class="cat">
       <?php

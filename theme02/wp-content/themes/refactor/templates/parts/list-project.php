@@ -40,7 +40,7 @@
     ?></div>
 
     <ul class="languages">
-      <li class="label">Languages</li>
+      <li class="label">사용 언어</li>
       <?php
         $languages = explode(', ', project_meta( 'tech' ));
 
