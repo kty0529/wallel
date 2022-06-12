@@ -6,7 +6,7 @@
 
 ## 남은 작업
 
-- [ ] 문의하기 form
+- [x] 문의하기 form
 - [ ] 퍼블리싱 스터디를 위한 Custom Post Type 만들기
 
 
