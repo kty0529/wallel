@@ -5,7 +5,10 @@
   .form-row {
     display: flex;
     align-items: center;
-    margin-top: rem-calc(20);
+
+    &:not(:first-child) {
+      margin-top: rem-calc(20);
+    }
   }
 
   .form-label {
