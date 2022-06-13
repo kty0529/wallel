@@ -1,6 +1,11 @@
 #header {
   background-color: $light;
 
+  @include mobile {
+    color: $light;
+    background-color: $dark;
+  }
+
   .inner-wrap {
     display: flex;
     justify-content: space-between;
@@ -9,7 +14,7 @@
 
     @include mobile {
       align-items: center;
-      padding-top: rem-calc(15);
+      padding: rem-calc(10 0);
       height: auto;
     }
   }
@@ -19,7 +24,6 @@
 
     @include mobile {
       font-size: rem-calc(16);
-      color: lighten($dark, 20%);
     }
   }
 
@@ -29,10 +33,6 @@
       margin: 0;
       padding: 0;
       list-style: none;
-
-      @include mobile {
-        margin-right: rem-calc(-10);
-      }
     }
 
     a {
