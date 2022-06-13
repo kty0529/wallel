@@ -33,6 +33,10 @@
       margin: 0;
       padding: 0;
       list-style: none;
+
+      @include mobile {
+        margin-right: rem-calc(-10);
+      }
     }
 
     a {
