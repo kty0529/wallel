@@ -4,7 +4,7 @@
 <div id="offcanvas" aria-hidden="true">
   <div class="widget widget-search">
     <form action="/">
-      <input type="text" name="s" placeholder="통합검색" enterkeyhint="search" required>
+      <input type="text" name="s" placeholder="통합검색" enterkeyhint="search" required value="<?php echo get_search_query(); ?>">
     </form>
   </div>
 
