@@ -127,6 +127,16 @@
                 </ul>
               </div>
             </div>
+
+            <?php if ( $history = project_meta( 'history' ) ) { ?>
+              <div class="sec sec-history">
+                <h3 class="sec-title">수정사항</h3>
+
+                <div class="sec-content">
+                  <?php echo $history ?>
+                </div>
+              </div>
+            <?php } ?>
           </div>
         </article>
       </div>

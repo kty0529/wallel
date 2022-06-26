@@ -203,6 +203,28 @@
 			),
 		);
 
+
+		/**
+		 * Changelog(History) 기록하기
+		 */
+		$meta_boxes[] = array(
+			'id'         => 'history',
+			'title'      => '프로젝트 히스토리',
+			'post_types' => $post_type,
+			'context'    => 'normal',
+			'priority'   => 'high',
+
+			'fields' => array(
+				array(
+					'id'                => $prefix.'history',
+					'name'              => '프로젝트 히스토리',
+					'label_description' => '프로젝트의 수정 기록을 남겨주세요.',
+					'type'              => 'wysiwyg',
+				),
+			),
+		);
+
+
 		return $meta_boxes;
 	}
 	add_filter( 'rwmb_meta_boxes', 'prefix_register_meta_boxes' );
