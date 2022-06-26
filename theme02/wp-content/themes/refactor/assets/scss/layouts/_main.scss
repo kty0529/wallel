@@ -3,6 +3,6 @@
   background-color: $light;
 
   @include mobile {
-    padding: rem-calc(20 0 100);
+    padding: rem-calc(50 0 100);
   }
 }
