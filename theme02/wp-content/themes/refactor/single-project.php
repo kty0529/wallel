@@ -120,7 +120,7 @@
                     <li>
                       <a class="download github" href="<?php echo $repository; ?>" target="_blank">
                         <?php echo file_get_contents( get_template_directory_uri() . '/assets/icons/svg/github.svg' ); ?>
-                        Github Repository
+                        Github 저장소에서 다운받기
                       </a>
                     </li>
                   <?php } ?>
