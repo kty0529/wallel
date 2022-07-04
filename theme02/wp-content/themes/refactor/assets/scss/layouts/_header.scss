@@ -20,6 +20,7 @@
   }
 
   .title {
+    margin: 0;
     font-size: rem-calc(28);
 
     @include mobile {
