@@ -31,13 +31,7 @@
   <div class="project-card-container">
     <a href="<?php echo get_permalink(); ?>"><h3 class="title"><?php echo get_the_title(); ?></h3></a>
 
-    <div class="description"><?php
-      // strip_tags($text, allow_tags)
-      // 두번째 인자인 allow_tags는 php 7.4 이상부터 사용할 수 있다 ㅠ
-      // 어차피 내가 쓰는것이기 때문에 모든 태그를 허용하기로 했다.
-      // 가능하면 나중에 p 태그만 사용 가능하게 해야할듯.
-      echo $content;
-    ?></div>
+    <div class="description"><?php echo $content; ?></div>
 
     <ul class="languages">
       <li class="label">사용 언어</li>
