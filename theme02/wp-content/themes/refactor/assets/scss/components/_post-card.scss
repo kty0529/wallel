@@ -110,7 +110,7 @@
     margin-top: rem-calc(30);
   }
 
-  &-thumbnail {
+  .thumbnail {
     position: relative;
     flex: 0 0 rem-calc(250);
     background-color: #fff;
@@ -147,9 +147,25 @@
         }
       }
     }
+
+    .closed {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      width: 100%;
+      height: rem-calc(40);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      font-weight: 700;
+      color: $light;
+      font-size: rem-calc(13);
+      background-color: $dark;
+    }
   }
 
-  &-container {
+  .content {
     display: flex;
     padding: rem-calc(10 0);
     flex-direction: column;
@@ -201,6 +217,18 @@
           background-color: #{$color};
           fill: #fff;
         }
+      }
+    }
+  }
+
+  &.project-closed {
+    opacity: 0.9;
+
+    .thumbnail {
+      filter: grayscale(1);
+
+      .closed {
+        display: flex;
       }
     }
   }

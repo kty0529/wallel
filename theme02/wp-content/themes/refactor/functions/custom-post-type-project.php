@@ -105,6 +105,17 @@
 
 			'fields' => array(
 				array(
+					'id'                => $prefix.'closed',
+					'name'              => '운영 종료 여부',
+					'label_description' => '프로젝트가 종료되었다면 활성화 해주세요.',
+					'type'              => 'switch',
+					'style'             => 'rounded',
+				),
+
+				array(
+					'type' => 'divider',
+				),
+				array(
 					'id'                => $prefix.'tech',
 					'name'              => '사용 기술',
 					'label_description' => '사이트 제작에 사용된 기술 나열하세요.<br>콤마로 구분하여 입력해주세요.',
@@ -121,8 +132,6 @@
 					'name'              => 'RELEASE',
 					'label_description' => '배포 날짜를 선택하세요.',
 					'type'              => 'date',
-					'desc'              => '',
-					'std'               => '',
 				),
 
 				array(
