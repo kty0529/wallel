@@ -115,16 +115,20 @@
               <h3 class="sec-title">다운로드</h3>
 
               <div class="sec-content">
-                <ul>
-                  <?php if ( $repository = project_meta( 'github_link' ) ) { ?>
-                    <li>
-                      <a class="download github" href="<?php echo $repository; ?>" target="_blank">
-                        <?php echo file_get_contents( get_template_directory_uri() . '/assets/icons/svg/github.svg' ); ?>
-                        Github 저장소에서 다운받기
-                      </a>
-                    </li>
-                  <?php } ?>
-                </ul>
+                <?php if ( project_meta( 'closed' ) ) { ?>
+                  <div class="closed"><strong>이 프로젝트는 운영 종료되었습니다.<br>감사합니다.</strong></div>
+                <?php } else { ?>
+                  <ul>
+                    <?php if ( $repository = project_meta( 'github_link' ) ) { ?>
+                      <li>
+                        <a class="download github" href="<?php echo $repository; ?>" target="_blank">
+                          <?php echo file_get_contents( get_template_directory_uri() . '/assets/icons/svg/github.svg' ); ?>
+                          Github 저장소에서 다운받기
+                        </a>
+                      </li>
+                    <?php } ?>
+                  </ul>
+                <?php } ?>
               </div>
             </div>
 

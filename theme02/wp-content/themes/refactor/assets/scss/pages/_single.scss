@@ -177,6 +177,12 @@
         width: rem-calc(32);
         height: rem-calc(32);
       }
+
+      .closed {
+        padding: rem-calc(20 10);
+        text-align: center;
+        background-color: $light;
+      }
     }
 
     a {
