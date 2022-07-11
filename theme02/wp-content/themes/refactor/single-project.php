@@ -56,60 +56,62 @@
               <?php the_content(); ?>
             </div>
 
-            <div class="sec sec-infomation">
-              <h3 class="sec-title">기본정보</h3>
+            <?php if ( $detail = project_meta( 'detail' ) ) { ?>
+              <div class="sec sec-infomation">
+                <h3 class="sec-title">기본정보</h3>
 
-              <div class="content">
-                <?php echo project_meta( 'detail' ); ?>
-              </div>
-            </div>
-
-            <div class="sec sec-screenshot">
-              <h3 class="sec-title">스크린샷</h3>
-
-              <div class="sec-content">
-                <div class="swiper">
-                  <ul class="swiper-wrapper">
-                    <?php
-                      $screenshot = project_meta( 'screenshot', array( 'size' => 'large' ) );
-
-                      $i = 0;
-                      foreach ( $screenshot as $image ) {
-                        $i++;
-                    ?>
-                        <li class="swiper-slide">
-                          <a href="<?php echo $image[ 'full_url' ] ?>" data-lightbox="screenshot">
-                            <img loading="lazy" src="<?php echo $image[ 'url' ] ?>" alt="screenshot <?php echo $i; ?>">
-                          </a>
-                        </li>
-                    <?php
-                      }
-                    ?>
-                  </ul>
+                <div class="content">
+                  <?php echo $detail; ?>
                 </div>
-
-                <div class="navigation">
-                  <button class="arrows prev" type="button" aria-label="이전 스크린샷">
-                    <span class="material-symbols-outlined icon">chevron_left</span>
-                  </button>
-
-                  <button class="arrows next" type="button" aria-label="다음 스크린샷">
-                    <span class="material-symbols-outlined icon">chevron_right</span>
-                  </button>
-                </div>
-
-                <script>
-                  const swiper = new Swiper('.sec-screenshot .swiper', {
-                    slidesPerView: 2.2,
-                    spaceBetween: 15,
-                    navigation: {
-                      prevEl: '.sec-screenshot .navigation .prev',
-                      nextEl: '.sec-screenshot .navigation .next'
-                    },
-                  });
-                </script>
               </div>
-            </div>
+            <?php } ?>
+
+            <?php if ( $screenshot = project_meta( 'screenshot', array( 'size' => 'large' ) ) ) { ?>
+              <div class="sec sec-screenshot">
+                <h3 class="sec-title">스크린샷</h3>
+
+                <div class="sec-content">
+                  <div class="swiper">
+                    <ul class="swiper-wrapper">
+                      <?php
+                        $i = 0;
+                        foreach ( $screenshot as $image ) {
+                          $i++;
+                      ?>
+                          <li class="swiper-slide">
+                            <a href="<?php echo $image[ 'full_url' ] ?>" data-lightbox="screenshot">
+                              <img loading="lazy" src="<?php echo $image[ 'url' ] ?>" alt="screenshot <?php echo $i; ?>">
+                            </a>
+                          </li>
+                      <?php
+                        }
+                      ?>
+                    </ul>
+                  </div>
+
+                  <div class="navigation">
+                    <button class="arrows prev" type="button" aria-label="이전 스크린샷">
+                      <span class="material-symbols-outlined icon">chevron_left</span>
+                    </button>
+
+                    <button class="arrows next" type="button" aria-label="다음 스크린샷">
+                      <span class="material-symbols-outlined icon">chevron_right</span>
+                    </button>
+                  </div>
+
+                  <script>
+                    const swiper = new Swiper('.sec-screenshot .swiper', {
+                      slidesPerView: 2.2,
+                      spaceBetween: 15,
+                      navigation: {
+                        prevEl: '.sec-screenshot .navigation .prev',
+                        nextEl: '.sec-screenshot .navigation .next'
+                      },
+                    });
+                  </script>
+                </div>
+              </div>
+            <?php } ?>
 
             <div class="sec sec-download">
               <h3 class="sec-title">다운로드</h3>
