@@ -11,6 +11,7 @@
   }
 
   .title {
+    margin: 0;
     font-size: rem-calc(18);
     font-weight: 400;
     word-break: keep-all;
@@ -34,7 +35,7 @@
   }
 
   .description {
-    margin-top: rem-calc(24);
+    margin: rem-calc(24 0 0);
     font-size: rem-calc(14);
     font-weight: 400;
     color: $secondary;
