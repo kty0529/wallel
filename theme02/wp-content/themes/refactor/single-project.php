@@ -141,7 +141,20 @@
                 <div class="sec-content">
                   <?php echo $history ?>
                 </div>
+
+                <button class="read-more">더 보기</button>
               </div>
+              <script>
+                const historyContent = document.querySelector('.sec-history .sec-content');
+
+                if ( historyContent.scrollHeight >= 300 ) {
+                  const readMore = document.querySelector('.sec-history .read-more');
+                  readMore.style.display = 'block';
+                  readMore.addEventListener('click', function(e) {
+                    this.previousElementSibling.classList.add('show');
+                  });
+                }
+              </script>
             <?php } ?>
           </div>
         </article>
