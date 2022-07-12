@@ -1,23 +1,27 @@
 #footer {
-  padding: 40px 0 86px;
-  font-size: 14px;
+  padding: rem-calc(40 0 86);
+  font-size: rem-calc(14);
   color: $secondary;
 
   .title {
-    font-size: 26px;
+    font-size: rem-calc(26);
     font-weight: 400;
   }
 
   .copyright {
-    margin-top: 6px;
+    margin-top: rem-calc(6);
   }
 
   .navigation {
     ul {
       @include reset-list;
-      margin-top: 28px;
-      padding-top: 28px;
-      border-top: 1px solid $light;
+      margin-top: rem-calc(28);
+      padding-top: rem-calc(28);
+      border-top: rem-calc(1) solid $light;
+
+      li:not(:first-child) {
+        margin-top: rem-calc(10);
+      }
     }
   }
 }
