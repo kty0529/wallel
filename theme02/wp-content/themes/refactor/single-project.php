@@ -152,6 +152,7 @@
                   readMore.style.display = 'block';
                   readMore.addEventListener('click', function(e) {
                     this.previousElementSibling.classList.add('show');
+                    readMore.style.display = 'none';
                   });
                 }
               </script>

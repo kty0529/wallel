@@ -3,8 +3,8 @@
   background-color: #fff;
 
   @include small {
-    margin: rem-calc(0 -15);
     padding: rem-calc(30 15);
+    margin: rem-calc(0 -15);
   }
 
   &-header {
@@ -18,16 +18,16 @@
 
     .data {
       display: flex;
-      gap: rem-calc(12);
       flex-wrap: wrap;
       margin-top: rem-calc(12);
-      font-size: rem-calc(12);
       color: $secondary;
+      font-size: rem-calc(12);
+      gap: rem-calc(12);
 
       @include mobile {
         .categories {
-          order: 2;
           flex-basis: 100%;
+          order: 2;
         }
       }
     }
@@ -39,11 +39,11 @@
   }
 
   &-tags {
-    margin-top: rem-calc(48);
     padding-top: rem-calc(24);
-    font-size: rem-calc(12);
-    color: $secondary;
     border-top: rem-calc(1) solid $light;
+    margin-top: rem-calc(48);
+    color: $secondary;
+    font-size: rem-calc(12);
 
     a {
       display: inline-block;
@@ -51,8 +51,8 @@
       background-color: $light;
 
       &:hover {
-        color: #fff;
         background-color: $primary;
+        color: #fff;
       }
 
       &:not(:first-child) {
@@ -62,13 +62,13 @@
   }
 
   &-comment {
-    margin-top: rem-calc(30);
     padding: rem-calc(30);
+    margin-top: rem-calc(30);
     background-color: #fff;
 
     @include small {
-      margin: rem-calc(30 -15 0);
       padding: rem-calc(30 15);
+      margin: rem-calc(30 -15 0);
     }
   }
 }
@@ -78,8 +78,8 @@
   background-color: #fff;
 
   @include small {
-    margin: rem-calc(0 -15);
     padding: rem-calc(30 15);
+    margin: rem-calc(0 -15);
   }
 
   &-header {
@@ -93,11 +93,11 @@
 
     .data {
       display: flex;
-      gap: rem-calc(12);
       flex-wrap: wrap;
       margin-top: rem-calc(12);
-      font-size: rem-calc(12);
       color: $secondary;
+      font-size: rem-calc(12);
+      gap: rem-calc(12);
 
       .label {
         font-weight: 500;
@@ -119,15 +119,15 @@
 
     .sec-content {
       ul {
-        margin: 0;
         padding: 0;
-        list-style: none;
+        margin: 0;
         background-color: transparent;
+        list-style: none;
       }
 
       li {
-        margin: 0;
         height: auto;
+        margin: 0;
       }
 
       a {
@@ -168,11 +168,11 @@
   .sec-download {
     .sec-content {
       ul {
-        margin: 0;
         padding: 0;
-        list-style: none;
+        margin: 0;
         background-color: transparent;
         border-radius: 0;
+        list-style: none;
       }
 
       svg {
@@ -182,32 +182,32 @@
 
       .closed {
         padding: rem-calc(20 10);
-        text-align: center;
         background-color: $light;
+        text-align: center;
       }
     }
 
     a {
       display: inline-flex;
+      height: rem-calc(35);
       align-items: center;
       padding: rem-calc(1 18 0 6);
-      height: rem-calc(35);
-      font-size: rem-calc(12);
-      font-weight: 600;
-      color: $secondary;
-      text-decoration: none;
-      text-transform: uppercase;
       border: rem-calc(2) solid $secondary;
       border-radius: rem-calc(5);
+      color: $secondary;
+      font-size: rem-calc(12);
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
 
       svg {
         margin-top: rem-calc(-1);
       }
 
       &:hover {
-        color: #fff;
         border-color: $primary;
         background-color: $primary;
+        color: #fff;
       }
     }
   }
@@ -216,28 +216,24 @@
     position: relative;
 
     .sec-content {
-      max-height: rem-calc(150);
       overflow: hidden;
+      max-height: rem-calc(150);
 
       &.show {
         max-height: inherit;
-
-        ~ .read-more {
-          display: none;
-        }
       }
     }
 
     .read-more {
-      display: none;
       position: absolute;
       bottom: 0;
       left: 0;
+      display: none;
       width: 100%;
       height: rem-calc(40);
-      font-weight: 700;
-      color: $primary;
       background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+      color: $primary;
+      font-weight: 700;
     }
   }
 }
