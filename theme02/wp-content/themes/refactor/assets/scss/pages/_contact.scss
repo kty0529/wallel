@@ -1,6 +1,6 @@
 #contact {
-  margin: 0 auto;
   max-width: rem-calc(600);
+  margin: 0 auto;
 
   .form-row {
     display: flex;
@@ -12,9 +12,24 @@
   }
 
   .form-label {
-    flex: 0 0 rem-calc(100);
     display: block;
+    flex: 0 0 rem-calc(100);
     font-size: rem-calc(13);
+  }
+
+  .form-row-message {
+    justify-content: center;
+    padding: rem-calc(20 15);
+    border: rem-calc(1) solid;
+    margin-bottom: rem-calc(50);
+    background-color: rgba(#5c009b, 5%);
+    color: #5c009b;
+    font-size: rem-calc(12);
+    font-weight: 500;
+    overflow-wrap: break-word;
+    text-align: center;
+    word-break: keep-all;
+    word-wrap: break-word;
   }
 
   .form-row-submit {
@@ -22,57 +37,57 @@
   }
 
   span {
-    flex: 1 1 auto;
     display: block;
+    flex: 1 1 auto;
   }
 
   input,
   textarea {
     display: block;
     width: 100%;
-    font-size: rem-calc(14);
-    background-color: #fff;
     border: rem-calc(1) solid $border-color;
+    background-color: #fff;
+    font-size: rem-calc(14);
   }
 
   input {
-    padding: rem-calc(0 10);
     height: rem-calc(40);
+    padding: rem-calc(0 10);
   }
 
   textarea {
-    padding: rem-calc(10);
     min-height: rem-calc(200);
+    padding: rem-calc(10);
     resize: vertical;
   }
 
   input[type='submit'] {
     height: rem-calc(50);
-    font-size: rem-calc(14);
-    color: $light;
-    background-color: $dark;
     border: 0;
+    background-color: $dark;
+    color: $light;
+    font-size: rem-calc(14);
   }
 
   .wpcf7-not-valid-tip {
     margin-top: rem-calc(10);
-    font-size: rem-calc(12);
     color: $danger;
+    font-size: rem-calc(12);
   }
 
   .wpcf7-response-output {
-    margin-left: 0;
+    padding: rem-calc(10 15);
     margin-right: 0;
-    padding: 10px 15px;
-    font-size: rem-calc(12);
+    margin-left: 0;
     background-color: #fff;
+    font-size: rem-calc(12);
   }
 
   .wpcf7-spinner {
     position: absolute;
-    margin: auto 0;
     top: 0;
     right: rem-calc(15);
     bottom: 0;
+    margin: auto 0;
   }
 }
