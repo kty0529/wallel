@@ -196,4 +196,6 @@
   /**
 	 * 추가 function 불러오기
 	 */
+	get_template_part( 'functions/metabox', 'common' );
 	get_template_part( 'functions/custom-post-type', 'project' );
+	get_template_part( 'functions/custom-post-type', 'study' );
