@@ -1,6 +1,7 @@
 <?php
 	defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
+	// CPT 생성
 	function create_post_type__project() {
 		$labels = array(
 			'name'           => '프로젝트',
@@ -31,6 +32,7 @@
 	add_action( 'init', 'create_post_type__project', 200 );
 
 
+	// Taxonomy(카테고리) 생성
 	function create__project__taxonomies() {
 		$labels = array(
 			'name'          => '프로젝트 카테고리', // 관리자 화면 글 목록의 카테고리 컬럼명
@@ -51,6 +53,7 @@
 	add_action( 'init', 'create__project__taxonomies', 201 );
 
 
+	// Tag 생성
 	function create__project__tags() {
 		$labels = array(
 			'name'          => '프로젝트 태그',
@@ -71,6 +74,7 @@
 	add_action( 'init', 'create__project__tags', 202 );
 
 
+	// 사용자단에서 한 페이지에 보여지는 개수 수정
 	function custom_project_posts_per_page( $query ) {
 		if ( ( is_post_type_archive( 'project' ) || is_tax( 'project-type' ) ) && ! is_admin() && $query->is_main_query() ) {
 			$query->set( 'posts_per_page', 6 );
@@ -79,23 +83,13 @@
 	add_action( 'pre_get_posts', 'custom_project_posts_per_page' );
 
 
-	/**
-	 * 메타박스 추가
-	 */
-	// 메타박스용 스타일 추가
-	function prefix_enqueue_custom_style() {
-		wp_enqueue_style( 'metabox-style', get_template_directory_uri() . '/assets/css/metabox-admin.css' );
-	}
-	add_action( 'rwmb_enqueue_scripts', 'prefix_enqueue_custom_style' );
-
 	// 메타박스 필드 추가
 	function prefix_register_meta_boxes( $meta_boxes ) {
 		$post_type = 'project';
 		$prefix    = $post_type.'_meta_';
 
-		/**
-		 * 기본 데이터
-		 */
+
+		// 기본 데이터
 		$meta_boxes[] = array(
 			'id'         => 'default_data',
 			'title'      => '기본 데이터',
@@ -171,9 +165,7 @@
 		);
 
 
-		/**
-		 * 프로젝트 상세 소개
-		 */
+		// 프로젝트 상세 소개
 		$meta_boxes[] = array(
 			'id'         => 'detail',
 			'title'      => '프로젝트 상세 소개',
@@ -192,9 +184,7 @@
 		);
 
 
-		/**
-		 * 스크린샷
-		 */
+		// 스크린샷
 		$meta_boxes[] = array(
 			'id'         => 'screenshot',
 			'title'      => '스크린샷',
@@ -213,9 +203,7 @@
 		);
 
 
-		/**
-		 * Changelog(History) 기록하기
-		 */
+		// Changelog(History) 기록하기
 		$meta_boxes[] = array(
 			'id'         => 'history',
 			'title'      => '프로젝트 히스토리',
@@ -239,21 +227,7 @@
 	add_filter( 'rwmb_meta_boxes', 'prefix_register_meta_boxes' );
 
 
-	/**
-	 * Metabox를 쉽게 사용하기 위해서 제작
-	 *
-	 * 기존 방식
-	 * rwmb_meta( 'project_meta_mockup', array( 'limit' => 1 ) ); 또는 rwmb_meta( 'project_meta_mockup' );
-	 * 변경된 방식
-	 * project_meta( 'mockup', array( 'limit' => 1 ) ); 또는 project_meta( 'mockup' );
-	 */
+	// 메타박스 호출 방식 변경
 	function project_meta( $key, $array = false ) {
-
-		if ( $array ) {
-			return rwmb_meta( 'project_meta_'.$key, $array );
-		} else {
-			return rwmb_meta( 'project_meta_'.$key );
-		}
-
-		return false;
+		return $array ? rwmb_meta( 'project_meta_'.$key, $array ) : rwmb_meta( 'project_meta_'.$key );
 	}
