@@ -1,21 +1,22 @@
 #header {
+  flex: 0 0 auto;
   background-color: $light;
 
   @include mobile {
-    color: $light;
     background-color: $dark;
+    color: $light;
   }
 
   .inner-wrap {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
     height: rem-calc(100);
+    align-items: flex-end;
+    justify-content: space-between;
 
     @include mobile {
+      height: auto;
       align-items: center;
       padding: rem-calc(10 0);
-      height: auto;
     }
   }
 
@@ -31,8 +32,8 @@
   .navigation {
     ul {
       display: flex;
-      margin: 0;
       padding: 0;
+      margin: 0;
       list-style: none;
 
       @include mobile {
