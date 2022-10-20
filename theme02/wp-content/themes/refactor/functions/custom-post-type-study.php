@@ -99,65 +99,64 @@
 
 			'fields' => array(
 				array(
-					'id'                => $prefix.'closed',
-					'name'              => '운영 종료 여부',
-					'label_description' => '스터디가 종료되었다면 활성화 해주세요.',
-					'type'              => 'switch',
-					'style'             => 'rounded',
+					'id'                => $prefix.'level',
+					'name'              => '난이도',
+					'type'              => 'select',
+					'select_all_none'   => true,
+					'options'           => [
+						'beginner'                 => '초급',
+						'beginner or intermediate' => '초중급',
+						'intermediate'             => '중급',
+						'intermediate or advanced' => '중고급',
+						'advanced'                 => '고급',
+						'other'                    => '기타',
+					],
 				),
 
 				array(
 					'type' => 'divider',
 				),
 				array(
-					'id'                => $prefix.'tech',
-					'name'              => '사용 기술',
-					'label_description' => '사이트 제작에 사용된 기술 나열하세요.<br>콤마로 구분하여 입력해주세요.',
-					'type'              => 'text',
-					'desc'              => 'ex) jQuery, PHP, HTML5, CSS3, SASS',
-					'std'               => 'HTML5, CSS3, jQuery',
+					'id'                => $prefix.'type',
+					'name'              => '스터디 타입',
+					'type'              => 'select',
+					'select_all_none'   => true,
+					'options'           => [
+						'live'   => '라이브 세션 강의',
+						'video'  => '영상 강의',
+						'mogako' => '모각코',
+						'other'  => '기타',
+					],
 				),
 
 				array(
 					'type' => 'divider',
 				),
 				array(
-					'id'                => $prefix.'release',
-					'name'              => 'RELEASE',
-					'label_description' => '배포 날짜를 선택하세요.',
-					'type'              => 'date',
+					'id'   => $prefix.'release',
+					'name' => '최초 개설일',
+					'type' => 'date',
 				),
 
 				array(
 					'type' => 'divider',
 				),
 				array(
-					'id'                => $prefix.'demo_link',
-					'name'              => '데모 링크',
-					'label_description' => '오픈된 사이트 혹은 데모 링크 주소 입력하세요.',
-					'type'              => 'text',
-				),
-
-				array(
-					'type' => 'divider',
-				),
-				array(
-					'id'                => $prefix.'github_link',
-					'name'              => 'Github 저장소 링크',
-					'label_description' => 'Github 저장소 주소 입력하세요.',
-					'type'              => 'text',
+					'id'   => $prefix.'courses',
+					'name' => '외부 플랫폼 URL',
+					'type' => 'text',
 				),
 			),
 
 			// 유효성 검사
 			'validation' => array(
 				'rules'  => array(
-					$prefix.'demo_link' => array(
+					$prefix.'courses' => array(
 						'url' => true,
 					),
 				),
 				'messages' => array(
-					$prefix.'demo_link' => array(
+					$prefix.'courses' => array(
 						'url' => '도메인 형식이 잘못됐습니다. http:// 또는 https://를 붙여주시거나 주소를 다시 확인해주세요.'
 					),
 				)
@@ -165,58 +164,84 @@
 		);
 
 
-		// 스터디 상세 소개
+		// 라이브 세션 정보
 		$meta_boxes[] = array(
-			'id'         => 'detail',
-			'title'      => '스터디 상세 소개',
+			'id'         => 'live',
+			'title'      => '라이브 세션 정보',
 			'post_types' => $post_type,
 			'context'    => 'normal',
 			'priority'   => 'high',
 
 			'fields' => array(
 				array(
-					'id'                => $prefix.'detail',
-					'name'              => '스터디 상세 소개',
-					'label_description' => '스터디에대한 상세 소개를 입력해주세요.',
-					'type'              => 'wysiwyg',
+					'id'   => $prefix.'start_at',
+					'name' => '모집 시작일',
+					'type' => 'date',
+				),
+				array(
+					'id'   => $prefix.'end_at',
+					'name' => '모집 종료일',
+					'type' => 'date',
+				),
+				array(
+					'id'   => $prefix.'total_student',
+					'name' => '모집 인원',
+					'type' => 'number',
+				),
+
+				array(
+					'type' => 'divider',
+				),
+				array(
+					'id'   => $prefix.'lecture_start_at',
+					'name' => '강의 시작일',
+					'type' => 'date',
+				),
+				array(
+					'id'   => $prefix.'lecture_end_at',
+					'name' => '강의 종료일',
+					'type' => 'date',
+				),
+
+				array(
+					'type' => 'divider',
+				),
+				array(
+					'id'   => $prefix.'location',
+					'name' => '스터디 장소',
+					'type' => 'text',
 				),
 			),
 		);
 
-
-		// 스크린샷
+		// 추천 대상 및 기대 효과
 		$meta_boxes[] = array(
-			'id'         => 'screenshot',
-			'title'      => '스크린샷',
+			'id'         => 'recommended',
+			'title'      => '추천 대상 및 기대 효과',
 			'post_types' => $post_type,
 			'context'    => 'normal',
 			'priority'   => 'high',
 
 			'fields' => array(
 				array(
-					'id'                => $prefix.'screenshot',
-					'name'              => '스크린샷',
-					'label_description' => '클릭하면 최대화면으로 노출되는 화면 스크린샷 선택하세요.',
-					'type'              => 'image_advanced',
+					'id'   => $prefix.'recommended',
+					'type' => 'wysiwyg',
 				),
 			),
 		);
 
-
-		// Changelog(History) 기록하기
+		// 강사 소개
 		$meta_boxes[] = array(
-			'id'         => 'history',
-			'title'      => '스터디 히스토리',
+			'id'         => 'instructor',
+			'title'      => '강사 소개',
 			'post_types' => $post_type,
 			'context'    => 'normal',
 			'priority'   => 'high',
 
 			'fields' => array(
 				array(
-					'id'                => $prefix.'history',
-					'name'              => '스터디 히스토리',
-					'label_description' => '스터디의 수정 기록을 남겨주세요.',
-					'type'              => 'wysiwyg',
+					'id'   => $prefix.'instructor',
+					'type' => 'wysiwyg',
 				),
 			),
 		);
