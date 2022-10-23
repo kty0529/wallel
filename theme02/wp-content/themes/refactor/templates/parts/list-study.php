@@ -4,7 +4,6 @@
   $thumbnail = get_the_post_thumbnail_url( $post->ID );
   $content = apply_filters( 'the_content', get_the_content( false ) );
 
-  // var_dump(study_meta( 'type' ) == 'live', @date('Y-m-d') > study_meta( 'end_at' ));
   if ( study_meta( 'type' ) == 'live' && @date('Y-m-d') > study_meta( 'end_at' ) ) {
     $closed = array(
       'status' => true,

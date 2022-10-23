@@ -3,9 +3,15 @@
 
   $thumbnail = get_the_post_thumbnail_url( $post->ID );
   $content = apply_filters( 'the_content', get_the_content( false ) );
-  $detect_closed = project_meta( 'closed' ) ? ' project-closed' : '';
+
+  if ( project_meta( 'closed' ) ) {
+    $closed = array(
+      'status' => true,
+      'class' => ' closed'
+    );
+  }
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'project-card' . $detect_closed ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'project-card' . $closed['class'] ); ?>>
   <?php if ( $thumbnail ) { ?>
     <div class="thumbnail">
       <a href="<?php echo get_permalink(); ?>">
@@ -27,7 +33,9 @@
         ?>
       </div>
 
-      <div class="closed">프로젝트 운영 종료</div>
+      <?php if ( $closed['status'] ) { ?>
+        <div class="closed">프로젝트 운영 종료</div>
+      <?php } ?>
     </div>
   <?php } ?>
 
