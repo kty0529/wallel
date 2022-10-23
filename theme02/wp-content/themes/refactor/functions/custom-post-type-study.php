@@ -133,15 +133,6 @@
 					'type' => 'divider',
 				),
 				array(
-					'id'   => $prefix.'release',
-					'name' => '최초 개설일',
-					'type' => 'date',
-				),
-
-				array(
-					'type' => 'divider',
-				),
-				array(
 					'id'   => $prefix.'courses',
 					'name' => '외부 플랫폼 URL',
 					'type' => 'text',

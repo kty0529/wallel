@@ -20,62 +20,62 @@
 
   .data {
     display: flex;
-    gap: rem-calc(12);
     flex-wrap: wrap;
     margin-top: rem-calc(12);
-    font-size: rem-calc(12);
     color: #a8a8a8;
+    font-size: rem-calc(12);
+    gap: rem-calc(12);
 
     @include mobile {
       .categories {
-        order: 2;
         flex-basis: 100%;
+        order: 2;
       }
     }
   }
 
   .description {
     margin: rem-calc(24 0 0);
+    color: $secondary;
     font-size: rem-calc(14);
     font-weight: 400;
-    color: $secondary;
     line-height: 1.8;
   }
 
   .buttons {
-    margin-top: rem-calc(30);
     display: flex;
+    margin-top: rem-calc(30);
+    color: $secondary;
     font-size: rem-calc(12);
     font-weight: 600;
-    color: $secondary;
 
     .view-more {
       display: flex;
+      height: rem-calc(35);
       align-items: center;
       padding: rem-calc(0 18);
-      height: rem-calc(35);
-      text-transform: uppercase;
       border: rem-calc(2) solid $secondary;
       border-radius: rem-calc(5);
+      text-transform: uppercase;
 
       &:not(:last-child) {
         border-right-width: rem-calc(1);
-        border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
       }
     }
 
     .external-link {
       display: flex;
-      align-items: center;
-      margin-left: rem-calc(-1);
-      padding: rem-calc(0 10);
-      font-size: rem-calc(16);
       height: rem-calc(35);
+      align-items: center;
+      padding: rem-calc(0 10);
       border: rem-calc(2) solid $secondary;
       border-left-width: rem-calc(1);
-      border-top-right-radius: rem-calc(5);
+      margin-left: rem-calc(-1);
       border-bottom-right-radius: rem-calc(5);
+      border-top-right-radius: rem-calc(5);
+      font-size: rem-calc(16);
     }
 
     a {
@@ -84,9 +84,9 @@
 
       &:hover {
         z-index: 2;
-        color: #fff;
         border-color: $primary;
         background-color: $primary;
+        color: #fff;
       }
     }
   }
@@ -95,9 +95,9 @@
 .project-card {
   display: flex;
   align-items: flex-start;
-  gap: rem-calc(20);
   padding: rem-calc(20);
   background-color: #fff;
+  gap: rem-calc(20);
 
   @include mobile {
     display: block;
@@ -128,18 +128,18 @@
     }
 
     .categories {
-      display: flex;
-      gap: rem-calc(4);
       position: absolute;
+      z-index: 10;
       top: rem-calc(10);
       left: rem-calc(10);
-      z-index: 10;
+      display: flex;
+      gap: rem-calc(4);
 
       .icon {
         width: rem-calc(36);
         height: rem-calc(36);
-        color: #fff;
         background-color: #000;
+        color: #fff;
       }
 
       @each $brand, $color in $brand-colors {
@@ -153,25 +153,25 @@
       position: absolute;
       top: 0;
       bottom: 0;
-      margin: auto 0;
+      display: none;
       width: 100%;
       height: rem-calc(40);
-      display: none;
-      justify-content: center;
       align-items: center;
-      font-weight: 700;
+      justify-content: center;
+      margin: auto 0;
+      background-color: $dark;
       color: $light;
       font-size: rem-calc(13);
-      background-color: $dark;
+      font-weight: 700;
     }
   }
 
   .content {
     display: flex;
-    padding: rem-calc(10 0);
+    flex: 1 1 auto;
     flex-direction: column;
     justify-content: center;
-    flex: 1 1 auto;
+    padding: rem-calc(10 0);
 
     @include mobile {
       margin-top: rem-calc(20);
@@ -184,33 +184,33 @@
 
     .description {
       margin-top: rem-calc(16);
-      font-size: rem-calc(13);
       color: $secondary;
+      font-size: rem-calc(13);
       line-height: 1.8;
     }
 
     .languages {
       display: flex;
       align-items: center;
-      gap: rem-calc(4);
-      list-style: none;
-      margin: rem-calc(30 0 0);
       padding: rem-calc(20 0 0);
       border-top: rem-calc(1) solid $border-color;
+      margin: rem-calc(30 0 0);
+      gap: rem-calc(4);
+      list-style: none;
 
       .label {
         padding-right: rem-calc(4);
+        color: $dark;
         font-size: rem-calc(13);
         font-weight: 500;
-        color: $dark;
       }
 
       svg {
         width: rem-calc(32);
         height: rem-calc(32);
-        vertical-align: middle;
         background-color: $light;
         fill: #333;
+        vertical-align: middle;
       }
 
       @each $brand, $color in $brand-colors {
@@ -225,6 +225,140 @@
   &.project-closed {
     opacity: 0.9;
 
+    .thumbnail {
+      filter: grayscale(1);
+
+      .closed {
+        display: flex;
+      }
+    }
+  }
+}
+
+.study-card {
+  display: flex;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #fff;
+  gap: 20px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  @include small {
+    padding: 15px;
+  }
+
+  .thumbnail {
+    position: relative;
+    width: 250px;
+    flex: 0 0 auto;
+
+    @include mobile {
+      width: auto;
+      height: auto;
+    }
+
+    a {
+      display: block;
+
+      img {
+        width: 100%;
+        min-height: 150px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    .level {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      display: inline-flex;
+      height: 25px;
+      align-items: center;
+      padding: 0 8px;
+      background-color: $secondary;
+      background-color: $dark;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .closed {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      display: none;
+      width: 100%;
+      height: rem-calc(40);
+      align-items: center;
+      justify-content: center;
+      margin: auto 0;
+      background-color: $dark;
+      color: $light;
+      font-size: rem-calc(13);
+      font-weight: 700;
+    }
+  }
+
+  .content {
+    flex: 1 1 auto;
+    padding: 10px 0;
+
+    .title {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .description {
+      margin-top: 16px;
+      color: $secondary;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .infomation {
+      padding: 16px 0 0;
+      border-top: 1px solid $light;
+      margin: 16px 0 0;
+      list-style: none;
+
+      li {
+        color: $secondary;
+        font-size: 14px;
+
+        &:not(:first-child) {
+          margin-top: 4px;
+        }
+      }
+    }
+
+    .languages {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-top: 16px;
+      gap: 4px;
+
+      a {
+        display: flex;
+        height: 25px;
+        align-items: center;
+        padding: 0 8px;
+        background-color: $light;
+        font-size: 12px;
+
+        &:hover {
+          background-color: $primary;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &.closed {
     .thumbnail {
       filter: grayscale(1);
 
