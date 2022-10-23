@@ -238,21 +238,25 @@
 .study-card {
   display: flex;
   align-items: flex-start;
-  padding: 20px;
+  padding: rem-calc(20);
   background-color: #fff;
-  gap: 20px;
+  gap: rem-calc(20);
 
   @include mobile {
     flex-direction: column;
   }
 
   @include small {
-    padding: 15px;
+    padding: rem-calc(15);
+  }
+
+  &:not(:first-child) {
+    margin-top: rem-calc(30);
   }
 
   .thumbnail {
     position: relative;
-    width: 250px;
+    width: rem-calc(250);
     flex: 0 0 auto;
 
     @include mobile {
@@ -265,7 +269,7 @@
 
       img {
         width: 100%;
-        min-height: 150px;
+        min-height: rem-calc(150);
         object-fit: cover;
         object-position: center;
       }
@@ -273,16 +277,16 @@
 
     .level {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: rem-calc(10);
+      left: rem-calc(10);
       display: inline-flex;
-      height: 25px;
+      height: rem-calc(25);
       align-items: center;
-      padding: 0 8px;
+      padding: rem-calc(0 8);
       background-color: $secondary;
       background-color: $dark;
       color: #fff;
-      font-size: 12px;
+      font-size: rem-calc(12);
       font-weight: 500;
     }
 
@@ -305,32 +309,32 @@
 
   .content {
     flex: 1 1 auto;
-    padding: 10px 0;
+    padding: rem-calc(10 0);
 
     .title {
-      font-size: 18px;
+      font-size: rem-calc(18);
       font-weight: 500;
     }
 
     .description {
-      margin-top: 16px;
+      margin-top: rem-calc(16);
       color: $secondary;
-      font-size: 13px;
+      font-size: rem-calc(13);
       line-height: 1.8;
     }
 
     .infomation {
-      padding: 16px 0 0;
-      border-top: 1px solid $light;
-      margin: 16px 0 0;
+      padding: rem-calc(16 0 0);
+      border-top: rem-calc(1) solid $light;
+      margin: rem-calc(16 0 0);
       list-style: none;
 
       li {
         color: $secondary;
-        font-size: 14px;
+        font-size: rem-calc(14);
 
         &:not(:first-child) {
-          margin-top: 4px;
+          margin-top: rem-calc(4);
         }
       }
     }
@@ -339,16 +343,16 @@
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
-      margin-top: 16px;
-      gap: 4px;
+      margin-top: rem-calc(16);
+      gap: rem-calc(4);
 
       a {
         display: flex;
-        height: 25px;
+        height: rem-calc(25);
         align-items: center;
-        padding: 0 8px;
+        padding: rem-calc(0 8);
         background-color: $light;
-        font-size: 12px;
+        font-size: rem-calc(12);
 
         &:hover {
           background-color: $primary;
