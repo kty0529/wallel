@@ -348,9 +348,15 @@
       }
 
       .deadline {
-        animation: flush 1.5s step-end 0s infinite;
+        animation: flush 0.5s step-end 0s infinite;
         color: $primary;
         font-weight: 700;
+
+        img {
+          position: relative;
+          top: rem-calc(-1);
+          width: rem-calc(22);
+        }
       }
       @keyframes flush {
         0%, 100% { opacity: 1; }

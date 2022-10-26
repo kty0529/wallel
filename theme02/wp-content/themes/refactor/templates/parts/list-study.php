@@ -63,7 +63,7 @@
             <?php echo study_meta( 'start_at' ); ?> ~ <?php echo $end_at; ?>
             <?php
               if ( $today > $deadline_week && $today < $end_at ) {
-                echo '<span class="deadline">마감임박</span>';
+                echo '<span class="deadline"><img src="' . get_template_directory_uri() . '/assets/images/Yeah.gif' . '" alt="예아아아아아아"> 마감임박</span>';
               }
             ?>
           </span>
