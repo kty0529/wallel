@@ -1,9 +1,10 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
-  /**
-   * 테마 CSS
-   */
+  // 상수
+  define( 'THEME_DIR', get_theme_root() . '/' . wp_get_theme()->name );
+
+  // 테마 CSS
   function wallel_theme_stylesheet() {
     // Vendor
     wp_enqueue_style( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/dist/css/lightbox.min.css' ), false, false, 'all' );
@@ -16,9 +17,7 @@
   add_action( 'wp_enqueue_scripts', 'wallel_theme_stylesheet' );
 
 
-  /**
-   * 테마 Script
-   */
+  // 테마 Script
   function wallel_theme_script() {
     // jQuery
     wp_deregister_script( 'jquery' );
@@ -35,9 +34,7 @@
   add_action( 'wp_enqueue_scripts', 'wallel_theme_script' );
 
 
-  /**
-   * 테마 서포트
-   */
+  // 테마 서포트
   function custom_theme_setup() {
     add_theme_support( 'title-tag' );
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
@@ -49,9 +46,7 @@
   add_action( 'after_setup_theme', 'custom_theme_setup', 10000 );
 
 
-  /**
-   * 메뉴 추가
-   */
+  // 메뉴 추가
   register_nav_menus(array(
     'main_menu'       => '메인메뉴',
     'footer_menu'     => '푸터메뉴',
@@ -60,10 +55,8 @@
   ));
 
 
-  /**
-   * 어드민바 버튼 제거
-   * https://codex.wordpress.org/Function_Reference/remove_node
-   */
+  // 어드민바 버튼 제거
+  // https://codex.wordpress.org/Function_Reference/remove_node
   if ( ! current_user_can( 'manage_options' ) ) {
     // 관리자가 아닐 경우 어드민바 자체를 노출 X
     show_admin_bar(false);
@@ -82,10 +75,8 @@
   add_action( 'admin_bar_menu', 'remove_admin_bar_node', 9999999 );
 
 
-  /**
-   * 워드프레스 대시보드(알림판) 위젯 제거
-   * http://www.wpbeginner.com/wp-tutorials/how-to-remove-wordpress-dashboard-widgets/
-   */
+  // 워드프레스 대시보드(알림판) 위젯 제거
+  // http://www.wpbeginner.com/wp-tutorials/how-to-remove-wordpress-dashboard-widgets/
   function remove_dashboard_widgets() {
     global $wp_meta_boxes;
 
@@ -107,11 +98,9 @@
   // remove_action( 'try_gutenberg_panel', 'wp_try_gutenberg_panel' ); // 구텐베르그 알림판 제거
 
 
-  /**
-   * 관리자가 아닌 사람은 관리자 페이지 접근 금지시키기
-   * current_user_can()을 변경하여 권한을 수정해서 사용하면 된다.
-   * http://natko.com/block-access-to-wp-admin-and-wordpress-dashboard/
-   */
+  // 관리자가 아닌 사람은 관리자 페이지 접근 금지시키기
+  // current_user_can()을 변경하여 권한을 수정해서 사용하면 된다.
+  // http://natko.com/block-access-to-wp-admin-and-wordpress-dashboard/
   function stop_access_dashboard() {
     if ( ! current_user_can( 'administrator' ) && ! ( defined('DOING_AJAX') && DOING_AJAX ) ) {
       wp_redirect( home_url() );
@@ -121,9 +110,7 @@
   add_action( 'admin_init', 'stop_access_dashboard' );
 
 
-  /**
-   * 관리자에 커스텀 스타일 추가하기
-   */
+  // 관리자에 커스텀 스타일 추가하기
   function custom_admin_style() {
     wp_enqueue_style( 'custom-admin-style', get_theme_file_uri( '/assets/css/admin/admin-style.css' ), false, time(), 'all' );
 
@@ -133,10 +120,8 @@
   add_action( 'admin_head', 'custom_admin_style' );
 
 
-  /**
-	 * TinyMCE에 editor style 입히기
-	 * https://codex.wordpress.org/TinyMCE
-	 */
+	// TinyMCE에 editor style 입히기
+	// https://codex.wordpress.org/TinyMCE
 	function custom_TinyMCE_format( $in ) {
 		$in['content_css'] = get_theme_file_uri( '/assets/css/editor-style.min.css' );
 		return $in;
@@ -144,10 +129,8 @@
 	add_filter( 'tiny_mce_before_init', 'custom_TinyMCE_format' );
 
 
-  /**
-   * 관리자 > 사용자 목록에 특정 column 지우기
-   * https://wordpress.stackexchange.com/questions/19180/how-to-remove-a-column-from-the-posts-page
-   */
+  // 관리자 > 사용자 목록에 특정 column 지우기
+  // https://wordpress.stackexchange.com/questions/19180/how-to-remove-a-column-from-the-posts-page
   function remove_user_list_columns( $columns ) {
     unset( $columns['posts'] );
     unset( $columns['role'] );
@@ -160,11 +143,9 @@
   add_action( 'admin_init' , 'remove_user_list_columns_filter' );
 
 
-  /**
-   * 특정 플러그인 업데이트 알림 끄기
-   * 플러그인의 폴더명/index파일명.php 를 작성하면 된다.
-   * https://silvawebdesigns.com/wordpress-disable-update-notification-individual-plugins/
-   */
+  // 특정 플러그인 업데이트 알림 끄기
+  // 플러그인의 폴더명/index파일명.php 를 작성하면 된다.
+  // https://silvawebdesigns.com/wordpress-disable-update-notification-individual-plugins/
   function disable_plugin_updates( $value ) {
     unset( $value->response['meta-box-columns/meta-box-columns.php'] );
     unset( $value->response['meta-box-tabs/meta-box-tabs.php'] );
@@ -175,27 +156,21 @@
   add_filter( 'site_transient_update_plugins', 'disable_plugin_updates' );
 
 
-  /**
-   * 비밀글 제목 앞에 아이콘 추가
-   */
+  // 비밀글 제목 앞에 아이콘 추가
   function custom_private_title_format( $format ) {
     return '[🔒] %s';
   }
   add_filter( 'private_title_format', 'custom_private_title_format' );
 
 
-  /**
-   * 보호글 제목 앞에 아이콘 추가
-   */
+  // 보호글 제목 앞에 아이콘 추가
   function custom_protacted_title_format( $format ) {
     return '[🔐] %s';
   }
   add_filter( 'protected_title_format', 'custom_protacted_title_format' );
 
 
-  /**
-	 * 추가 function 불러오기
-	 */
+	// 추가 function 불러오기
 	get_template_part( 'functions/metabox', 'common' );
 	get_template_part( 'functions/custom-post-type', 'project' );
 	get_template_part( 'functions/custom-post-type', 'study' );

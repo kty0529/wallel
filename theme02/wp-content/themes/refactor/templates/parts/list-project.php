@@ -25,7 +25,10 @@
           if ( $terms && ! is_wp_error( $terms ) ) {
             foreach ( $terms as $term ) {
               $icon = strtolower($term->name);
-              if ( $file = file_get_contents( get_template_directory_uri() . '/assets/icons/svg/' . $icon . '.svg' ) ) {
+              $file = file_get_contents( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
+              $file_exists = file_exists( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
+
+              if ( $file_exists ) {
                 echo '<a href="' . get_term_link( $term->slug, $term->taxonomy ) . '" class="icon icon-' . $icon . '" data-tooltip="' . strtoupper($term->name) . '">' . $file . '</a>';
               }
             }
@@ -51,8 +54,10 @@
 
         foreach ( $languages as $v ) {
           $icon = strtolower($v);
+          $file = file_get_contents( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
+          $file_exists = file_exists( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
 
-          if ( $file = file_get_contents( get_template_directory_uri() . '/assets/icons/svg/' . $icon . '.svg' ) ) {
+          if ( $file_exists ) {
             echo '<li class="icon-' . $icon . '" data-tooltip="' . strtoupper($v) . '">' . $file . '</li>';
           }
         }
