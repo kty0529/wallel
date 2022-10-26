@@ -25,11 +25,17 @@
     'video'  => '영상 강의',
     'mogako' => '모각코',
     'other'  => '기타',
-  )
+  );
+
+  $today = date('Y-m-d');
+  $end_at = study_meta( 'end_at' );
+  $deadline_week = date( 'Y-m-d', strtotime( '-1 week', strtotime( $end_at ) ) );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'study-card' . $closed['class'] ); ?>>
   <div class="thumbnail">
-    <span class="common level"><?php echo $level_text_arr[ study_meta( 'level' ) ]; ?></span>
+    <div class="status">
+      <span class="common level"><?php echo $level_text_arr[ study_meta( 'level' ) ]; ?></span>
+    </div>
 
     <a href="<?php echo study_meta( 'courses' ); ?>" target="_blank">
       <img loading="lazy" src="<?php echo $thumbnail; ?>" alt="스터디 대표 이미지">
@@ -53,7 +59,14 @@
       <?php if ( study_meta( 'type' ) == 'live' ) { ?>
         <li>
           <span class="label"><b>모집 기간</b>: </span>
-          <span class="value"><?php echo study_meta( 'start_at' ); ?> ~ <?php echo study_meta( 'end_at' ); ?></span>
+          <span class="value">
+            <?php echo study_meta( 'start_at' ); ?> ~ <?php echo $end_at; ?>
+            <?php
+              if ( $today > $deadline_week && $today < $end_at ) {
+                echo '<span class="deadline">마감임박</span>';
+              }
+            ?>
+          </span>
         </li>
         <li>
           <span class="label"><b>모집 인원</b>: </span>

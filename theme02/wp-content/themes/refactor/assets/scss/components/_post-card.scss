@@ -275,19 +275,28 @@
       }
     }
 
-    .level {
+    .status {
       position: absolute;
       top: rem-calc(10);
       left: rem-calc(10);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .common {
       display: inline-flex;
       height: rem-calc(25);
+      flex: 0 0 auto;
       align-items: center;
       padding: rem-calc(0 8);
-      background-color: $secondary;
-      background-color: $dark;
-      color: #fff;
       font-size: rem-calc(12);
       font-weight: 500;
+    }
+
+    .level {
+      background-color: $dark;
+      color: #fff;
     }
 
     .closed {
@@ -336,6 +345,16 @@
         &:not(:first-child) {
           margin-top: rem-calc(4);
         }
+      }
+
+      .deadline {
+        animation: flush 1.5s step-end 0s infinite;
+        color: $primary;
+        font-weight: 700;
+      }
+      @keyframes flush {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
       }
     }
 
