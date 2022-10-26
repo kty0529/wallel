@@ -30,6 +30,12 @@
   }
 
   .navigation {
+    margin-right: rem-calc(-20);
+
+    @include mobile {
+      margin-right: 0;
+    }
+
     ul {
       display: flex;
       padding: 0;
