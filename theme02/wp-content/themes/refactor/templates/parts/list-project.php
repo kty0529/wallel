@@ -24,12 +24,10 @@
 
           if ( $terms && ! is_wp_error( $terms ) ) {
             foreach ( $terms as $term ) {
-              $icon = strtolower($term->name);
-              $file = file_get_contents( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
-              $file_exists = file_exists( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
+              $type_icon = GET_SVG($term->name);
 
-              if ( $file_exists ) {
-                echo '<a href="' . get_term_link( $term->slug, $term->taxonomy ) . '" class="icon icon-' . $icon . '" data-tooltip="' . strtoupper($term->name) . '">' . $file . '</a>';
+              if ( $type_icon['exists'] ) {
+                echo '<a href="' . get_term_link( $term->slug, $term->taxonomy ) . '" class="icon icon-' . $type_icon['name'] . '" data-tooltip="' . strtoupper($type_icon['name']) . '">' . $type_icon['file'] . '</a>';
               }
             }
           }
@@ -52,13 +50,13 @@
       <?php
         $languages = explode(', ', project_meta( 'tech' ));
 
-        foreach ( $languages as $v ) {
-          $icon = strtolower($v);
-          $file = file_get_contents( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
-          $file_exists = file_exists( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
+        if ( $languages && ! is_wp_error( $languages ) ) {
+          foreach ( $languages as $language ) {
+            $language_icon = GET_SVG($language);
 
-          if ( $file_exists ) {
-            echo '<li class="icon-' . $icon . '" data-tooltip="' . strtoupper($v) . '">' . $file . '</li>';
+            if ( $language_icon['exists'] ) {
+              echo '<li class="icon-' . $language_icon['name'] . '" data-tooltip="' . strtoupper( $language_icon['name'] ) . '">' . $language_icon['file'] . '</li>';
+            }
           }
         }
       ?>

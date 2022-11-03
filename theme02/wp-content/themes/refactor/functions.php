@@ -4,6 +4,19 @@
   // 상수
   define( 'THEME_DIR', get_theme_root() . '/' . wp_get_theme()->name );
 
+  // 공통 함수
+  function GET_SVG($file_name) {
+    $icon = strtolower($file_name);
+    $file = file_get_contents( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
+    $file_exists = file_exists( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
+
+    return array(
+      'exists' => $file_exists,
+      'name' => $icon,
+      'file' => $file,
+    );
+  }
+
   // 테마 CSS
   function wallel_theme_stylesheet() {
     // Vendor
