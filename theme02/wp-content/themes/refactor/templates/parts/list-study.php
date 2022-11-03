@@ -31,7 +31,7 @@
   $end_at = study_meta( 'end_at' );
   $deadline_week = date( 'Y-m-d', strtotime( '-1 week', strtotime( $end_at ) ) );
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'study-card' . $closed['class'] ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'study-card' ); ?>>
   <div class="thumbnail">
     <div class="status">
       <span class="common level"><?php echo $level_text_arr[ study_meta( 'level' ) ]; ?></span>
