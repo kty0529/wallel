@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /wp-admin/admin-ajax.php
+Disallow: /wp-admin/
+Disallow: /kty0529/
+Disallow: /adm/
+Disallow: /imkty/
+Disallow: /admin/
+
+Sitemap: https://wallel.com/sitemap.xml
+Sitemap: https://wallel.com/sitemap.rss
