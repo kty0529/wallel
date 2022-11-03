@@ -347,6 +347,12 @@
         }
       }
 
+      .label {
+        @include mobile {
+          display: block;
+        }
+      }
+
       .deadline {
         animation: flush 0.5s step-end 0s infinite;
         color: $primary;
@@ -366,6 +372,7 @@
 
     .languages {
       display: flex;
+      flex-wrap: wrap;
       align-items: flex-start;
       justify-content: flex-start;
       margin-top: rem-calc(16);
