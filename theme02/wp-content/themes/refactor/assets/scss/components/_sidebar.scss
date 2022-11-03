@@ -92,4 +92,14 @@
       color: $primary;
     }
   }
+
+  .widget-banners {
+    a {
+      display: block;
+
+      &:not(:first-child) {
+        margin-top: rem-calc(10);
+      }
+    }
+  }
 }
