@@ -142,7 +142,7 @@
                   <?php echo $history ?>
                 </div>
 
-                <button class="read-more">더 보기</button>
+                <button class="read-more"><span>더 보기</span></button>
               </div>
               <script>
                 const historyContent = document.querySelector('.sec-history .sec-content');
