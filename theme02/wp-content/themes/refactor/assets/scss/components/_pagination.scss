@@ -5,17 +5,15 @@
     margin-top: rem-calc(60);
 
     .page-numbers {
-      position: relative;
-      z-index: 1;
       display: flex;
-      align-items: center;
-      margin-left: rem-calc(-1);
-      padding: rem-calc(0 12);
       height: rem-calc(32);
-      font-size: rem-calc(12);
-      color: $secondary;
-      background-color: #fff;
+      align-items: center;
+      padding: rem-calc(0 12);
       border: rem-calc(1) solid $border-color;
+      margin-left: rem-calc(-1);
+      background-color: #fff;
+      color: $secondary;
+      font-size: rem-calc(12);
 
       &:first-child {
         margin-left: 0;
@@ -32,15 +30,18 @@
         font-size: rem-calc(18);
       }
 
-      &:hover {
-        z-index: 2;
-        color: $primary;
+      @include transition() {
+        transition: color 0.2s;
+
+        &:hover {
+          color: $primary;
+        }
       }
     }
 
     .current {
-      color: $dark;
       background-color: $light;
+      color: $dark;
     }
 
     .prev {

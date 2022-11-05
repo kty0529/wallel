@@ -3,40 +3,41 @@
   position: relative;
   z-index: 10;
 
+  &::before,
+  &::after {
+    position: absolute;
+    left: 50%;
+    background-color: $dark;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
   &::before {
     @include disable();
-    content: attr(data-tooltip);
-    display: none;
-    position: absolute;
-    bottom: calc(100% + rem-calc(6));
-    left: 50%;
     z-index: 2;
+    bottom: calc(100% + rem-calc(6));
     padding: rem-calc(3 5);
-    font-weight: 500;
-    font-size: rem-calc(12);
-    color: #fff;
-    background-color: $dark;
-    transform: translateX(-50%);
     border-radius: rem-calc(3);
+    color: #fff;
+    content: attr(data-tooltip);
+    font-size: rem-calc(12);
+    font-weight: 500;
+    transform: translateX(-50%);
     white-space: nowrap;
   }
 
   &::after {
     @include disable();
-    content: '';
-    display: none;
-    position: absolute;
-    bottom: calc(100% + rem-calc(4));
-    left: 50%;
     z-index: 1;
-    transform: translateX(-50%) rotate(45deg);
+    bottom: calc(100% + rem-calc(4));
     width: rem-calc(4);
     height: rem-calc(4);
-    background-color: $dark;
+    content: '';
+    transform: translateX(-50%) rotate(45deg);
   }
 
   &:hover::before,
   &:hover::after {
-    display: block;
+    opacity: 1;
   }
 }

@@ -50,9 +50,13 @@
       padding: rem-calc(2 4);
       background-color: $light;
 
-      &:hover {
-        background-color: $primary;
-        color: #fff;
+      @include transition() {
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover {
+          background-color: $primary;
+          color: #fff;
+        }
       }
 
       &:not(:first-child) {
@@ -157,8 +161,12 @@
           margin-top: rem-calc(20);
           line-height: inherit;
 
-          &:not([disabled]):hover {
-            color: $primary;
+          @include transition() {
+            transition: color 0.2s;
+
+            &:not([disabled]):hover {
+              color: $primary;
+            }
           }
         }
       }
@@ -204,10 +212,14 @@
         margin-top: rem-calc(-1);
       }
 
-      &:hover {
-        border-color: $primary;
-        background-color: $primary;
-        color: #fff;
+      @include transition() {
+        transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+
+        &:hover {
+          border-color: $primary;
+          background-color: $primary;
+          color: #fff;
+        }
       }
     }
   }

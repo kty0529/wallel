@@ -82,11 +82,15 @@
       position: relative;
       z-index: 1;
 
-      &:hover {
-        z-index: 2;
-        border-color: $primary;
-        background-color: $primary;
-        color: #fff;
+      @include transition() {
+        transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+
+        &:hover {
+          z-index: 2;
+          border-color: $primary;
+          background-color: $primary;
+          color: #fff;
+        }
       }
     }
   }
@@ -210,6 +214,7 @@
         height: rem-calc(32);
         background-color: $light;
         fill: #333;
+        transition: background-color 0.2s, fill 0.2s;
         vertical-align: middle;
       }
 
@@ -386,9 +391,13 @@
         background-color: $light;
         font-size: rem-calc(12);
 
-        &:hover {
-          background-color: $primary;
-          color: #fff;
+        @include transition() {
+          transition: background-color 0.2s, color 0.2s;
+
+          &:hover {
+            background-color: $primary;
+            color: #fff;
+          }
         }
       }
     }
