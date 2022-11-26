@@ -7,6 +7,7 @@
 
 html,
 body {
+  /* stylelint-disable-next-line scss/no-global-function-names */
   color: map-get($theme-colors, 'dark');
   font-family: $ff-default;
   font-size: rem-calc(16);
@@ -39,6 +40,14 @@ code {
   top: rem-calc(-1);
   display: inline-block;
   color: $danger;
+  font-family: 'Menlo', 'Consolas', $ff-default;
+  font-size: 0.9em;
+  letter-spacing: rem-calc(-0.2);
+}
+
+pre {
+  padding: 10px;
+  background-color: #fafafa;
   font-family: 'Menlo', 'Consolas', $ff-default;
   font-size: 0.9em;
   letter-spacing: rem-calc(-0.2);
