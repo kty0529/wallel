@@ -133,7 +133,7 @@
   word-wrap: normal;
 }
 
-@mixin transition() {
+@mixin hover() {
   @media (min-width: 1024px) {
     @content;
   }

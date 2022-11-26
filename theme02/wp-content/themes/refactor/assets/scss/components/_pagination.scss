@@ -30,7 +30,7 @@
         font-size: rem-calc(18);
       }
 
-      @include transition() {
+      @include hover() {
         transition: color 0.2s;
 
         &:hover {

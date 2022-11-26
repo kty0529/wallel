@@ -50,7 +50,7 @@
       padding: rem-calc(2 4);
       background-color: $light;
 
-      @include transition() {
+      @include hover() {
         transition: background-color 0.2s, color 0.2s;
 
         &:hover {
@@ -161,7 +161,7 @@
           margin-top: rem-calc(20);
           line-height: inherit;
 
-          @include transition() {
+          @include hover() {
             transition: color 0.2s;
 
             &:not([disabled]):hover {
@@ -212,7 +212,7 @@
         margin-top: rem-calc(-1);
       }
 
-      @include transition() {
+      @include hover() {
         transition: border-color 0.2s, background-color 0.2s, color 0.2s;
 
         &:hover {

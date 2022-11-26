@@ -82,7 +82,7 @@
       position: relative;
       z-index: 1;
 
-      @include transition() {
+      @include hover() {
         transition: border-color 0.2s, background-color 0.2s, color 0.2s;
 
         &:hover {
@@ -391,7 +391,7 @@
         background-color: $light;
         font-size: rem-calc(12);
 
-        @include transition() {
+        @include hover() {
           transition: background-color 0.2s, color 0.2s;
 
           &:hover {
