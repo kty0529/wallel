@@ -18,7 +18,7 @@
                 while ( have_posts() ) {
                   the_post();
 
-                  get_template_part( 'templates/parts/list', 'study' );
+                  get_template_part( 'templates/parts/list' );
                 }
 
                 get_template_part('templates/parts/pagination');
