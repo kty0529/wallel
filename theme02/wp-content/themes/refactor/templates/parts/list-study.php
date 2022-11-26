@@ -58,17 +58,17 @@
       </li>
       <?php if ( study_meta( 'type' ) == 'live' ) { ?>
         <?php /* ?>
-        <li>
-        <span class="label"><b>모집 기간</b>: </span>
-        <span class="value">
-        <?php echo study_meta( 'start_at' ); ?> ~ <?php echo $end_at; ?>
-        <?php
-        if ( $today > $deadline_week && $today < $end_at ) {
-          echo '<span class="deadline"><img src="' . get_template_directory_uri() . '/assets/images/Yeah.gif' . '" alt="예아아아아아아"> 마감임박</span>';
-        }
-        ?>
-        </span>
-        </li>
+          <li>
+            <span class="label"><b>모집 기간</b>: </span>
+            <span class="value">
+            <?php echo study_meta( 'start_at' ); ?> ~ <?php echo $end_at; ?>
+            <?php
+            if ( $today > $deadline_week && $today < $end_at ) {
+              echo '<span class="deadline"><img src="' . get_template_directory_uri() . '/assets/images/Yeah.gif' . '" alt="예아아아아아아"> 마감임박</span>';
+            }
+            ?>
+            </span>
+          </li>
         <?php */ ?>
         <li>
           <span class="label"><b>모집 인원</b>: </span>
