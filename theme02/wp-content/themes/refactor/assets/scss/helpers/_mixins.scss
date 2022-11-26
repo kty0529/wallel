@@ -76,37 +76,7 @@
   }
 }
 
-// 이미지 관련
-@mixin retina-bgi($uri, $extension) {
-  background-image: url('#{$uri}.#{$extension}');
-
-  @media all and (-webkit-min-device-pixel-ratio: 1.5),
-    all and (-o-min-device-pixel-ratio: 3/2),
-    all and (min--moz-device-pixel-ratio: 1.5),
-    all and (min-device-pixel-ratio: 1.5) {
-    background-image: url('#{$uri}@2x.#{$extension}');
-  }
-}
-
-// 크로스 브라우징
-// https://unto.kr/blog/coding-info/only-ie-css/
-@mixin IE {
-  // IE10 이상에서만 작동되게
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    @content;
-  }
-}
-
 // 기타 mixin
-@mixin clearfix {
-  &::after {
-    display: table;
-    width: 100%;
-    clear: both;
-    content: ' ';
-  }
-}
-
 @mixin disable($boolean: true) {
   @if $boolean == true {
     pointer-events: none;
