@@ -1,7 +1,7 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
-  $thumbnail = get_the_post_thumbnail_url( $post->ID );
+  $thumbnail = get_the_post_thumbnail( $post->ID, 'large' );
   $content = apply_filters( 'the_content', get_the_content( false ) );
 
   if ( study_meta( 'type' ) == 'live' && @date('Y-m-d') > study_meta( 'end_at' ) ) {
@@ -38,7 +38,7 @@
     </div>
 
     <a href="<?php echo study_meta( 'courses' ); ?>" target="_blank">
-      <img loading="lazy" src="<?php echo $thumbnail; ?>" alt="스터디 대표 이미지">
+      <?php echo $thumbnail; ?>
     </a>
 
     <?php if ( $closed['status'] ) { ?>

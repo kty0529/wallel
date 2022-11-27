@@ -1,7 +1,7 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
-  $thumbnail = get_the_post_thumbnail_url( $post->ID );
+  $thumbnail = get_the_post_thumbnail( $post->ID, 'large' );
   $content = apply_filters( 'the_content', get_the_content( false ) );
 
   if ( project_meta( 'closed' ) ) {
@@ -15,7 +15,7 @@
   <?php if ( $thumbnail ) { ?>
     <div class="thumbnail">
       <a href="<?php echo get_permalink(); ?>">
-        <img loading="lazy" src="<?php echo $thumbnail; ?>" alt="프로젝트 대표 이미지">
+        <?php echo $thumbnail; ?>
       </a>
 
       <div class="categories">
