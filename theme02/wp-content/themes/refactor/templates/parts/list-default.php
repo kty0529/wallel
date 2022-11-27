@@ -33,8 +33,9 @@
     ?>
   </p>
 
+  <?php /* ?>
   <div class="buttons">
-    <a href="<?php echo get_permalink(); ?>" class="view-more">자세히 보기</a>
+    <a href="<?php echo get_permalink(); ?>" class="view-more" title="<?php the_title(); ?>">자세히 보기</a>
 
     <?php if ( $get_url = get_url_in_content( $content ) && get_post_format() === 'link' ) { ?>
       <a href="<?php echo get_url_in_content( $content ); ?>" class="external-link" target="_blank" data-tooltip="외부링크 바로가기" aria-label="외부링크 바로가기">
@@ -42,4 +43,5 @@
       </a>
     <?php } ?>
   </div>
+  <?php */ ?>
 </article>
