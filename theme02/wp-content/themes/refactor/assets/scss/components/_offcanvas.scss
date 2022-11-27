@@ -1,17 +1,27 @@
+// variables
+$adminbarHeight: (
+  32px, // desktop
+  46px  // mobile
+);
+
+$offcanvasWidth: rem-calc(320);
+
+// styles
 #offcanvas {
-  display: none;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
   z-index: 101;
-  padding: rem-calc(50 30 100);
-  max-width: rem-calc(320);
-  width: 100%;
-  background-color: #fff;
+  top: 0;
+  bottom: 0;
+  left: 100%;
   overflow: hidden;
-  overflow-y: auto;
+  width: 100%;
+  max-width: $offcanvasWidth;
+  padding: rem-calc(50 30 100);
+  background-color: #fff;
   -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.2s;
 
   .widget {
     &:not(:first-child) {
@@ -21,11 +31,11 @@
 
   .widget-search {
     input {
-      padding: rem-calc(0 15);
-      height: rem-calc(40);
-      font-size: rem-calc(16);
       width: 100%;
+      height: rem-calc(40);
+      padding: rem-calc(0 15);
       border: rem-calc(1) solid $border-color;
+      font-size: rem-calc(16);
 
       &::placeholder {
         font-size: rem-calc(14);
@@ -34,18 +44,18 @@
   }
 
   .widget-title {
+    color: $dark;
     font-size: rem-calc(16);
     font-weight: 500;
-    color: $dark;
     text-transform: uppercase;
   }
 
   .widget-menu {
     ul {
-      margin: 0;
       padding: 0;
-      list-style: none;
+      margin: 0;
       font-size: rem-calc(14);
+      list-style: none;
     }
 
     .menu {
@@ -63,10 +73,10 @@
 
   .widget-category {
     ul {
-      margin: 0;
       padding: 0;
-      list-style: none;
+      margin: 0;
       font-size: rem-calc(14);
+      list-style: none;
     }
 
     .cat {
@@ -90,11 +100,11 @@
 
           // material icons
           content: '\e5cc';
+          vertical-align: middle;
           font: {
             family: 'Material Symbols Outlined';
             size: rem-calc(18);
           }
-          vertical-align: middle;
         }
 
         ul {
@@ -112,20 +122,20 @@
 }
 
 #toggle-offcanvas {
-  display: none;
   position: fixed;
-  bottom: rem-calc(30);
-  right: rem-calc(15);
   z-index: 102;
-  padding-bottom: rem-calc(2);
+  right: rem-calc(15);
+  bottom: rem-calc(30);
+  display: none;
   width: rem-calc(40);
   height: rem-calc(40);
-  font-size: rem-calc(16);
-  color: $dark;
-  text-align: center;
-  background-color: #fff;
+  padding-bottom: rem-calc(2);
   border: rem-calc(1) solid darken($light, 5%);
+  background-color: #fff;
   border-radius: rem-calc(3);
+  color: $dark;
+  font-size: rem-calc(16);
+  text-align: center;
 
   .icon_active {
     display: none;
@@ -136,10 +146,7 @@
   }
 }
 
-$adminbarHeight: (
-  32px, // desktop
-  46px  // mobile
-);
+// 어드민바 처리
 body.admin-bar {
   #offcanvas {
     @include mobile {
@@ -148,6 +155,7 @@ body.admin-bar {
   }
 }
 
+// 사이드바 열림 처리
 html.offcanvas-active {
   @include min-w($tablet) {
     &.scroll-lock {
@@ -161,7 +169,7 @@ html.offcanvas-active {
 
   @include mobile {
     #offcanvas {
-      display: block;
+      transform: translate3d(-$offcanvasWidth, 0, 0);
     }
 
     #toggle-offcanvas {
