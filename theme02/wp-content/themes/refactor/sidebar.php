@@ -25,5 +25,5 @@
     </ul>
   </div>
 
-  <?php get_template_part( '/templates/parts/sidebar-banners-widget' ); ?>
+  <?php get_template_part( '/templates/random-banners/sidebar-widget' ); ?>
 </aside>
