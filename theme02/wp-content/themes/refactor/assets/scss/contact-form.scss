@@ -1,0 +1,18 @@
+// common use
+@use 'sass:math';
+@use "sass:list";
+
+// helpers
+@import './helpers/index';
+
+// pages
+.page-contact-form {
+  .container {
+    display: flex;
+    gap: $gutter / 2;
+  }
+
+  #contact {
+    flex: 1 1 auto;
+  }
+}

@@ -1,0 +1,18 @@
+// common use
+@use 'sass:math';
+@use "sass:list";
+
+// helpers
+@import './helpers/index';
+
+// pages
+.page-archive-study {
+  .container {
+    display: flex;
+    gap: $gutter / 2;
+  }
+
+  #study {
+    flex: 1 1 auto;
+  }
+}

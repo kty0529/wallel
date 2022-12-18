@@ -1,4 +1,7 @@
 .sidebar {
+  width: rem-calc(240);
+  flex: 0 0 auto;
+
   @media ($md_down) {
     display: none;
   }
