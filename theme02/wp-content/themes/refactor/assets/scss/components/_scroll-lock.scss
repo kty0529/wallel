@@ -1,7 +1,7 @@
 html.scroll-lock {
   overflow: hidden;
 
-  @media ($md_up) {
+  @media ($lg_up) {
     overflow: visible;
   }
 }

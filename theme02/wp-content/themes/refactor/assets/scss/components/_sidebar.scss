@@ -2,7 +2,7 @@
   width: rem-calc(240);
   flex: 0 0 auto;
 
-  @media ($md_down) {
+  @media ($lg_down) {
     display: none;
   }
 
@@ -14,6 +14,10 @@
       font-size: rem-calc(13);
       font-weight: 600;
       text-transform: uppercase;
+    }
+
+    &-content {
+      margin-top: rem-calc(20);
     }
 
     &:not(:first-of-type) {

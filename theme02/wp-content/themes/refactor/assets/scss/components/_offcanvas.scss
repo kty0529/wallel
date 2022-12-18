@@ -1,7 +1,7 @@
 // variables
 $adminbarHeight: (
-  32px, // desktop
-  46px  // mobile
+  rem-calc(32), // desktop
+  rem-calc(46)  // mobile
 );
 
 $offcanvasWidth: rem-calc(320);
@@ -27,7 +27,7 @@ $offcanvasWidth: rem-calc(320);
     line-height: 1;
 
     &:not(:first-child) {
-      margin-top: rem-calc(32);
+      margin-top: rem-calc(64);
     }
 
     ul {
@@ -132,7 +132,7 @@ $offcanvasWidth: rem-calc(320);
     display: none;
   }
 
-  @media ($md_down) {
+  @media ($lg_down) {
     display: block;
   }
 }
@@ -140,6 +140,10 @@ $offcanvasWidth: rem-calc(320);
 // 어드민바 처리
 body.admin-bar {
   #offcanvas {
+    @media ($lg_down) {
+      top: list.nth($adminbarHeight, 1);
+    }
+
     @media ($md_down) {
       top: list.nth($adminbarHeight, 2);
     }
@@ -148,9 +152,9 @@ body.admin-bar {
 
 // 사이드바 열림 처리
 html.offcanvas-active {
-  @media ($md_up) {
+  @media ($lg_up) {
     &.scroll-lock {
-      overflow: visible;
+      overflow: auto;
     }
 
     #overlay.active {
@@ -158,7 +162,7 @@ html.offcanvas-active {
     }
   }
 
-  @media ($md_down) {
+  @media ($lg_down) {
     #offcanvas {
       transform: translate3d(-$offcanvasWidth, 0, 0);
     }

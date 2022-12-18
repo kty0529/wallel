@@ -2,7 +2,7 @@
   flex: 0 0 auto;
   background-color: $light;
 
-  @media ($md_down) {
+  @media ($lg_down) {
     background-color: $dark;
     color: $light;
   }
@@ -13,7 +13,7 @@
     align-items: flex-end;
     justify-content: space-between;
 
-    @media ($md_down) {
+    @media ($lg_down) {
       height: auto;
       align-items: center;
       padding: {
@@ -27,7 +27,7 @@
     margin: 0;
     font-size: rem-calc(28);
 
-    @media ($md_down) {
+    @media ($lg_down) {
       font-size: rem-calc(16);
     }
   }
@@ -35,7 +35,7 @@
   .navigation {
     margin-right: rem-calc(-20);
 
-    @media ($md_down) {
+    @media ($lg_down) {
       margin-right: 0;
     }
 
@@ -45,7 +45,7 @@
       margin: 0;
       list-style: none;
 
-      @media ($md_down) {
+      @media ($lg_down) {
         margin-right: rem-calc(-10);
       }
     }
@@ -56,7 +56,7 @@
       font-size: rem-calc(14);
       text-transform: uppercase;
 
-      @media ($md_down) {
+      @media ($lg_down) {
         padding: rem-calc(0 10);
         font-size: rem-calc(12);
       }

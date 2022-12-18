@@ -26,7 +26,7 @@ body {
 }
 
 a {
-  @media (min-width: 1024px) {
+  @media ($lg_up) {
     transition: color 0.2s;
 
     &:hover {
@@ -46,7 +46,7 @@ code {
 }
 
 pre {
-  padding: 10px;
+  padding: rem-calc(10);
   background-color: #fafafa;
   font-family: 'Menlo', 'Consolas', $ff-default;
   font-size: 0.9em;

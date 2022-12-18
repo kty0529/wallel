@@ -3,7 +3,7 @@
   padding: rem-calc(70 0 150);
   background-color: $light;
 
-  @media ($md_down) {
+  @media ($lg_down) {
     padding: rem-calc(50 0 100);
   }
 }

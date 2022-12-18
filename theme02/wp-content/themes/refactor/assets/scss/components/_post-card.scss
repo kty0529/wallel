@@ -289,7 +289,7 @@
       left: rem-calc(10);
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: rem-calc(8);
     }
 
     .common {
