@@ -150,6 +150,18 @@
     text-decoration: underline;
   }
 
+  p, h1, h2, h3, h4, h5, h6 {
+    margin: 1em 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
   h3 {
     position: relative;
     margin-bottom: 1em;
@@ -170,18 +182,6 @@
     }
   }
 
-  p, h1, h2, h3, h4, h5, h6 {
-    margin: 1em 0;
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-
   h4 {
     margin-top: 1.3em;
     font-size: 1.1em;
@@ -197,35 +197,26 @@
     margin: rem-calc(30 0);
   }
 
-  & > ul,
-  & > ol {
-    padding-right: rem-calc(30);
-  }
-
-  ul,
-  ol {
-    padding-top: rem-calc(20);
-    padding-bottom: rem-calc(20);
+  ul, ol {
+    padding: rem-calc(20 30);
+    padding-left: rem-calc(40);
     background-color: $light;
     border-radius: rem-calc(5);
-  }
 
-  ul li,
-  ol li {
-    margin-bottom: rem-calc(8);
-  }
+    ul, ol {
+      padding-right: 0;
+    }
 
-  ul li:last-child,
-  ol li:last-child {
-    margin-bottom: 0;
+    li:not(:first-child) {
+      margin-top: rem-calc(8);
+    }
   }
 
   table {
     border-collapse: collapse;
     table-layout: fixed;
 
-    th,
-    td {
+    th, td {
       padding: rem-calc(10);
     }
 
@@ -243,6 +234,7 @@
 
   pre[class*=language-] {
     code {
+      // 모바일에서 pre태그에 추가된 padding-right 값이 제대로 적용되도록 처리 콘텐츠 너비의 처리 방식을 변경
       min-width: fit-content;
     }
   }
@@ -255,7 +247,7 @@
   // embed 블럭 스타일링
   .wp-block-embed {
     figcaption {
-      margin-top: .5em;
+      margin-top: 0.5em;
       margin-bottom: 1em;
       color: #555;
       font-size: rem-calc(13);
