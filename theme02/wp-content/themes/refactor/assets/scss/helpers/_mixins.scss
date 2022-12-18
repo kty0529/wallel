@@ -89,12 +89,6 @@
   }
 }
 
-@mixin reset-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
 @mixin text-ellipsis() {
   display: inline-block;
   overflow: hidden;
