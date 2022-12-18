@@ -5,21 +5,17 @@
       <h2 class="screen-reader-text">푸터</h2>
 
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="title ff-lemon"><a href="<?php echo home_url(); ?>">Wallel</a></div>
+        <div class="title ff-lemon"><a href="<?php echo home_url(); ?>">Wallel</a></div>
 
-            <div class="copyright">Copyright 2014 ~ <?php echo date('Y'); ?></div>
+        <div class="copyright">Copyright 2014 ~ <?php echo date('Y'); ?></div>
 
-            <div class="navigation">
-              <?php
-                wp_nav_menu( array(
-                  'theme_location' => 'footer_menu',
-                  'container'      => false,
-                ) );
-              ?>
-            </div>
-          </div>
+        <div class="navigation">
+          <?php
+            wp_nav_menu( array(
+              'theme_location' => 'footer_menu',
+              'container'      => false,
+            ) );
+          ?>
         </div>
       </div>
     </footer>

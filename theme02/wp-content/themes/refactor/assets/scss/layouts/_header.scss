@@ -7,7 +7,7 @@
     color: $light;
   }
 
-  .inner-wrap {
+  .container {
     display: flex;
     height: rem-calc(100);
     align-items: flex-end;
@@ -16,7 +16,10 @@
     @media ($md_down) {
       height: auto;
       align-items: center;
-      padding: rem-calc(10 0);
+      padding: {
+        top: rem-calc(10);
+        bottom: rem-calc(10);
+      };
     }
   }
 

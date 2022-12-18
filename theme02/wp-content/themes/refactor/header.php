@@ -34,23 +34,17 @@
 
     <header id="header">
       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="inner-wrap">
-              <h1 class="title ff-lemon"><a href="<?php echo home_url(); ?>">Wallel</a></h1>
+        <h1 class="title ff-lemon"><a href="<?php echo home_url(); ?>">Wallel</a></h1>
 
-              <nav class="navigation">
-                <h2 class="screen-reader-text">네비게이션</h2>
+        <nav class="navigation">
+          <h2 class="screen-reader-text">네비게이션</h2>
 
-                <?php
-                  wp_nav_menu(array(
-                    'theme_location' => 'main_menu',
-                    'container'      => false,
-                  ));
-                ?>
-              </nav>
-            </div>
-          </div>
-        </div>
+          <?php
+            wp_nav_menu(array(
+              'theme_location' => 'main_menu',
+              'container'      => false,
+            ));
+          ?>
+        </nav>
       </div>
     </header>
