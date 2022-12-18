@@ -15,14 +15,14 @@ $light:     #ecf0f1 !default;
 $dark:      #222 !default;
 
 $theme-colors: (
-	"primary":    $primary,
-	"secondary":  $secondary,
-	"success":    $success,
-	"info":       $info,
-	"warning":    $warning,
-	"danger":     $danger,
-	"light":      $light,
-	"dark":       $dark
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
 ) !default;
 
 
@@ -30,43 +30,47 @@ $theme-colors: (
 $container: rem-calc(1080) !default;
 $gutter: rem-calc(30) !default;
 
-// Desktop First이며, 아래 기기 "이하"에서 반응형 작동함
-// 예) 모니터 가로길이 1024px 까지는 PC로 인정 1023px 부터 테블릿
-$descktop: rem-calc(1024 - 1) !default;
-$tablet: rem-calc(783 - 1) !default;
-$mobile: rem-calc(425 - 1) !default;
+// breakpoints
+$lg_up: 'min-width: #{rem-calc(1024)}';
+$md_up: 'min-width: #{rem-calc(768)}';
+$sm_up: 'max-width: #{rem-calc(425)}';
+
+$lg_down: 'max-width: #{rem-calc(1023)}';
+$md_down: 'max-width: #{rem-calc(767)}';
+$sm_down: 'max-width: #{rem-calc(424)}';
 
 $columns: (
-	'1': 8.333333%,
-	'2': 16.666666%,
-	'3': 25%,
-	'4': 33.333333%,
-	'5': 41.666666%,
-	'6': 50%,
-	'7': 58.333333%,
-	'8': 66.666666%,
-	'9': 75%,
-	'10': 83.333333%,
-	'11': 91.666666%,
-	'12': 100%
+  '1': 8.333333%,
+  '2': 16.666666%,
+  '3': 25%,
+  '4': 33.333333%,
+  '5': 41.666666%,
+  '6': 50%,
+  '7': 58.333333%,
+  '8': 66.666666%,
+  '9': 75%,
+  '10': 83.333333%,
+  '11': 91.666666%,
+  '12': 100%
 ) !default;
 
 
 // 브랜드별 대표 색상
 $brand-colors: (
-	"css3": "#30A9DC",
-	"github": "#000",
-	"html5": "#F1672C",
-	"javascript": "#F1BF26",
-	"jquery": "#1168af",
-	"php": "#8892BF",
-	"react": "#61DAFB",
-	"sass": "#CF649A",
-	"tistory": "#EA5220",
-	"vue": "#50C08D",
-	"wordpress": "#575C60",
+  "css3": "#30A9DC",
+  "github": "#000",
+  "html5": "#F1672C",
+  "javascript": "#F1BF26",
+  "jquery": "#1168af",
+  "php": "#8892BF",
+  "react": "#61DAFB",
+  "sass": "#CF649A",
+  "tistory": "#EA5220",
+  "vue": "#50C08D",
+  "wordpress": "#575C60",
 );
 
 
 // 커스텀 테마 컬러
+/* stylelint-disable-next-line scss/no-global-function-names */
 $border-color: darken($light, 10%);

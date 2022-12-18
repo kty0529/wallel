@@ -2,144 +2,144 @@
 
 // 기본값
 .container {
-	margin: {
-		left: auto;
-		right: auto;
-	}
-	padding: {
-		left: math.div($gutter, 2);
-		right: math.div($gutter, 2);
-	}
-	max-width: $container;
-	width: 100%;
+  margin: {
+    right: auto;
+    left: auto;
+  }
+  padding: {
+    right: math.div($gutter, 2);
+    left: math.div($gutter, 2);
+  }
+  width: 100%;
+  max-width: $container;
 }
 
 .container-fluid {
-	padding: {
-		left: math.div($gutter, 2);
-		right: math.div($gutter, 2);
-	}
+  padding: {
+    right: math.div($gutter, 2);
+    left: math.div($gutter, 2);
+  }
 }
 
 .row {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	margin-left: -#{math.div($gutter, 2)};
-	margin-right: -#{math.div($gutter, 2)};
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: -#{math.div($gutter, 2)};
+  margin-left: -#{math.div($gutter, 2)};
 
-	&.reverse {
-		flex-direction: row-reverse;
-	}
+  &.reverse {
+    flex-direction: row-reverse;
+  }
 
-	&-hidden {
-		display: none;
-	}
+  &-hidden {
+    display: none;
+  }
 }
 
 .col {
-	@extend .row;
-	flex-direction: column;
+  @extend .row;
+  flex-direction: column;
 
-	&.reverse {
-		flex-direction: column-reverse;
-	}
+  &.reverse {
+    flex-direction: column-reverse;
+  }
 
-	&-hidden {
-		display: none;
-	}
+  &-hidden {
+    display: none;
+  }
 }
 
 
 // 순서 제어
 @for $i from 1 to 10 {
-	.order-#{$i} {
-		order: #{$i};
-	}
+  .order-#{$i} {
+    order: #{$i};
+  }
 }
 
 
 // 기본 제어
 @each $key, $value in $columns {
-	.col-#{$key}, .col-offset-#{$key},
-	.col-tb-#{$key}, .col-tb-offset-#{$key},
-	.col-mo-#{$key}, .col-mo-offset-#{$key},
-	.col-sm-#{$key}, .col-sm-offset-#{$key} {
-		flex: 0 1 auto;
-		padding-left: math.div($gutter, 2);
-		padding-right: math.div($gutter, 2);
-		min-height: 1px;
-	}
+  .col-#{$key}, .col-offset-#{$key},
+  .col-tb-#{$key}, .col-tb-offset-#{$key},
+  .col-mo-#{$key}, .col-mo-offset-#{$key},
+  .col-sm-#{$key}, .col-sm-offset-#{$key} {
+    min-height: 1px;
+    flex: 0 1 auto;
+    padding-right: math.div($gutter, 2);
+    padding-left: math.div($gutter, 2);
+  }
 
-	.col-#{$key} { width: #{$value}; }
-	.col-offset-#{$key} { margin-left: #{$value}; }
+  .col-#{$key} { width: #{$value}; }
+  .col-offset-#{$key} { margin-left: #{$value}; }
 }
 
 
 // 데스크탑 이하
-@include tablet {
-	@each $key, $value in $columns {
-		.col-#{$key} { width: 100%; }
-		.col-offset-#{$key} { margin-left: 0; }
+@media ($lg_down) {
+  @each $key, $value in $columns {
+    .col-#{$key} { width: 100%; }
+    .col-offset-#{$key} { margin-left: 0; }
 
-		.col-tb-#{$key} { width: #{$value}; }
-		.col-tb-offset-#{$key} { margin-left: #{$value}; }
-	}
-	.col-tb-hidden { display: none; }
+    .col-tb-#{$key} { width: #{$value}; }
+    .col-tb-offset-#{$key} { margin-left: #{$value}; }
+  }
+  .col-tb-hidden { display: none; }
 }
 
 
 // 테블릿 이하
-@include mobile {
-	@each $key, $value in $columns {
-		.col-tb-#{$key} { width: 100%; }
-		.col-tb-offset-#{$key} { margin-left: 0; }
+@media ($md_down) {
+  @each $key, $value in $columns {
+    .col-tb-#{$key} { width: 100%; }
+    .col-tb-offset-#{$key} { margin-left: 0; }
 
-		.col-mo-#{$key} { width: #{$value}; }
-		.col-mo-offset-#{$key} { margin-left: #{$value}; }
-	}
-	.col-mo-hidden { display: none; }
+    .col-mo-#{$key} { width: #{$value}; }
+    .col-mo-offset-#{$key} { margin-left: #{$value}; }
+  }
+  .col-mo-hidden { display: none; }
 }
 
 
 // 모바일 이하
-@include small {
-	@each $key, $value in $columns {
-		.col-mo-#{$key} { width: 100%; }
-		.col-mo-offset-#{$key} { margin-left: 0; }
+@media ($sm_down) {
+  @each $key, $value in $columns {
+    .col-mo-#{$key} { width: 100%; }
+    .col-mo-offset-#{$key} { margin-left: 0; }
 
-		.col-sm-#{$key} { width: #{$value}; }
-		.col-sm-offset-#{$key} { margin-left: #{$value}; }
-	}
-	.col-sm-hidden { display: none; }
+    .col-sm-#{$key} { width: #{$value}; }
+    .col-sm-offset-#{$key} { margin-left: #{$value}; }
+  }
+  .col-sm-hidden { display: none; }
 }
 
 
 // 320px 미만의 기기에선 사이트 무조건 숨김,
 // 불필요 할 경우 제거
 @media all and (max-width: 319px) {
-	html, body { display: none; }
+  html, body { display: none; }
 }
 
 
 // 정렬
 $flex-align: (
-	'justify-content': (
-		'start': 'flex-start',
-		'end': 'flex-end',
-		'center': 'center',
-	),
-	'align-items': (
-		'start': 'flex-start',
-		'end': 'flex-end',
-		'center': 'center',
-	),
+  'justify-content': (
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+  ),
+  'align-items': (
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+  ),
 );
 
 @each $k, $v in $flex-align {
-	@each $i, $o in $v {
-		.#{$k}-#{$i} {
-			#{$k}: #{$o};
-		}
-	}
+  @each $i, $o in $v {
+    .#{$k}-#{$i} {
+      #{$k}: #{$o};
+    }
+  }
 }

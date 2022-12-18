@@ -1,5 +1,5 @@
 .sidebar {
-  @include mobile {
+  @media ($md_down) {
     display: none;
   }
 

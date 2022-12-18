@@ -2,7 +2,7 @@
   padding: rem-calc(40 30);
   background-color: #fff;
 
-  @include small {
+  @media ($sm_down) {
     padding: rem-calc(30 15);
     margin: rem-calc(0 -15);
   }
@@ -24,7 +24,7 @@
       font-size: rem-calc(12);
       gap: rem-calc(12);
 
-      @include mobile {
+      @media ($md_down) {
         .categories {
           flex-basis: 100%;
           order: 2;
@@ -70,7 +70,7 @@
     margin-top: rem-calc(30);
     background-color: #fff;
 
-    @include small {
+    @media ($sm_down) {
       padding: rem-calc(30 15);
       margin: rem-calc(30 -15 0);
     }
@@ -81,7 +81,7 @@
   padding: rem-calc(40 30);
   background-color: #fff;
 
-  @include small {
+  @media ($sm_down) {
     padding: rem-calc(30 15);
     margin: rem-calc(0 -15);
   }

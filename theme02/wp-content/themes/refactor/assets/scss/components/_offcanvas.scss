@@ -132,7 +132,7 @@ $offcanvasWidth: rem-calc(320);
     display: none;
   }
 
-  @include mobile {
+  @media ($md_down) {
     display: block;
   }
 }
@@ -140,7 +140,7 @@ $offcanvasWidth: rem-calc(320);
 // 어드민바 처리
 body.admin-bar {
   #offcanvas {
-    @include mobile {
+    @media ($md_down) {
       top: list.nth($adminbarHeight, 2);
     }
   }
@@ -148,7 +148,7 @@ body.admin-bar {
 
 // 사이드바 열림 처리
 html.offcanvas-active {
-  @include min-w($tablet) {
+  @media ($md_up) {
     &.scroll-lock {
       overflow: visible;
     }
@@ -158,7 +158,7 @@ html.offcanvas-active {
     }
   }
 
-  @include mobile {
+  @media ($md_down) {
     #offcanvas {
       transform: translate3d(-$offcanvasWidth, 0, 0);
     }

@@ -1,7 +1,7 @@
 html.scroll-lock {
   overflow: hidden;
 
-  @include min-w($tablet) {
+  @media ($md_up) {
     overflow: visible;
   }
 }
