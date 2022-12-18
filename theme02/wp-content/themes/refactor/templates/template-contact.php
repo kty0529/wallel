@@ -10,7 +10,7 @@
   add_filter('wpcf7_autop_or_not', '__return_false');
 
   // pages style
-  wp_enqueue_style( 'style', get_theme_file_uri( '/assets/css/contact-form.min.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
+  wp_enqueue_style( 'style', get_theme_file_uri( '/assets/css/page-contact-form.min.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
 
   get_header();
 ?>

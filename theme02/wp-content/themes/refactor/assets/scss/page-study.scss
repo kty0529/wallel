@@ -6,13 +6,13 @@
 @import './helpers/index';
 
 // pages
-.page-contact-form {
+.page-archive-study {
   .container {
     display: flex;
-    gap: $gutter / 2;
+    gap: $gutter;
   }
 
-  #contact {
+  #study {
     flex: 1 1 auto;
   }
 }

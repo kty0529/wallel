@@ -2,7 +2,7 @@
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
   // pages style
-  wp_enqueue_style( 'style', get_theme_file_uri( '/assets/css/study.min.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
+  wp_enqueue_style( 'style', get_theme_file_uri( '/assets/css/page-study.min.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
 
   get_header();
 ?>
