@@ -24,8 +24,17 @@ $offcanvasWidth: rem-calc(320);
   transition: transform 0.2s;
 
   .widget {
+    line-height: 1;
+
     &:not(:first-child) {
       margin-top: rem-calc(32);
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      font-size: rem-calc(14);
+      list-style: none;
     }
   }
 
@@ -51,19 +60,8 @@ $offcanvasWidth: rem-calc(320);
   }
 
   .widget-menu {
-    ul {
-      padding: 0;
-      margin: 0;
-      font-size: rem-calc(14);
-      list-style: none;
-    }
-
-    .menu {
-      margin-top: rem-calc(12);
-
-      & > li {
-        padding-bottom: rem-calc(14);
-      }
+    .menu-item {
+      margin-top: rem-calc(20);
     }
 
     .current-menu-item > a {
@@ -72,24 +70,16 @@ $offcanvasWidth: rem-calc(320);
   }
 
   .widget-category {
-    ul {
-      padding: 0;
-      margin: 0;
-      font-size: rem-calc(14);
-      list-style: none;
-    }
-
     .cat {
       margin-top: rem-calc(12);
+    }
 
-      & > li {
-        padding-bottom: rem-calc(14);
-      }
+    .cat-item {
+      margin-top: rem-calc(20);
     }
 
     .children {
-      li {
-        margin-top: rem-calc(4);
+      .cat-item {
         color: $secondary;
 
         &:before {
@@ -100,11 +90,11 @@ $offcanvasWidth: rem-calc(320);
 
           // material icons
           content: '\e5cc';
-          vertical-align: middle;
           font: {
             family: 'Material Symbols Outlined';
             size: rem-calc(18);
           }
+          vertical-align: middle;
         }
 
         ul {
@@ -130,6 +120,7 @@ $offcanvasWidth: rem-calc(320);
   width: rem-calc(40);
   height: rem-calc(40);
   padding-bottom: rem-calc(2);
+  /* stylelint-disable-next-line scss/no-global-function-names */
   border: rem-calc(1) solid darken($light, 5%);
   background-color: #fff;
   border-radius: rem-calc(3);
