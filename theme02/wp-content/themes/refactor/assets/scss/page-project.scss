@@ -11,6 +11,10 @@
     display: flex;
     align-items: flex-start;
     gap: $gutter;
+
+    @media ($sm_down) {
+      margin: rem-calc(0 -15);
+    }
   }
 
   #project {
@@ -24,10 +28,189 @@
     display: flex;
     align-items: flex-start;
     gap: $gutter;
+
+    @media ($sm_down) {
+      margin: rem-calc(0 -15);
+    }
   }
 
   #project-entry {
     min-width: 0;
     flex: 1 1 auto;
+    padding: rem-calc(40 30);
+    background-color: #fff;
+
+    @media ($sm_down) {
+      padding: rem-calc(30 15);
+    }
+
+    &-header {
+      .title {
+        margin: 0;
+        font-size: rem-calc(18);
+        font-weight: 500;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+
+      .data {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: rem-calc(12);
+        color: $secondary;
+        font-size: rem-calc(12);
+        gap: rem-calc(12);
+
+        .label {
+          font-weight: 500;
+        }
+      }
+    }
+
+    &-container {
+      padding-top: rem-calc(40);
+      @include common-description-typhography;
+    }
+
+    .sec {
+      margin-top: rem-calc(70);
+    }
+
+    .sec-screenshot {
+      position: relative;
+
+      .sec-content {
+        ul {
+          padding: 0;
+          margin: 0;
+          background-color: transparent;
+          list-style: none;
+        }
+
+        li {
+          height: auto;
+          margin: 0;
+        }
+
+        a {
+          position: relative;
+          display: block;
+          padding-top: 56.25%;
+          border: rem-calc(1) solid $border-color;
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+        }
+
+        .navigation {
+          display: flex;
+          justify-content: flex-end;
+          font-size: rem-calc(25);
+          line-height: 0;
+
+          .arrows {
+            margin-top: rem-calc(20);
+            line-height: inherit;
+
+            @include hover() {
+              transition: color 0.2s;
+
+              &:not([disabled]):hover {
+                color: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .sec-download {
+      .sec-content {
+        ul {
+          padding: 0;
+          margin: 0;
+          background-color: transparent;
+          border-radius: 0;
+          list-style: none;
+        }
+
+        svg {
+          width: rem-calc(32);
+          height: rem-calc(32);
+        }
+
+        .closed {
+          padding: rem-calc(20 10);
+          background-color: $light;
+          text-align: center;
+        }
+      }
+
+      a {
+        display: inline-flex;
+        height: rem-calc(35);
+        align-items: center;
+        padding: rem-calc(1 18 0 6);
+        border: rem-calc(2) solid $secondary;
+        border-radius: rem-calc(5);
+        color: $secondary;
+        font-size: rem-calc(12);
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        svg {
+          margin-top: rem-calc(-1);
+        }
+
+        @include hover() {
+          transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+
+          &:hover {
+            border-color: $primary;
+            background-color: $primary;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .sec-history {
+      position: relative;
+
+      .sec-content {
+        overflow: hidden;
+        max-height: rem-calc(150);
+
+        &.show {
+          max-height: inherit;
+        }
+      }
+
+      .read-more {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: rem-calc(40);
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%);
+        color: $primary;
+        font-weight: 700;
+
+        span {
+          display: inline-block;
+          padding: rem-calc(3 5);
+          background-color: #fff;
+        }
+      }
+    }
   }
 }

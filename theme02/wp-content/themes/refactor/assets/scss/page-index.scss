@@ -11,6 +11,10 @@
     display: flex;
     align-items: flex-start;
     gap: $gutter;
+
+    @media ($sm_down) {
+      margin: rem-calc(0 -15);
+    }
   }
 
   #posts,
@@ -25,10 +29,78 @@
     display: flex;
     align-items: flex-start;
     gap: $gutter;
+
+    @media ($sm_down) {
+      margin: rem-calc(0 -15);
+    }
   }
 
   #entry {
     min-width: 0;
     flex: 1 1 auto;
+    padding: rem-calc(40 30);
+    background-color: #fff;
+
+    @media ($sm_down) {
+      padding: rem-calc(30 15);
+    }
+
+    &-header {
+      .title {
+        margin: 0;
+        font-size: rem-calc(18);
+        font-weight: 500;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+
+      .data {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: rem-calc(12);
+        color: $secondary;
+        font-size: rem-calc(12);
+        gap: rem-calc(12);
+
+        @media ($md_down) {
+          .categories {
+            flex-basis: 100%;
+            order: 2;
+          }
+        }
+      }
+    }
+
+    &-container {
+      padding-top: rem-calc(40);
+      @include common-description-typhography;
+    }
+
+    &-tags {
+      padding-top: rem-calc(24);
+      border-top: rem-calc(1) solid $light;
+      margin-top: rem-calc(48);
+      color: $secondary;
+      font-size: rem-calc(12);
+
+      a {
+        display: inline-block;
+        padding: rem-calc(2 4);
+        background-color: $light;
+
+        @include hover() {
+          transition: background-color 0.2s, color 0.2s;
+
+          &:hover {
+            background-color: $primary;
+            color: #fff;
+          }
+        }
+
+        &:not(:first-child) {
+          margin-left: rem-calc(4);
+        }
+      }
+    }
   }
 }

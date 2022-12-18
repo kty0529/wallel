@@ -8,7 +8,7 @@
 
   the_post();
 ?>
-<main id="main" <?php post_class( 'page' ); ?> itemscope itemtype="http://schema.org/Article">
+<main id="main" <?php post_class( 'page-default' ); ?> itemscope itemtype="http://schema.org/Article">
   <meta itemprop="url" content="<?php echo get_permalink(); ?>">
 
   <div class="container">
