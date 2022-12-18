@@ -16,6 +16,7 @@
   die();
 
   // pages style
+  /*
   wp_enqueue_style( 'style', get_theme_file_uri( '/assets/css/404.min.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
 
   get_header();
