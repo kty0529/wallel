@@ -5,6 +5,10 @@
     Template Name: 문의하기
   */
 
+  // p 태그 제거
+  // https://pineco.de/snippets/remove-p-tag-from-contact-form-7/
+  add_filter('wpcf7_autop_or_not', '__return_false');
+
   get_header();
 ?>
 <main id="main" <?php post_class(); ?>>
