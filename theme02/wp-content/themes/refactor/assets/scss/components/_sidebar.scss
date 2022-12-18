@@ -43,6 +43,8 @@
   }
 
   .widget-category {
+    line-height: 1;
+
     ul {
       padding: 0;
       margin: 0;
@@ -52,17 +54,14 @@
 
     .cat {
       margin-top: rem-calc(24);
+    }
 
-      & > li {
-        &:not(:last-child) {
-          padding-bottom: rem-calc(14);
-        }
-      }
+    .cat-item {
+      margin-top: 20px;
     }
 
     .children {
-      li {
-        margin-top: rem-calc(4);
+      .cat-item {
         color: $secondary;
 
         &:before {
