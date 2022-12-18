@@ -9,7 +9,7 @@
       <div class="col-9 col-tb-9">
         <section id="posts">
           <header id="posts-header">
-            <h2 class="blind">블로그</h2>
+            <h2 class="screen-reader-text">블로그</h2>
           </header>
 
           <div id="posts-container">

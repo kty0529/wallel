@@ -9,7 +9,7 @@
       <div class="col-9 col-tb-9">
         <section id="project">
           <header id="project-header">
-            <h2 class="blind">프로젝트</h2>
+            <h2 class="screen-reader-text">프로젝트</h2>
           </header>
 
           <div id="project-container">

@@ -42,7 +42,7 @@
 						</div>
 						<div class="col-7">
 							<nav class="gnb">
-								<h2 class="blind">메인 메뉴</h2>
+								<h2 class="screen-reader-text">메인 메뉴</h2>
 								<?php
 									wp_nav_menu( array(
 										'theme_location' => 'main_menu',

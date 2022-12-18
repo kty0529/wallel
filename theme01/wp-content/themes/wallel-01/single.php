@@ -89,7 +89,7 @@
 			<?php /* sidebar ?>
 			<div class="col-3">
 				<aside id="sidebar">
-					<h2 class="blind">사이드바</h2>
+					<h2 class="screen-reader-text">사이드바</h2>
 
 					<div class="widget widget-index">
 						<h3 class="widget-title">Index</h3>

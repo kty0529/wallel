@@ -40,7 +40,7 @@
               <h1 class="title ff-lemon"><a href="<?php echo home_url(); ?>">Wallel</a></h1>
 
               <nav class="navigation">
-                <h2 class="blind">네비게이션</h2>
+                <h2 class="screen-reader-text">네비게이션</h2>
 
                 <?php
                   wp_nav_menu(array(

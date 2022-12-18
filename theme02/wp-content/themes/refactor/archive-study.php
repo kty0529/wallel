@@ -9,7 +9,7 @@
       <div class="col-9 col-tb-9">
         <section id="study">
           <header id="study-header">
-            <h2 class="blind">스터디</h2>
+            <h2 class="screen-reader-text">스터디</h2>
           </header>
 
           <div id="study-container">

@@ -2,7 +2,7 @@
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 ?>
     <footer id="footer">
-      <h2 class="blind">푸터</h2>
+      <h2 class="screen-reader-text">푸터</h2>
 
       <div class="container">
         <div class="row">

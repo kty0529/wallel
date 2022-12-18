@@ -1,5 +1,5 @@
 <aside class="sidebar">
-  <h2 class="blind">사이드바</h2>
+  <h2 class="screen-reader-text">사이드바</h2>
 
   <div class="widget widget-search">
     <form method="get" action="<?php echo home_url() ?>">
