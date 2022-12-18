@@ -6,14 +6,27 @@
 @import './helpers/index';
 
 // pages
-.page-contact-form {
+.page-archive-project {
   .container {
     display: flex;
     align-items: flex-start;
     gap: $gutter;
   }
 
-  #contact {
+  #project {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+}
+
+.page-single-study {
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: $gutter;
+  }
+
+  #project-entry {
     min-width: 0;
     flex: 1 1 auto;
   }

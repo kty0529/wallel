@@ -9,10 +9,12 @@
 .page-archive-study {
   .container {
     display: flex;
+    align-items: flex-start;
     gap: $gutter;
   }
 
   #study {
+    min-width: 0;
     flex: 1 1 auto;
   }
 }

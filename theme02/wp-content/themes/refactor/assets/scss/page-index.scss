@@ -9,10 +9,26 @@
 .page-index {
   .container {
     display: flex;
+    align-items: flex-start;
     gap: $gutter;
   }
 
+  #posts,
   #contact {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+}
+
+.page-single {
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: $gutter;
+  }
+
+  #entry {
+    min-width: 0;
     flex: 1 1 auto;
   }
 }
