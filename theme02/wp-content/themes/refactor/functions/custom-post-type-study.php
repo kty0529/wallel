@@ -122,11 +122,20 @@
 					'type'              => 'select',
 					'select_all_none'   => true,
 					'options'           => [
-						'live'   => '라이브 세션 강의',
-						'video'  => '영상 강의',
+						'live'   => '라이브 세션',
+						'video'  => '동영상',
 						'mogako' => '모각코',
 						'other'  => '기타',
 					],
+				),
+
+				array(
+					'type' => 'divider',
+				),
+				array(
+					'id'   => $prefix.'total_student',
+					'name' => '모집 인원',
+					'type' => 'number',
 				),
 
 				array(
@@ -156,7 +165,7 @@
 
 
 		// 라이브 세션 정보
-		$meta_boxes[] = array(
+		/* $meta_boxes[] = array(
 			'id'         => 'live',
 			'title'      => '라이브 세션 정보',
 			'post_types' => $post_type,
@@ -173,11 +182,6 @@
 					'id'   => $prefix.'end_at',
 					'name' => '모집 종료일',
 					'type' => 'date',
-				),
-				array(
-					'id'   => $prefix.'total_student',
-					'name' => '모집 인원',
-					'type' => 'number',
 				),
 
 				array(
@@ -203,10 +207,10 @@
 					'type' => 'text',
 				),
 			),
-		);
+		); */
 
 		// 추천 대상 및 기대 효과
-		$meta_boxes[] = array(
+		/* $meta_boxes[] = array(
 			'id'         => 'recommended',
 			'title'      => '추천 대상 및 기대 효과',
 			'post_types' => $post_type,
@@ -219,10 +223,10 @@
 					'type' => 'wysiwyg',
 				),
 			),
-		);
+		); */
 
 		// 강사 소개
-		$meta_boxes[] = array(
+		/* $meta_boxes[] = array(
 			'id'         => 'instructor',
 			'title'      => '강사 소개',
 			'post_types' => $post_type,
@@ -235,7 +239,7 @@
 					'type' => 'wysiwyg',
 				),
 			),
-		);
+		); */
 
 
 		return $meta_boxes;

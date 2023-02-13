@@ -21,8 +21,8 @@
   );
 
   $type_text_arr = array(
-    'live'   => '라이브 세션 강의',
-    'video'  => '영상 강의',
+    'live'   => '라이브 세션',
+    'video'  => '동영상',
     'mogako' => '모각코',
     'other'  => '기타',
   );
@@ -53,7 +53,7 @@
 
     <ul class="infomation">
       <li>
-        <span class="label"><b>강의 형식</b>: </span>
+        <span class="label"><b>형식</b>: </span>
         <span class="value"><?php echo $type_text_arr[ study_meta( 'type' ) ]; ?></span>
       </li>
       <?php if ( study_meta( 'type' ) == 'live' ) { ?>
