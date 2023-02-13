@@ -23,7 +23,7 @@
   }
 }
 
-.page-single-study {
+.page-single-project {
   .container {
     display: flex;
     align-items: flex-start;
@@ -169,6 +169,32 @@
         svg {
           margin-top: rem-calc(-1);
         }
+
+        @include hover() {
+          transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+
+          &:hover {
+            border-color: $primary;
+            background-color: $primary;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .sec-license {
+      a {
+        display: inline-flex;
+        height: rem-calc(35);
+        align-items: center;
+        padding: rem-calc(1 18 0);
+        border: rem-calc(2) solid $secondary;
+        border-radius: rem-calc(5);
+        color: $secondary;
+        font-size: rem-calc(12);
+        font-weight: 600;
+        text-decoration: none;
+        text-transform: uppercase;
 
         @include hover() {
           transition: border-color 0.2s, background-color 0.2s, color 0.2s;

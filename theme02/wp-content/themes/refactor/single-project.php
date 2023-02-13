@@ -15,7 +15,7 @@
 
   the_post();
 ?>
-<main id="main" <?php post_class( 'page-single-study' ); ?>>
+<main id="main" <?php post_class( 'page-single-project' ); ?>>
   <div class="container">
     <article id="project-entry">
       <header id="project-entry-header">
@@ -132,6 +132,14 @@
                 <?php } ?>
               </ul>
             <?php } ?>
+          </div>
+        </div>
+
+        <div class="sec sec-license">
+          <h3 class="sec-title">라이센스</h3>
+
+          <div class="sec-content">
+            <a href="<?php echo get_permalink( 2037 ); ?>">무료 배포 파일 통합 라이센스</a>
           </div>
         </div>
 
