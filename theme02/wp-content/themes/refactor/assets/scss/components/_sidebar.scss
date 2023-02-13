@@ -101,7 +101,7 @@
 
   .widget-banners {
     .widget-content {
-      margin-top: 8px;
+      margin-top: rem-calc(8);
     }
 
     a {
@@ -114,15 +114,15 @@
 
       .label {
         position: absolute;
-        top: 10px;
-        left: 10px;
+        top: rem-calc(10);
+        left: rem-calc(10);
         display: inline-flex;
-        height: 25px;
+        height: rem-calc(25);
         align-items: center;
-        padding: 0 10px;
+        padding: rem-calc(0 10);
         background-color: $dark;
         color: $light;
-        font-size: 12px;
+        font-size: rem-calc(12);
         font-weight: 500;
       }
     }
