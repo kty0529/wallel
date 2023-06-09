@@ -20,7 +20,6 @@
   // 테마 CSS
   function wallel_theme_stylesheet() {
     // Vendor
-    wp_enqueue_style( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/dist/css/lightbox.min.css' ), false, false, 'all' );
     wp_enqueue_style( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.css' ), false, '1.29.0', 'all' );
 
     // Core
@@ -37,7 +36,6 @@
     wp_enqueue_script( 'jquery', '//code.jquery.com/jquery-3.6.0.min.js', false, '3.6.0', false );
 
     // Vendor
-    wp_enqueue_script( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/dist/js/lightbox.min.js' ), array( 'jquery' ), false, false );
     wp_enqueue_script( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.js' ), array( 'jquery' ), '1.29.0', false );
 
     // Core
