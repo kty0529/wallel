@@ -32,7 +32,7 @@
 
     <header id="header">
       <div class="container">
-        <h1 class="title ff-lemon">
+        <h1 class="title">
           <a href="<?php echo home_url(); ?>" aria-label="Wallel">
             <?php echo GET_SVG('Wallel')['code']; ?>
           </a>

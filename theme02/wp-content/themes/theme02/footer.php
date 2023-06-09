@@ -5,7 +5,7 @@
       <h2 class="screen-reader-text">푸터</h2>
 
       <div class="container">
-        <div class="title ff-lemon">
+        <div class="title">
           <a href="<?php echo home_url(); ?>" aria-label="Wallel">
             <?php echo GET_SVG('Wallel')['code']; ?>
           </a>

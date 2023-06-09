@@ -25,15 +25,15 @@
 
   .title {
     margin: 0;
-    font-size: rem-calc(28);
-
-    @media ($lg_down) {
-      font-size: rem-calc(16);
-    }
+    line-height: 0;
 
     svg {
       @include hover {
         fill: $primary;
+      }
+
+      @media ($lg_down) {
+        width: 70px;
       }
     }
   }

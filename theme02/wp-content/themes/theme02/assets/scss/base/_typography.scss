@@ -1,7 +1,3 @@
-* {
-  outline-color: $primary;
-}
-
 html,
 body {
   /* stylelint-disable-next-line scss/no-global-function-names */
@@ -11,15 +7,6 @@ body {
   overflow-wrap: break-word;
   word-break: break-all;
   word-wrap: break-word;
-}
-
-::selection {
-  background-color: $primary;
-  color: #fff;
-}
-
-.ff-lemon {
-  font-family: 'Lemon', sans-serif;
 }
 
 a {
