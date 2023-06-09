@@ -156,8 +156,11 @@
     background-color: $light;
     border-radius: rem-calc(5);
 
-    ul, ol {
-      padding-right: 0;
+    ul, ol,
+    ul[class*='wp-block'],
+    ol[class*='wp-block'] {
+      padding: 0;
+      margin: rem-calc(8 30);
     }
 
     li:not(:first-child) {
