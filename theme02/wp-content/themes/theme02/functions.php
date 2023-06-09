@@ -8,8 +8,7 @@
 
   // 테마 폴더 내 SVG 아이콘 가져오기
   function GET_SVG($name) {
-    $name = strtolower($name);
-    $code = file_get_contents( THEME_DIR . '/assets/icons/svg/' . $name . '.svg' );
+    $code = file_get_contents( THEME_DIR . '/assets/svgs/' . $name . '.svg' );
 
     return $code ? array(
       'name' => $name,

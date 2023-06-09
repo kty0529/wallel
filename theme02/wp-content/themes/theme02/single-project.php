@@ -129,7 +129,7 @@
                 <?php if ( $repository = project_meta( 'github_link' ) ) { ?>
                   <li>
                     <a class="download github" href="<?php echo $repository; ?>" target="_blank">
-                      <?php echo GET_SVG('github')['code']; ?>
+                      <?php echo GET_SVG('GitHub')['code']; ?>
                       Github 저장소에서 다운받기
                     </a>
                   </li>

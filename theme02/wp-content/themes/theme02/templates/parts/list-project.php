@@ -27,7 +27,7 @@
               $icon = GET_SVG($term->name);
 
               if ( ! empty( $icon ) ) {
-                echo '<a href="' . get_term_link( $term->slug, $term->taxonomy ) . '" class="icon icon-' . $icon['name'] . '" data-tooltip="' . strtoupper($icon['name']) . '">' . $icon['code'] . '</a>';
+                echo '<a href="' . get_term_link( $term->slug, $term->taxonomy ) . '" class="icon icon-' . strtolower( $icon['name'] ) . '" data-tooltip="' . $icon['name'] . '">' . $icon['code'] . '</a>';
               }
             }
           }
@@ -52,10 +52,10 @@
 
         if ( $languages && ! is_wp_error( $languages ) ) {
           foreach ( $languages as $language ) {
-            $language_icon = GET_SVG($language);
+            $icon = GET_SVG($language);
 
-            if ( ! empty( $language_icon ) ) {
-              echo '<li class="icon-' . $language_icon['name'] . '" data-tooltip="' . strtoupper( $language_icon['name'] ) . '">' . $language_icon['code'] . '</li>';
+            if ( ! empty( $icon ) ) {
+              echo '<li class="icon-' . strtolower( $icon['name'] ) . '" data-tooltip="' . $icon['name'] . '">' . $icon['code'] . '</li>';
             }
           }
         }
