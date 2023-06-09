@@ -109,6 +109,12 @@
           object-position: top center;
         }
 
+        .swiper  {
+          @media ($sm_down) {
+            overflow: visible;
+          }
+        }
+
         .navigation {
           display: flex;
           justify-content: flex-end;
