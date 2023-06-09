@@ -57,8 +57,11 @@
     add_theme_support( 'post-formats', array( 'quote', 'image', 'link', 'video' ));
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'customize-selective-refresh-widgets' );
+
+    add_theme_support( 'editor-styles' );
+    add_editor_style( get_theme_file_uri( '/assets/css/editor-style.min.css?' . time() ) );
   }
-  add_action( 'after_setup_theme', 'custom_theme_setup', 10000 );
+  add_action( 'after_setup_theme', 'custom_theme_setup' );
 
 
   // 메뉴 추가
@@ -123,25 +126,6 @@
     }
   }
   add_action( 'admin_init', 'stop_access_dashboard' );
-
-
-  // 관리자에 커스텀 스타일 추가하기
-  function custom_admin_style() {
-    wp_enqueue_style( 'custom-admin-style', get_theme_file_uri( '/assets/css/admin/admin-style.css' ), false, time(), 'all' );
-
-    // 구텐베르그 에디터 스타일
-    wp_enqueue_style( 'gutenberg-editor-css', get_theme_file_uri( '/assets/css/admin/gutenberg_editor.css' ), false, time(), 'all' );
-  }
-  add_action( 'admin_head', 'custom_admin_style' );
-
-
-	// TinyMCE에 editor style 입히기
-	// https://codex.wordpress.org/TinyMCE
-	function custom_TinyMCE_format( $in ) {
-		$in['content_css'] = get_theme_file_uri( '/assets/css/editor-style.min.css' );
-		return $in;
-	}
-	add_filter( 'tiny_mce_before_init', 'custom_TinyMCE_format' );
 
 
   // 관리자 > 사용자 목록에 특정 column 지우기
