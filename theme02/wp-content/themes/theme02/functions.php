@@ -23,6 +23,9 @@
     // Vendor
     wp_enqueue_style( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.css' ), false, '1.29.0', 'all' );
 
+    // fotns
+    wp_enqueue_style( 'pretendard', get_theme_file_uri( '/assets/fonts/pretendard-subset.css' ), false, false, 'all' );
+
     // Core
     wp_enqueue_style( 'core', get_theme_file_uri( '/assets/css/core.min.css' ), false, time(), 'all' );
     wp_enqueue_style( 'style', get_theme_file_uri( '/style.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
