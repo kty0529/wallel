@@ -24,10 +24,10 @@
 
           if ( $terms && ! is_wp_error( $terms ) ) {
             foreach ( $terms as $term ) {
-              $type_icon = GET_SVG($term->name);
+              $icon = GET_SVG($term->name);
 
-              if ( $type_icon['exists'] ) {
-                echo '<a href="' . get_term_link( $term->slug, $term->taxonomy ) . '" class="icon icon-' . $type_icon['name'] . '" data-tooltip="' . strtoupper($type_icon['name']) . '">' . $type_icon['file'] . '</a>';
+              if ( ! empty( $icon ) ) {
+                echo '<a href="' . get_term_link( $term->slug, $term->taxonomy ) . '" class="icon icon-' . $icon['name'] . '" data-tooltip="' . strtoupper($icon['name']) . '">' . $icon['code'] . '</a>';
               }
             }
           }
@@ -54,8 +54,8 @@
           foreach ( $languages as $language ) {
             $language_icon = GET_SVG($language);
 
-            if ( $language_icon['exists'] ) {
-              echo '<li class="icon-' . $language_icon['name'] . '" data-tooltip="' . strtoupper( $language_icon['name'] ) . '">' . $language_icon['file'] . '</li>';
+            if ( ! empty( $language_icon ) ) {
+              echo '<li class="icon-' . $language_icon['name'] . '" data-tooltip="' . strtoupper( $language_icon['name'] ) . '">' . $language_icon['code'] . '</li>';
             }
           }
         }

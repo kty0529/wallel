@@ -1,21 +1,22 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
+
   // 상수
-  define( 'THEME_DIR', get_theme_root() . '/' . wp_get_theme()->name );
+  define( 'THEME_DIR', get_template_directory() );
 
-  // 공통 함수
-  function GET_SVG($file_name) {
-    $icon = strtolower($file_name);
-    $file = file_get_contents( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
-    $file_exists = file_exists( THEME_DIR . '/assets/icons/svg/' . $icon . '.svg' );
 
-    return array(
-      'exists' => $file_exists,
-      'name' => $icon,
-      'file' => $file,
-    );
+  // 테마 폴더 내 SVG 아이콘 가져오기
+  function GET_SVG($name) {
+    $name = strtolower($name);
+    $code = file_get_contents( THEME_DIR . '/assets/icons/svg/' . $name . '.svg' );
+
+    return $code ? array(
+      'name' => $name,
+      'code' => $code,
+    ) : false;
   }
+
 
   // 테마 CSS
   function wallel_theme_stylesheet() {
