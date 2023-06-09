@@ -184,6 +184,10 @@
       // 모바일에서 pre태그에 추가된 padding-right 값이 제대로 적용되도록 처리 콘텐츠 너비의 처리 방식을 변경
       min-width: fit-content;
     }
+
+    a {
+      color: inherit;
+    }
   }
 
   .wp-caption {
