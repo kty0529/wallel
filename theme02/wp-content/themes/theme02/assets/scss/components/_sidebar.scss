@@ -77,12 +77,8 @@
           margin-right: rem-calc(8);
           color: $border-color;
 
-          // material icons
-          content: '\e5cc';
-          font: {
-            family: 'Material Symbols Outlined';
-            size: rem-calc(18);
-          }
+          @include material-icons('e5cc');
+          font-size: rem-calc(18);
           vertical-align: middle;
         }
 

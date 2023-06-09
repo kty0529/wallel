@@ -86,6 +86,12 @@
   }
 }
 
+@mixin material-icons($code, $style: 'Outlined') {
+  $withslash: "\"\\#{$code}\"";
+  content: unquote($withslash);
+  font-family: 'Material Symbols #{$style}';
+}
+
 
 // 커스텀 mixin
 @mixin common-description-typhography {
