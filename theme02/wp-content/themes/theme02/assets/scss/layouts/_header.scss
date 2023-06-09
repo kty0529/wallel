@@ -30,6 +30,12 @@
     @media ($lg_down) {
       font-size: rem-calc(16);
     }
+
+    svg {
+      @include hover {
+        fill: $primary;
+      }
+    }
   }
 
   .navigation {

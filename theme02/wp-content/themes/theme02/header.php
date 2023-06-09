@@ -11,7 +11,6 @@
   <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lemon&text=Wwallel&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
 
   <?php wp_head(); ?>
@@ -33,7 +32,11 @@
 
     <header id="header">
       <div class="container">
-        <h1 class="title ff-lemon"><a href="<?php echo home_url(); ?>">Wallel</a></h1>
+        <h1 class="title ff-lemon">
+          <a href="<?php echo home_url(); ?>" aria-label="Wallel">
+            <?php echo GET_SVG('Wallel')['code']; ?>
+          </a>
+        </h1>
 
         <nav class="navigation">
           <h2 class="screen-reader-text">네비게이션</h2>
