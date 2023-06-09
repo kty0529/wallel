@@ -6,13 +6,13 @@ $ff-default: 'Spoqa Han Sans Neo', 'AppleSDGothicNeo', 'Noto Sans CJK KR', 'Malg
 // 색상값, 변수명 부트스트랩 카피
 // 색조합: https://flatuicolors.com/palette/defo
 $primary:   #b20a0a !default;
-$secondary: #606060 !default;
+$secondary: #595959 !default;
 $success:   #27ae60 !default;
 $info:      #3498db !default;
 $warning:   #f1c40f !default;
 $danger:    #c0392b !default;
 $light:     #ecf0f1 !default;
-$dark:      #222 !default;
+$dark:      #000 !default;
 
 $theme-colors: (
   "primary":    $primary,
