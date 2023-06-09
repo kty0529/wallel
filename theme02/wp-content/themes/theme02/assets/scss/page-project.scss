@@ -118,10 +118,14 @@
           .arrows {
             margin-top: rem-calc(20);
             line-height: inherit;
+            color: $dark;
+            transition: all 0.2s;
+
+            &[disabled] {
+              opacity: 0.2;
+            }
 
             @include hover() {
-              transition: color 0.2s;
-
               &:not([disabled]):hover {
                 color: $primary;
               }
