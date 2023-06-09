@@ -8,17 +8,6 @@
     </form>
   </div>
 
-  <div class="widget widget-menu">
-    <div class="widget-title">메뉴</div>
-
-    <?php
-      wp_nav_menu(array(
-        'theme_location' => 'main_menu',
-        'container'      => false,
-      ));
-    ?>
-  </div>
-
   <div class="widget widget-category">
     <div class="widget-title">블로그</div>
 
