@@ -103,7 +103,7 @@
     text-decoration: underline;
   }
 
-  p, h1, h2, h3, h4, h5, h6 {
+  p, h1, h2, h3, h4, h5, h6, figure {
     margin: 1em 0;
 
     &:first-child {
@@ -122,7 +122,7 @@
     font-weight: 400;
 
     &:not(:first-child) {
-      margin-top: 1.3em;
+      margin-top: 2em;
     }
 
     &:before {
