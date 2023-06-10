@@ -34,10 +34,6 @@
 
   // 테마 Script
   function wallel_theme_script() {
-    // jQuery
-    wp_deregister_script( 'jquery' );
-    wp_enqueue_script( 'jquery', '//code.jquery.com/jquery-3.6.0.min.js', false, '3.6.0', false );
-
     // Vendor
     wp_enqueue_script( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.js' ), array( 'jquery' ), '1.29.0', false );
 
