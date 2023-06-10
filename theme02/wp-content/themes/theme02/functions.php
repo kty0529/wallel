@@ -27,7 +27,7 @@
 
     // Core
     wp_enqueue_style( 'core', get_theme_file_uri( '/assets/css/core.min.css' ), false, time(), 'all' );
-    wp_enqueue_style( 'style', get_theme_file_uri( '/style.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
+    wp_enqueue_style( 'theme', get_theme_file_uri( '/style.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
   }
   add_action( 'wp_enqueue_scripts', 'wallel_theme_stylesheet' );
 

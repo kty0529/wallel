@@ -1,7 +1,7 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
-	function add_vendor() {
+	function page_assets() {
     // swiper
     wp_enqueue_style( 'swiper-css', get_theme_file_uri( '/assets/vendor/swiper/swiper-bundle.min.css' ), false, '8.2.2', 'all' );
     wp_enqueue_script( 'swiper-js', get_theme_file_uri( '/assets/vendor/swiper/swiper-bundle.min.js' ), false, '8.2.2', false );
@@ -9,11 +9,11 @@
     // lightbox
     wp_enqueue_style( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/css/lightbox.min.css' ), false, '2.11.3', 'all' );
     wp_enqueue_script( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/js/lightbox.min.js' ), false, '2.11.3', false );
-	}
-	add_action( 'wp_enqueue_scripts', 'add_vendor' );
 
-  // pages style
-  wp_enqueue_style( 'style', get_theme_file_uri( '/assets/css/page-project.min.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
+    // pages style
+    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-project.min.css' ), false, time(), 'all' );
+	}
+	add_action( 'wp_enqueue_scripts', 'page_assets' );
 
   get_header();
 

@@ -9,8 +9,11 @@
   // https://pineco.de/snippets/remove-p-tag-from-contact-form-7/
   add_filter('wpcf7_autop_or_not', '__return_false');
 
-  // pages style
-  wp_enqueue_style( 'style', get_theme_file_uri( '/assets/css/page-contact-form.min.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
+  function page_assets() {
+    // pages style
+    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-contact-form.min.css' ), false, time(), 'all' );
+  }
+	add_action( 'wp_enqueue_scripts', 'page_assets' );
 
   get_header();
 ?>

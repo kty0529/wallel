@@ -1,8 +1,11 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
-  // pages style
-  wp_enqueue_style( 'style', get_theme_file_uri( '/assets/css/page-index.min.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
+  function page_assets() {
+    // pages style
+    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-index.min.css' ), false, time(), 'all' );
+  }
+	add_action( 'wp_enqueue_scripts', 'page_assets' );
 
   get_header();
 
