@@ -1,7 +1,7 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 ?>
-<div id="offcanvas" aria-hidden="true">
+<div id="offcanvas">
   <div class="widget widget-search">
     <form action="/">
       <input type="text" name="s" placeholder="통합검색" enterkeyhint="search" required value="<?php echo get_search_query(); ?>">
