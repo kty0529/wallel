@@ -22,7 +22,9 @@
               get_template_part( 'templates/parts/list' );
             }
 
-            get_template_part('templates/parts/pagination');
+            get_template_part( 'templates/parts/pagination' );
+          } else {
+            get_template_part( 'templates/parts/no-results' );
           }
         ?>
       </div>

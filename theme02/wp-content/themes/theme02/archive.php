@@ -2,18 +2,18 @@
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
   // pages style
-  wp_enqueue_style( 'style', get_theme_file_uri( '/assets/css/page-study.min.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
+  wp_enqueue_style( 'style', get_theme_file_uri( '/assets/css/page-index.min.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
 
   get_header();
 ?>
-<main id="main" <?php post_class( 'page-archive-study' ); ?>>
+<main id="main" <?php post_class( 'page-index' ); ?>>
   <div class="container">
-    <section id="study">
-      <header id="study-header">
-        <h2 class="screen-reader-text">스터디</h2>
+    <section id="posts">
+      <header id="posts-header">
+        <h2 class="screen-reader-text">블로그</h2>
       </header>
 
-      <div id="study-container">
+      <div id="posts-container">
         <?php
           if ( have_posts() ) {
             while ( have_posts() ) {
@@ -35,3 +35,4 @@
 </main>
 <?php
   get_footer();
+
