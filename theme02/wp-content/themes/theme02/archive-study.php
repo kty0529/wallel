@@ -28,7 +28,7 @@
       </div>
     </section>
 
-    <?php get_sidebar( 'study' ); ?>
+    <?php get_sidebar(); ?>
   </div>
 </main>
 <?php

@@ -28,7 +28,7 @@
       </div>
     </section>
 
-    <?php get_sidebar( 'project' ); ?>
+    <?php get_sidebar(); ?>
   </div>
 </main>
 <?php
