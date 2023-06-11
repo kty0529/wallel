@@ -32,3 +32,4 @@ Thumbs.db
 # 샘플 테마 동기화 차단
 **/themes/wallel-liji/*
 **/wp-config.php
+**/example
