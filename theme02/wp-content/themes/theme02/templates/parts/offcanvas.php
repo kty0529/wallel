@@ -36,6 +36,21 @@
       ?>
     </ul>
   </div>
+
+  <div class="widget widget-category">
+    <div class="widget-title">스터디</div>
+
+    <ul class="cat">
+      <?php
+        wp_list_categories( array(
+          'taxonomy' => 'study-type',
+          'title_li' => '',
+          'show_count' => true,
+          'hide_title_if_empty' => false,
+        ) );
+      ?>
+    </ul>
+  </div>
 </div>
 
 <button id="toggle-offcanvas" aria-hidden="true">
