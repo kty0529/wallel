@@ -13,6 +13,7 @@
     return $code ? array(
       'name' => $name,
       'code' => $code,
+      'path' => get_theme_file_uri( '/assets/svgs/' . $name . '.svg' ),
     ) : false;
   }
 
