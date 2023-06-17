@@ -13,13 +13,19 @@
 
         <div class="copyright">Copyright 2014 ~ <?php echo date('Y'); ?></div>
 
-        <div class="navigation">
+        <div class="other">
           <?php
             wp_nav_menu( array(
               'theme_location' => 'footer_menu',
               'container'      => false,
             ) );
           ?>
+
+          <div class="vultr">
+            <a href="https://www.vultr.com/?ref=6993867" target="_blank" data-tooltip="Server by Vultr">
+              <img src="<?php echo GET_SVG('Vultr')['path']; ?>" alt="Vultr Logo">
+            </a>
+          </div>
         </div>
       </div>
     </footer>
