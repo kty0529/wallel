@@ -1,11 +1,7 @@
 html,
 body {
-  color: map-get($theme-colors, 'dark');
+  color: map.get($theme-colors, 'dark');
   font-family: $ff-default;
-  font-size: rem-calc(16);
-  overflow-wrap: break-word;
-  word-break: break-all;
-  word-wrap: break-word;
 }
 
 a {

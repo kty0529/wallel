@@ -1,9 +1,10 @@
 // common use
+@use 'sass:map';
 @use 'sass:math';
 @use "sass:list";
 
 // helpers
-@import './helpers/index';
+@import './helpers';
 
 // base
 @import './base/reset';
