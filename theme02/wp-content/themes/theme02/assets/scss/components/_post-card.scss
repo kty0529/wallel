@@ -13,84 +13,31 @@
   .title {
     margin: 0;
     font-size: rem-calc(18);
-    font-weight: 400;
+    font-weight: 500;
     word-break: keep-all;
     word-wrap: break-word;
   }
 
-  .data {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: rem-calc(12);
-    color: $secondary;
-    font-size: rem-calc(14);
-    gap: rem-calc(12);
-
-    @media ($md_down) {
-      .categories {
-        flex-basis: 100%;
-        order: 2;
-      }
-    }
-  }
-
   .description {
-    margin: rem-calc(24 0 0);
+    margin: rem-calc(8 0 0);
     color: $secondary;
     font-size: rem-calc(14);
     font-weight: 400;
     line-height: 1.8;
   }
 
-  .buttons {
+  .data {
     display: flex;
-    margin-top: rem-calc(30);
+    flex-wrap: wrap;
+    margin-top: rem-calc(24);
     color: $secondary;
     font-size: rem-calc(12);
-    font-weight: 600;
+    gap: rem-calc(12);
 
-    .view-more {
-      display: flex;
-      height: rem-calc(35);
-      align-items: center;
-      padding: rem-calc(0 18);
-      border: rem-calc(2) solid $secondary;
-      border-radius: rem-calc(5);
-      text-transform: uppercase;
-
-      &:not(:last-child) {
-        border-right-width: rem-calc(1);
-        border-bottom-right-radius: 0;
-        border-top-right-radius: 0;
-      }
-    }
-
-    .external-link {
-      display: flex;
-      height: rem-calc(35);
-      align-items: center;
-      padding: rem-calc(0 10);
-      border: rem-calc(2) solid $secondary;
-      border-left-width: rem-calc(1);
-      margin-left: rem-calc(-1);
-      border-bottom-right-radius: rem-calc(5);
-      border-top-right-radius: rem-calc(5);
-      font-size: rem-calc(16);
-    }
-
-    a {
-      position: relative;
-      z-index: 1;
-
-      @include hover() {
-        transition: border-color 0.2s, background-color 0.2s, color 0.2s;
-
-        &:hover {
-          z-index: 2;
-          border-color: $primary;
-          background-color: $primary;
-          color: #fff;
-        }
+    @media ($md_down) {
+      .categories {
+        flex-basis: 100%;
+        order: 2;
       }
     }
   }

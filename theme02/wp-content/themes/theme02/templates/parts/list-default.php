@@ -9,6 +9,10 @@
     <h3 itemprop="name headline" class="title"><?php the_title(); ?></h3>
   </a>
 
+  <p class="description">
+    <?php echo mb_strimwidth( strip_tags( $content ), '0', '200', '...', 'utf-8' ); ?>
+  </p>
+
   <div class="data">
     <time itemprop="dateCreated datePublished" datetime="<?php echo get_the_date('Y-m-d H:i:s'); ?>"><?php echo get_the_date('Y-m-d'); ?></time>
 
@@ -26,22 +30,4 @@
 
     <span itemprop="author" class="author"><?php echo get_the_author_nickname(); ?></span>
   </div>
-
-  <p class="description">
-    <?php
-      echo mb_strimwidth( strip_tags( $content ), '0', '200', '...', 'utf-8' );
-    ?>
-  </p>
-
-  <?php /* ?>
-  <div class="buttons">
-    <a href="<?php echo get_permalink(); ?>" class="view-more" title="<?php the_title(); ?>">자세히 보기</a>
-
-    <?php if ( $get_url = get_url_in_content( $content ) && get_post_format() === 'link' ) { ?>
-      <a href="<?php echo get_url_in_content( $content ); ?>" class="external-link" target="_blank" data-tooltip="외부링크 바로가기" aria-label="외부링크 바로가기">
-        <span class="material-symbols-outlined">north_east</span>
-      </a>
-    <?php } ?>
-  </div>
-  <?php */ ?>
 </article>
