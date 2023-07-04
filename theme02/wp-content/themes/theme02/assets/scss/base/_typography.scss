@@ -1,6 +1,5 @@
 html,
 body {
-  /* stylelint-disable-next-line scss/no-global-function-names */
   color: map-get($theme-colors, 'dark');
   font-family: $ff-default;
   font-size: rem-calc(16);

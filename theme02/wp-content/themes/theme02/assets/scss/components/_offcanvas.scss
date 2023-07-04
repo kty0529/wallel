@@ -116,7 +116,6 @@ $offcanvasWidth: rem-calc(320);
   width: rem-calc(40);
   height: rem-calc(40);
   padding-bottom: rem-calc(2);
-  /* stylelint-disable-next-line scss/no-global-function-names */
   border: rem-calc(1) solid darken($light, 5%);
   background-color: #fff;
   border-radius: rem-calc(3);
