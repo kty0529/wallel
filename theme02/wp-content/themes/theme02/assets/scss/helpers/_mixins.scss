@@ -195,6 +195,7 @@
   code[class*=language-],
   pre[class*=language-] {
     font-family: 'Menlo', 'Consolas', $ff-default;
+    font-size: rem-calc(14);
   }
 
   pre[class*=language-] {
