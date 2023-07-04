@@ -16,8 +16,8 @@
       font-size: rem-calc(12);
 
       &:first-child {
-        margin-left: 0;
         border-radius: rem-calc(5 0 0 5);
+        margin-left: 0;
       }
 
       &:last-child {
@@ -25,8 +25,6 @@
       }
 
       .icon {
-        position: relative;
-        top: rem-calc(-0.5);
         font-size: rem-calc(18);
       }
 
