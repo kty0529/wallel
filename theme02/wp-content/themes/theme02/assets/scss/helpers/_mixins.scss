@@ -1,4 +1,6 @@
-// 포지션 관련
+@use 'sass:string';
+
+
 @mixin fullscreen($z: 1, $p: 'absolute') {
   position: #{$p};
   z-index: $z;
@@ -88,14 +90,14 @@
 
 @mixin material-icons($code, $style: 'Outlined') {
   $withslash: "\"\\#{$code}\"";
-  content: unquote($withslash);
+  content: string.unquote($withslash);
   font-family: 'Material Symbols #{$style}';
 }
 
 
 // 커스텀 mixin
 @mixin common-description-typhography {
-  font-size: rem-calc(14);
+  font-size: rem-calc(16);
   line-height: 1.8;
 
   a {
@@ -153,8 +155,8 @@
   ul, ol {
     padding: rem-calc(20 30);
     padding-left: rem-calc(40);
-    background-color: $light;
     border-radius: rem-calc(5);
+    background-color: $light;
 
     ul, ol,
     ul[class*='wp-block'],
@@ -166,6 +168,14 @@
     li:not(:first-child) {
       margin-top: rem-calc(8);
     }
+  }
+
+  ol > li {
+    list-style: decimal;
+  }
+
+  ul > li {
+    list-style: disc;
   }
 
   table {
@@ -185,7 +195,6 @@
   code[class*=language-],
   pre[class*=language-] {
     font-family: 'Menlo', 'Consolas', $ff-default;
-    font-size: 0.95em;
   }
 
   pre[class*=language-] {
