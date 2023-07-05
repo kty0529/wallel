@@ -42,6 +42,10 @@
         <?php the_content(); ?>
       </div>
 
+      <div id="entry-adsense">
+        <?php get_template_part( 'templates/parts/adsense' ); ?>
+      </div>
+
       <?php if ( $tags = get_the_tags() ) { ?>
         <div id="entry-tags">
           <?php

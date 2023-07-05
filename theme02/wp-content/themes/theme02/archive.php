@@ -24,7 +24,7 @@
               the_post();
 
               if ( $i === 2 || $i === 4 ) {
-                get_template_part( 'templates/parts/adsense' );
+                get_template_part( 'templates/parts/adsense', 'infeed' );
               }
 
               get_template_part( 'templates/parts/list' );

@@ -81,6 +81,10 @@
       @include common-description-typhography;
     }
 
+    &-adsense {
+      margin-top: rem-calc(48);
+    }
+
     &-tags {
       padding-top: rem-calc(24);
       border-top: rem-calc(1) solid $light;
