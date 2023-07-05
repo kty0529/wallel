@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 * {
   outline-color: $primary;
 }
@@ -5,4 +7,43 @@
 ::selection {
   background-color: $primary;
   color: #fff;
+}
+
+.container {
+  margin: {
+    right: auto;
+    left: auto;
+  }
+  padding: {
+    right: math.div($gutter, 2);
+    left: math.div($gutter, 2);
+  }
+  max-width: $container;
+}
+
+// 플랙스박스 정렬 class
+$flex-align: (
+  'justify-content': (
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+  ),
+  'align-items': (
+    'start': 'flex-start',
+    'end': 'flex-end',
+    'center': 'center',
+  ),
+);
+
+@each $k, $v in $flex-align {
+  @each $i, $o in $v {
+    .#{$k}-#{$i} {
+      #{$k}: #{$o};
+    }
+  }
+}
+
+// 워드프레스 어드민바 항상 고정
+#wpadminbar {
+  position: fixed !important;
 }
