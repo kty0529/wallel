@@ -1,7 +1,6 @@
 {
   "scripts": {
-    "lint": "stylelint \"scss/**/*.scss\" --config .stylelintrc.json --fix",
-    "watch": "sass --watch scss:css"
+    "watch": "sass --style=compressed --update --watch theme02/wp-content/themes/theme02/assets/scss/:theme02/wp-content/themes/theme02/assets/css/"
   },
   "dependencies": {
     "stylelint": "^14.16.1",
