@@ -1,9 +1,5 @@
-// common use
-@use 'sass:math';
-@use "sass:list";
-
 // helpers
-@import './helpers/index';
+@import './helpers';
 
 // pages
 .page-archive-study {
