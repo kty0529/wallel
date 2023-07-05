@@ -21,6 +21,12 @@
     min-width: 0;
     flex: 1 1 auto;
   }
+
+  #project-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem-calc(30);
+  }
 }
 
 .page-single-project {
@@ -109,7 +115,7 @@
           object-position: top center;
         }
 
-        .swiper  {
+        .swiper {
           @media ($sm_down) {
             overflow: visible;
           }
@@ -123,8 +129,8 @@
 
           .arrows {
             margin-top: rem-calc(20);
-            line-height: inherit;
             color: $dark;
+            line-height: inherit;
             transition: all 0.2s;
 
             &[disabled] {
@@ -145,9 +151,9 @@
       .sec-content {
         ul {
           padding: 0;
+          border-radius: 0;
           margin: 0;
           background-color: transparent;
-          border-radius: 0;
           list-style: none;
         }
 

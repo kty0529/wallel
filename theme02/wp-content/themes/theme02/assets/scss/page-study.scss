@@ -21,4 +21,10 @@
     min-width: 0;
     flex: 1 1 auto;
   }
+
+  #study-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem-calc(30);
+  }
 }

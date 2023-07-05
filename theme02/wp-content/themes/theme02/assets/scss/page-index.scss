@@ -21,6 +21,12 @@
     min-width: 0;
     flex: 1 1 auto;
   }
+
+  #posts-container {
+    display: flex;
+    flex-direction: column;
+    gap: rem-calc(30);
+  }
 }
 
 .page-single {

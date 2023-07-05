@@ -6,10 +6,6 @@
     padding: rem-calc(30 15);
   }
 
-  &:not(:first-child) {
-    margin-top: rem-calc(30);
-  }
-
   .title {
     margin: 0;
     font-size: rem-calc(18);
@@ -56,10 +52,6 @@
 
   @media ($sm_down) {
     padding: rem-calc(15);
-  }
-
-  &:not(:first-child) {
-    margin-top: rem-calc(30);
   }
 
   .thumbnail {
@@ -200,10 +192,6 @@
 
   @media ($sm_down) {
     padding: rem-calc(15);
-  }
-
-  &:not(:first-child) {
-    margin-top: rem-calc(30);
   }
 
   .thumbnail {
