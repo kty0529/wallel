@@ -96,6 +96,7 @@
         li {
           height: auto;
           margin: 0;
+          list-style: none;
         }
 
         a {
@@ -154,6 +155,10 @@
           border-radius: 0;
           margin: 0;
           background-color: transparent;
+          list-style: none;
+        }
+
+        li {
           list-style: none;
         }
 
