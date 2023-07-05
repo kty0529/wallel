@@ -1,6 +1,6 @@
 // common use
 @use 'sass:math';
-@use "sass:list";
+@use 'sass:list';
 
 // helpers
 @import './helpers';
@@ -8,12 +8,40 @@
 // base
 @import './base/reset';
 @import './base/colors';
-// @import './base/grid';
 @import './base/typography';
-@import './base/wordpress';
 
 // custom
 body {
-  margin: 8px;
+  padding: {
+    top: $gutter;
+    right: math.div($gutter, 2);
+    bottom: $gutter;
+    left: math.div($gutter, 2);
+  };
   @include common-description-typhography;
+}
+
+body.wp-autoresize,
+#tinymce {
+  padding: {
+    top: $gutter;
+    right: math.div($gutter, 2);
+    bottom: $gutter;
+    left: math.div($gutter, 2);
+  };
+}
+
+/* Main column width */
+.wp-block {
+  max-width: 720px;
+}
+
+/* Width of "wide" blocks */
+.wp-block[data-align="wide"] {
+  max-width: 720px;
+}
+
+/* Width of "full-width" blocks */
+.wp-block[data-align="full"] {
+  max-width: 720px;
 }
