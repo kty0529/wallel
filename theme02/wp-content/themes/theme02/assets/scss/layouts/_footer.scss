@@ -31,11 +31,7 @@
     }
 
     .vultr {
-      width: 50px;
-
-      @media ($sm-down) {
-        width: 30px;
-      }
+      width: 30px;
 
       a {
         display: block;
