@@ -11,7 +11,7 @@
     wp_enqueue_script( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/js/lightbox.min.js' ), false, '2.11.3', false );
 
     // pages style
-    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-project.min.css' ), false, time(), 'all' );
+    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-project.css' ), false, time(), 'all' );
 	}
 	add_action( 'wp_enqueue_scripts', 'page_assets' );
 

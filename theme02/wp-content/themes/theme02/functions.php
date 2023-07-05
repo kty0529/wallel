@@ -27,7 +27,7 @@
     wp_enqueue_style( 'pretendard', get_theme_file_uri( '/assets/fonts/pretendard-subset.css' ), false, false, 'all' );
 
     // Core
-    wp_enqueue_style( 'core', get_theme_file_uri( '/assets/css/core.min.css' ), false, time(), 'all' );
+    wp_enqueue_style( 'core', get_theme_file_uri( '/assets/css/core.css' ), false, time(), 'all' );
     wp_enqueue_style( 'theme', get_theme_file_uri( '/style.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
   }
   add_action( 'wp_enqueue_scripts', 'wallel_theme_stylesheet' );
@@ -55,7 +55,7 @@
     add_theme_support( 'customize-selective-refresh-widgets' );
 
     add_theme_support( 'editor-styles' );
-    add_editor_style( get_theme_file_uri( '/assets/css/editor-style.min.css?' . time() ) );
+    add_editor_style( get_theme_file_uri( '/assets/css/editor-style.css?' . time() ) );
   }
   add_action( 'after_setup_theme', 'custom_theme_setup' );
 

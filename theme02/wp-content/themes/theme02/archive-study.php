@@ -3,7 +3,7 @@
 
   function page_assets() {
     // pages style
-    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-study.min.css' ), false, time(), 'all' );
+    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-study.css' ), false, time(), 'all' );
   }
 	add_action( 'wp_enqueue_scripts', 'page_assets' );
 
