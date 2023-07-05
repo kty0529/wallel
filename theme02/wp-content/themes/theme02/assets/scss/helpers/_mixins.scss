@@ -1,6 +1,3 @@
-@use 'sass:string';
-
-
 @mixin fullscreen($z: 1, $p: 'absolute') {
   position: #{$p};
   z-index: $z;
