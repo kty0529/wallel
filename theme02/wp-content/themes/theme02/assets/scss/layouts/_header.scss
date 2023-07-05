@@ -41,7 +41,7 @@
     margin-right: rem-calc(-20);
 
     @media ($lg_down) {
-      margin-right: 0;
+      margin-right: rem-calc(-10);
     }
 
     ul {
@@ -49,10 +49,6 @@
       padding: 0;
       margin: 0;
       list-style: none;
-
-      @media ($lg_down) {
-        margin-right: rem-calc(-10);
-      }
     }
 
     a {
