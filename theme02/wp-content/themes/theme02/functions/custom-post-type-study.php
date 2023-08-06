@@ -17,14 +17,16 @@
 		);
 
 		$args = array(
-			'label'               => '스터디',
-			'description'         => '스터디를 등록할 수 있습니다.',
-			'labels'              => $labels,
-			'public'              => true,
-			'has_archive'         => true,
-			'supports'            => array( 'title', 'editor', 'tags', 'thumbnail', 'revisions' ),
-			'menu_position'       => 5,
-			'taxonomies'          => false
+			'label'         => '스터디',
+			'description'   => '스터디를 등록할 수 있습니다.',
+			'labels'        => $labels,
+			'public'        => true,
+			'has_archive'   => true,
+			'supports'      => array( 'title', 'editor', 'tags', 'thumbnail', 'revisions' ),
+			'menu_position' => 5,
+			'taxonomies'    => false,
+			'show_in_rest'  => true,
+			'rest_base'     => 'study',
 		);
 
 		register_post_type( 'study', $args );

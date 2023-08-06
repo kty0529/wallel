@@ -17,14 +17,16 @@
 		);
 
 		$args = array(
-			'label'               => '프로젝트',
-			'description'         => '프로젝트를 등록할 수 있습니다.',
-			'labels'              => $labels,
-			'public'              => true,
-			'has_archive'         => true,
-			'supports'            => array( 'title', 'editor', 'tags', 'thumbnail', 'revisions' ),
-			'menu_position'       => 5,
-			'taxonomies'          => false
+			'label'         => '프로젝트',
+			'description'   => '프로젝트를 등록할 수 있습니다.',
+			'labels'        => $labels,
+			'public'        => true,
+			'has_archive'   => true,
+			'supports'      => array( 'title', 'editor', 'tags', 'thumbnail', 'revisions' ),
+			'menu_position' => 5,
+			'taxonomies'    => false,
+			'show_in_rest'  => true,
+			'rest_base'     => 'project',
 		);
 
 		register_post_type( 'project', $args );
