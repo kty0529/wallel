@@ -19,7 +19,7 @@
 
 
   // 테마 CSS
-  function wallel_theme_stylesheet() {
+  function custom_theme_stylesheet() {
     // Vendor
     wp_enqueue_style( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.css' ), false, '1.29.0', 'all' );
 
@@ -30,11 +30,11 @@
     wp_enqueue_style( 'core', get_theme_file_uri( '/assets/css/core.css' ), false, time(), 'all' );
     wp_enqueue_style( 'theme', get_theme_file_uri( '/style.css' ), array( 'core' ), wp_get_theme()->get( 'Version' ), 'all' );
   }
-  add_action( 'wp_enqueue_scripts', 'wallel_theme_stylesheet' );
+  add_action( 'wp_enqueue_scripts', 'custom_theme_stylesheet' );
 
 
   // 테마 Script
-  function wallel_theme_script() {
+  function custom_theme_script() {
     // Vendor
     wp_enqueue_script( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.js' ), array( 'jquery' ), '1.29.0', false );
 
@@ -42,7 +42,7 @@
     wp_enqueue_script( 'core-header', get_theme_file_uri( '/assets/js/core-header.js' ), array( 'jquery' ), time(), false );
     wp_enqueue_script( 'core-footer', get_theme_file_uri( '/assets/js/core-footer.js' ), array( 'jquery', 'core-header' ), time(), true );
   }
-  add_action( 'wp_enqueue_scripts', 'wallel_theme_script' );
+  add_action( 'wp_enqueue_scripts', 'custom_theme_script' );
 
 
   // 테마 서포트
