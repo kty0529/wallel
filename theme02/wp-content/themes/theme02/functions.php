@@ -40,7 +40,7 @@
 
     // Core
     // wp_enqueue_script( 'core-header', get_theme_file_uri( '/assets/js/core-header.js' ), array( 'jquery' ), time(), false );
-    wp_enqueue_script( 'core-footer', get_theme_file_uri( '/assets/js/core-footer.js' ), array( 'jquery', 'core-header' ), time(), true );
+    wp_enqueue_script( 'core-footer', get_theme_file_uri( '/assets/js/core-footer.js' ), array( 'jquery' ), time(), true );
   }
   add_action( 'wp_enqueue_scripts', 'custom_theme_script' );
 
