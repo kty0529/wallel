@@ -69,6 +69,13 @@
   ));
 
 
+  // 관리자 페이지에 스타일 및 스크립트 추가
+  function admin_scripts() {
+    wp_enqueue_style( 'admin', get_theme_file_uri( '/assets/css/admin.css' ), false, time(), 'all' );
+  }
+  add_action( 'admin_enqueue_scripts', 'admin_scripts' );
+
+
   // 어드민바 버튼 제거
   // https://codex.wordpress.org/Function_Reference/remove_node
   if ( ! current_user_can( 'manage_options' ) ) {
