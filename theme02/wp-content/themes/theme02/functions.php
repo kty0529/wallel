@@ -39,7 +39,7 @@
     wp_enqueue_script( 'prismjs', get_theme_file_uri( '/assets/vendor/prismjs/prism.js' ), array( 'jquery' ), '1.29.0', false );
 
     // Core
-    wp_enqueue_script( 'core-header', get_theme_file_uri( '/assets/js/core-header.js' ), array( 'jquery' ), time(), false );
+    // wp_enqueue_script( 'core-header', get_theme_file_uri( '/assets/js/core-header.js' ), array( 'jquery' ), time(), false );
     wp_enqueue_script( 'core-footer', get_theme_file_uri( '/assets/js/core-footer.js' ), array( 'jquery', 'core-header' ), time(), true );
   }
   add_action( 'wp_enqueue_scripts', 'custom_theme_script' );
