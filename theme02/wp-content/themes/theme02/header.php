@@ -33,7 +33,8 @@
     <header id="header">
       <div class="container">
         <h1 class="title">
-          <a href="<?php echo home_url(); ?>" aria-label="Wallel">
+          <a href="<?php echo home_url(); ?>">
+            <span class="screen-reader-text">Wallel</span>
             <?php echo GET_SVG('Wallel')['code']; ?>
           </a>
         </h1>
