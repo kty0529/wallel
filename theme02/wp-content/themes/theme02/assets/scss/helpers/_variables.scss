@@ -27,17 +27,17 @@ $theme-colors: (
 
 
 // 반응형
-$container: rem-calc(1080) !default;
-$gutter: rem-calc(32) !default;
+$container: 1080px !default;
+$gutter: 32px !default;
 
 // breakpoints
-$lg_up: 'min-width: #{rem-calc(1024)}';
-$md_up: 'min-width: #{rem-calc(768)}';
-$sm_up: 'max-width: #{rem-calc(425)}';
+$lg_up: 'min-width: #{1024px}';
+$md_up: 'min-width: #{768px}';
+$sm_up: 'max-width: #{425px}';
 
-$lg_down: 'max-width: #{rem-calc(1023)}';
-$md_down: 'max-width: #{rem-calc(767)}';
-$sm_down: 'max-width: #{rem-calc(424)}';
+$lg_down: 'max-width: #{1023px}';
+$md_down: 'max-width: #{767px}';
+$sm_down: 'max-width: #{424px}';
 
 
 // 브랜드별 대표 색상

@@ -1,24 +1,24 @@
 #footer {
-  padding: rem-calc(40 0 86);
+  padding: 40px 0 86px;
   color: $secondary;
-  font-size: rem-calc(14);
+  font-size: 14px;
 
   .title {
-    font-size: rem-calc(26);
+    font-size: 26px;
     font-weight: 400;
   }
 
   .copyright {
-    margin-top: rem-calc(6);
+    margin-top: 6px;
   }
 
   .other {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: rem-calc(28);
-    border-top: rem-calc(1) solid $light;
-    margin-top: rem-calc(28);
+    padding-top: 28px;
+    border-top: 1px solid $light;
+    margin-top: 28px;
 
     ul {
       padding: 0;
@@ -26,7 +26,7 @@
       list-style: none;
 
       li:not(:first-child) {
-        margin-top: rem-calc(10);
+        margin-top: 10px;
       }
     }
 

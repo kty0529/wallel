@@ -20,14 +20,14 @@ code {
   display: inline-block;
   color: $danger;
   font-family: $code-font-family;
-  font-size: rem-calc(14);
-  letter-spacing: rem-calc(-0.2);
+  font-size: 14px;
+  letter-spacing: -0.2px;
 }
 
 pre {
-  padding: rem-calc(10);
+  padding: 10px;
   background-color: #fafafa;
   font-family: $code-font-family;
-  font-size: rem-calc(14);
-  letter-spacing: rem-calc(-0.2);
+  font-size: 14px;
+  letter-spacing: -0.2px;
 }

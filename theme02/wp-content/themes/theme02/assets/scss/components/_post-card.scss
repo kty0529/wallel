@@ -1,23 +1,23 @@
 .post-card {
-  padding: rem-calc(40 30);
+  padding: 40px 30px;
   background-color: #fff;
 
   @media ($sm_down) {
-    padding: rem-calc(30 15);
+    padding: 30px 15px;
   }
 
   .title {
     margin: 0;
-    font-size: rem-calc(18);
+    font-size: 18px;
     font-weight: 500;
     word-break: keep-all;
     word-wrap: break-word;
   }
 
   .description {
-    margin: rem-calc(8 0 0);
+    margin: 8px 0 0;
     color: $secondary;
-    font-size: rem-calc(14);
+    font-size: 14px;
     font-weight: 400;
     line-height: 1.8;
   }
@@ -25,10 +25,10 @@
   .data {
     display: flex;
     flex-wrap: wrap;
-    margin-top: rem-calc(24);
+    margin-top: 24px;
     color: $secondary;
-    font-size: rem-calc(12);
-    gap: rem-calc(12);
+    font-size: 12px;
+    gap: 12px;
 
     @media ($md_down) {
       .categories {
@@ -42,21 +42,21 @@
 .project-card {
   display: flex;
   align-items: flex-start;
-  padding: rem-calc(20);
+  padding: 20px;
   background-color: #fff;
-  gap: rem-calc(20);
+  gap: 20px;
 
   @media ($md_down) {
     display: block;
   }
 
   @media ($sm_down) {
-    padding: rem-calc(15);
+    padding: 15px;
   }
 
   .thumbnail {
     position: relative;
-    flex: 0 0 rem-calc(250);
+    flex: 0 0 250px;
     background-color: #fff;
 
     a {
@@ -65,7 +65,7 @@
 
     img {
       width: 100%;
-      min-height: rem-calc(150);
+      min-height: 150px;
       object-fit: cover;
       object-position: top center;
     }
@@ -73,14 +73,14 @@
     .categories {
       position: absolute;
       z-index: 10;
-      top: rem-calc(10);
-      left: rem-calc(10);
+      top: 10px;
+      left: 10px;
       display: flex;
-      gap: rem-calc(4);
+      gap: 4px;
 
       .icon {
-        width: rem-calc(36);
-        height: rem-calc(36);
+        width: 36px;
+        height: 36px;
         background-color: #000;
         color: #fff;
       }
@@ -98,13 +98,13 @@
       bottom: 0;
       display: none;
       width: 100%;
-      height: rem-calc(40);
+      height: 40px;
       align-items: center;
       justify-content: center;
       margin: auto 0;
       background-color: $dark;
       color: $light;
-      font-size: rem-calc(13);
+      font-size: 13px;
       font-weight: 700;
     }
   }
@@ -114,43 +114,43 @@
     flex: 1 1 auto;
     flex-direction: column;
     justify-content: center;
-    padding: rem-calc(10 0);
+    padding: 10px 0;
 
     @media ($md_down) {
-      margin-top: rem-calc(20);
+      margin-top: 20px;
     }
 
     .title {
-      font-size: rem-calc(18);
+      font-size: 18px;
       font-weight: 500;
     }
 
     .description {
-      margin-top: rem-calc(16);
+      margin-top: 16px;
       color: $secondary;
-      font-size: rem-calc(13);
+      font-size: 13px;
       line-height: 1.8;
     }
 
     .languages {
       display: flex;
       align-items: center;
-      padding: rem-calc(20 0 0);
-      border-top: rem-calc(1) solid $border-color;
-      margin: rem-calc(30 0 0);
-      gap: rem-calc(4);
+      padding: 20px 0 0px;
+      border-top: 1px solid $border-color;
+      margin: 30px 0 0px;
+      gap: 4px;
       list-style: none;
 
       .label {
-        padding-right: rem-calc(4);
+        padding-right: 4px;
         color: $dark;
-        font-size: rem-calc(13);
+        font-size: 13px;
         font-weight: 500;
       }
 
       svg {
-        width: rem-calc(32);
-        height: rem-calc(32);
+        width: 32px;
+        height: 32px;
         background-color: $light;
         fill: #333;
         transition: background-color 0.2s, fill 0.2s;
@@ -182,21 +182,21 @@
 .study-card {
   display: flex;
   align-items: flex-start;
-  padding: rem-calc(20);
+  padding: 20px;
   background-color: #fff;
-  gap: rem-calc(20);
+  gap: 20px;
 
   @media ($md_down) {
     flex-direction: column;
   }
 
   @media ($sm_down) {
-    padding: rem-calc(15);
+    padding: 15px;
   }
 
   .thumbnail {
     position: relative;
-    width: rem-calc(250);
+    width: 250px;
     flex: 0 0 auto;
 
     @media ($md_down) {
@@ -209,7 +209,7 @@
 
       img {
         width: 100%;
-        min-height: rem-calc(150);
+        min-height: 150px;
         object-fit: cover;
         object-position: center;
       }
@@ -217,20 +217,20 @@
 
     .status {
       position: absolute;
-      top: rem-calc(10);
-      left: rem-calc(10);
+      top: 10px;
+      left: 10px;
       display: flex;
       flex-wrap: wrap;
-      gap: rem-calc(8);
+      gap: 8px;
     }
 
     .common {
       display: inline-flex;
-      height: rem-calc(25);
+      height: 25px;
       flex: 0 0 auto;
       align-items: center;
-      padding: rem-calc(0 8);
-      font-size: rem-calc(12);
+      padding: 0 8px;
+      font-size: 12px;
       font-weight: 500;
     }
 
@@ -245,45 +245,45 @@
       bottom: 0;
       display: none;
       width: 100%;
-      height: rem-calc(40);
+      height: 40px;
       align-items: center;
       justify-content: center;
       margin: auto 0;
       background-color: $dark;
       color: $light;
-      font-size: rem-calc(13);
+      font-size: 13px;
       font-weight: 700;
     }
   }
 
   .content {
     flex: 1 1 auto;
-    padding: rem-calc(10 0);
+    padding: 10px 0;
 
     .title {
-      font-size: rem-calc(18);
+      font-size: 18px;
       font-weight: 500;
     }
 
     .description {
-      margin-top: rem-calc(16);
+      margin-top: 16px;
       color: $secondary;
-      font-size: rem-calc(13);
+      font-size: 13px;
       line-height: 1.8;
     }
 
     .infomation {
-      padding: rem-calc(16 0 0);
-      border-top: rem-calc(1) solid $light;
-      margin: rem-calc(16 0 0);
+      padding: 16px 0 0;
+      border-top: 1px solid $light;
+      margin: 16px 0 0;
       list-style: none;
 
       li {
         color: $secondary;
-        font-size: rem-calc(14);
+        font-size: 14px;
 
         &:not(:first-child) {
-          margin-top: rem-calc(4);
+          margin-top: 4px;
         }
       }
 
@@ -300,8 +300,8 @@
 
         img {
           position: relative;
-          top: rem-calc(-1);
-          width: rem-calc(22);
+          top: -1px;
+          width: 22px;
         }
       }
       @keyframes flush {
@@ -315,16 +315,16 @@
       flex-wrap: wrap;
       align-items: flex-start;
       justify-content: flex-start;
-      margin-top: rem-calc(16);
-      gap: rem-calc(4);
+      margin-top: 16px;
+      gap: 4px;
 
       a {
         display: flex;
-        height: rem-calc(25);
+        height: 25px;
         align-items: center;
-        padding: rem-calc(0 8);
+        padding: 0 8px;
         background-color: $light;
-        font-size: rem-calc(12);
+        font-size: 12px;
 
         @include hover() {
           transition: background-color 0.2s, color 0.2s;

@@ -15,12 +15,12 @@
   &::before {
     @include disable();
     z-index: 2;
-    bottom: calc(100% + rem-calc(6));
-    padding: rem-calc(3 5);
-    border-radius: rem-calc(3);
+    bottom: calc(100% + 6px);
+    padding: 3 5px;
+    border-radius: 3px;
     color: #fff;
     content: attr(data-tooltip);
-    font-size: rem-calc(12);
+    font-size: 12px;
     font-weight: 500;
     transform: translateX(-50%);
     white-space: nowrap;
@@ -29,9 +29,9 @@
   &::after {
     @include disable();
     z-index: 1;
-    bottom: calc(100% + rem-calc(4));
-    width: rem-calc(4);
-    height: rem-calc(4);
+    bottom: calc(100% + 4px);
+    width: 4px;
+    height: 4px;
     content: '';
     transform: translateX(-50%) rotate(45deg);
   }

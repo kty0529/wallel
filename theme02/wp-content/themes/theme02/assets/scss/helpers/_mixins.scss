@@ -48,7 +48,7 @@
   white-space: nowrap;
 }
 
-@mixin box-ellipsis($line: 3, $lineHeight: rem-calc(20), $boxHeight: 'auto') {
+@mixin box-ellipsis($line: 3, $lineHeight: 20px, $boxHeight: 'auto') {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -94,7 +94,7 @@
 
 // 커스텀 mixin
 @mixin common-description-typhography {
-  font-size: rem-calc(16);
+  font-size: 16px;
   line-height: 1.8;
 
   a {
@@ -126,9 +126,9 @@
 
     &:before {
       display: block;
-      width: rem-calc(40);
-      height: rem-calc(1);
-      margin-bottom: rem-calc(10);
+      width: 40px;
+      height: 1px;
+      margin-bottom: 10px;
       background-color: $primary;
       content: '';
     }
@@ -145,25 +145,25 @@
     height: 0;
     padding: 0;
     border: 0;
-    border-top: rem-calc(1) solid $border-color;
-    margin: rem-calc(30 0);
+    border-top: 1px solid $border-color;
+    margin: 30 0px;
   }
 
   ul, ol {
-    padding: rem-calc(20 30);
-    padding-left: rem-calc(40);
-    border-radius: rem-calc(5);
+    padding: 20px 30px;
+    padding-left: 40px;
+    border-radius: 5px;
     background-color: $light;
 
     ul, ol,
     ul[class*='wp-block'],
     ol[class*='wp-block'] {
       padding: 0;
-      margin: rem-calc(8 30);
+      margin: 8 30px;
     }
 
     li:not(:first-child) {
-      margin-top: rem-calc(8);
+      margin-top: 8px;
     }
   }
 
@@ -180,7 +180,7 @@
     table-layout: fixed;
 
     th, td {
-      padding: rem-calc(10);
+      padding: 10px;
     }
 
     th {
@@ -192,7 +192,7 @@
   code[class*=language-],
   pre[class*=language-] {
     font-family: 'Menlo', 'Consolas', $ff-default;
-    font-size: rem-calc(14);
+    font-size: 14px;
   }
 
   pre[class*=language-] {
@@ -217,7 +217,7 @@
       margin-top: 0.5em;
       margin-bottom: 1em;
       color: #555;
-      font-size: rem-calc(13);
+      font-size: 13px;
       text-align: center;
     }
 

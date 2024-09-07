@@ -1,8 +1,8 @@
 #main {
-  padding: rem-calc(70 0 150);
+  padding: 70px 0 150px;
   background-color: $light;
 
   @media ($lg_down) {
-    padding: rem-calc(50 0 100);
+    padding: 50px 0 100px;
   }
 }

@@ -1,10 +1,10 @@
 // variables
 $adminbarHeight: (
-  rem-calc(32), // desktop
-  rem-calc(46)  // mobile
+  32px, // desktop
+  46px,  // mobile
 );
 
-$offcanvasWidth: rem-calc(320);
+$offcanvasWidth: 320px;
 
 // styles
 #offcanvas {
@@ -16,7 +16,7 @@ $offcanvasWidth: rem-calc(320);
   overflow: hidden;
   width: 100%;
   max-width: $offcanvasWidth;
-  padding: rem-calc(50 30 100);
+  padding: 50px 30px 100px;
   background-color: #fff;
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
@@ -27,13 +27,13 @@ $offcanvasWidth: rem-calc(320);
     line-height: 1;
 
     &:not(:first-child) {
-      margin-top: rem-calc(64);
+      margin-top: 64px;
     }
 
     ul {
       padding: 0;
       margin: 0;
-      font-size: rem-calc(14);
+      font-size: 14px;
       list-style: none;
     }
   }
@@ -41,27 +41,27 @@ $offcanvasWidth: rem-calc(320);
   .widget-search {
     input {
       width: 100%;
-      height: rem-calc(40);
-      padding: rem-calc(0 15);
-      border: rem-calc(1) solid $border-color;
-      font-size: rem-calc(16);
+      height: 40px;
+      padding: 0 15px;
+      border: 1px solid $border-color;
+      font-size: 16px;
 
       &::placeholder {
-        font-size: rem-calc(14);
+        font-size: 14px;
       }
     }
   }
 
   .widget-title {
     color: $dark;
-    font-size: rem-calc(16);
+    font-size: 16px;
     font-weight: 500;
     text-transform: uppercase;
   }
 
   .widget-menu {
     .menu-item {
-      margin-top: rem-calc(20);
+      margin-top: 20px;
     }
 
     .current-menu-item > a {
@@ -71,11 +71,11 @@ $offcanvasWidth: rem-calc(320);
 
   .widget-category {
     .cat {
-      margin-top: rem-calc(12);
+      margin-top: 12px;
     }
 
     .cat-item {
-      margin-top: rem-calc(20);
+      margin-top: 20px;
     }
 
     .children {
@@ -84,18 +84,18 @@ $offcanvasWidth: rem-calc(320);
 
         &:before {
           position: relative;
-          top: rem-calc(-1);
-          margin-right: rem-calc(8);
+          top: -1px;
+          margin-right: 8px;
           color: $border-color;
 
           @include material-icons('e5cc');
-          font-size: rem-calc(18);
+          font-size: 18px;
           vertical-align: middle;
         }
 
         ul {
           li {
-            padding-left: rem-calc(16);
+            padding-left: 16px;
           }
         }
       }
@@ -110,17 +110,17 @@ $offcanvasWidth: rem-calc(320);
 #toggle-offcanvas {
   position: fixed;
   z-index: 102;
-  right: rem-calc(15);
-  bottom: rem-calc(30);
+  right: 15px;
+  bottom: 30px;
   display: none;
-  width: rem-calc(40);
-  height: rem-calc(40);
-  padding-bottom: rem-calc(2);
-  border: rem-calc(1) solid darken($light, 5%);
+  width: 40px;
+  height: 40px;
+  padding-bottom: 2px;
+  border: 1px solid darken($light, 5%);
+  border-radius: 3px;
   background-color: #fff;
-  border-radius: rem-calc(3);
   color: $dark;
-  font-size: rem-calc(16);
+  font-size: 16px;
   text-align: center;
 
   .icon_active {

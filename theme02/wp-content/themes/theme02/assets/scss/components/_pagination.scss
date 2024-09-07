@@ -5,26 +5,26 @@
 
     .page-numbers {
       display: flex;
-      height: rem-calc(32);
+      height: 32px;
       align-items: center;
-      padding: rem-calc(0 12);
-      border: rem-calc(1) solid $border-color;
-      margin-left: rem-calc(-1);
+      padding: 0 12px;
+      border: 1px solid $border-color;
+      margin-left: -1px;
       background-color: #fff;
       color: $secondary;
-      font-size: rem-calc(12);
+      font-size: 12px;
 
       &:first-child {
-        border-radius: rem-calc(5 0 0 5);
+        border-radius: 5px 0 0 5px;
         margin-left: 0;
       }
 
       &:last-child {
-        border-radius: rem-calc(0 5 5 0);
+        border-radius: 0 5px 5px 0px;
       }
 
       .icon {
-        font-size: rem-calc(18);
+        font-size: 18px;
       }
 
       @include hover() {
@@ -42,17 +42,17 @@
     }
 
     .prev {
-      padding-left: rem-calc(5);
+      padding-left: 5px;
     }
 
     .next {
-      padding-right: rem-calc(5);
+      padding-right: 5px;
     }
 
     @media ($md_down) {
       .prev,
       .next {
-        padding: rem-calc(0 5);
+        padding: 0 5px;
 
         .text {
           display: none;

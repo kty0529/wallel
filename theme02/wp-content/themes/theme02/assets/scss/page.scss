@@ -9,24 +9,24 @@
     gap: $gutter;
 
     @media ($sm_down) {
-      margin: rem-calc(0 -15);
+      margin: 0 -15px;
     }
   }
 
   #entry {
     min-width: 0;
     flex: 1 1 auto;
-    padding: rem-calc(40 30);
+    padding: 40px 30px;
     background-color: #fff;
 
     @media ($sm_down) {
-      padding: rem-calc(30 15);
+      padding: 30px 15px;
     }
 
     &-header {
       .title {
         margin: 0;
-        font-size: rem-calc(18);
+        font-size: 18px;
         font-weight: 500;
         word-break: keep-all;
         word-wrap: break-word;
@@ -35,10 +35,10 @@
       .data {
         display: flex;
         flex-wrap: wrap;
-        margin-top: rem-calc(12);
+        margin-top: 12px;
         color: $secondary;
-        font-size: rem-calc(12);
-        gap: rem-calc(12);
+        font-size: 12px;
+        gap: 12px;
 
         @media ($md_down) {
           .categories {
@@ -50,20 +50,20 @@
     }
 
     &-container {
-      padding-top: rem-calc(40);
+      padding-top: 40px;
       @include common-description-typhography;
     }
 
     &-tags {
-      padding-top: rem-calc(24);
-      border-top: rem-calc(1) solid $light;
-      margin-top: rem-calc(48);
+      padding-top: 24px;
+      border-top: 1px solid $light;
+      margin-top: 48px;
       color: $secondary;
-      font-size: rem-calc(12);
+      font-size: 12px;
 
       a {
         display: inline-block;
-        padding: rem-calc(2 4);
+        padding: 2px 4px;
         background-color: $light;
 
         @include hover() {
@@ -76,7 +76,7 @@
         }
 
         &:not(:first-child) {
-          margin-left: rem-calc(4);
+          margin-left: 4px;
         }
       }
     }

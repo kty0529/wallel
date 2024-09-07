@@ -9,7 +9,7 @@
     gap: $gutter;
 
     @media ($sm_down) {
-      margin: rem-calc(0 -15);
+      margin: 0 -15px;
     }
   }
 
@@ -21,6 +21,6 @@
   #study-container {
     display: flex;
     flex-direction: column;
-    gap: rem-calc(30);
+    gap: 30px;
   }
 }
