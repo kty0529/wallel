@@ -11,8 +11,8 @@ $offcanvasWidth: 320px;
   position: fixed;
   z-index: 101;
   top: 0;
+  right: 0;
   bottom: 0;
-  left: 100%;
   overflow: hidden;
   width: 100%;
   max-width: $offcanvasWidth;
@@ -20,7 +20,7 @@ $offcanvasWidth: 320px;
   background-color: #fff;
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d($offcanvasWidth, 0, 0);
   transition: transform 0.2s;
 
   .widget {
@@ -159,7 +159,7 @@ html.offcanvas-active {
 
   @media ($lg_down) {
     #offcanvas {
-      transform: translate3d(-$offcanvasWidth, 0, 0);
+      transform: translate3d(0, 0, 0);
     }
 
     #toggle-offcanvas {
