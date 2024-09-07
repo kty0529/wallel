@@ -42,6 +42,7 @@
     </ul>
   </div>
 
+  <?php /* ?>
   <div class="widget widget-banners">
     <h3 class="widget-title">스터디</h3>
 
@@ -49,4 +50,5 @@
       <?php get_template_part( '/templates/random-banners/random-banners' ); ?>
     </div>
   </div>
+  <?php */ ?>
 </aside>
