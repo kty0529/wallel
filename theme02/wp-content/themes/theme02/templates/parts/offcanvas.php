@@ -1,6 +1,11 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 ?>
+<button id="toggle-offcanvas">
+  <span class="material-symbols-outlined icon_deactive">menu</span>
+  <span class="material-symbols-outlined icon_active">menu_open</span>
+</button>
+
 <div id="offcanvas">
   <div class="widget widget-search">
     <form action="/">
@@ -67,8 +72,3 @@
     </ul>
   </div>
 </div>
-
-<button id="toggle-offcanvas" aria-hidden="true">
-  <span class="material-symbols-outlined icon_deactive">menu</span>
-  <span class="material-symbols-outlined icon_active">menu_open</span>
-</button>
