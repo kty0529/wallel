@@ -32,3 +32,74 @@
     margin-top: 40px;
   }
 }
+
+.page-single-portfolio {
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: $gutter;
+
+    @media ($sm_down) {
+      margin: 0 -15px;
+    }
+  }
+
+  #portfolio-entry {
+    min-width: 0;
+    flex: 1 1 auto;
+    padding: 40px 30px;
+    background-color: #fff;
+
+    @media ($sm_down) {
+      padding: 30px 15px;
+    }
+
+    &-header {
+      .title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+
+      .data {
+        display: flex;
+        flex-direction: column;
+        margin-top: 12px;
+        color: $secondary;
+        font-size: 12px;
+        gap: 4px;
+
+        .label {
+          font-weight: 500;
+        }
+      }
+    }
+
+    &-container {
+      @include common-description-typhography;
+      padding-top: 40px;
+
+      .sec-screenshots {
+        display: grid;
+        padding: 0;
+        background-color: transparent;
+        gap: 4px;
+        grid-template-columns: repeat(3, 1fr);
+
+        li {
+          list-style: none;
+
+          &:not(:first-child) {
+            margin: 0;
+          }
+        }
+      }
+
+      .sec-content {
+        margin-top: 20px;
+      }
+    }
+  }
+}
