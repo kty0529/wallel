@@ -1,7 +1,7 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
-  $detect_post_type = in_array( get_post_type(), array( 'project', 'study' ) );
+  $detect_post_type = in_array( get_post_type(), array( 'project', 'study', 'portfolio' ) );
 
   if ( $detect_post_type ) {
     get_template_part( 'templates/parts/list', get_post_type() );

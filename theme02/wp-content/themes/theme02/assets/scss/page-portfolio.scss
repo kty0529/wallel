@@ -1,0 +1,30 @@
+// helpers
+@import "./helpers";
+
+// pages
+.page-archive-portfolio {
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: $gutter;
+
+    @media ($sm_down) {
+      margin: 0 -15px;
+    }
+  }
+
+  #portfolio {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  #portfolio-container {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media ($md_down) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

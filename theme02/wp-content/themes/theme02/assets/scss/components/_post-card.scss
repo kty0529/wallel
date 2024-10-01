@@ -354,3 +354,35 @@
     }
   }
 }
+
+.portfolio-card {
+  padding: 10px 10px 12px;
+  background-color: #fff;
+
+  .thumbnail {
+    height: 200px;
+    margin-bottom: 8px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  .data {
+    text-align: center;
+
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .category {
+      color: $secondary;
+      font-size: 12px;
+      font-weight: 300;
+    }
+  }
+}
