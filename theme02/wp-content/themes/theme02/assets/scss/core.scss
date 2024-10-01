@@ -1,35 +1,41 @@
 // common use
-@use 'sass:map';
-@use 'sass:math';
-@use 'sass:list';
-@use 'sass:color';
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+@use "sass:color";
 
 // helpers
-@import './helpers';
+@import "./helpers";
 
 // base
-@import './base/reset';
-@import './base/colors';
-@import './base/typography';
+@import "./base/reset";
+@import "./base/colors";
+@import "./base/typography";
 
 // components
-@import './components/icons';
-@import './components/overlay';
-@import './components/post-card';
-@import './components/sidebar';
-@import './components/tooltip';
-@import './components/pagination';
-@import './components/offcanvas';
-@import './components/scroll-lock';
-@import './components/no-results';
+@import "./components/icons";
+@import "./components/overlay";
+@import "./components/post-card";
+@import "./components/sidebar";
+@import "./components/tooltip";
+@import "./components/pagination";
+@import "./components/offcanvas";
+@import "./components/scroll-lock";
+@import "./components/no-results";
 
 // layouts
-@import './layouts/common';
-@import './layouts/header';
-@import './layouts/main';
-@import './layouts/footer';
+@import "./layouts/common";
+@import "./layouts/header";
+@import "./layouts/main";
+@import "./layouts/footer";
 
 // 사용자 코드 입력
 .grecaptcha-badge {
   visibility: hidden;
+}
+
+body {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  word-wrap: break-all;
 }
