@@ -94,18 +94,32 @@
 		// 기본 데이터
 		$meta_boxes[] = array(
 			'id'         => 'default_data',
-			'title'      => '기본 데이터',
+			'title'      => '정보',
 			'post_types' => $post_type,
 			'context'    => 'normal',
 			'priority'   => 'high',
 
 			'fields' => array(
 				array(
-					'id'                => $prefix.'level',
-					'name'              => '난이도',
-					'type'              => 'select',
-					'select_all_none'   => true,
-					'options'           => [
+					'id'       => $prefix.'running',
+					'name'     => '운영 여부',
+					'type'     => 'radio',
+					'options'  => [
+						'running' => '운영중',
+						'stop'    => '운영 종료',
+					],
+				),
+
+				array(
+					'type' => 'divider',
+				),
+
+				array(
+					'id'              => $prefix.'level',
+					'name'            => '난이도',
+					'type'            => 'select',
+					'select_all_none' => true,
+					'options'         => [
 						'beginner'                 => '초급',
 						'beginner or intermediate' => '초중급',
 						'intermediate'             => '중급',
@@ -118,12 +132,13 @@
 				array(
 					'type' => 'divider',
 				),
+
 				array(
-					'id'                => $prefix.'type',
-					'name'              => '스터디 타입',
-					'type'              => 'select',
-					'select_all_none'   => true,
-					'options'           => [
+					'id'              => $prefix.'type',
+					'name'            => '스터디 타입',
+					'type'            => 'select',
+					'select_all_none' => true,
+					'options'         => [
 						'live'   => '라이브 세션',
 						'video'  => '동영상',
 						'mogako' => '모각코',
@@ -134,6 +149,7 @@
 				array(
 					'type' => 'divider',
 				),
+
 				array(
 					'id'   => $prefix.'total_student',
 					'name' => '모집 인원',
@@ -143,6 +159,7 @@
 				array(
 					'type' => 'divider',
 				),
+
 				array(
 					'id'   => $prefix.'courses',
 					'name' => '외부 플랫폼 URL',
@@ -152,7 +169,7 @@
 
 			// 유효성 검사
 			'validation' => array(
-				'rules'  => array(
+				'rules' => array(
 					$prefix.'courses' => array(
 						'url' => true,
 					),
@@ -164,85 +181,6 @@
 				)
 			),
 		);
-
-
-		// 라이브 세션 정보
-		/* $meta_boxes[] = array(
-			'id'         => 'live',
-			'title'      => '라이브 세션 정보',
-			'post_types' => $post_type,
-			'context'    => 'normal',
-			'priority'   => 'high',
-
-			'fields' => array(
-				array(
-					'id'   => $prefix.'start_at',
-					'name' => '모집 시작일',
-					'type' => 'date',
-				),
-				array(
-					'id'   => $prefix.'end_at',
-					'name' => '모집 종료일',
-					'type' => 'date',
-				),
-
-				array(
-					'type' => 'divider',
-				),
-				array(
-					'id'   => $prefix.'lecture_start_at',
-					'name' => '강의 시작일',
-					'type' => 'date',
-				),
-				array(
-					'id'   => $prefix.'lecture_end_at',
-					'name' => '강의 종료일',
-					'type' => 'date',
-				),
-
-				array(
-					'type' => 'divider',
-				),
-				array(
-					'id'   => $prefix.'location',
-					'name' => '스터디 장소',
-					'type' => 'text',
-				),
-			),
-		); */
-
-		// 추천 대상 및 기대 효과
-		/* $meta_boxes[] = array(
-			'id'         => 'recommended',
-			'title'      => '추천 대상 및 기대 효과',
-			'post_types' => $post_type,
-			'context'    => 'normal',
-			'priority'   => 'high',
-
-			'fields' => array(
-				array(
-					'id'   => $prefix.'recommended',
-					'type' => 'wysiwyg',
-				),
-			),
-		); */
-
-		// 강사 소개
-		/* $meta_boxes[] = array(
-			'id'         => 'instructor',
-			'title'      => '강사 소개',
-			'post_types' => $post_type,
-			'context'    => 'normal',
-			'priority'   => 'high',
-
-			'fields' => array(
-				array(
-					'id'   => $prefix.'instructor',
-					'type' => 'wysiwyg',
-				),
-			),
-		); */
-
 
 		return $meta_boxes;
 	}
