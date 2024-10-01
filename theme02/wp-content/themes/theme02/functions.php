@@ -176,4 +176,5 @@
 	get_template_part( 'functions/metabox', 'common' );
 	get_template_part( 'functions/custom-post-type', 'project' );
 	get_template_part( 'functions/custom-post-type', 'study' );
+	get_template_part( 'functions/custom-post-type', 'portfolio' );
 	get_template_part( 'functions/disable-comment-trackback' );
