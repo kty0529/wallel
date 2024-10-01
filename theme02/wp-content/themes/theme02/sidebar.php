@@ -5,12 +5,14 @@
     'post' => 'category',
     'study' => 'study-type',
     'project' => 'project-type',
+    'portfolio' => 'portfolio-type',
   );
 
   $search_placeholder_arr = array(
     'post' => '글 검색',
     'study' => '스터디 검색',
     'project' => '프로젝트 검색',
+    'portfolio' => '포트폴리오 검색',
   );
 ?>
 
