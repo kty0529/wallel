@@ -1,5 +1,5 @@
 // helpers
-@import './helpers';
+@import "./helpers";
 
 // pages
 .page-archive-study {
@@ -22,5 +22,9 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
+  }
+
+  .navigation {
+    margin-top: 40px;
   }
 }

@@ -31,13 +31,13 @@
 
               $i++;
             }
-
-            get_template_part( 'templates/parts/pagination' );
           } else {
             get_template_part( 'templates/parts/no-results' );
           }
         ?>
       </div>
+
+      <?php get_template_part( 'templates/parts/pagination' ); ?>
     </section>
 
     <?php get_sidebar(); ?>
