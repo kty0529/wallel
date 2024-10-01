@@ -51,6 +51,21 @@
       ?>
     </ul>
   </div>
+
+  <div class="widget widget-category">
+    <div class="widget-title">포트폴리오</div>
+
+    <ul class="cat">
+      <?php
+        wp_list_categories( array(
+          'taxonomy' => 'portfolio-type',
+          'title_li' => '',
+          'show_count' => true,
+          'hide_title_if_empty' => false,
+        ) );
+      ?>
+    </ul>
+  </div>
 </div>
 
 <button id="toggle-offcanvas" aria-hidden="true">
