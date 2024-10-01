@@ -26,6 +26,11 @@
     @media ($md_down) {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    @media ($sm_down) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .navigation {

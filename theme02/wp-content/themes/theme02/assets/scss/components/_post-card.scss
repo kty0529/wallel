@@ -359,6 +359,10 @@
   padding: 10px 10px 12px;
   background-color: #fff;
 
+  @media ($sm_down) {
+    padding: 15px;
+  }
+
   a {
     display: block;
   }
