@@ -103,30 +103,6 @@
 
 			'fields' => array(
 				array(
-					'id'                => $prefix.'tech',
-					'name'              => '사용 기술',
-					'label_description' => '사용 기술을 입력해주세요.<br>키워드를 입력하면 완성된 텍스트가 표시 됩니다.',
-					'type'              => 'autocomplete',
-					'options'           => [
-						'java'       => 'Java',
-						'jquery'     => 'jQuery',
-						'javascript' => 'JavaScript',
-						'php'        => 'PHP',
-						'html5'      => 'HTML5',
-						'css3'       => 'CSS3',
-						'sass'       => 'SASS',
-						'react'      => 'React',
-						'vuejs'      => 'Vue.js',
-						'figma'      => 'Figma',
-						'adobe'      => 'Adobe',
-					],
-				),
-
-				array(
-					'type' => 'divider',
-				),
-
-				array(
 					'id'                => $prefix.'date',
 					'name'              => '작업 소요 기간',
 					'label_description' => '작업 소요 기간을 선택해주세요.',
