@@ -16,26 +16,32 @@
         <h2 class="screen-reader-text">블로그</h2>
       </header>
 
-      <div id="posts-container">
-        <?php
-          if ( have_posts() ) {
-            $i = 0;
-            while ( have_posts() ) {
-              the_post();
+      <?php
+        if ( have_posts() ) {
+          echo '<div id="posts-container">';
 
-              if ( $i === 2 ) {
-                get_template_part( 'templates/parts/adsense', 'infeed' );
-              }
+          $i = 0;
+          while ( have_posts() ) {
+            the_post();
 
-              get_template_part( 'templates/parts/list' );
-
-              $i++;
+            if ( $i === 2 ) {
+              get_template_part( 'templates/parts/adsense', 'infeed' );
             }
-          } else {
-            get_template_part( 'templates/parts/no-results' );
+
+            get_template_part( 'templates/parts/list' );
+
+            $i++;
           }
-        ?>
-      </div>
+
+          echo '</div>';
+        }
+      ?>
+
+      <?php
+        if ( ! have_posts() ) {
+          get_template_part( 'templates/parts/no-results' );
+        }
+      ?>
 
       <?php get_template_part( 'templates/parts/pagination' ); ?>
     </section>

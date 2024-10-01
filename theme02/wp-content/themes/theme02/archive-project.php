@@ -16,19 +16,25 @@
         <h2 class="screen-reader-text">프로젝트</h2>
       </header>
 
-      <div id="project-container">
-        <?php
-          if ( have_posts() ) {
-            while ( have_posts() ) {
-              the_post();
+      <?php
+        if ( have_posts() ) {
+          echo '<div id="project-container">';
 
-              get_template_part( 'templates/parts/list' );
-            }
-          } else {
-            get_template_part( 'templates/parts/no-results' );
+          while ( have_posts() ) {
+            the_post();
+
+            get_template_part( 'templates/parts/list' );
           }
-        ?>
-      </div>
+
+          echo '</div>';
+        }
+      ?>
+
+      <?php
+        if ( ! have_posts() ) {
+          get_template_part( 'templates/parts/no-results' );
+        }
+      ?>
 
       <?php get_template_part( 'templates/parts/pagination' ); ?>
     </section>
