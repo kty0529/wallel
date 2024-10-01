@@ -8,9 +8,9 @@
   );
 
   $search_placeholder_arr = array(
-    'post' => '글 찾기',
-    'study' => '스터디 찾기',
-    'project' => '프로젝트 찾기',
+    'post' => '글 검색',
+    'study' => '스터디 검색',
+    'project' => '프로젝트 검색',
   );
 ?>
 
