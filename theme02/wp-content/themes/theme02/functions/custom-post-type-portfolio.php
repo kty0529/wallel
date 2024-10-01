@@ -81,7 +81,7 @@
 	// 사용자단에서 한 페이지에 보여지는 개수 수정
 	function custom_portfolio_posts_per_page( $query ) {
 		if ( ( is_post_type_archive( 'portfolio' ) || is_tax( 'portfolio-type' ) ) && ! is_admin() && $query->is_main_query() ) {
-			$query->set( 'posts_per_page', 6 );
+			$query->set( 'posts_per_page', 9 );
 		}
 	}
 	add_action( 'pre_get_posts', 'custom_portfolio_posts_per_page' );
