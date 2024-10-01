@@ -1,5 +1,7 @@
 <?php
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+
+  if ( ! current_user_can( 'manage_options' ) ) {
 ?>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4212432261324883"
      crossorigin="anonymous"></script>
@@ -12,3 +14,5 @@
 <script>
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+<?php
+  }
