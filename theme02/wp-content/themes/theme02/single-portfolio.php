@@ -22,10 +22,12 @@
         <h2 class="title"><?php the_title(); ?></h2>
 
         <ul class="data">
-          <li class="row">
-            <span class="label">작업 기간:</span>
-            <span class="value"><?php echo portfolio_meta( 'date' )['start']; ?> ~ <?php echo portfolio_meta( 'date' )['end']; ?></span>
-          </li>
+          <?php if ( portfolio_meta( 'date' ) ) { ?>
+            <li class="row">
+              <span class="label">작업 기간:</span>
+              <span class="value"><?php echo portfolio_meta( 'date' )['start']; ?> ~ <?php echo portfolio_meta( 'date' )['end']; ?></span>
+            </li>
+          <?php } ?>
 
           <li class="row">
             <span class="label">담당 파트:</span>
