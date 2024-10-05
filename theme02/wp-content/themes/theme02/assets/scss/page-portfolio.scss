@@ -72,26 +72,51 @@
         display: flex;
         flex-direction: column;
         margin-top: 12px;
-        color: $secondary;
+        color: $dark;
         font-size: 12px;
-        gap: 4px;
+
+        .row {
+          display: flex;
+        }
 
         .label {
+          flex: 0 0 100px;
+          padding: 10px;
+          border-bottom: 1px solid $light;
+          background-color: $light;
           font-weight: 500;
+        }
+
+        .value {
+          flex: 1 1 auto;
+          padding: 10px;
+          border-bottom: 1px solid $light;
         }
       }
     }
 
     &-container {
-      @include common-description-typhography;
+      display: flex;
+      flex-direction: column;
       padding-top: 40px;
+      gap: 20px;
+
+      .sec-content {
+        @include common-description-typhography;
+      }
 
       .sec-screenshots {
         display: grid;
-        padding: 0;
-        background-color: transparent;
         gap: 4px;
         grid-template-columns: repeat(3, 1fr);
+
+        &.grid-1 {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        &.grid-2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
 
         li {
           list-style: none;
@@ -100,10 +125,6 @@
             margin: 0;
           }
         }
-      }
-
-      .sec-content {
-        margin-top: 20px;
       }
     }
   }

@@ -24,13 +24,13 @@
         <ul class="data">
           <?php if ( portfolio_meta( 'date' ) ) { ?>
             <li class="row">
-              <span class="label">작업 기간:</span>
+              <span class="label">작업 기간</span>
               <span class="value"><?php echo portfolio_meta( 'date' )['start']; ?> ~ <?php echo portfolio_meta( 'date' )['end']; ?></span>
             </li>
           <?php } ?>
 
           <li class="row">
-            <span class="label">담당 파트:</span>
+            <span class="label">담당 파트</span>
             <span class="value">
               <?php
                 $part_text = [
@@ -43,10 +43,10 @@
                 $part_arr = [];
 
                 foreach($part_data as $key => $part) {
-                  $part_arr[] = $part_text[$key] . ': ' . $part;
+                  $part_arr[] = $part_text[$key] . ': ' . $part . '%';
                 };
 
-                echo join( ', ', $part_arr ) . '%';
+                echo join( ', ', $part_arr );
               ?>
             </span>
           </li>
@@ -55,7 +55,7 @@
             if ( $url = portfolio_meta( 'url' ) ) {
           ?>
               <li class="row">
-                <span class="label">바로가기:</span>
+                <span class="label">바로가기</span>
                 <span class="value">
                   <a href="<?php echo $url ?>" target="_blank" title="사이트 바로가기"><?php echo $url; ?></a>
                 </span>
@@ -65,7 +65,7 @@
           ?>
 
           <li class="row skils">
-            <span class="label">사용 스킬:</span>
+            <span class="label">사용 스킬</span>
             <span class="value">
               <?php
                 $terms = get_the_terms( get_the_ID(), 'portfolio-tag' );
@@ -85,10 +85,14 @@
       </header>
 
       <div id="portfolio-entry-container">
+        <div class="sec-content">
+          <?php the_content(); ?>
+        </div>
+
         <?php
           if ( $screenshots = portfolio_meta( 'screenshots', array( 'size' => 'thumbnail' ) ) ) {
         ?>
-            <ul class="sec-screenshots">
+            <ul class="sec-screenshots grid-<?php echo count($screenshots); ?>">
               <?php
                 $i = 0;
                 foreach ( $screenshots as $image ) {
@@ -106,10 +110,6 @@
         <?php
           }
         ?>
-
-        <div class="sec-content">
-          <?php the_content(); ?>
-        </div>
       </div>
     </article>
 
