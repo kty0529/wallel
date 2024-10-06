@@ -25,7 +25,17 @@
           <?php if ( portfolio_meta( 'date' ) ) { ?>
             <li class="row date">
               <span class="label">작업 기간</span>
-              <span class="value"><?php echo portfolio_meta( 'date' )['start']; ?> ~ <?php echo portfolio_meta( 'date' )['end']; ?></span>
+              <span class="value">
+                <?php echo portfolio_meta( 'date' )['start']; ?>
+                ~
+                <?php
+                  if ( $end_date = portfolio_meta( 'date' )['end'] ) {
+                    echo $end_date;
+                  } else {
+                    echo '진행중';
+                  }
+                ?>
+              </span>
             </li>
           <?php } ?>
 
@@ -58,6 +68,7 @@
                 <span class="label">바로가기</span>
                 <span class="value">
                   <a href="<?php echo $url ?>" target="_blank" title="사이트 바로가기"><?php echo $url; ?></a>
+                  <br>* 클라이언트의 사정에 따라 연결되지 않을 수 있습니다.
                 </span>
               </li>
           <?php
