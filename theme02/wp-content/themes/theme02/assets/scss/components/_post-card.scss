@@ -356,20 +356,19 @@
 }
 
 .portfolio-card {
+  display: flex;
+  flex-direction: column;
   padding: 10px 10px 12px;
   background-color: #fff;
+  gap: 12px;
 
   @media ($sm_down) {
     padding: 15px;
   }
 
-  a {
-    display: block;
-  }
-
   .thumbnail {
+    display: block;
     height: 200px;
-    margin-bottom: 8px;
 
     img {
       width: 100%;
@@ -382,15 +381,30 @@
   .data {
     text-align: center;
 
+    .icon {
+      position: relative;
+      top: -1px;
+    }
+
     .title {
       font-size: 14px;
       font-weight: 600;
     }
 
     .category {
+      margin-top: 8px;
       color: $secondary;
       font-size: 12px;
       font-weight: 300;
+
+      a {
+        display: inline-block;
+      }
     }
+  }
+
+  .part {
+    color: $secondary;
+    font-size: 12px;
   }
 }

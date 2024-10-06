@@ -7,29 +7,52 @@
   $terms_arr = array();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'portfolio-card' ); ?>>
-  <a href="<?php echo get_permalink(); ?>">
     <?php if ( $thumbnail ) { ?>
-      <div class="thumbnail">
+      <a class="thumbnail" href="<?php echo get_permalink(); ?>">
         <?php echo $thumbnail; ?>
-      </div>
+      </a>
     <?php } ?>
 
     <div class="data">
-      <h3 class="title"><?php echo get_the_title(); ?></h3>
+      <a href="<?php echo get_permalink(); ?>">
+        <h3 class="title"><?php echo get_the_title(); ?></h3>
+      </a>
 
       <p class="category">
+        <span class="material-symbols-outlined icon">folder</span>
         <?php
           if ( $terms && ! is_wp_error( $terms ) ) {
             // var_dump($terms);
             foreach ( $terms as $term ) {
               if ( $term->parent !== 0 ) {
-                $terms_arr[] = $term->name;
+                $terms_arr[] = '<a href="' . get_term_link( $term->slug, $term->taxonomy ) . '">'. $term->name . '</a>';
               }
             }
             echo join( ', ', $terms_arr );
           }
         ?>
       </p>
+
+      <div class="part">
+        <span class="material-symbols-outlined icon">handyman</span>
+
+        <?php
+          $part_text = [
+            'planning' => '기획',
+            'design'   => '디자인',
+            'develop'  => '개발',
+          ];
+
+          $part_data = portfolio_meta( 'part' );
+          $part_arr = [];
+
+          foreach($part_data as $key => $part) {
+            $part_arr[] = $part_text[$key];
+          };
+
+          echo join( ', ', $part_arr );
+        ?>
+      </div>
     </div>
   </a>
 </article>
