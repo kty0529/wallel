@@ -19,7 +19,10 @@
       </a>
 
       <p class="category">
-        <span class="material-symbols-outlined icon">folder</span>
+        <span class="material-symbols-outlined icon" aria-hidden="true">
+          folder
+        </span>
+
         <?php
           if ( $terms && ! is_wp_error( $terms ) ) {
             // var_dump($terms);
@@ -34,7 +37,10 @@
       </p>
 
       <div class="part">
-        <span class="material-symbols-outlined icon">handyman</span>
+        <span class="material-symbols-outlined icon" aria-hidden="true">
+          handyman
+        </span>
+
 
         <?php
           $part_text = [
