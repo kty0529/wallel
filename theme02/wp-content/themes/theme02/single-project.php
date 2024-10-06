@@ -27,30 +27,35 @@
 
         <div class="data">
           <div class="release">
-            <span class="label">최초 배포:</span>
-            <span class="value"><?php echo project_meta( 'release' ); ?></span>
+            <span class="material-symbols-outlined icon" aria-hidden="true">
+              new_releases
+            </span>
+
+            <?php echo project_meta( 'release' ); ?>
           </div>
 
           <div class="cms">
-            <span class="label">분류:</span>
-            <span class="value">
-              <?php
-                $terms = get_the_terms( get_the_ID(), 'project-type' );
-                if ( $terms && ! is_wp_error( $terms ) ) {
-                  $terms = array_values( $terms );
-                  $term = $terms[0];
-                  $term_link = get_term_link( $term->term_id, $term->taxonomy );
-                  echo '<a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a>';
-                }
-              ?>
+            <span class="material-symbols-outlined icon" aria-hidden="true">
+              folder
             </span>
+
+            <?php
+              $terms = get_the_terms( get_the_ID(), 'project-type' );
+              if ( $terms && ! is_wp_error( $terms ) ) {
+                $terms = array_values( $terms );
+                $term = $terms[0];
+                $term_link = get_term_link( $term->term_id, $term->taxonomy );
+                echo '<a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a>';
+              }
+            ?>
           </div>
 
           <div class="languages">
-            <span class="label">사용 언어:</span>
-            <span class="value">
-              <?php echo project_meta( 'tech' ); ?>
+            <span class="material-symbols-outlined icon" aria-hidden="true">
+              code
             </span>
+
+            <?php echo project_meta( 'tech' ); ?>
           </div>
         </div>
 

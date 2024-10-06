@@ -67,8 +67,9 @@
         font-size: 12px;
         gap: 4px 12px;
 
-        .label {
-          font-weight: 500;
+        .icon {
+          position: relative;
+          top: -0.07em;
         }
       }
     }
