@@ -52,17 +52,22 @@
   gap: 20px;
 
   @media ($md_down) {
-    display: block;
+    flex-direction: column;
   }
 
   @media ($sm_down) {
-    padding: 15px;
+    padding: 15px 15px 20px;
   }
 
   .thumbnail {
     position: relative;
-    flex: 0 0 250px;
+    width: 250px;
+    flex: 0 0 auto;
     background-color: #fff;
+
+    @media ($md_down) {
+      width: auto;
+    }
 
     a {
       display: block;
@@ -70,9 +75,13 @@
 
     img {
       width: 100%;
-      min-height: 150px;
+      aspect-ratio: 4 / 3;
       object-fit: cover;
       object-position: top center;
+
+      @media ($md_down) {
+        aspect-ratio: 16 / 9;
+      }
     }
 
     .categories {
@@ -122,7 +131,7 @@
     padding: 10px 0;
 
     @media ($md_down) {
-      margin-top: 20px;
+      padding: 0;
     }
 
     .title {
@@ -196,7 +205,7 @@
   }
 
   @media ($sm_down) {
-    padding: 15px;
+    padding: 15px 15px 20px;
   }
 
   .thumbnail {
@@ -206,17 +215,20 @@
 
     @media ($md_down) {
       width: auto;
-      height: auto;
     }
 
     a {
       display: block;
+    }
 
-      img {
-        width: 100%;
-        min-height: 150px;
-        object-fit: cover;
-        object-position: center;
+    img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+
+      @media ($md_down) {
+        aspect-ratio: 16 / 9;
       }
     }
 
@@ -264,6 +276,10 @@
   .content {
     flex: 1 1 auto;
     padding: 10px 0;
+
+    @media ($sm_down) {
+      padding: 0;
+    }
 
     .title {
       font-size: 18px;
@@ -368,18 +384,21 @@
   gap: 12px;
 
   @media ($sm_down) {
-    padding: 15px;
+    padding: 15px 15px 20px;
   }
 
   .thumbnail {
     display: block;
-    height: 200px;
 
     img {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       object-position: top;
+
+      @media ($md_down) {
+        aspect-ratio: 16 / 9;
+      }
     }
   }
 
