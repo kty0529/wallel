@@ -23,13 +23,13 @@
 
         <ul class="data">
           <?php if ( portfolio_meta( 'date' ) ) { ?>
-            <li class="row">
+            <li class="row date">
               <span class="label">작업 기간</span>
               <span class="value"><?php echo portfolio_meta( 'date' )['start']; ?> ~ <?php echo portfolio_meta( 'date' )['end']; ?></span>
             </li>
           <?php } ?>
 
-          <li class="row">
+          <li class="row part">
             <span class="label">담당 파트</span>
             <span class="value">
               <?php
@@ -54,7 +54,7 @@
           <?php
             if ( $url = portfolio_meta( 'url' ) ) {
           ?>
-              <li class="row">
+              <li class="row preview">
                 <span class="label">바로가기</span>
                 <span class="value">
                   <a href="<?php echo $url ?>" target="_blank" title="사이트 바로가기"><?php echo $url; ?></a>
