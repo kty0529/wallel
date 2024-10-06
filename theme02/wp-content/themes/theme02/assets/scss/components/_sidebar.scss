@@ -13,6 +13,11 @@
       font-size: 1em;
       font-weight: 600;
       text-transform: uppercase;
+
+      .icon {
+        position: relative;
+        top: -0.07em;
+      }
     }
 
     &-content {

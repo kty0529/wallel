@@ -20,7 +20,12 @@
   <h2 class="screen-reader-text">사이드바</h2>
 
   <div class="widget widget-search">
-    <h3 class="widget-title"><?php echo $search_placeholder_arr[$post_type]; ?></h3>
+    <h3 class="widget-title">
+      <span class="material-symbols-outlined icon" aria-hidden="true">
+        search
+      </span>
+      <?php echo $search_placeholder_arr[$post_type]; ?>
+    </h3>
 
     <div class="widget-content">
       <form method="get" action="<?php echo home_url() ?>">
@@ -34,7 +39,12 @@
   </div>
 
   <div class="widget widget-category">
-    <h3 class="widget-title">카테고리</h3>
+    <h3 class="widget-title">
+      <span class="material-symbols-outlined icon" aria-hidden="true">
+        folder
+      </span>
+      카테고리
+    </h3>
 
     <div class="widget-content">
       <ul class="cat">
