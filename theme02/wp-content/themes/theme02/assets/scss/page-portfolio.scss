@@ -110,7 +110,15 @@
         gap: 4px;
         grid-template-columns: repeat(3, 1fr);
 
+        img {
+          border: 1px solid $light;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          object-position: top;
+        }
+
         &.grid-1 {
+          aspect-ratio: inherit;
           grid-template-columns: repeat(1, 1fr);
         }
 
