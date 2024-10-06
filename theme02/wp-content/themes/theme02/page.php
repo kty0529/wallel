@@ -21,7 +21,13 @@
         <h2 itemprop="name headline" class="title"><?php the_title(); ?></h2>
 
         <div class="data">
-          <time itemprop="dateCreated datePublished" datetime="<?php echo get_the_date('Y-m-d H:i:s'); ?>"><?php echo get_the_date('Y-m-d'); ?></time>
+          <time itemprop="dateCreated datePublished" datetime="<?php echo get_the_date('Y-m-d H:i:s'); ?>">
+            <span class="material-symbols-outlined icon" aria-hidden="true">
+              calendar_today
+            </span>
+
+            <?php echo get_the_date('Y-m-d'); ?>
+          </time>
         </div>
       </header>
 

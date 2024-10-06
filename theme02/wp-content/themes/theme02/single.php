@@ -20,9 +20,19 @@
         <h2 itemprop="name headline" class="title"><?php the_title(); ?></h2>
 
         <div class="data">
-          <time itemprop="dateCreated datePublished" datetime="<?php echo get_the_date('Y-m-d H:i:s'); ?>"><?php echo get_the_date('Y-m-d'); ?></time>
+          <time itemprop="dateCreated datePublished" datetime="<?php echo get_the_date('Y-m-d H:i:s'); ?>">
+            <span class="material-symbols-outlined icon" aria-hidden="true">
+              calendar_today
+            </span>
 
-          <span itemprop="keywords" class="categories">
+            <?php echo get_the_date('Y-m-d'); ?>
+          </time>
+
+          <div itemprop="keywords" class="categories">
+            <span class="material-symbols-outlined icon" aria-hidden="true">
+              folder
+            </span>
+
             <?php
               $categories = get_the_category();
 
@@ -32,9 +42,15 @@
               }
               echo implode( ', ', $category_arr );
             ?>
-          </span>
+          </div>
 
-          <span itemprop="author" class="author"><?php echo get_the_author_nickname(); ?></span>
+          <div itemprop="author" class="author">
+            <span class="material-symbols-outlined icon" aria-hidden="true">
+              person
+            </span>
+
+            <?php echo get_the_author_nickname(); ?>
+          </div>
         </div>
       </header>
 

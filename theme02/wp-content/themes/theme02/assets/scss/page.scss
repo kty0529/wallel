@@ -1,5 +1,5 @@
 // helpers
-@import './helpers';
+@import "./helpers";
 
 // pages
 .page-default {
@@ -39,6 +39,11 @@
         color: $secondary;
         font-size: 12px;
         gap: 12px;
+
+        .icon {
+          position: relative;
+          top: -0.07em;
+        }
 
         @media ($md_down) {
           .categories {

@@ -30,6 +30,11 @@
     font-size: 12px;
     gap: 12px;
 
+    .icon {
+      position: relative;
+      top: -0.07em;
+    }
+
     @media ($md_down) {
       .categories {
         flex-basis: 100%;
