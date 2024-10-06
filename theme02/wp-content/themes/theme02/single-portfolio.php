@@ -7,7 +7,7 @@
     wp_enqueue_script( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/js/lightbox.min.js' ), false, '2.11.3', false );
 
     // pages style
-    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-portfolio.css' ), false, time(), 'all' );
+    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/portfolio.css' ), false, time(), 'all' );
 	}
 	add_action( 'wp_enqueue_scripts', 'page_assets' );
 
@@ -15,7 +15,7 @@
 
   the_post();
 ?>
-<main id="main" <?php post_class( 'page-single-portfolio' ); ?>>
+<main id="main" <?php post_class( 'portfolio-article' ); ?>>
   <div class="container">
     <article id="portfolio-entry">
       <header id="portfolio-entry-header">

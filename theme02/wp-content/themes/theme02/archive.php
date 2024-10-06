@@ -3,13 +3,13 @@
 
   function page_assets() {
     // pages style
-    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-index.css' ), false, time(), 'all' );
+    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/single.css' ), false, time(), 'all' );
   }
 	add_action( 'wp_enqueue_scripts', 'page_assets' );
 
   get_header();
 ?>
-<main id="main" <?php post_class( 'page-index' ); ?>>
+<main id="main" <?php post_class( 'single-archive' ); ?>>
   <div class="container">
     <section id="posts">
       <header id="posts-header">

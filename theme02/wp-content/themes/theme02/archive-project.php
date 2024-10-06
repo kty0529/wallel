@@ -3,13 +3,13 @@
 
   function page_assets() {
     // pages style
-    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-project.css' ), false, time(), 'all' );
+    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/project.css' ), false, time(), 'all' );
   }
 	add_action( 'wp_enqueue_scripts', 'page_assets' );
 
   get_header();
 ?>
-<main id="main" <?php post_class( 'page-archive-project' ); ?>>
+<main id="main" <?php post_class( 'project-archive' ); ?>>
   <div class="container">
     <section id="project">
       <header id="project-header">

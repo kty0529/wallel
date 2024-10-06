@@ -3,7 +3,7 @@
 
   function page_assets() {
     // pages style
-    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/page-index.css' ), false, time(), 'all' );
+    wp_enqueue_style( 'page-style', get_theme_file_uri( '/assets/css/single.css' ), false, time(), 'all' );
   }
 	add_action( 'wp_enqueue_scripts', 'page_assets' );
 
@@ -11,7 +11,7 @@
 
   the_post();
 ?>
-<main id="main" <?php post_class( 'page-single' ); ?> itemscope itemtype="http://schema.org/Article">
+<main id="main" <?php post_class( 'single-article' ); ?> itemscope itemtype="http://schema.org/Article">
   <meta itemprop="url" content="<?php echo get_permalink(); ?>">
 
   <div class="container">
