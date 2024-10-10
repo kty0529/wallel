@@ -22,6 +22,15 @@
         <h2 class="title"><?php the_title(); ?></h2>
 
         <ul class="data">
+          <?php if ( portfolio_meta( 'client' ) ) { ?>
+            <li class="row date">
+              <span class="label">클라이언트</span>
+              <span class="value">
+                <?php echo portfolio_meta( 'client' ); ?>
+              </span>
+            </li>
+          <?php } ?>
+
           <?php if ( portfolio_meta( 'date' ) ) { ?>
             <li class="row date">
               <span class="label">작업 기간</span>

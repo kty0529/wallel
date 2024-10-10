@@ -126,6 +126,17 @@
 				),
 
 				array(
+					'id'                => $prefix.'client',
+					'name'              => '클라이언트',
+					'label_description' => '클라이언트를 입력해주세요.',
+					'type'              => 'text',
+				),
+
+				array(
+					'type' => 'divider',
+				),
+
+				array(
 					'id'                => $prefix.'part',
 					'name'              => '담당 파트',
 					'label_description' => '담당 파트의 기여율을 정의해주세요.',
