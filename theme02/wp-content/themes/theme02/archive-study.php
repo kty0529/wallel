@@ -20,10 +20,17 @@
         if ( have_posts() ) {
           echo '<div id="study-container">';
 
+          $i = 0;
           while ( have_posts() ) {
             the_post();
 
+            if ( $i === 1 ) {
+              get_template_part( 'templates/parts/adsense', 'infeed' );
+            }
+
             get_template_part( 'templates/parts/list' );
+
+            $i++;
           }
 
           echo '</div>';
