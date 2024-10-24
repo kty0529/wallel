@@ -2,6 +2,10 @@
   defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
 	function page_assets() {
+    // swiper
+    wp_enqueue_style( 'swiper-css', get_theme_file_uri( '/assets/vendor/swiper/swiper-bundle.min.css' ), false, '8.2.2', 'all' );
+    wp_enqueue_script( 'swiper-js', get_theme_file_uri( '/assets/vendor/swiper/swiper-bundle.min.js' ), false, '8.2.2', false );
+
     // lightbox
     wp_enqueue_style( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/css/lightbox.min.css' ), false, '2.11.3', 'all' );
     wp_enqueue_script( 'lightbox', get_theme_file_uri( '/assets/vendor/lightbox2/js/lightbox.min.js' ), false, '2.11.3', false );
@@ -105,31 +109,49 @@
       </header>
 
       <div id="portfolio-entry-container">
-        <div class="sec-content">
-          <?php the_content(); ?>
-        </div>
-
         <?php
           if ( $screenshots = portfolio_meta( 'screenshots', array( 'size' => 'thumbnail' ) ) ) {
         ?>
-            <ul class="sec-screenshots grid-<?php echo count($screenshots); ?>">
-              <?php
-                $i = 0;
-                foreach ( $screenshots as $image ) {
-                  $i++;
-              ?>
-                  <li>
-                    <a href="<?php echo $image[ 'url' ] ?>" data-lightbox="screenshot">
-                      <?php echo wp_get_attachment_image( $image['ID'], 'small' ); ?>
-                    </a>
-                  </li>
-              <?php
+            <div class="sec-screenshot">
+              <div class="swiper">
+                <ul class="swiper-wrapper">
+                  <?php
+                    $i = 0;
+                    foreach ( $screenshots as $image ) {
+                      $i++;
+                  ?>
+                      <li class="swiper-slide">
+                        <a href="<?php echo $image[ 'url' ] ?>" data-lightbox="screenshot">
+                          <?php echo wp_get_attachment_image( $image['ID'], 'small' ); ?>
+                        </a>
+                      </li>
+                  <?php
+                    }
+                  ?>
+                </ul>
+
+                <div class="scrollbar"></div>
+              </div>
+            </div>
+
+            <script>
+              const swiper = new Swiper('.sec-screenshot .swiper', {
+                freeMode: true,
+                slidesPerView: 3.2,
+                spaceBetween: 15,
+                scrollbar: {
+                  el: '.sec-screenshot .scrollbar',
+                  draggable: true
                 }
-              ?>
-            </ul>
+              });
+            </script>
         <?php
           }
         ?>
+
+        <div class="sec-content">
+          <?php the_content(); ?>
+        </div>
       </div>
     </article>
 

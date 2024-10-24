@@ -71,9 +71,9 @@
       .data {
         display: flex;
         flex-direction: column;
-        margin-top: 12px;
+        margin-top: 14px;
         color: $dark;
-        font-size: 12px;
+        font-size: 14px;
 
         .row {
           display: flex;
@@ -81,7 +81,7 @@
 
         .label {
           flex: 0 0 100px;
-          padding: 10px;
+          padding: 14px;
           border-bottom: 1px solid $light;
           background-color: $light;
           font-weight: 500;
@@ -89,7 +89,7 @@
 
         .value {
           flex: 1 1 auto;
-          padding: 10px;
+          padding: 14px;
           border-bottom: 1px solid $light;
         }
       }
@@ -101,15 +101,7 @@
       padding-top: 40px;
       gap: 20px;
 
-      .sec-content {
-        @include common-description-typhography;
-      }
-
-      .sec-screenshots {
-        display: grid;
-        gap: 4px;
-        grid-template-columns: repeat(3, 1fr);
-
+      .sec-screenshot {
         img {
           border: 1px solid $light;
           aspect-ratio: 1 / 1;
@@ -117,22 +109,28 @@
           object-position: top;
         }
 
-        &.grid-1 {
-          aspect-ratio: inherit;
-          grid-template-columns: repeat(1, 1fr);
-        }
+        .swiper {
+          .scrollbar {
+            margin-top: 10px;
 
-        &.grid-2 {
-          grid-template-columns: repeat(2, 1fr);
-        }
+            .swiper-scrollbar-drag {
+              height: 5px;
+              border-radius: 5px;
+              background: $light;
 
-        li {
-          list-style: none;
-
-          &:not(:first-child) {
-            margin: 0;
+              &:hover,
+              &:active,
+              &:focus {
+                background: $primary;
+                cursor: pointer;
+              }
+            }
           }
         }
+      }
+
+      .sec-content {
+        @include common-description-typhography;
       }
     }
   }
