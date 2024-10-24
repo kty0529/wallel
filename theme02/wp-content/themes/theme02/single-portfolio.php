@@ -81,7 +81,7 @@
                 <span class="label">바로가기</span>
                 <span class="value">
                   <a href="<?php echo $url ?>" target="_blank" title="사이트 바로가기"><?php echo $url; ?></a>
-                  <br>* 클라이언트의 사정에 따라 연결되지 않을 수 있습니다.
+                  <br><small>* 클라이언트의 사정에 따라 연결되지 않을 수 있습니다.</small>
                 </span>
               </li>
           <?php
