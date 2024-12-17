@@ -20,16 +20,18 @@
     @media ($lg_down) {
       height: auto;
       align-items: center;
-      padding: {
-        top: 10px;
-        bottom: 10px;
-      }
     }
   }
 
   .title {
     margin: 0;
     line-height: 0;
+
+    a {
+      display: flex;
+      height: 50px;
+      align-items: center;
+    }
 
     svg {
       @include hover {
@@ -57,8 +59,10 @@
     }
 
     a {
-      display: block;
-      padding: 16px 20px;
+      display: flex;
+      height: 50px;
+      align-items: center;
+      padding: 0 20px;
       font-size: 14px;
       text-transform: uppercase;
 
