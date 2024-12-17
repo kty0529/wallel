@@ -1,15 +1,16 @@
 // common use
-@use 'sass:map';
-@use 'sass:math';
-@use 'sass:list';
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
 
 // helpers
-@import './helpers';
+@use "./helpers/variables" as *;
+@use "./helpers/mixins" as *;
 
 // base
-@import './base/reset';
-@import './base/colors';
-@import './base/typography';
+@forward "./base/reset";
+@forward "./base/colors";
+@forward "./base/typography";
 
 // custom
 body {
@@ -18,7 +19,7 @@ body {
     right: math.div($gutter, 2);
     bottom: $gutter;
     left: math.div($gutter, 2);
-  };
+  }
   @include common-description-typhography;
 }
 
@@ -29,7 +30,7 @@ body.wp-autoresize,
     right: math.div($gutter, 2);
     bottom: $gutter;
     left: math.div($gutter, 2);
-  };
+  }
 }
 
 /* Main column width */

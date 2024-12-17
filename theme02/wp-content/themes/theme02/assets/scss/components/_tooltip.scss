@@ -1,4 +1,8 @@
-// tooltip
+// use
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+// styles
 [data-tooltip] {
   position: relative;
   z-index: 10;
@@ -32,7 +36,7 @@
     bottom: calc(100% + 4px);
     width: 4px;
     height: 4px;
-    content: '';
+    content: "";
     transform: translateX(-50%) rotate(45deg);
   }
 

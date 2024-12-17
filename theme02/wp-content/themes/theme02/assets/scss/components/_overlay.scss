@@ -1,3 +1,7 @@
+// use
+@use "../helpers/variables" as *;
+
+// styles
 #overlay {
   display: none;
   position: fixed;

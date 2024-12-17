@@ -1,5 +1,6 @@
 // helpers
-@import './helpers';
+@use "./helpers/variables" as *;
+@use "./helpers/mixins" as *;
 
 // pages
 .page-contact-form {
@@ -74,7 +75,7 @@
       resize: vertical;
     }
 
-    input[type='submit'] {
+    input[type="submit"] {
       height: 50px;
       border: 0;
       background-color: $dark;

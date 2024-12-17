@@ -1,6 +1,13 @@
+// use
+@use "sass:map";
+
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+// styles
 html,
 body {
-  color: map.get($theme-colors, 'dark');
+  color: map.get($theme-colors, "dark");
   font-family: $ff-default;
 }
 
@@ -14,7 +21,7 @@ a {
   }
 }
 
-$code-font-family: 'Menlo', 'Consolas', $ff-default;
+$code-font-family: "Menlo", "Consolas", $ff-default;
 
 code {
   display: inline-block;

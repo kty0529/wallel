@@ -1,5 +1,6 @@
 // helpers
-@import "./helpers";
+@use "./helpers/variables" as *;
+@use "./helpers/mixins" as *;
 
 // pages
 // 메타박스 공지 숨기기

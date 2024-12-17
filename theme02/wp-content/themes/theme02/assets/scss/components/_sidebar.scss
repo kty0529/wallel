@@ -1,3 +1,8 @@
+// use
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+// styles
 .sidebar {
   width: 240px;
   flex: 0 0 auto;

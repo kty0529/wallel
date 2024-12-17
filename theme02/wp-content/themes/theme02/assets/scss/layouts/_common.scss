@@ -1,3 +1,8 @@
+// use
+@use "sass:math";
+@use "../helpers/variables" as *;
+
+// styles
 * {
   outline-color: $primary;
 }
@@ -21,15 +26,15 @@
 
 // 플랙스박스 정렬 class
 $flex-align: (
-  'justify-content': (
-    'start': 'flex-start',
-    'end': 'flex-end',
-    'center': 'center',
+  "justify-content": (
+    "start": "flex-start",
+    "end": "flex-end",
+    "center": "center",
   ),
-  'align-items': (
-    'start': 'flex-start',
-    'end': 'flex-end',
-    'center': 'center',
+  "align-items": (
+    "start": "flex-start",
+    "end": "flex-end",
+    "center": "center",
   ),
 );
 

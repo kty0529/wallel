@@ -5,29 +5,30 @@
 @use "sass:color";
 
 // helpers
-@import "./helpers";
+@use "./helpers/variables" as *;
+@use "./helpers/mixins" as *;
 
 // base
-@import "./base/reset";
-@import "./base/colors";
-@import "./base/typography";
+@use "./base/reset" as *;
+@use "./base/colors" as *;
+@use "./base/typography" as *;
 
 // components
-@import "./components/icons";
-@import "./components/overlay";
-@import "./components/post-card";
-@import "./components/sidebar";
-@import "./components/tooltip";
-@import "./components/pagination";
-@import "./components/offcanvas";
-@import "./components/scroll-lock";
-@import "./components/no-results";
+@use "./components/icons" as *;
+@use "./components/overlay" as *;
+@use "./components/post-card" as *;
+@use "./components/sidebar" as *;
+@use "./components/tooltip" as *;
+@use "./components/pagination" as *;
+@use "./components/offcanvas" as *;
+@use "./components/scroll-lock" as *;
+@use "./components/no-results" as *;
 
 // layouts
-@import "./layouts/common";
-@import "./layouts/header";
-@import "./layouts/main";
-@import "./layouts/footer";
+@use "./layouts/common" as *;
+@use "./layouts/header" as *;
+@use "./layouts/main" as *;
+@use "./layouts/footer" as *;
 
 // 사용자 코드 입력
 .grecaptcha-badge {
@@ -37,5 +38,5 @@
 body {
   overflow-wrap: break-word;
   word-break: keep-all;
-  word-wrap: break-all;
+  word-wrap: break-word;
 }

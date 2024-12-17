@@ -1,3 +1,7 @@
+// use
+@use "../helpers/variables" as *;
+
+// styles
 html.scroll-lock {
   overflow: hidden;
 

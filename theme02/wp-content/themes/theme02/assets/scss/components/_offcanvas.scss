@@ -1,7 +1,15 @@
+// use
+@use "sass:list";
+@use "sass:color";
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
 // variables
 $adminbarHeight: (
-  32px, // desktop
-  46px,  // mobile
+  32px,
+  // desktop
+  46px,
+  // mobile
 );
 
 $offcanvasWidth: 320px;
@@ -88,7 +96,7 @@ $offcanvasWidth: 320px;
           margin-right: 8px;
           color: $border-color;
 
-          @include material-icons('e5cc');
+          @include material-icons("e5cc");
           font-size: 18px;
           vertical-align: middle;
         }

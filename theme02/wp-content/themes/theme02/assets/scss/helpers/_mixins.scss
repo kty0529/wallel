@@ -1,4 +1,9 @@
-@mixin fullscreen($z: 1, $p: 'absolute') {
+// use
+@use "sass:string";
+@use "./variables" as *;
+
+// mixins
+@mixin fullscreen($z: 1, $p: "absolute") {
   position: #{$p};
   z-index: $z;
   top: 0;
@@ -7,20 +12,20 @@
   height: 100%;
 }
 
-@mixin position($p: 'center') {
-  @if #{$p} == 'center' {
+@mixin position($p: "center") {
+  @if #{$p} == "center" {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     margin: auto;
-  } @else if #{$p} == 'vertical' {
+  } @else if #{$p} == "vertical" {
     position: absolute;
     top: 0;
     bottom: 0;
     margin: auto 0;
-  } @else if #{$p} == 'horizontal' {
+  } @else if #{$p} == "horizontal" {
     position: absolute;
     right: 0;
     left: 0;
@@ -48,7 +53,7 @@
   white-space: nowrap;
 }
 
-@mixin box-ellipsis($line: 3, $lineHeight: 20px, $boxHeight: 'auto') {
+@mixin box-ellipsis($line: 3, $lineHeight: 20px, $boxHeight: "auto") {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -58,7 +63,7 @@
   white-space: normal;
   word-break: break-all;
   word-wrap: break-word;
-  @if ($boxHeight) == 'fixed' {
+  @if ($boxHeight) == "fixed" {
     height: $lineHeight * $line;
   } @else {
     height: auto;
@@ -80,17 +85,16 @@
 }
 
 @mixin hover() {
-  @media (min-width: 1024px) {
+  @media ($lg_up) {
     @content;
   }
 }
 
-@mixin material-icons($code, $style: 'Outlined') {
-  $withslash: "\"\\#{$code}\"";
+@mixin material-icons($code, $style: "Outlined") {
+  $withslash: '"\\#{$code}"';
   content: string.unquote($withslash);
-  font-family: 'Material Symbols #{$style}';
+  font-family: "Material Symbols #{$style}";
 }
-
 
 // 커스텀 mixin
 @mixin common-description-typhography {
@@ -102,7 +106,14 @@
     text-decoration: underline;
   }
 
-  p, h1, h2, h3, h4, h5, h6, figure {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  figure {
     margin: 1em 0;
 
     &:first-child {
@@ -130,7 +141,7 @@
       height: 1px;
       margin-bottom: 10px;
       background-color: $primary;
-      content: '';
+      content: "";
     }
   }
 
@@ -149,17 +160,19 @@
     margin: 30 0px;
   }
 
-  ul, ol {
+  ul,
+  ol {
     padding: 20px 30px;
     padding-left: 40px;
     border-radius: 5px;
     background-color: $light;
 
-    ul, ol,
-    ul[class*='wp-block'],
-    ol[class*='wp-block'] {
+    ul,
+    ol,
+    ul[class*="wp-block"],
+    ol[class*="wp-block"] {
       padding: 0;
-      margin: 8 30px;
+      margin: 8px 30px;
     }
 
     li:not(:first-child) {
@@ -179,7 +192,8 @@
     border-collapse: collapse;
     table-layout: fixed;
 
-    th, td {
+    th,
+    td {
       padding: 10px;
     }
 
@@ -189,13 +203,13 @@
   }
 
   // prismjs 스타일링
-  code[class*=language-],
-  pre[class*=language-] {
-    font-family: 'Menlo', 'Consolas', $ff-default;
+  code[class*="language-"],
+  pre[class*="language-"] {
+    font-family: "Menlo", "Consolas", $ff-default;
     font-size: 14px;
   }
 
-  pre[class*=language-] {
+  pre[class*="language-"] {
     code {
       // 모바일에서 pre태그에 추가된 padding-right 값이 제대로 적용되도록 처리 콘텐츠 너비의 처리 방식을 변경
       min-width: fit-content;
@@ -221,7 +235,7 @@
       text-align: center;
     }
 
-    iframe[src*='codepen.io'] {
+    iframe[src*="codepen.io"] {
       width: 100%;
       vertical-align: middle;
     }
