@@ -2,20 +2,20 @@
 @use "sass:color";
 
 // 타이포그래피
-$rem-base: 16px !default;
+$ff-base-size: 16px;
 $ff-default: "Pretendard", "AppleSDGothicNeo", "Noto Sans CJK KR",
-  "Malgun Gothic", sans-serif !default;
+  "Malgun Gothic", sans-serif;
 
 // 색상값, 변수명 부트스트랩 카피
 // 색조합: https://flatuicolors.com/palette/defo
-$primary: #b20a0a !default;
-$secondary: #595959 !default;
-$success: #27ae60 !default;
-$info: #3498db !default;
-$warning: #f1c40f !default;
-$danger: #c0392b !default;
-$light: #ecf0f1 !default;
-$dark: #000 !default;
+$primary: #b20a0a;
+$secondary: #595959;
+$success: #27ae60;
+$info: #3498db;
+$warning: #f1c40f;
+$danger: #c0392b;
+$light: #ecf0f1;
+$dark: #000;
 
 $theme-colors: (
   "primary": $primary,
@@ -26,11 +26,11 @@ $theme-colors: (
   "danger": $danger,
   "light": $light,
   "dark": $dark,
-) !default;
+);
 
 // 반응형
-$container: 1080px !default;
-$gutter: 32px !default;
+$container: 1080px;
+$gutter: 32px;
 
 // breakpoints
 $lg_up: "min-width: #{1024px}";

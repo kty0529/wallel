@@ -35,7 +35,9 @@
   visibility: hidden;
 }
 
+html,
 body {
+  font-size: $ff-base-size;
   overflow-wrap: break-word;
   word-break: keep-all;
   word-wrap: break-word;

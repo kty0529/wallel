@@ -52,7 +52,7 @@ $offcanvasWidth: 320px;
       height: 40px;
       padding: 0 15px;
       border: 1px solid $border-color;
-      font-size: 16px;
+      font-size: 1rem;
 
       &::placeholder {
         font-size: 14px;
@@ -62,7 +62,7 @@ $offcanvasWidth: 320px;
 
   .widget-title {
     color: $dark;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
     text-transform: uppercase;
   }
@@ -128,7 +128,7 @@ $offcanvasWidth: 320px;
   border-radius: 3px;
   background-color: #fff;
   color: $dark;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
 
   .icon_active {
