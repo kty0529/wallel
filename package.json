@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "watch": "sass --style=compressed --update --watch theme02/wp-content/themes/theme02/assets/scss/:theme02/wp-content/themes/theme02/assets/css/"
+    "watch": "sass --style=compressed --update --watch theme02/wp-content/themes/theme02/assets/scss/:theme02/wp-content/themes/theme02/assets/css/",
+    "watch:refactor": "sass --style=compressed --update --watch theme02/wp-content/themes/theme02-refactor/assets/scss/:theme02/wp-content/themes/theme02-refactor/assets/css/"
   },
   "dependencies": {
     "stylelint": "^14.16.1",
