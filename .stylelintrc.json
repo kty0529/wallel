@@ -9,7 +9,6 @@
     "declaration-block-no-redundant-longhand-properties": true,
     "color-hex-length": "short",
     "alpha-value-notation": "number",
-    "max-nesting-depth": 3,
     "no-descending-specificity": null,
     "no-empty-source": null,
     "scss/operator-no-unspaced": true
