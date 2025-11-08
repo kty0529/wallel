@@ -15,8 +15,8 @@
   <meta itemprop="url" content="<?php echo get_permalink(); ?>">
 
   <div class="container">
-    <article id="entry">
-      <header id="entry-header">
+    <article class="entry">
+      <header class="entry-header">
         <h1 itemprop="name headline" class="title"><?php the_title(); ?></h1>
 
         <div class="data">
@@ -54,16 +54,20 @@
         </div>
       </header>
 
-      <div itemprop="articleBody" id="entry-container">
+      <div class="entry-adsense">
+        <?php get_template_part( 'templates/parts/adsense' ); ?>
+      </div>
+
+      <div itemprop="articleBody" class="entry-container">
         <?php the_content(); ?>
       </div>
 
-      <div id="entry-adsense">
+      <div class="entry-adsense">
         <?php get_template_part( 'templates/parts/adsense' ); ?>
       </div>
 
       <?php if ( $tags = get_the_tags() ) { ?>
-        <div id="entry-tags">
+        <aside class="entry-tags" aria-label="태그">
           <?php
             // $tag_arr = array();
             foreach ( $tags as $v ) {
@@ -72,7 +76,7 @@
             }
             // echo implode( ', ', $tag_arr );
           ?>
-        </div>
+        </aside>
       <?php } ?>
     </article>
 

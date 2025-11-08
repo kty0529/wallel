@@ -41,7 +41,7 @@
     }
   }
 
-  #entry {
+  .entry {
     min-width: 0;
     flex: 1 1 auto;
     padding: 40px 30px;
@@ -50,64 +50,64 @@
     @media ($sm_down) {
       padding: 30px 15px;
     }
+  }
 
-    &-header {
-      .title {
-        margin: 0;
-        font-size: 18px;
-        font-weight: 500;
-        word-break: keep-all;
-        word-wrap: break-word;
-      }
-
-      .data {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 12px;
-        color: $secondary;
-        font-size: 12px;
-        gap: 4px 12px;
-
-        .icon {
-          position: relative;
-          top: -0.07em;
-        }
-      }
+  .entry-header {
+    .title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 500;
+      word-break: keep-all;
+      word-wrap: break-word;
     }
 
-    &-container {
-      padding-top: 40px;
-      @include common-description-typhography;
-    }
-
-    &-adsense {
-      margin-top: 48px;
-    }
-
-    &-tags {
-      padding-top: 24px;
-      border-top: 1px solid $light;
-      margin-top: 48px;
+    .data {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 12px;
       color: $secondary;
       font-size: 12px;
+      gap: 4px 12px;
 
-      a {
-        display: inline-block;
-        padding: 2px 4px;
-        background-color: $light;
+      .icon {
+        position: relative;
+        top: -0.07em;
+      }
+    }
+  }
 
-        @include hover() {
-          transition: background-color 0.2s, color 0.2s;
+  .entry-container {
+    @include common-description-typhography;
+    padding-top: 40px;
+  }
 
-          &:hover {
-            background-color: $primary;
-            color: #fff;
-          }
+  .entry-adsense {
+    margin-top: 48px;
+  }
+
+  .entry-tags {
+    padding-top: 24px;
+    border-top: 1px solid $light;
+    margin-top: 48px;
+    color: $secondary;
+    font-size: 12px;
+
+    a {
+      display: inline-block;
+      padding: 2px 4px;
+      background-color: $light;
+
+      @include hover() {
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover {
+          background-color: $primary;
+          color: #fff;
         }
+      }
 
-        &:not(:first-child) {
-          margin-left: 4px;
-        }
+      &:not(:first-child) {
+        margin-left: 4px;
       }
     }
   }
