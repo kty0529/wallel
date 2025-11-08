@@ -1,6 +1,11 @@
 {
   "scripts": {
-    "watch": "node scripts/watch-all.js"
+    "watch": "node scripts/watch-all.js",
+    "lint:css": "npx stylelint \"theme02/wp-content/themes/**/assets/scss/**/*.scss\"",
+    "lint:css:fix": "npx stylelint \"theme02/wp-content/themes/**/assets/scss/**/*.scss\" --fix",
+    "lint:js": "npx eslint \"theme02/wp-content/themes/**/assets/js/**/*.js\"",
+    "lint:js:fix": "npx eslint \"theme02/wp-content/themes/**/assets/js/**/*.js\" --fix",
+    "lint": "npm run lint:css && npm run lint:js"
   },
   "dependencies": {
     "stylelint": "^14.16.1",
