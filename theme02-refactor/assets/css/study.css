@@ -1,1 +1,24 @@
-.study-archive .container{display:flex;align-items:flex-start;gap:32px}@media(max-width: 424px){.study-archive .container{margin:0 -15px}}.study-archive #study{min-width:0;flex:1 1 auto}.study-archive #study-container{display:flex;flex-direction:column;gap:30px}.study-archive .navigation{margin-top:40px}/*# sourceMappingURL=study.css.map */
+.study-archive .container {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+@media (max-width: 424px) {
+  .study-archive .container {
+    margin: 0 -15px;
+  }
+}
+.study-archive #study {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.study-archive #study-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.study-archive .navigation {
+  margin-top: 40px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../scss/study.scss%22,%22../scss/helpers/_variables.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAME;EACE;EACA;EACA,KCuBK;;ADrBL;EALF;IAMI;;;AAIJ;EACE;EACA;;AAGF;EACE;EACA;EACA;;AAGF;EACE%22,%22file%22:%22study.css%22,%22sourcesContent%22:%5B%22//%20helpers%5Cn@use%20%5C%22./helpers/variables%5C%22%20as%20*;%5Cn@use%20%5C%22./helpers/mixins%5C%22%20as%20*;%5Cn%5Cn//%20pages%5Cn.study-archive%20%7B%5Cn%20%20.container%20%7B%5Cn%20%20%20%20display:%20flex;%5Cn%20%20%20%20align-items:%20flex-start;%5Cn%20%20%20%20gap:%20$gutter;%5Cn%5Cn%20%20%20%20@media%20($sm_down)%20%7B%5Cn%20%20%20%20%20%20margin:%200%20-15px;%5Cn%20%20%20%20%7D%5Cn%20%20%7D%5Cn%5Cn%20%20%23study%20%7B%5Cn%20%20%20%20min-width:%200;%5Cn%20%20%20%20flex:%201%201%20auto;%5Cn%20%20%7D%5Cn%5Cn%20%20%23study-container%20%7B%5Cn%20%20%20%20display:%20flex;%5Cn%20%20%20%20flex-direction:%20column;%5Cn%20%20%20%20gap:%2030px;%5Cn%20%20%7D%5Cn%5Cn%20%20.navigation%20%7B%5Cn%20%20%20%20margin-top:%2040px;%5Cn%20%20%7D%5Cn%7D%5Cn%22,%22//%20use%5Cn@use%20%5C%22sass:color%5C%22;%5Cn%5Cn//%20%ED%83%80%EC%9D%B4%ED%8F%AC%EA%B7%B8%EB%9E%98%ED%94%BC%5Cn$ff-base-size:%2016px;%5Cn$ff-default:%20%5C%22Pretendard%5C%22,%20%5C%22AppleSDGothicNeo%5C%22,%20%5C%22Noto%20Sans%20CJK%20KR%5C%22,%5Cn%20%20%5C%22Malgun%20Gothic%5C%22,%20sans-serif;%5Cn%5Cn//%20%EC%83%89%EC%83%81%EA%B0%92,%20%EB%B3%80%EC%88%98%EB%AA%85%20%EB%B6%80%ED%8A%B8%EC%8A%A4%ED%8A%B8%EB%9E%A9%20%EC%B9%B4%ED%94%BC%5Cn//%20%EC%83%89%EC%A1%B0%ED%95%A9:%20https://flatuicolors.com/palette/defo%5Cn$primary:%20%23b20a0a;%5Cn$secondary:%20%23595959;%5Cn$success:%20%2327ae60;%5Cn$info:%20%233498db;%5Cn$warning:%20%23f1c40f;%5Cn$danger:%20%23c0392b;%5Cn$light:%20%23ecf0f1;%5Cn$dark:%20%23000;%5Cn%5Cn$theme-colors:%20(%5Cn%20%20%5C%22primary%5C%22:%20$primary,%5Cn%20%20%5C%22secondary%5C%22:%20$secondary,%5Cn%20%20%5C%22success%5C%22:%20$success,%5Cn%20%20%5C%22info%5C%22:%20$info,%5Cn%20%20%5C%22warning%5C%22:%20$warning,%5Cn%20%20%5C%22danger%5C%22:%20$danger,%5Cn%20%20%5C%22light%5C%22:%20$light,%5Cn%20%20%5C%22dark%5C%22:%20$dark,%5Cn);%5Cn%5Cn//%20%EB%B0%98%EC%9D%91%ED%98%95%5Cn$container:%201080px;%5Cn$gutter:%2032px;%5Cn%5Cn//%20breakpoints%5Cn$lg_up:%20%5C%22min-width:%20%23%7B1024px%7D%5C%22;%5Cn$md_up:%20%5C%22min-width:%20%23%7B768px%7D%5C%22;%5Cn$sm_up:%20%5C%22max-width:%20%23%7B425px%7D%5C%22;%5Cn%5Cn$lg_down:%20%5C%22max-width:%20%23%7B1023px%7D%5C%22;%5Cn$md_down:%20%5C%22max-width:%20%23%7B767px%7D%5C%22;%5Cn$sm_down:%20%5C%22max-width:%20%23%7B424px%7D%5C%22;%5Cn%5Cn//%20%EB%B8%8C%EB%9E%9C%EB%93%9C%EB%B3%84%20%EB%8C%80%ED%91%9C%20%EC%83%89%EC%83%81%5Cn$brand-colors:%20(%5Cn%20%20%5C%22css3%5C%22:%20%5C%22%2330A9DC%5C%22,%5Cn%20%20%5C%22github%5C%22:%20%5C%22%23000%5C%22,%5Cn%20%20%5C%22html5%5C%22:%20%5C%22%23F1672C%5C%22,%5Cn%20%20%5C%22javascript%5C%22:%20%5C%22%23F1BF26%5C%22,%5Cn%20%20%5C%22jquery%5C%22:%20%5C%22%231168af%5C%22,%5Cn%20%20%5C%22php%5C%22:%20%5C%22%238892BF%5C%22,%5Cn%20%20%5C%22react%5C%22:%20%5C%22%2361DAFB%5C%22,%5Cn%20%20%5C%22sass%5C%22:%20%5C%22%23CF649A%5C%22,%5Cn%20%20%5C%22tistory%5C%22:%20%5C%22%23EA5220%5C%22,%5Cn%20%20%5C%22vue%5C%22:%20%5C%22%2350C08D%5C%22,%5Cn%20%20%5C%22wordpress%5C%22:%20%5C%22%23575C60%5C%22,%5Cn);%5Cn%5Cn//%20%EC%BB%A4%EC%8A%A4%ED%85%80%20%ED%85%8C%EB%A7%88%20%EC%BB%AC%EB%9F%AC%5Cn$border-color:%20color.adjust($light,%20$lightness:%20-10%25);%5Cn%22%5D%7D */
