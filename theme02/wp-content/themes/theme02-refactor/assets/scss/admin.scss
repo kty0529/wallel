@@ -6,6 +6,7 @@
 // 메타박스 공지 숨기기
 .notice.notice-warning.is-dismissible:has(a[href*="meta-box-updater"]) {
   display: none !important;
+  background-color: red;
 }
 
 #aioseo-primary-term-portfolio-type {
