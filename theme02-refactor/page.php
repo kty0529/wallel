@@ -18,7 +18,7 @@
   <div class="container">
     <article id="entry">
       <header id="entry-header">
-        <h2 itemprop="name headline" class="title"><?php the_title(); ?></h2>
+        <h1 itemprop="name headline" class="title"><?php the_title(); ?></h1>
 
         <div class="data">
           <time itemprop="dateCreated datePublished" datetime="<?php echo get_the_date('Y-m-d H:i:s'); ?>">
