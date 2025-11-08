@@ -1,5 +1,10 @@
 # Repository Guidelines
 
+## 문서 계층 및 우선순위
+- 본 파일은 `theme02-refactor` 폴더 전용 세부 지침입니다.
+- 기본 원칙과 규칙은 루트의 `AGENTS.md`를 우선적으로 따릅니다.
+- 이 문서의 항목이 루트 지침과 상충할 경우, 별도로 “루트 지침을 이 항목에서 한해 재정의”라고 명시된 부분만 예외로 적용됩니다.
+
 ## 프로젝트 구조 및 모듈 구성
 
 - 루트 템플릿: `index.php`, `single.php`, `archive.php`, `page.php`, `404.php`, 그리고 전용 템플릿(예: `single-portfolio.php`, 각 taxonomy 아카이브).
@@ -12,6 +17,7 @@
 
 ## 빌드·테스트·개발 명령
 
+- 공통 감시: 루트 스크립트 `npm run watch`로 모든 테마의 SCSS를 자동 감시/빌드합니다.
 - SCSS 단발 빌드: `sass assets/scss:assets/css --style=compressed`
 - SCSS 감시: `sass --watch assets/scss:assets/css`
 - PHP 린트(전체): `find . -name "*.php" -print0 | xargs -0 -n1 php -l`
