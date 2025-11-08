@@ -1,0 +1,138 @@
+// helpers
+@use "./helpers/variables" as *;
+@use "./helpers/mixins" as *;
+
+// pages
+.portfolio-archive {
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: $gutter;
+
+    @media ($sm_down) {
+      margin: 0 -15px;
+    }
+  }
+
+  #portfolio {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  #portfolio-container {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+
+    @media ($md_down) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media ($sm_down) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .navigation {
+    margin-top: 40px;
+  }
+}
+
+.portfolio-article {
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: $gutter;
+
+    @media ($sm_down) {
+      margin: 0 -15px;
+    }
+  }
+
+  #portfolio-entry {
+    min-width: 0;
+    flex: 1 1 auto;
+    padding: 40px 30px;
+    background-color: #fff;
+
+    @media ($sm_down) {
+      padding: 30px 15px;
+    }
+
+    &-header {
+      .title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+
+      .data {
+        display: flex;
+        flex-direction: column;
+        margin-top: 14px;
+        color: $dark;
+        font-size: 14px;
+
+        .row {
+          display: flex;
+        }
+
+        .label {
+          flex: 0 0 100px;
+          padding: 14px;
+          border-bottom: 1px solid $light;
+          background-color: $light;
+          font-weight: 500;
+        }
+
+        .value {
+          flex: 1 1 auto;
+          padding: 14px;
+          border-bottom: 1px solid $light;
+        }
+      }
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      padding-top: 40px;
+      gap: 20px;
+
+      .sec-screenshot {
+        img {
+          border: 1px solid $light;
+          aspect-ratio: 1 / 1;
+          object-fit: cover;
+          object-position: top;
+        }
+
+        .swiper {
+          .scrollbar {
+            margin-top: 10px;
+
+            .swiper-scrollbar-drag {
+              height: 5px;
+              border-radius: 5px;
+              background: $light;
+
+              &:hover,
+              &:active,
+              &:focus {
+                background: $primary;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      .sec-content {
+        @include common-description-typhography;
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+#post .postbox {  }
+#post .postbox .thumbnail {
+	border: 0;
+	-webkit-box-shadow: none;
+	        box-shadow: none;
+}
+#post .rwmb-meta-box {
+	padding: 10px 5px 30px;
+}
+
+#post .rwmb-field:not(:last-of-type) {
+	margin-bottom: 20px;
+}
+
+#post .rwmb-meta-box .description {
+	margin-top: 5px;
+	font-style: normal;
+}
+
+#post .rwmb-tabs-left {
+	margin: -15px -17px -42px;
+}
+
+#post .rwmb-tabs-left .rwmb-tab-nav a {
+	padding: 10px 25px 10px 15px;
+}
+
+#post .rwmb-tabs-left .rwmb-tab-panel {
+	padding: 20px 20px 40px;
+}

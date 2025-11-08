@@ -1,0 +1,44 @@
+// common use
+@use "sass:map";
+@use "sass:math";
+@use "sass:list";
+@use "sass:color";
+
+// helpers
+@use "./helpers/variables" as *;
+@use "./helpers/mixins" as *;
+
+// base
+@use "./base/reset" as *;
+@use "./base/colors" as *;
+@use "./base/typography" as *;
+
+// components
+@use "./components/icons" as *;
+@use "./components/overlay" as *;
+@use "./components/post-card" as *;
+@use "./components/sidebar" as *;
+@use "./components/tooltip" as *;
+@use "./components/pagination" as *;
+@use "./components/offcanvas" as *;
+@use "./components/scroll-lock" as *;
+@use "./components/no-results" as *;
+
+// layouts
+@use "./layouts/common" as *;
+@use "./layouts/header" as *;
+@use "./layouts/main" as *;
+@use "./layouts/footer" as *;
+
+// 사용자 코드 입력
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+html,
+body {
+  font-size: $ff-base-size;
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  word-wrap: break-word;
+}

@@ -1,0 +1,243 @@
+// use
+@use "sass:string";
+@use "./variables" as *;
+
+// mixins
+@mixin fullscreen($z: 1, $p: "absolute") {
+  position: #{$p};
+  z-index: $z;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin position($p: "center") {
+  @if #{$p} == "center" {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  } @else if #{$p} == "vertical" {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+  } @else if #{$p} == "horizontal" {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+  }
+}
+
+// 기타 mixin
+@mixin disable($boolean: true) {
+  @if $boolean == true {
+    pointer-events: none;
+    touch-action: none;
+    user-select: none;
+  } @else {
+    pointer-events: auto;
+    touch-action: auto;
+    user-select: auto;
+  }
+}
+
+@mixin text-ellipsis() {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin box-ellipsis($line: 3, $lineHeight: 20px, $boxHeight: "auto") {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  line-height: $lineHeight;
+  text-align: left;
+  white-space: normal;
+  word-break: break-all;
+  word-wrap: break-word;
+  @if ($boxHeight) == "fixed" {
+    height: $lineHeight * $line;
+  } @else {
+    height: auto;
+    max-height: $lineHeight * $line;
+  }
+}
+
+@mixin blind {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  word-wrap: normal;
+}
+
+@mixin hover() {
+  @media ($lg_up) {
+    @content;
+  }
+}
+
+@mixin material-icons($code, $style: "Outlined") {
+  $withslash: '"\\#{$code}"';
+  content: string.unquote($withslash);
+  font-family: "Material Symbols #{$style}";
+}
+
+// 커스텀 mixin
+@mixin common-description-typhography {
+  font-size: 1rem;
+  line-height: 1.8;
+
+  a {
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  figure {
+    margin: 1em 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  h3 {
+    position: relative;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 400;
+
+    &:not(:first-child) {
+      margin-top: 2em;
+    }
+
+    &:before {
+      display: block;
+      width: 40px;
+      height: 1px;
+      margin-bottom: 10px;
+      background-color: $primary;
+      content: "";
+    }
+  }
+
+  h4 {
+    margin-top: 1.3em;
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+
+  hr {
+    overflow: hidden;
+    height: 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid $border-color;
+    margin: 30 0px;
+  }
+
+  ul,
+  ol {
+    padding: 20px 30px;
+    padding-left: 40px;
+    border-radius: 5px;
+    background-color: $light;
+
+    ul,
+    ol,
+    ul[class*="wp-block"],
+    ol[class*="wp-block"] {
+      padding: 8px 0 8px 30px;
+      margin: 0;
+    }
+
+    li:not(:first-child) {
+      margin-top: 8px;
+    }
+  }
+
+  ol > li {
+    list-style: decimal;
+  }
+
+  ul > li {
+    list-style: disc;
+  }
+
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    th,
+    td {
+      padding: 10px;
+    }
+
+    th {
+      background-color: $light;
+    }
+  }
+
+  // prismjs 스타일링
+  code[class*="language-"],
+  pre[class*="language-"] {
+    font-family: "Menlo", "Consolas", $ff-default;
+    font-size: 14px;
+  }
+
+  pre[class*="language-"] {
+    code {
+      // 모바일에서 pre태그에 추가된 padding-right 값이 제대로 적용되도록 처리 콘텐츠 너비의 처리 방식을 변경
+      min-width: fit-content;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .wp-caption {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  // embed 블럭 스타일링
+  .wp-block-embed {
+    figcaption {
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+      color: #555;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    iframe[src*="codepen.io"] {
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+// use
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+// styles
+.sidebar {
+  width: 240px;
+  flex: 0 0 auto;
+  font-size: 14px;
+
+  @media ($lg_down) {
+    display: none;
+  }
+
+  .widget {
+    &-title {
+      color: $dark;
+      font-size: 1em;
+      font-weight: 600;
+      text-transform: uppercase;
+
+      .icon {
+        position: relative;
+        top: -0.07em;
+      }
+    }
+
+    &-content {
+      margin-top: 10px;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 50px;
+    }
+  }
+
+  .widget-search {
+    form {
+      display: flex;
+      height: 50px;
+      border: 1px solid $border-color;
+      background-color: #fff;
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      flex: 1 1 auto;
+      padding: 0 10px;
+    }
+
+    button {
+      width: 50px;
+      height: 100%;
+      flex: 0 0 auto;
+      padding-bottom: 2px;
+      font-size: 20px;
+    }
+  }
+
+  .widget-category {
+    line-height: 1;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .cat-item {
+      margin-top: 20px;
+    }
+
+    .children {
+      .cat-item {
+        color: $secondary;
+
+        &:before {
+          position: relative;
+          top: -1px;
+          margin-right: 8px;
+          color: $border-color;
+
+          @include material-icons("e5cc");
+          font-size: 18px;
+          vertical-align: middle;
+        }
+
+        ul {
+          li {
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+
+    .current-cat > a {
+      color: $primary;
+    }
+  }
+
+  .widget-banners {
+    .widget-content {
+      margin-top: 8px;
+    }
+
+    a {
+      position: relative;
+      display: block;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      .label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: inline-flex;
+        height: 25px;
+        align-items: center;
+        padding: 0 10px;
+        background-color: $dark;
+        color: $light;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+}

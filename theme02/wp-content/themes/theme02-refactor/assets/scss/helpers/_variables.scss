@@ -1,0 +1,60 @@
+// use
+@use "sass:color";
+
+// 타이포그래피
+$ff-base-size: 16px;
+$ff-default: "Pretendard", "AppleSDGothicNeo", "Noto Sans CJK KR",
+  "Malgun Gothic", sans-serif;
+
+// 색상값, 변수명 부트스트랩 카피
+// 색조합: https://flatuicolors.com/palette/defo
+$primary: #b20a0a;
+$secondary: #595959;
+$success: #27ae60;
+$info: #3498db;
+$warning: #f1c40f;
+$danger: #c0392b;
+$light: #ecf0f1;
+$dark: #000;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+// 반응형
+$container: 1080px;
+$gutter: 32px;
+
+// breakpoints
+$lg_up: "min-width: #{1024px}";
+$md_up: "min-width: #{768px}";
+$sm_up: "max-width: #{425px}";
+
+$lg_down: "max-width: #{1023px}";
+$md_down: "max-width: #{767px}";
+$sm_down: "max-width: #{424px}";
+
+// 브랜드별 대표 색상
+$brand-colors: (
+  "css3": "#30A9DC",
+  "github": "#000",
+  "html5": "#F1672C",
+  "javascript": "#F1BF26",
+  "jquery": "#1168af",
+  "php": "#8892BF",
+  "react": "#61DAFB",
+  "sass": "#CF649A",
+  "tistory": "#EA5220",
+  "vue": "#50C08D",
+  "wordpress": "#575C60",
+);
+
+// 커스텀 테마 컬러
+$border-color: color.adjust($light, $lightness: -10%);

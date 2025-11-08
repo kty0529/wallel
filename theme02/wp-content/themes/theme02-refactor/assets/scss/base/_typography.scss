@@ -1,0 +1,40 @@
+// use
+@use "sass:map";
+
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+// styles
+html,
+body {
+  color: map.get($theme-colors, "dark");
+  font-family: $ff-default;
+}
+
+a {
+  @media ($lg_up) {
+    transition: color 0.2s;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+}
+
+$code-font-family: "Menlo", "Consolas", $ff-default;
+
+code {
+  display: inline-block;
+  color: $danger;
+  font-family: $code-font-family;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
+pre {
+  padding: 10px;
+  background-color: #fafafa;
+  font-family: $code-font-family;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}

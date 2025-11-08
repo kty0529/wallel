@@ -1,0 +1,12 @@
+// use
+@use "../helpers/variables" as *;
+
+// styles
+#main {
+  padding: 70px 0 150px;
+  background-color: $light;
+
+  @media ($lg_down) {
+    padding: 50px 0 100px;
+  }
+}

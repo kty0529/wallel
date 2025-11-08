@@ -1,0 +1,31 @@
+// helpers
+@use "./helpers/variables" as *;
+@use "./helpers/mixins" as *;
+
+// pages
+.study-archive {
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: $gutter;
+
+    @media ($sm_down) {
+      margin: 0 -15px;
+    }
+  }
+
+  #study {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  #study-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .navigation {
+    margin-top: 40px;
+  }
+}

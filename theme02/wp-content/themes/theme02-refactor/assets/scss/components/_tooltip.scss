@@ -1,0 +1,47 @@
+// use
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+// styles
+[data-tooltip] {
+  position: relative;
+  z-index: 10;
+
+  &::before,
+  &::after {
+    position: absolute;
+    left: 50%;
+    background-color: $dark;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  &::before {
+    @include disable();
+    z-index: 2;
+    bottom: calc(100% + 6px);
+    padding: 3px 5px;
+    border-radius: 3px;
+    color: #fff;
+    content: attr(data-tooltip);
+    font-size: 12px;
+    font-weight: 500;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+
+  &::after {
+    @include disable();
+    z-index: 1;
+    bottom: calc(100% + 4px);
+    width: 4px;
+    height: 4px;
+    content: "";
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+  }
+}

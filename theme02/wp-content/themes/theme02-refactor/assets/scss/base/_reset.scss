@@ -1,0 +1,169 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'AppleSDGothicNeo', 'Malgun Gothic', sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  line-height: 1.8;
+  overflow-wrap: break-word;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+main, header, footer, section, article, aside, nav, hgroup, details, menu, figure, figcaption {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+ol, ul, li, dl, dt, dd {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  height: auto;
+}
+
+img, iframe, video, object, embed, button, select, input, textarea {
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  background-color: transparent;
+  box-shadow: none;
+  font: inherit;
+  line-height: inherit;
+  vertical-align: middle;
+}
+
+// 외형 초기화
+input, textarea {
+  appearance: none;
+}
+
+// 체크박스는 기본 외형 나오도록 설정
+input[type='checkbox'] {
+  appearance: auto;
+}
+
+input[type='search'] {
+  // 검색 필드 외형 초기화
+  // https://css-tricks.com/webkit-html5-search-inputs/#comment-82432
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  // MS 에서 검색 필드 외형 초기화
+  &::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  &::-ms-reveal {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+  appearance: button;
+}
+
+::file-selector-button {
+  appearance: button;
+  font: inherit;
+}
+
+button, select, label {
+  cursor: pointer;
+}
+
+small {
+  font-size: 80%;
+}
+
+code, kbd, samp {
+  font-family: 'Menlo', 'Consolas', 'monospace', sans-serif;
+  font-size: 1em;
+}
+
+sub, sup {
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+[hidden] {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+// [접근성] 스크린 리더기를 위한 클래스
+// https://make.wordpress.org/accessibility/handbook/markup/the-css-class-screen-reader-text/
+.screen-reader-text {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  margin: -1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+  z-index: 100000;
+  top: 5px;
+  left: 5px;
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 15px 23px 14px;
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  font-size: 1em;
+  line-height: normal;
+  text-decoration: none;
+}

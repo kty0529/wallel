@@ -1,0 +1,75 @@
+// use
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+// styles
+#header {
+  background-color: $light;
+
+  @media ($lg_down) {
+    background-color: $dark;
+    color: $light;
+  }
+
+  .container {
+    display: flex;
+    height: 100px;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @media ($lg_down) {
+      height: auto;
+      align-items: center;
+    }
+  }
+
+  .title {
+    margin: 0;
+    line-height: 0;
+
+    a {
+      display: flex;
+      height: 50px;
+      align-items: center;
+    }
+
+    svg {
+      @include hover {
+        fill: $primary;
+      }
+
+      @media ($lg_down) {
+        width: 70px;
+      }
+    }
+  }
+
+  .navigation {
+    margin-right: -20px;
+
+    @media ($lg_down) {
+      margin-right: -10px;
+    }
+
+    ul {
+      display: flex;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    a {
+      display: flex;
+      height: 50px;
+      align-items: center;
+      padding: 0 20px;
+      font-size: 14px;
+      text-transform: uppercase;
+
+      @media ($lg_down) {
+        padding: 0 10px;
+        font-size: 12px;
+      }
+    }
+  }
+}

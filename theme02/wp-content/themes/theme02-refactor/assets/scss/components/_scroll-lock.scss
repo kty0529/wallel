@@ -1,0 +1,11 @@
+// use
+@use "../helpers/variables" as *;
+
+// styles
+html.scroll-lock {
+  overflow: hidden;
+
+  @media ($lg_up) {
+    overflow: visible;
+  }
+}

@@ -1,0 +1,183 @@
+// use
+@use "sass:list";
+@use "sass:color";
+@use "../helpers/variables" as *;
+@use "../helpers/mixins" as *;
+
+// variables
+$adminbarHeight: (
+  32px,
+  // desktop
+  46px,
+  // mobile
+);
+
+$offcanvasWidth: 320px;
+
+// styles
+#offcanvas {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  max-width: $offcanvasWidth;
+  padding: 50px 30px 100px;
+  background-color: #fff;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  transform: translate3d($offcanvasWidth, 0, 0);
+  transition: transform 0.2s;
+
+  .widget {
+    line-height: 1;
+
+    &:not(:first-child) {
+      margin-top: 64px;
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      list-style: none;
+    }
+  }
+
+  .widget-search {
+    input {
+      width: 100%;
+      height: 40px;
+      padding: 0 15px;
+      border: 1px solid $border-color;
+      font-size: 1rem;
+
+      &::placeholder {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .widget-title {
+    color: $dark;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .widget-menu {
+    .menu-item {
+      margin-top: 20px;
+    }
+
+    .current-menu-item > a {
+      color: $primary;
+    }
+  }
+
+  .widget-category {
+    .cat {
+      margin-top: 12px;
+    }
+
+    .cat-item {
+      margin-top: 20px;
+    }
+
+    .children {
+      .cat-item {
+        color: $secondary;
+
+        &:before {
+          position: relative;
+          top: -1px;
+          margin-right: 8px;
+          color: $border-color;
+
+          @include material-icons("e5cc");
+          font-size: 18px;
+          vertical-align: middle;
+        }
+
+        ul {
+          li {
+            padding-left: 16px;
+          }
+        }
+      }
+    }
+
+    .current-cat > a {
+      color: $primary;
+    }
+  }
+}
+
+#toggle-offcanvas {
+  position: fixed;
+  z-index: 102;
+  right: 15px;
+  bottom: 30px;
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding-bottom: 2px;
+  border: 1px solid color.adjust($light, $blackness: 5%);
+  border-radius: 3px;
+  background-color: #fff;
+  color: $dark;
+  font-size: 1rem;
+  text-align: center;
+
+  .icon_active {
+    display: none;
+  }
+
+  @media ($lg_down) {
+    display: block;
+  }
+}
+
+// 어드민바 처리
+body.admin-bar {
+  #offcanvas {
+    @media ($lg_down) {
+      top: list.nth($adminbarHeight, 1);
+    }
+
+    @media ($md_down) {
+      top: list.nth($adminbarHeight, 2);
+    }
+  }
+}
+
+// 사이드바 열림 처리
+html.offcanvas-active {
+  @media ($lg_up) {
+    &.scroll-lock {
+      overflow: auto;
+    }
+
+    #overlay.active {
+      display: none;
+    }
+  }
+
+  @media ($lg_down) {
+    #offcanvas {
+      transform: translate3d(0, 0, 0);
+    }
+
+    #toggle-offcanvas {
+      .icon_deactive {
+        display: none;
+      }
+
+      .icon_active {
+        display: block;
+      }
+    }
+  }
+}

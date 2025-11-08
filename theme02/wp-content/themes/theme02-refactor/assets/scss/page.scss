@@ -1,0 +1,90 @@
+// helpers
+@use "./helpers/variables" as *;
+@use "./helpers/mixins" as *;
+
+// pages
+.page-default {
+  .container {
+    display: flex;
+    align-items: flex-start;
+    gap: $gutter;
+
+    @media ($sm_down) {
+      margin: 0 -15px;
+    }
+  }
+
+  #entry {
+    min-width: 0;
+    flex: 1 1 auto;
+    padding: 40px 30px;
+    background-color: #fff;
+
+    @media ($sm_down) {
+      padding: 30px 15px;
+    }
+
+    &-header {
+      .title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+
+      .data {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 12px;
+        color: $secondary;
+        font-size: 12px;
+        gap: 12px;
+
+        .icon {
+          position: relative;
+          top: -0.07em;
+        }
+
+        @media ($md_down) {
+          .categories {
+            flex-basis: 100%;
+            order: 2;
+          }
+        }
+      }
+    }
+
+    &-container {
+      padding-top: 40px;
+      @include common-description-typhography;
+    }
+
+    &-tags {
+      padding-top: 24px;
+      border-top: 1px solid $light;
+      margin-top: 48px;
+      color: $secondary;
+      font-size: 12px;
+
+      a {
+        display: inline-block;
+        padding: 2px 4px;
+        background-color: $light;
+
+        @include hover() {
+          transition: background-color 0.2s, color 0.2s;
+
+          &:hover {
+            background-color: $primary;
+            color: #fff;
+          }
+        }
+
+        &:not(:first-child) {
+          margin-left: 4px;
+        }
+      }
+    }
+  }
+}

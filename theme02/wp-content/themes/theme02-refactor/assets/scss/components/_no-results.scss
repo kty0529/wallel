@@ -1,0 +1,21 @@
+// use
+@use "../helpers/variables" as *;
+
+// styles
+.no-results {
+  text-align: center;
+
+  .emoji {
+    color: $secondary;
+    font-family: Arial, sans-serif;
+    font-size: 60px;
+
+    @media ($md_down) {
+      font-size: 50px;
+    }
+  }
+
+  .text {
+    margin-top: 10px;
+  }
+}
