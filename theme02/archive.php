@@ -24,7 +24,7 @@
           while ( have_posts() ) {
             the_post();
 
-            if ( $i === 2 ) {
+            if ( $i === 2 || $i === 4 ) {
               get_template_part( 'templates/parts/adsense', 'infeed' );
             }
 
