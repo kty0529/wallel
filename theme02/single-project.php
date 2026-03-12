@@ -169,7 +169,10 @@
             <h3 class="sec-title">라이센스</h3>
 
             <div class="sec-content">
-              <a href="<?php echo get_permalink( 2037 ); ?>">무료 배포 파일 통합 라이센스</a>
+              <a href="<?php echo get_permalink( 2037 ); ?>">
+                <span class="material-symbols-outlined icon" aria-hidden="true">gavel</span>
+                무료 배포 파일 통합 라이센스
+              </a>
             </div>
           </div>
         <?php } ?>

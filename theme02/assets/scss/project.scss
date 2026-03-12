@@ -85,7 +85,10 @@
         font-size: 12px;
         font-weight: 600;
         text-decoration: none;
-        transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+        transition:
+          border-color 0.2s,
+          background-color 0.2s,
+          color 0.2s;
 
         .icon {
           margin-right: 4px;
@@ -192,8 +195,8 @@
         }
 
         svg {
-          width: 32px;
-          height: 32px;
+          width: 24px;
+          height: 24px;
         }
 
         .closed {
@@ -205,31 +208,28 @@
 
       a {
         display: inline-flex;
-        height: 35px;
         align-items: center;
-        padding: 1px 18px 0 6px;
-        border: 2px solid $secondary;
-        border-radius: 5px;
+        padding: 6px 12px;
+        border: 1px solid rgba($secondary, 0.28);
+        border-radius: 999px;
         color: $secondary;
         font-size: 12px;
         font-weight: 600;
         text-decoration: none;
-        text-transform: uppercase;
+        transition:
+          border-color 0.2s,
+          background-color 0.2s,
+          color 0.2s;
 
         svg {
-          margin-top: -1px;
+          margin-right: 6px;
         }
 
         @include hover() {
-          transition:
-            border-color 0.2s,
-            background-color 0.2s,
-            color 0.2s;
-
           &:hover {
             border-color: $primary;
-            background-color: $primary;
-            color: #fff;
+            background-color: rgba($primary, 0.06);
+            color: $primary;
           }
         }
       }
@@ -238,27 +238,29 @@
     .sec-license {
       a {
         display: inline-flex;
-        height: 35px;
         align-items: center;
-        padding: 1px 18px 0;
-        border: 2px solid $secondary;
-        border-radius: 5px;
+        padding: 6px 12px;
+        border: 1px solid rgba($secondary, 0.28);
+        border-radius: 999px;
         color: $secondary;
         font-size: 12px;
         font-weight: 600;
         text-decoration: none;
-        text-transform: uppercase;
+        transition:
+          border-color 0.2s,
+          background-color 0.2s,
+          color 0.2s;
+
+        .icon {
+          margin-right: 6px;
+          font-size: 17px;
+        }
 
         @include hover() {
-          transition:
-            border-color 0.2s,
-            background-color 0.2s,
-            color 0.2s;
-
           &:hover {
             border-color: $primary;
-            background-color: $primary;
-            color: #fff;
+            background-color: rgba($primary, 0.06);
+            color: $primary;
           }
         }
       }
