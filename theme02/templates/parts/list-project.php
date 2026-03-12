@@ -48,22 +48,5 @@
     <a href="<?php echo get_permalink(); ?>"><h3 class="title"><?php echo get_the_title(); ?></h3></a>
 
     <div class="description"><?php echo $content; ?></div>
-
-    <ul class="languages">
-      <li class="label">사용 언어</li>
-      <?php
-        $languages = explode(', ', project_meta( 'tech' ));
-
-        if ( $languages && ! is_wp_error( $languages ) ) {
-          foreach ( $languages as $language ) {
-            $icon = GET_SVG($language);
-
-            if ( ! empty( $icon ) ) {
-              echo '<li class="icon-' . strtolower( $icon['name'] ) . '" data-tooltip="' . $icon['name'] . '">' . $icon['code'] . '</li>';
-            }
-          }
-        }
-      ?>
-    </ul>
   </div>
 </article>

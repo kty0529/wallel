@@ -151,38 +151,6 @@
       line-height: 1.8;
     }
 
-    .languages {
-      display: flex;
-      align-items: center;
-      padding: 20px 0 0px;
-      border-top: 1px solid $border-color;
-      margin: 30px 0 0px;
-      gap: 4px;
-      list-style: none;
-
-      .label {
-        padding-right: 4px;
-        color: $dark;
-        font-size: 13px;
-        font-weight: 500;
-      }
-
-      svg {
-        width: 32px;
-        height: 32px;
-        background-color: $light;
-        fill: #333;
-        transition: background-color 0.2s, fill 0.2s;
-        vertical-align: middle;
-      }
-
-      @each $brand, $color in $brand-colors {
-        .icon-#{$brand}:hover svg {
-          background-color: #{$color};
-          fill: #fff;
-        }
-      }
-    }
   }
 
   &.closed {
