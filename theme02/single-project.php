@@ -26,13 +26,15 @@
         <h2 class="title"><?php the_title(); ?></h2>
 
         <div class="data">
-          <div class="release">
-            <span class="material-symbols-outlined icon" aria-hidden="true">
-              new_releases
-            </span>
+          <?php if ( $release = project_meta( 'release' ) ) { ?>
+            <div class="release">
+              <span class="material-symbols-outlined icon" aria-hidden="true">
+                new_releases
+              </span>
 
-            <?php echo project_meta( 'release' ); ?>
-          </div>
+              <?php echo $release; ?>
+            </div>
+          <?php } ?>
 
           <div class="cms">
             <span class="material-symbols-outlined icon" aria-hidden="true">
@@ -57,7 +59,15 @@
 
             <?php echo project_meta( 'tech' ); ?>
           </div>
+
         </div>
+
+        <?php if ( $demo_link = project_meta( 'demo_link' ) ) { ?>
+          <a class="demo-link" href="<?php echo esc_url( $demo_link ); ?>" target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined icon" aria-hidden="true">arrow_outward</span>
+            <span><?php echo $demo_link; ?></span>
+          </a>
+        <?php } ?>
 
       </header>
 
@@ -123,34 +133,46 @@
           </div>
         <?php } ?>
 
-        <div class="sec sec-download">
-          <h3 class="sec-title">다운로드</h3>
+        <?php
+          $closed = project_meta( 'closed' );
+          $download = project_meta( 'github_link' );
+        ?>
+        <?php if ( $closed ) { ?>
+          <div class="sec sec-download">
+            <h3 class="sec-title">안내</h3>
 
-          <div class="sec-content">
-            <?php if ( project_meta( 'closed' ) ) { ?>
-              <div class="closed"><strong>이 프로젝트는 운영 종료되었습니다.<br>감사합니다.</strong></div>
-            <?php } else { ?>
+            <div class="sec-content">
+              <div class="closed"><strong>이 프로젝트는 운영이 종료되었습니다.<br>다운로드와 지원이 제한될 수 있습니다.</strong></div>
+            </div>
+          </div>
+        <?php } ?>
+
+        <?php if ( $download ) { ?>
+          <div class="sec sec-download">
+            <h3 class="sec-title">다운로드</h3>
+
+            <div class="sec-content">
               <ul>
                 <?php if ( $repository = project_meta( 'github_link' ) ) { ?>
                   <li>
-                    <a class="download github" href="<?php echo $repository; ?>" target="_blank">
+                    <a class="download github" href="<?php echo esc_url( $repository ); ?>" target="_blank" rel="noopener noreferrer">
                       <?php echo GET_SVG('GitHub')['code']; ?>
                       Github 저장소에서 다운받기
                     </a>
                   </li>
                 <?php } ?>
               </ul>
-            <?php } ?>
+            </div>
           </div>
-        </div>
 
-        <div class="sec sec-license">
-          <h3 class="sec-title">라이센스</h3>
+          <div class="sec sec-license">
+            <h3 class="sec-title">라이센스</h3>
 
-          <div class="sec-content">
-            <a href="<?php echo get_permalink( 2037 ); ?>">무료 배포 파일 통합 라이센스</a>
+            <div class="sec-content">
+              <a href="<?php echo get_permalink( 2037 ); ?>">무료 배포 파일 통합 라이센스</a>
+            </div>
           </div>
-        </div>
+        <?php } ?>
 
         <?php if ( $history = project_meta( 'history' ) ) { ?>
           <div class="sec sec-history">

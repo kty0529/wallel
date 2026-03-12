@@ -3,6 +3,10 @@
 
   $thumbnail = get_the_post_thumbnail( $post->ID, 'large' );
   $content = apply_filters( 'the_content', get_the_content( false ) );
+  $closed = array(
+    'status' => false,
+    'class' => '',
+  );
 
   if ( project_meta( 'closed' ) ) {
     $closed = array(

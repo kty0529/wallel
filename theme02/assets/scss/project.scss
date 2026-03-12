@@ -73,6 +73,33 @@
           top: -0.07em;
         }
       }
+
+      .demo-link {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border: 1px solid rgba($secondary, 0.28);
+        border-radius: 999px;
+        margin-top: 16px;
+        color: $secondary;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+
+        .icon {
+          margin-right: 4px;
+          font-size: 16px;
+        }
+
+        @include hover() {
+          &:hover {
+            border-color: $primary;
+            background-color: rgba($primary, 0.06);
+            color: $primary;
+          }
+        }
+      }
     }
 
     &-container {
@@ -194,7 +221,10 @@
         }
 
         @include hover() {
-          transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+          transition:
+            border-color 0.2s,
+            background-color 0.2s,
+            color 0.2s;
 
           &:hover {
             border-color: $primary;
@@ -220,7 +250,10 @@
         text-transform: uppercase;
 
         @include hover() {
-          transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+          transition:
+            border-color 0.2s,
+            background-color 0.2s,
+            color 0.2s;
 
           &:hover {
             border-color: $primary;
