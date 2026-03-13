@@ -71,13 +71,12 @@
 
     .children {
       .cat-item {
-        display: flex;
-        align-items: center;
         color: $secondary;
-        gap: 4px;
 
         &:before {
           @include material-icons("e5cc");
+          position: relative;
+          top: -1px;
           color: $secondary;
           font-size: 14px;
           vertical-align: middle;
