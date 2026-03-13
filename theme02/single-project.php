@@ -52,13 +52,25 @@
             ?>
           </div>
 
-          <div class="languages">
-            <span class="material-symbols-outlined icon" aria-hidden="true">
-              code
-            </span>
+          <?php
+            $terms = get_the_terms( get_the_ID(), 'project-tag' );
 
-            <?php echo project_meta( 'tech' ); ?>
-          </div>
+            if ( $terms && ! is_wp_error( $terms ) ) {
+              $terms_arr = array();
+
+              foreach ( $terms as $term ) {
+                $term_link = get_term_link( $term->term_id, $term->taxonomy );
+                $terms_arr[] = '<a href="' . esc_url( $term_link ) . '">' . esc_html( $term->name ) . '</a>';
+              }
+          ?>
+            <div class="languages">
+              <span class="material-symbols-outlined icon" aria-hidden="true">
+                sell
+              </span>
+
+              <?php echo join( ', ', $terms_arr ); ?>
+            </div>
+          <?php } ?>
 
         </div>
 
