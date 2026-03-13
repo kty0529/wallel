@@ -85,11 +85,14 @@
     }
 
     &-tags {
+      display: flex;
+      flex-wrap: wrap;
       padding-top: 24px;
       border-top: 1px solid $light;
       margin-top: 48px;
       color: $secondary;
       font-size: 12px;
+      gap: 4px;
 
       a {
         display: inline-block;
@@ -105,10 +108,6 @@
             background-color: $primary;
             color: #fff;
           }
-        }
-
-        &:not(:first-child) {
-          margin-left: 4px;
         }
       }
     }
