@@ -121,7 +121,7 @@
     .description {
       margin-top: 14px;
       color: $secondary;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.8;
     }
 
@@ -196,13 +196,9 @@
 
     img {
       width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
       object-position: center;
-
-      @media ($md_down) {
-        aspect-ratio: 16 / 9;
-      }
     }
 
     .status {
@@ -248,7 +244,7 @@
 
   .content {
     flex: 1 1 auto;
-    padding: 10px 0;
+    padding: 4px 0;
 
     @media ($sm_down) {
       padding: 0;
@@ -260,9 +256,9 @@
     }
 
     .description {
-      margin-top: 16px;
+      margin-top: 14px;
       color: $secondary;
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.8;
     }
 
@@ -403,6 +399,7 @@
   }
 
   .part {
+    margin-top: 4px;
     color: $secondary;
     font-size: 12px;
   }
