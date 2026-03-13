@@ -63,7 +63,7 @@
       .data {
         display: flex;
         flex-wrap: wrap;
-        margin-top: 12px;
+        margin-top: 6px;
         color: $secondary;
         font-size: 12px;
         gap: 4px 12px;
@@ -97,7 +97,9 @@
         background-color: $light;
 
         @include hover() {
-          transition: background-color 0.2s, color 0.2s;
+          transition:
+            background-color 0.2s,
+            color 0.2s;
 
           &:hover {
             background-color: $primary;

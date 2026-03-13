@@ -80,35 +80,9 @@
 
     img {
       width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
       object-position: top center;
-
-      @media ($md_down) {
-        aspect-ratio: 16 / 9;
-      }
-    }
-
-    .categories {
-      position: absolute;
-      z-index: 10;
-      top: 10px;
-      left: 10px;
-      display: flex;
-      gap: 4px;
-
-      .icon {
-        width: 36px;
-        height: 36px;
-        background-color: #000;
-        color: #fff;
-      }
-
-      @each $brand, $color in $brand-colors {
-        .icon-#{$brand} {
-          background-color: #{$color};
-        }
-      }
     }
 
     .closed {
@@ -123,7 +97,7 @@
       margin: auto 0;
       background-color: $dark;
       color: $light;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 700;
     }
   }
@@ -133,19 +107,19 @@
     flex: 1 1 auto;
     flex-direction: column;
     justify-content: center;
-    padding: 10px 0;
+    padding: 4px 0;
 
     @media ($md_down) {
       padding: 0;
     }
 
     .title {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 500;
     }
 
     .description {
-      margin-top: 16px;
+      margin-top: 14px;
       color: $secondary;
       font-size: 13px;
       line-height: 1.8;
@@ -154,7 +128,7 @@
     .data {
       display: flex;
       flex-wrap: wrap;
-      margin-top: 12px;
+      margin-top: 6px;
       color: $secondary;
       font-size: 12px;
       gap: 4px 12px;
