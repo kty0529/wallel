@@ -45,6 +45,15 @@
   add_action( 'wp_enqueue_scripts', 'custom_theme_script' );
 
 
+  // 검색 결과 페이지 noindex 메타 태그
+  function custom_search_robots_meta() {
+    if ( is_search() ) {
+      echo '<meta name="robots" content="noindex,follow">';
+    }
+  }
+  add_action( 'wp_head', 'custom_search_robots_meta' );
+
+
   // 테마 서포트
   function custom_theme_setup() {
     add_theme_support( 'title-tag' );
