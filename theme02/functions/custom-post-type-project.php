@@ -24,7 +24,7 @@
 			'has_archive'   => true,
 			'supports'      => array( 'title', 'editor', 'tags', 'thumbnail', 'revisions' ),
 			'menu_position' => 5,
-			'taxonomies'    => false,
+			'taxonomies'    => [],
 			'show_in_rest'  => true,
 			'rest_base'     => 'project',
 		);
